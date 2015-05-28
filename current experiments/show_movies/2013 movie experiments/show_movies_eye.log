@@ -1,8 +1,0 @@
-Scenario - 
-Logfile written - 11/07/2012 12:54:53
-
-Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
-
-909	Pause		6137963	3125712		20170
-909	Resume		6137963	3125712	
-3235	Quit		15826069	161	

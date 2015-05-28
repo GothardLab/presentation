@@ -1,6 +1,0 @@
-strings	ints	doubles	bools
-text 1	1	1.1	true
-text 2	2	2.2	false
-text 3	3	3.3	true
-text 4	4	4.4	false
-text 5	5	5.5	true

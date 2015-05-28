@@ -1,4 +1,0 @@
-item#   |moviename          |startframe   |endframe              |totalitems=3
-01      |64ls.avi           |001          |300
-02      |64ne.avi           |001          |300
-03      |joust.avi          |001          |300

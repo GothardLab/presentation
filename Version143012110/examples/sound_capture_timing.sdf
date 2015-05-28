@@ -1,8 +1,0 @@
-sounds: event_type == "Sound"
-responses: event_type == "Response"  
-
-pairs:: simple_match( 0, 90, sounds, responses )
-average_rt = avg( pairs, time_diff )
-rt_std_dev = std_dev( pairs, time_diff )
-rt_max = max( pairs, time_diff )
-rt_min = min( pairs, time_diff )

@@ -1,6 +1,0 @@
-picture {
-   text {
-      caption = $cap;
-   };
-   x = 0; y = 0;
-};
