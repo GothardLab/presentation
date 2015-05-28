@@ -1,0 +1,5 @@
+item#   |filename              totalitems=004
+001     |M058_Av_s.bmp
+002     |M058_Di_s.bmp
+003     |M059_Av_s.bmp
+003     |M059_Di_s.bmp

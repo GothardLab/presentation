@@ -1,0 +1,7 @@
+
+
+cnd 62 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 1)  |  all cnds: 100% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 100% (of 1)
+
+cnd 51 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)

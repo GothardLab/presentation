@@ -1,0 +1,2 @@
+item#   |filename              totalitems=001
+001     |placeholder.bmp

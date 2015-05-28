@@ -1,0 +1,7 @@
+Scenario - 
+Logfile written - 09/03/2012 10:55:15
+
+Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+0	Text Input	f	74792	74792	2
+0	Text Input	g	75456	75456	3

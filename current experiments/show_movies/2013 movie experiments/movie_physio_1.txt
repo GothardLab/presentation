@@ -1,0 +1,16 @@
+item#   |moviename          |startframe   |endframe              |totalitems=15
+01      |1ls.avi            |001          |300
+02      |1ne.avi            |001          |300
+03      |1th.avi            |001          |300
+04      |13ls.avi           |001          |300
+05      |13ne.avi           |001          |300
+06      |13th.avi           |001          |300
+07      |17ls.avi           |001          |300
+08      |17ne.avi           |001          |300
+09      |17th.avi           |001          |300
+10      |19ls.avi           |001          |300
+11      |19ne.avi           |001          |300
+12      |19th.avi           |001          |300
+13      |babynip.avi        |001          |300
+14      |fiona.avi          |001          |300
+15      |dieter.avi         |001          |300

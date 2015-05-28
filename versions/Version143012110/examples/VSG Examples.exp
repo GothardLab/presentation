@@ -1,0 +1,259 @@
+<ver>11</ver>
+<efn>C:\PerForce\dev\presentation_help\examples\VSG Examples.exp</efn>
+<author></author>
+<con>
+<pause>P</pause>
+<pause_code></pause_code>
+<port1>1</port1>
+<quit>Q</quit>
+<quit_code></quit_code>
+<resume>R</resume>
+<resume_code></resume_code>
+<send_output>0</send_output>
+<start_code></start_code>
+</con>
+<dbi></dbi>
+<dbs>button</dbs>
+<ddi>0</ddi>
+<dds>
+<icm_profile></icm_profile>
+<use_icm>0</use_icm>
+</dds>
+<ddv>Primary Display Driver</ddv>
+<display_status_window>1</display_status_window>
+<dmd>16</dmd>
+<dmh>600</dmh>
+<dmr>60</dmr>
+<dmw>800</dmw>
+<dsd>C:\PerForce\dev\presentation_help\examples</dsd>
+<dxv>8</dxv>
+<efs>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG Examples 1.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG examples 2.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG examples 3.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG examples 4.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG Examples 10.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG examples 5.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG examples 6.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG Examples 7.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG Examples 8.sce</filename>
+<filename>C:\PerForce\dev\presentation_help\examples\VSG Examples 9.sce</filename>
+</efs>
+<font_settings>
+<dpi>96</dpi>
+<font_smooth>1</font_smooth>
+<use_dpi>1</use_dpi>
+<use_font_smooth>1</use_font_smooth>
+</font_settings>
+<idt>1000</idt>
+<ip_chans></ip_chans>
+<isb>10000</isb>
+<lfd>C:\PerForce\dev\presentation_help\examples</lfd>
+<lnb>2</lnb>
+<lno>0</lno>
+<log>
+<append_counter>0</append_counter>
+<delimiter>9</delimiter>
+<general_list>1</general_list>
+<pien>0</pien>
+<set_def_file></set_def_file>
+<stimulus_list>0</stimulus_list>
+<subject_id></subject_id>
+<subject_id_pol>0</subject_id_pol>
+<video_list>0</video_list>
+</log>
+<lol>1</lol>
+<lpr></lpr>
+<mss>4</mss>
+<nam>VSG Examples Experiment</nam>
+<one_processor>2</one_processor>
+<oports></oports>
+<out_encrypt_key></out_encrypt_key>
+<pi_list></pi_list>
+<port_devices>
+<device>
+<parameters>
+<cts>0</cts>
+<dsrin>0</dsrin>
+<dsrout>0</dsrout>
+<dtr>disable</dtr>
+<rts>disable</rts>
+<set_fifo>1</set_fifo>
+<spd>5</spd>
+<spp>none</spp>
+<spr>38400</spr>
+<sps>1</sps>
+</parameters>
+<piai>COM1</piai>
+<pian>Serial Port</pian>
+<pihpn>COM1</pihpn>
+</device>
+<device>
+<parameters>
+<cts>0</cts>
+<dsrin>0</dsrin>
+<dsrout>0</dsrout>
+<dtr>disable</dtr>
+<rts>disable</rts>
+<set_fifo>1</set_fifo>
+<spd></spd>
+<spp></spp>
+<spr></spr>
+<sps></sps>
+</parameters>
+<piai>COM2</piai>
+<pian>Serial Port</pian>
+<pihpn>COM2</pihpn>
+</device>
+</port_devices>
+<rdl>
+<device>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>X-axis</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>Y-axis</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>Wheel</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<device_type>2</device_type>
+<dx_device_type>18</dx_device_type>
+<name>Mouse</name>
+</device>
+<device>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>X-axis</name>
+<saturation>1</saturation>
+</axis>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>Y-axis</name>
+<saturation>1</saturation>
+</axis>
+<device_type>6</device_type>
+<dx_device_type>0</dx_device_type>
+<name>gameport device</name>
+</device>
+<device>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>x</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<axis>
+<max>1000</max>
+<min>-1000</min>
+<name>y</name>
+<restricted>1</restricted>
+<scale>1</scale>
+</axis>
+<device_type>5</device_type>
+<dx_device_type>0</dx_device_type>
+<name>pointing device</name>
+</device>
+</rdl>
+<rep>1</rep>
+<require_name_match>0</require_name_match>
+<rts>1</rts>
+<sbs>100000</sbs>
+<sce>
+<sfn>all_scenarios</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG Examples 1.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG examples 2.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG examples 3.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG examples 4.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG examples 5.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG examples 6.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG Examples 7.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG Examples 8.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG Examples 9.sce</sfn>
+</sce>
+<sce>
+<sfn>C:\PerForce\dev\presentation_help\examples\VSG Examples 10.sce</sfn>
+</sce>
+<sct>
+<capture_device>
+<bps></bps>
+<chan></chan>
+<do_rec_vol>0</do_rec_vol>
+<freq></freq>
+<name>None</name>
+<rec_vol>1</rec_vol>
+</capture_device>
+<resp_dev>
+<combine>0</combine>
+<ignore>1000</ignore>
+<rec_dur>500</rec_dur>
+<save>1</save>
+<thresh>0.1</thresh>
+</resp_dev>
+</sct>
+<sde>
+<buffer_length>1000</buffer_length>
+<custom_buf>sec_hw</custom_buf>
+<halt_on_underrun>1</halt_on_underrun>
+<max_mix_length>400</max_mix_length>
+<min_mix_length>100</min_mix_length>
+<mixer>custom</mixer>
+<rewind_distance>10</rewind_distance>
+<side_speakers>1</side_speakers>
+</sde>
+<sdv>Primary Sound Driver</sdv>
+<smc>2</smc>
+<smd>16</smd>
+<smr>44100</smr>
+<srs>1</srs>
+<ssb>2000</ssb>
+<svl>
+<attenuation>0</attenuation>
+<do_attenuation>0</do_attenuation>
+<do_volume>0</do_volume>
+<volume>1</volume>
+</svl>
+<text_encoding>utf8</text_encoding>
+<trigger_mode>
+<cn></cn>
+<v></v>
+</trigger_mode>
+<udt>0</udt>
+<unc>2000</unc>
+<upb>0</upb>
+<urp>1</urp>

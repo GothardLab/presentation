@@ -1,0 +1,3 @@
+item#   |moviename                      |startframe   |endframe              |totalitems=02
+01      |1groom.avi                     |001          |300
+02      |1groom_56.avi                  |001          |001

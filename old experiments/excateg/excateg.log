@@ -1,0 +1,12 @@
+Scenario - 
+Logfile written - 02/25/2010 18:35:00
+
+Trial,Event Type,Code,Time,TTime,Uncertainty,Duration,Uncertainty,ReqTime,ReqDur
+
+5,Response,1,56618,2054,1
+5,Response,2,60946,6382,2
+5,Response,1,64601,10037,1
+5,Response,2,67197,12633,1
+7,Response,1,135063,3170,2
+12,Response,2,177868,11068,1
+14,Quit,,240899,19135,

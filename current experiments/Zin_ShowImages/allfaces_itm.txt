@@ -1,0 +1,26 @@
+item#   |filename              totalitems=025
+001     |1.bmp
+002     |26.bmp
+003     |27.bmp
+004     |34.bmp
+005     |37.bmp
+006     |4.bmp
+007     |berber062.bmp
+008     |berber02.bmp
+009     |blacklem.bmp
+010     |RUMT04.bmp
+011     |SCme05.bmp
+012     |SCMM16.bmp
+013     |43.bmp
+014     |52.bmp
+015     |54.bmp
+016     |68.bmp
+017     |img3111.bmp
+018     |img3736.bmp
+019     |item01.bmp
+020     |85.bmp
+021     |86.bmp
+022     |item03.bmp
+023     |item41.bmp
+024     |monk28.bmp
+025     |monk29.bmp

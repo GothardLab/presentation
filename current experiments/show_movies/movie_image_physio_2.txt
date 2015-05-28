@@ -1,0 +1,21 @@
+item#   |moviename                              |startframe   |endframe              |totalitems=20
+01      |101ls_65.avi                           |001          |001
+02      |101ne_23.avi                           |001          |001
+03      |101th_88.avi                           |001          |001
+04      |106fg_183.avi                          |001          |001
+05      |106ne_111.avi                          |001          |001
+06      |106th_138.avi                          |001          |001
+07      |carol_268.avi                          |001          |001
+08      |cayo_2kids_chillin_268.avi             |001          |001
+09      |cayo_baby_flies_into_nail_salon_218.avi|001          |001
+10      |cayo_dogscratch_257.avi                |001          |001
+11      |101ls.avi                              |001          |120
+12      |101ne.avi                              |001          |120
+13      |101th.avi                              |001          |120
+14      |106fg.avi                              |091          |210
+15      |106ne.avi                              |001          |120
+16      |106th.avi                              |091          |210
+17      |carol.avi                              |181          |300
+18      |cayo_2kids_chillin.avi                 |181          |300
+19      |cayo_baby_flies_into_nail_salon.avi    |181          |300
+20      |cayo_dogscratch.avi                    |181          |300

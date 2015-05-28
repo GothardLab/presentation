@@ -1,0 +1,22 @@
+
+trial {
+	trial_duration = 5000;
+	trial_type = first_response;
+	all_responses = false;
+	
+	picture {
+		text $part1;
+		x = 0; y = 0;
+	};
+	time = 0;
+	code = $code1;
+	
+	picture {
+		text $part2;
+		x = 0; y = 0;
+	};
+	time = $dur;
+	duration = $dur;
+	response_active = true;
+	code = $code2;
+};

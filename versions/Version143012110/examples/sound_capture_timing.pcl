@@ -1,0 +1,16 @@
+audio_space.run( "channel1 = sin( 2000, 0, 10, 0 )" );
+audio_space.run( "sound1 = (channel1,channel1)" );
+audio_space.get_wave_data( "sound1", wave1 );  
+
+term.print( "For this scenario to work, you must connect\n" );
+term.print( "your sound card output directly to the recording device.\n" );
+term.print( "This scenario takes 10 seconds" );
+
+loop
+   int i = 1
+until
+   i > 100
+begin
+   trial1.present();
+   i = i + 1
+end

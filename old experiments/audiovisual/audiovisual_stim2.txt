@@ -1,0 +1,31 @@
+item#   |framefile                   |audiofile                     |startframe   |endframe              |totalitems=30
+01      |54grunt.avi                 |54grunt_A.wav                 |001          |030
+02      |76_coo_01.avi               |76_coo_01_A.wav               |001          |030
+03      |83&84_scream_02.avi         |83&84_scream_02_A.wav         |001          |030
+04      |brian qt_01.avi             |brian qt_01_A.wav             |001          |030
+05      |clayton qts.avi             |clayton qts_A.wav             |001          |030
+06      |drew no.avi                 |drew no_A.wav                 |001          |030
+07      |monkey 67 shrill_bark02.avi |monkey 67 shrill_bark02_A.wav |001          |030
+08      |prisca no.avi               |prisca no_A.wav               |001          |030
+09      |stir cup.avi                |stir cup_A.wav                |001          |030
+10      |walking.avi                 |walking_A.wav                 |001          |030
+11      |black.avi     	             |54grunt_A.wav                 |001          |030
+12      |black.avi                   |76_coo_01_A.wav               |001          |030
+13      |black.avi                   |83&84_scream_02_A.wav         |001          |030
+14      |black.avi                   |brian qt_01_A.wav             |001          |030
+15      |black.avi                   |clayton qts_A.wav             |001          |030
+16      |black.avi                   |drew no_A.wav                 |001          |030
+17      |black.avi                   |monkey 67 shrill_bark02_A.wav |001          |030
+18      |black.avi                   |prisca no_A.wav               |001          |030
+19      |black.avi                   |stir cup_A.wav                |001          |030
+20      |black.avi                   |walking_A.wav                 |001          |030
+21      |54grunt.avi                 |silent.wav                    |001          |030
+22      |76_coo_01.avi               |silent.wav                    |001          |030
+23      |83&84_scream_02.avi         |silent.wav                    |001          |030
+24      |brian qt_01.avi             |silent.wav                    |001          |030
+25      |clayton qts.avi             |silent.wav                    |001          |030
+26      |drew no.avi                 |silent.wav                    |001          |030
+27      |monkey 67 shrill_bark02.avi |silent.wav                    |001          |030
+28      |prisca no.avi               |silent.wav                    |001          |030
+29      |stir cup.avi                |silent.wav                    |001          |030
+30      |walking.avi                 |silent.wav                    |001          |030

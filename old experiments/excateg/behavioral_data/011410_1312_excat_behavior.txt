@@ -1,0 +1,19 @@
+
+
+cnd 8 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 1)  |  all cnds: 100% (of 1)
+threat: 100% (of 1)  |  lipsmack: NaN% (of 0)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 2)  |  all cnds: 100% (of 2)
+threat: 100% (of 2)  |  lipsmack: NaN% (of 0)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 3)  |  all cnds: 100% (of 3)
+threat: 100% (of 2)  |  lipsmack: 100% (of 1)
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 4)  |  all cnds: 75% (of 4)
+threat: 100% (of 2)  |  lipsmack: 50% (of 2)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)

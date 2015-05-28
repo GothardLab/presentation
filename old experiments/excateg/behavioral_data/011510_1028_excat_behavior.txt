@@ -1,0 +1,163 @@
+
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 1)  |  all cnds: 100% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 2)  |  all cnds: 50% (of 2)
+threat: 0% (of 1)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 1)
+cues: 100% (of 3)  |  all cnds: 33% (of 3)
+threat: 0% (of 2)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 2)
+cues: 100% (of 4)  |  all cnds: 25% (of 4)
+threat: 0% (of 3)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 3)
+cues: 100% (of 5)  |  all cnds: 20% (of 5)
+threat: 0% (of 4)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 4)
+cues: 100% (of 6)  |  all cnds: 16% (of 6)
+threat: 0% (of 5)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 5)
+cues: 100% (of 7)  |  all cnds: 14% (of 7)
+threat: 0% (of 6)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 6)
+cues: 100% (of 8)  |  all cnds: 12% (of 8)
+threat: 0% (of 7)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 7)
+cues: 100% (of 9)  |  all cnds: 11% (of 9)
+threat: 0% (of 8)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 8)
+cues: 100% (of 10)  |  all cnds: 10% (of 10)
+threat: 0% (of 9)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 9)
+cues: 100% (of 11)  |  all cnds: 9% (of 11)
+threat: 0% (of 10)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 10)
+cues: 100% (of 12)  |  all cnds: 8% (of 12)
+threat: 0% (of 11)  |  lipsmack: 100% (of 1)
+
+cnd 15 --> threat  | round: 1  | cnd accuracy: 0% (of 11)
+cues: 100% (of 13)  |  all cnds: 15% (of 13)
+threat: 8% (of 12)  |  lipsmack: 100% (of 1)
+
+cnd 8 --> threat  | round: 1  | cnd accuracy: 0% (of 0)
+cues: 100% (of 14)  |  all cnds: 21% (of 14)
+threat: 15% (of 13)  |  lipsmack: 100% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: 0% (of 0)
+cues: 100% (of 15)  |  all cnds: 26% (of 15)
+threat: 15% (of 13)  |  lipsmack: 100% (of 2)
+
+cnd 8 --> threat  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 100% (of 16)  |  all cnds: 31% (of 16)
+threat: 21% (of 14)  |  lipsmack: 100% (of 2)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 100% (of 17)  |  all cnds: 35% (of 17)
+threat: 21% (of 14)  |  lipsmack: 100% (of 3)
+
+cnd 15 --> threat  | round: 2  | cnd accuracy: 8% (of 12)
+cues: 100% (of 18)  |  all cnds: 38% (of 18)
+threat: 26% (of 15)  |  lipsmack: 100% (of 3)
+
+cnd 1 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 100% (of 19)  |  all cnds: 36% (of 19)
+threat: 26% (of 15)  |  lipsmack: 75% (of 4)
+
+cnd 1 --> lipsmack  | round: 2  | cnd accuracy: 50% (of 2)
+cues: 100% (of 20)  |  all cnds: 40% (of 20)
+threat: 26% (of 15)  |  lipsmack: 80% (of 5)
+
+cnd 1 --> lipsmack  | round: 3  | cnd accuracy: 66% (of 3)
+cues: 100% (of 21)  |  all cnds: 38% (of 21)
+threat: 26% (of 15)  |  lipsmack: 66% (of 6)
+
+cnd 1 --> lipsmack  | round: 3  | cnd accuracy: 50% (of 4)
+cues: 100% (of 22)  |  all cnds: 40% (of 22)
+threat: 26% (of 15)  |  lipsmack: 71% (of 7)
+
+cnd 15 --> threat  | round: 3  | cnd accuracy: 15% (of 13)
+cues: 100% (of 23)  |  all cnds: 43% (of 23)
+threat: 31% (of 16)  |  lipsmack: 71% (of 7)
+
+cnd 8 --> threat  | round: 3  | cnd accuracy: 100% (of 2)
+cues: 100% (of 24)  |  all cnds: 45% (of 24)
+threat: 35% (of 17)  |  lipsmack: 71% (of 7)
+
+cnd 2 --> lipsmack  | round: 3  | cnd accuracy: 100% (of 2)
+cues: 100% (of 25)  |  all cnds: 48% (of 25)
+threat: 35% (of 17)  |  lipsmack: 75% (of 8)
+
+cnd 2 --> lipsmack  | round: 4  | cnd accuracy: 100% (of 3)
+cues: 100% (of 26)  |  all cnds: 46% (of 26)
+threat: 35% (of 17)  |  lipsmack: 66% (of 9)
+
+cnd 2 --> lipsmack  | round: 4  | cnd accuracy: 75% (of 4)
+cues: 100% (of 27)  |  all cnds: 48% (of 27)
+threat: 35% (of 17)  |  lipsmack: 70% (of 10)
+
+cnd 8 --> threat  | round: 4  | cnd accuracy: 100% (of 3)
+cues: 100% (of 28)  |  all cnds: 50% (of 28)
+threat: 38% (of 18)  |  lipsmack: 70% (of 10)
+
+cnd 15 --> threat  | round: 4  | cnd accuracy: 21% (of 14)
+cues: 100% (of 29)  |  all cnds: 51% (of 29)
+threat: 42% (of 19)  |  lipsmack: 70% (of 10)
+
+cnd 1 --> lipsmack  | round: 4  | cnd accuracy: 60% (of 5)
+cues: 100% (of 30)  |  all cnds: 53% (of 30)
+threat: 42% (of 19)  |  lipsmack: 72% (of 11)
+
+cnd 2 --> lipsmack  | round: 5  | cnd accuracy: 80% (of 5)
+cues: 100% (of 31)  |  all cnds: 51% (of 31)
+threat: 42% (of 19)  |  lipsmack: 66% (of 12)
+
+cnd 2 --> lipsmack  | round: 5  | cnd accuracy: 66% (of 6)
+cues: 100% (of 32)  |  all cnds: 53% (of 32)
+threat: 42% (of 19)  |  lipsmack: 69% (of 13)
+
+cnd 8 --> threat  | round: 5  | cnd accuracy: 100% (of 4)
+cues: 100% (of 33)  |  all cnds: 54% (of 33)
+threat: 45% (of 20)  |  lipsmack: 69% (of 13)
+
+cnd 1 --> lipsmack  | round: 5  | cnd accuracy: 66% (of 6)
+cues: 100% (of 34)  |  all cnds: 55% (of 34)
+threat: 45% (of 20)  |  lipsmack: 71% (of 14)
+
+cnd 15 --> threat  | round: 5  | cnd accuracy: 26% (of 15)
+cues: 100% (of 35)  |  all cnds: 57% (of 35)
+threat: 47% (of 21)  |  lipsmack: 71% (of 14)
+
+cnd 1 --> lipsmack  | round: 6  | cnd accuracy: 71% (of 7)
+cues: 100% (of 36)  |  all cnds: 55% (of 36)
+threat: 47% (of 21)  |  lipsmack: 66% (of 15)
+
+cnd 1 --> lipsmack  | round: 6  | cnd accuracy: 62% (of 8)
+cues: 100% (of 37)  |  all cnds: 56% (of 37)
+threat: 47% (of 21)  |  lipsmack: 68% (of 16)
+
+cnd 8 --> threat  | round: 6  | cnd accuracy: 100% (of 5)
+cues: 100% (of 38)  |  all cnds: 57% (of 38)
+threat: 50% (of 22)  |  lipsmack: 68% (of 16)
+
+cnd 15 --> threat  | round: 6  | cnd accuracy: 31% (of 16)
+cues: 100% (of 39)  |  all cnds: 58% (of 39)
+threat: 52% (of 23)  |  lipsmack: 68% (of 16)
+
+cnd 2 --> lipsmack  | round: 6  | cnd accuracy: 71% (of 7)
+cues: 100% (of 40)  |  all cnds: 57% (of 40)
+threat: 52% (of 23)  |  lipsmack: 64% (of 17)
+
+cnd 2 --> lipsmack  | round: 6  | cnd accuracy: 62% (of 8)

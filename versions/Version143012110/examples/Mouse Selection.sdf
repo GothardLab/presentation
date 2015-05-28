@@ -1,0 +1,21 @@
+unc_over_1 : time_uncertainty > 1
+over1_count = count( unc_over_1 )
+unc_over_5 : time_uncertainty > 5
+over5_count = count( unc_over_5 )
+
+picture: event_type == "Picture"
+stimulus( picture ) : code contains "select"
+stimulus_count = count( stimulus )
+
+press: event_type == "Response"  
+response: press and rel_index_range(-1,-1) is stimulus
+response_count = count( response )
+
+pair:: simple_match( 0, 50000, stimulus, response ) 
+
+check1 = stimulus_count - response_count
+check2 = stimulus_count - count( pair )
+
+event_pair_table custom_table( stim1, time1, time_uncertainty1, x_pos1, y_pos1, x_sel1, y_sel1, time_uncertainty2, time_diff )
+
+print custom_table( pair, "\t", "\n" )

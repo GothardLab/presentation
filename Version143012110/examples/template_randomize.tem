@@ -1,0 +1,6 @@
+trial {
+   trial_duration = 1000;
+   
+   picture $pic; 
+   code = $ecode;
+};

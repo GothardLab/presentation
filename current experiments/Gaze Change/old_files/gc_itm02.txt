@@ -1,0 +1,19 @@
+item#   |filename              totalitems=018
+001     |M001_Av_O_B091.bmp
+002     |M001_Di_O_B091.bmp
+003     |M002_Av_O_B038.bmp
+004     |M002_Di_O_B038.bmp
+005     |M004_Av_O_B060.bmp
+006     |M004_Di_O_B060.bmp
+007     |M005_Av_O_B073.bmp
+008     |M005_Di_O_B073.bmp
+009     |M007_Av_O_B024.bmp
+010     |M007_Di_O_B033.bmp
+011     |M008_Av_O_B033.bmp
+012     |M008_Di_O_B033.bmp
+013     |M010_Av_O_B002.bmp
+014     |M010_Di_O_B002.bmp
+015     |M013_Av_O_B056.bmp
+016     |M013_Di_O_B056.bmp
+017     |M064_Av_O_B032.bmp
+018     |M064_Di_O_B032.bmp
