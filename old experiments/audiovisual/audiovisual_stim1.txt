@@ -1,0 +1,31 @@
+item#   |framefile                   |audiofile                     |startframe   |endframe              |totalitems=30
+01      |79&80_baby_scream02.avi     |79&80_baby_scream02_A.wav     |001          |030
+02      |138_shrill_bark01.avi       |138_shrill_bark01_A.wav       |001          |030
+03      |brian no.avi                |brian no_A.wav                |001          |030
+04      |kati no away.avi            |kati no away_A.wav            |001          |030
+05      |keys02.avi                  |keys02_A.wav                  |001          |030
+06      |monkey 58_ coo_01.avi       |monkey 58_ coo_01_A.wav       |001          |030
+07      |61_grunt_01_fil.avi         |61_grunt_01_fil_A.wav         |001          |030
+08      |prisca qts away.avi         |prisca qts away_A.wav         |001          |030
+09      |sara qts.avi                |sara qts_A.wav                |001          |030
+10      |water_01.avi                |water_01_A.wav                |001          |030
+11      |black.avi     	             |79&80_baby_scream02_A.wav     |001          |030
+12      |black.avi                   |138_shrill_bark01_A.wav       |001          |030
+13      |black.avi                   |brian no_A.wav                |001          |030
+14      |black.avi                   |kati no away_A.wav            |001          |030
+15      |black.avi                   |keys02_A.wav                  |001          |030
+16      |black.avi                   |monkey 58_ coo_01_A.wav       |001          |030
+17      |black.avi                   |61_grunt_01_fil_A.wav         |001          |030
+18      |black.avi                   |prisca qts away_A.wav         |001          |030
+19      |black.avi                   |sara qts_A.wav                |001          |030
+20      |black.avi                   |water_01_A.wav                |001          |030
+21      |79&80_baby_scream02.avi     |silent.wav                    |001          |030
+22      |138_shrill_bark01.avi       |silent.wav                    |001          |030
+23      |brian no.avi                |silent.wav                    |001          |030
+24      |kati no away.avi            |silent.wav                    |001          |030
+25      |keys02.avi                  |silent.wav                    |001          |030
+26      |monkey 58_ coo_01.avi       |silent.wav                    |001          |030
+27      |61_grunt_01_fil.avi         |silent.wav                    |001          |030
+28      |prisca qts away.avi         |silent.wav                    |001          |030
+29      |sara qts.avi                |silent.wav                    |001          |030
+30      |water_01.avi                |silent.wav                    |001          |030

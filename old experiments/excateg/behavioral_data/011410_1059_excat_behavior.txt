@@ -1,0 +1,7 @@
+
+
+cnd 8 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 1)  |  all cnds: 0% (of 1)
+threat: 0% (of 1)  |  lipsmack: NaN% (of 0)
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)

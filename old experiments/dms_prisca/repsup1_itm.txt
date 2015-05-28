@@ -1,0 +1,9 @@
+item#	filename	total items=08
+01	01nene03.bmp
+02	01nenw02.bmp
+03	13neme04.bmp
+04	13nene07.bmp
+05	17neee06.bmp
+06	17neme09.bmp
+07	49neme06.bmp
+08	49ness03.bmp

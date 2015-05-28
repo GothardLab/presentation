@@ -1,0 +1,12 @@
+item#   |framefile                   |audiofile                     |startframe   |endframe              |totalitems=11
+01      |black.avi     	             |whitey1.wav                   |001          |030
+02      |black.avi                   |whitey2.wav                   |001          |030
+03      |black.avi                   |whitey3.wav                   |001          |030
+04      |black.avi                   |whitey4.wav                   |001          |030
+05      |black.avi                   |whitey5.wav                   |001          |030
+06      |black.avi                   |whitey6.wav                   |001          |030
+07      |black.avi                   |whitey7.wav                   |001          |030
+08      |black.avi                   |whitey8.wav                   |001          |030
+09      |black.avi                   |whitey9.wav                   |001          |030
+10      |black.avi                   |whitey10.wav                  |001          |030
+11      |black.avi                   |whitey11.wav                  |001          |030

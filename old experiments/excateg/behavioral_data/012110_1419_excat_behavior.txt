@@ -1,0 +1,43 @@
+
+
+cnd 20 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 1)  |  all cnds: 0% (of 1)
+threat: 0% (of 1)  |  lipsmack: NaN% (of 0)
+
+cnd 48 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 2)  |  all cnds: 50% (of 2)
+threat: 0% (of 1)  |  lipsmack: 100% (of 1)
+
+cnd 41 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 3)  |  all cnds: 66% (of 3)
+threat: 0% (of 1)  |  lipsmack: 100% (of 2)
+
+cnd 47 --> threat  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 100% (of 4)  |  all cnds: 50% (of 4)
+threat: 0% (of 2)  |  lipsmack: 100% (of 2)
+
+cnd 47 --> threat  | round: 1  | cnd accuracy: 0% (of 1)
+cues: 100% (of 5)  |  all cnds: 40% (of 5)
+threat: 0% (of 3)  |  lipsmack: 100% (of 2)
+
+cnd 20 --> threat  | round: 1  | cnd accuracy: 0% (of 1)
+cues: 83% (of 6)  |  all cnds: 40% (of 5)
+threat: 0% (of 3)  |  lipsmack: 100% (of 2)
+
+cnd 20 --> threat  | round: 1  | cnd accuracy: 0% (of 1)
+cues: 85% (of 7)  |  all cnds: 33% (of 6)
+threat: 0% (of 4)  |  lipsmack: 100% (of 2)
+
+cnd 20 --> threat  | round: 1  | cnd accuracy: 0% (of 2)
+cues: 87% (of 8)  |  all cnds: 42% (of 7)
+threat: 20% (of 5)  |  lipsmack: 100% (of 2)
+
+cnd 47 --> threat  | round: 1  | cnd accuracy: 0% (of 2)
+cues: 88% (of 9)  |  all cnds: 37% (of 8)
+threat: 16% (of 6)  |  lipsmack: 100% (of 2)
+
+cnd 47 --> threat  | round: 1  | cnd accuracy: 0% (of 3)
+cues: 80% (of 10)  |  all cnds: 37% (of 8)
+threat: 16% (of 6)  |  lipsmack: 100% (of 2)
+
+cnd 47 --> threat  | round: 1  | cnd accuracy: 0% (of 3)

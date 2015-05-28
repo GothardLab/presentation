@@ -1,0 +1,341 @@
+
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 0% (of 1)  |  all cnds: NaN% (of 0)
+threat: NaN% (of 0)  |  lipsmack: NaN% (of 0)
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 50% (of 2)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 33% (of 3)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 25% (of 4)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 20% (of 5)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 16% (of 6)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 14% (of 7)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 12% (of 8)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 11% (of 9)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 10% (of 10)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 9% (of 11)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 8% (of 12)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 7% (of 13)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 7% (of 14)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 6% (of 15)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 6% (of 16)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 5% (of 17)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 5% (of 18)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 5% (of 19)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 5% (of 20)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 4% (of 21)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 4% (of 22)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 4% (of 23)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 4% (of 24)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 4% (of 25)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 3% (of 26)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 3% (of 27)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 3% (of 28)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 3% (of 29)  |  all cnds: 0% (of 1)
+threat: NaN% (of 0)  |  lipsmack: 0% (of 1)
+
+cnd 2 --> lipsmack  | round: 1  | cnd accuracy: NaN% (of 0)
+cues: 6% (of 30)  |  all cnds: 50% (of 2)
+threat: NaN% (of 0)  |  lipsmack: 50% (of 2)
+
+cnd 1 --> lipsmack  | round: 1  | cnd accuracy: 0% (of 1)
+cues: 9% (of 31)  |  all cnds: 66% (of 3)
+threat: NaN% (of 0)  |  lipsmack: 66% (of 3)
+
+cnd 1 --> lipsmack  | round: 2  | cnd accuracy: 50% (of 2)
+cues: 12% (of 32)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 12% (of 33)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 11% (of 34)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 11% (of 35)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 11% (of 36)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 10% (of 37)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 10% (of 38)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 10% (of 39)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 10% (of 40)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 9% (of 41)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 9% (of 42)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 9% (of 43)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 9% (of 44)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 8% (of 45)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 8% (of 46)  |  all cnds: 75% (of 4)
+threat: NaN% (of 0)  |  lipsmack: 75% (of 4)
+
+cnd 2 --> lipsmack  | round: 2  | cnd accuracy: 100% (of 1)
+cues: 10% (of 47)  |  all cnds: 80% (of 5)
+threat: NaN% (of 0)  |  lipsmack: 80% (of 5)
+
+cnd 1 --> lipsmack  | round: 3  | cnd accuracy: 66% (of 3)
+cues: 12% (of 48)  |  all cnds: 83% (of 6)
+threat: NaN% (of 0)  |  lipsmack: 83% (of 6)
+
+cnd 2 --> lipsmack  | round: 3  | cnd accuracy: 100% (of 2)
+cues: 12% (of 49)  |  all cnds: 83% (of 6)
+threat: NaN% (of 0)  |  lipsmack: 83% (of 6)
+
+cnd 2 --> lipsmack  | round: 3  | cnd accuracy: 100% (of 2)
+cues: 14% (of 50)  |  all cnds: 85% (of 7)
+threat: NaN% (of 0)  |  lipsmack: 85% (of 7)
+
+cnd 2 --> lipsmack  | round: 4  | cnd accuracy: 100% (of 3)
+cues: 15% (of 51)  |  all cnds: 87% (of 8)
+threat: NaN% (of 0)  |  lipsmack: 87% (of 8)
+
+cnd 1 --> lipsmack  | round: 4  | cnd accuracy: 75% (of 4)
+cues: 17% (of 52)  |  all cnds: 88% (of 9)
+threat: NaN% (of 0)  |  lipsmack: 88% (of 9)
+
+cnd 2 --> lipsmack  | round: 5  | cnd accuracy: 100% (of 4)
+cues: 18% (of 53)  |  all cnds: 90% (of 10)
+threat: NaN% (of 0)  |  lipsmack: 90% (of 10)
+
+cnd 1 --> lipsmack  | round: 5  | cnd accuracy: 80% (of 5)
+cues: 20% (of 54)  |  all cnds: 90% (of 11)
+threat: NaN% (of 0)  |  lipsmack: 90% (of 11)
+
+cnd 2 --> lipsmack  | round: 6  | cnd accuracy: 100% (of 5)
+cues: 21% (of 55)  |  all cnds: 91% (of 12)
+threat: NaN% (of 0)  |  lipsmack: 91% (of 12)
+
+cnd 1 --> lipsmack  | round: 6  | cnd accuracy: 83% (of 6)
+cues: 23% (of 56)  |  all cnds: 92% (of 13)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 13)
+
+cnd 2 --> lipsmack  | round: 7  | cnd accuracy: 100% (of 6)
+cues: 24% (of 57)  |  all cnds: 92% (of 14)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 14)
+
+cnd 1 --> lipsmack  | round: 7  | cnd accuracy: 85% (of 7)
+cues: 25% (of 58)  |  all cnds: 93% (of 15)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 15)
+
+cnd 2 --> lipsmack  | round: 8  | cnd accuracy: 100% (of 7)
+cues: 27% (of 59)  |  all cnds: 93% (of 16)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 16)
+
+cnd 1 --> lipsmack  | round: 8  | cnd accuracy: 87% (of 8)
+cues: 28% (of 60)  |  all cnds: 94% (of 17)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 17)
+
+cnd 1 --> lipsmack  | round: 9  | cnd accuracy: 88% (of 9)
+cues: 29% (of 61)  |  all cnds: 94% (of 18)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 18)
+
+cnd 2 --> lipsmack  | round: 9  | cnd accuracy: 100% (of 8)
+cues: 30% (of 62)  |  all cnds: 94% (of 19)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 19)
+
+cnd 2 --> lipsmack  | round: 10  | cnd accuracy: 100% (of 9)
+cues: 31% (of 63)  |  all cnds: 95% (of 20)
+threat: NaN% (of 0)  |  lipsmack: 95% (of 20)
+
+cnd 1 --> lipsmack  | round: 10  | cnd accuracy: 90% (of 10)
+cues: 32% (of 64)  |  all cnds: 90% (of 21)
+threat: NaN% (of 0)  |  lipsmack: 90% (of 21)
+
+cnd 1 --> lipsmack  | round: 10  | cnd accuracy: 81% (of 11)
+cues: 33% (of 65)  |  all cnds: 90% (of 22)
+threat: NaN% (of 0)  |  lipsmack: 90% (of 22)
+
+cnd 2 --> lipsmack  | round: 11  | cnd accuracy: 100% (of 10)
+cues: 34% (of 66)  |  all cnds: 91% (of 23)
+threat: NaN% (of 0)  |  lipsmack: 91% (of 23)
+
+cnd 1 --> lipsmack  | round: 11  | cnd accuracy: 83% (of 12)
+cues: 35% (of 67)  |  all cnds: 91% (of 24)
+threat: NaN% (of 0)  |  lipsmack: 91% (of 24)
+
+cnd 2 --> lipsmack  | round: 12  | cnd accuracy: 100% (of 11)
+cues: 36% (of 68)  |  all cnds: 92% (of 25)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 25)
+
+cnd 1 --> lipsmack  | round: 12  | cnd accuracy: 84% (of 13)
+cues: 37% (of 69)  |  all cnds: 92% (of 26)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 26)
+
+cnd 2 --> lipsmack  | round: 13  | cnd accuracy: 100% (of 12)
+cues: 38% (of 70)  |  all cnds: 92% (of 27)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 27)
+
+cnd 1 --> lipsmack  | round: 13  | cnd accuracy: 85% (of 14)
+cues: 39% (of 71)  |  all cnds: 92% (of 28)
+threat: NaN% (of 0)  |  lipsmack: 92% (of 28)
+
+cnd 2 --> lipsmack  | round: 14  | cnd accuracy: 100% (of 13)
+cues: 40% (of 72)  |  all cnds: 93% (of 29)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 29)
+
+cnd 1 --> lipsmack  | round: 14  | cnd accuracy: 86% (of 15)
+cues: 41% (of 73)  |  all cnds: 93% (of 30)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 30)
+
+cnd 1 --> lipsmack  | round: 15  | cnd accuracy: 87% (of 16)
+cues: 41% (of 74)  |  all cnds: 93% (of 31)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 31)
+
+cnd 2 --> lipsmack  | round: 15  | cnd accuracy: 100% (of 14)
+cues: 42% (of 75)  |  all cnds: 93% (of 32)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 32)
+
+cnd 1 --> lipsmack  | round: 16  | cnd accuracy: 88% (of 17)
+cues: 43% (of 76)  |  all cnds: 93% (of 33)
+threat: NaN% (of 0)  |  lipsmack: 93% (of 33)
+
+cnd 2 --> lipsmack  | round: 16  | cnd accuracy: 100% (of 15)
+cues: 44% (of 77)  |  all cnds: 94% (of 34)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 34)
+
+cnd 1 --> lipsmack  | round: 17  | cnd accuracy: 88% (of 18)
+cues: 44% (of 78)  |  all cnds: 94% (of 35)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 35)
+
+cnd 2 --> lipsmack  | round: 17  | cnd accuracy: 100% (of 16)
+cues: 45% (of 79)  |  all cnds: 94% (of 36)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 36)
+
+cnd 1 --> lipsmack  | round: 18  | cnd accuracy: 89% (of 19)
+cues: 46% (of 80)  |  all cnds: 94% (of 37)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 37)
+
+cnd 2 --> lipsmack  | round: 18  | cnd accuracy: 100% (of 17)
+cues: 46% (of 81)  |  all cnds: 94% (of 38)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 38)
+
+cnd 1 --> lipsmack  | round: 19  | cnd accuracy: 90% (of 20)
+cues: 47% (of 82)  |  all cnds: 94% (of 39)
+threat: NaN% (of 0)  |  lipsmack: 94% (of 39)
+
+cnd 2 --> lipsmack  | round: 19  | cnd accuracy: 100% (of 18)
+cues: 48% (of 83)  |  all cnds: 95% (of 40)
+threat: NaN% (of 0)  |  lipsmack: 95% (of 40)
+
+cnd 1 --> lipsmack  | round: 20  | cnd accuracy: 90% (of 21)
+cues: 48% (of 84)  |  all cnds: 95% (of 41)
+threat: NaN% (of 0)  |  lipsmack: 95% (of 41)
+
+cnd 2 --> lipsmack  | round: 20  | cnd accuracy: 100% (of 19)
+cues: 49% (of 85)  |  all cnds: 95% (of 42)
+threat: NaN% (of 0)  |  lipsmack: 95% (of 42)

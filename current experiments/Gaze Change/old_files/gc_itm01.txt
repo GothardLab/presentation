@@ -1,0 +1,19 @@
+item#   |filename              totalitems=018
+001     |M055_Av.bmp
+002     |M055_Di.bmp
+003     |M053_Av.bmp
+004     |M053_Di.bmp
+005     |M062_Av.bmp
+006     |M062_Di.bmp
+007     |M058_Av.bmp
+008     |M058_Di.bmp
+009     |M059_Av.bmp
+010     |M059_Di.bmp
+011     |M063_Av.bmp
+012     |M063_Di.bmp
+013     |M061_Av.bmp
+014     |M061_Di.bmp
+015     |M060_Av.bmp
+016     |M060_Di.bmp
+017     |M066_Av.bmp
+018     |M066_Di.bmp

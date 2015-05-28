@@ -1,0 +1,17 @@
+Scenario - 
+Logfile written - 05/28/2014 12:39:03
+
+Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+0	Text Input	5	14436	14436	2
+0	Text Input	r	25151	25151	2
+0	Text Input	r	28319	28319	2
+0	Text Input	5	32114	32114	1
+0	Text Input	5	39050	39050	1
+0	Text Input	r	41592	41592	1
+0	Text Input	r	43508	43508	1
+0	Text Input	r	46363	46363	2
+0	Text Input	4	47966	47966	2
+0	Text Input	r	53642	53642	2
+0	Text Input	r	56497	56497	2
+0	Text Input	q	64693	64693	1
