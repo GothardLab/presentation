@@ -1,0 +1,15 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	all stimuli_itm.txt
+COND:	Vibration&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 15:06:28
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	1483	End:	9050	END
+Trl:	2	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	9542	End:	17083	END
+Trl:	3	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	17575	End:	21083	END
+Trl:	4	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Miss	Start:	21581	End:	27850	END
+Trl:	5	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Miss	Start:	28344	End:	34183	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	34674	End:	49716	END
+Trl:	7	Blk:	1	Cnd:	9	LVal:	0	RVal:	8	Rsp:	Left	Start:	50222	End:	63048	END
+Trl:	8	Blk:	1	Cnd:	5	

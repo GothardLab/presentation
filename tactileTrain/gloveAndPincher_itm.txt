@@ -1,0 +1,3 @@
+item#   |imagename          	|reward              |totalitems=02
+01      |gloveHnd.bmp       	|08
+02      |bpincher.bmp       	|08

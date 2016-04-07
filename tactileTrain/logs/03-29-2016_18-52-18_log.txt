@@ -1,0 +1,10 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	Pincher&Nothing_L&R_cnd.txt
+DATE:	03/29/2016 18:52:18
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	1654	End:	9217	END
+Trl:	2	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	9442	End:	22366	END
+Trl:	3	Blk:	1	Cnd:	1	LVal:	0	RVal:	8	Rsp:	Ignore	Start:	22728	End:	33183	END

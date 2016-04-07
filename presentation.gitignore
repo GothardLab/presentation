@@ -1,0 +1,10 @@
+---------------------------------------
+
+# bitmap images
+*.bmp
+
+# movies
+*.avi
+
+# wav audio files
+*.wav

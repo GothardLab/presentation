@@ -1,0 +1,42 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	all stimuli_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 13:18:51
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	1354	End:	8917	END
+Trl:	2	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	9287	End:	16817	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	17187	End:	24750	END
+Trl:	4	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	25122	End:	32650	END
+Trl:	5	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	33020	End:	40549	END
+Trl:	6	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	40916	End:	48466	END
+Trl:	7	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	48834	End:	56365	END
+Trl:	8	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	56736	End:	64282	END
+Trl:	9	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	64647	End:	72198	END
+Trl:	10	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	72567	End:	80115	END
+Trl:	11	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	80485	End:	88031	END
+Trl:	12	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	88398	End:	95931	END
+Trl:	13	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	96299	End:	103847	END
+Trl:	14	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	104219	End:	111747	END
+Trl:	15	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	112117	End:	119647	END
+Trl:	16	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	120014	End:	127563	END
+Trl:	17	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	127931	End:	135463	END
+Trl:	18	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	135835	End:	143379	END
+Trl:	19	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	143762	End:	151296	END
+Trl:	20	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	151666	End:	159195	END
+Trl:	21	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	159563	End:	167112	END
+Trl:	22	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	167483	End:	175012	END
+Trl:	23	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	175380	End:	194894	END
+Trl:	24	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	195267	End:	202827	END
+Trl:	25	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	203196	End:	210744	END
+Trl:	26	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	211114	End:	218643	END
+Trl:	27	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	219019	End:	226560	END
+Trl:	28	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	226928	End:	234460	END
+Trl:	29	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	234830	End:	242359	END
+Trl:	30	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	242734	End:	250276	END
+Trl:	31	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	250643	End:	258175	END
+Trl:	32	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	258543	End:	266092	END
+Trl:	33	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	266465	End:	274008	END
+Trl:	34	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	274374	End:	281908	END
+Trl:	35	Blk:	1	Cnd:	6	

@@ -1,0 +1,34 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	all stimuli_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 14:35:46
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	1461	End:	17217	END
+Trl:	2	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	17576	End:	32200	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	32554	End:	47949	END
+Trl:	4	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	48305	End:	62782	END
+Trl:	5	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	63139	End:	77598	END
+Trl:	6	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	77951	End:	92447	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	92808	End:	107230	END
+Trl:	8	Blk:	1	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Right	Start:	107591	End:	122096	END
+Trl:	9	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	122458	End:	136563	END
+Trl:	10	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	136915	End:	150979	END
+Trl:	11	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	151333	End:	165795	END
+Trl:	12	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	166147	End:	180561	END
+Trl:	13	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	180917	End:	195294	END
+Trl:	14	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	195651	End:	210060	END
+Trl:	15	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	210410	End:	224476	END
+Trl:	16	Blk:	2	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	224977	End:	242542	END
+Trl:	17	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	242905	End:	257492	END
+Trl:	18	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	257855	End:	272258	END
+Trl:	19	Blk:	2	Cnd:	11	Rsp:	StartCueMiss	Start:	272612	End:	276058	END
+Trl:	20	Blk:	2	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Right	Start:	276415	End:	290791	END
+Trl:	21	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	291150	End:	305690	END
+Trl:	22	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	306051	End:	320456	END
+Trl:	23	Blk:	2	Cnd:	1	Rsp:	StartCueMiss	Start:	320815	End:	324123	END
+Trl:	24	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	324482	End:	342189	END
+Trl:	25	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	342550	End:	358355	END
+Trl:	26	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	358707	End:	373188	END
+PROGRAM EXIT

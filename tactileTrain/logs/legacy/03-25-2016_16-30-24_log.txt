@@ -1,0 +1,18 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincher_itm.txt
+COND:	glovePincherChoice_cnd.txt
+DATE:	03/25/2016 16:30:24
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	1013	End:	19933	END
+Trl:	2	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Right	Start:	19938	End:	35249	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	35254	End:	50466	END
+Trl:	4	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	50471	End:	67698	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	67703	End:	82931	END
+Trl:	6	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	82936	End:	98997	END
+Trl:	7	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	99002	End:	115147	END
+Trl:	8	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	115152	End:	131013	END
+Trl:	9	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Right	Start:	131018	End:	145912	END
+Trl:	10	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	145917	End:	160945	END
+Trl:	11	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	

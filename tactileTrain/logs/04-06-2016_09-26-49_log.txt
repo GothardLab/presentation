@@ -1,0 +1,32 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cnd.txt
+DATE:	04/06/2016 09:26:49
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	1396	End:	8500	END
+Trl:	2	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	8894	End:	29716	END
+Trl:	3	Blk:	1	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Right	Start:	30134	End:	49166	END
+Trl:	4	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	49560	End:	68199	END
+Trl:	5	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	68593	End:	75682	END
+Trl:	6	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	76076	End:	83165	END
+Trl:	7	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	83559	End:	90648	END
+Trl:	8	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	91042	End:	98114	END
+Trl:	9	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	98508	End:	105581	END
+Trl:	10	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	105974	End:	113064	END
+Trl:	11	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	113458	End:	120530	END
+Trl:	12	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	120924	End:	128014	END
+Trl:	13	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	128407	End:	135497	END
+Trl:	14	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	135891	End:	142963	END
+Trl:	15	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	143357	End:	150446	END
+Trl:	16	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	150839	End:	157913	END
+Trl:	17	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	158307	End:	165379	END
+Trl:	18	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	165772	End:	172862	END
+Trl:	19	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	173256	End:	180329	END
+Trl:	20	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	180724	End:	187812	END
+Trl:	21	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	188205	End:	195295	END
+Trl:	22	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	195689	End:	202761	END
+Trl:	23	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	203156	End:	210244	END
+Trl:	24	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	210638	End:	217711	END
+Trl:	25	Blk:	1	Cnd:	16	

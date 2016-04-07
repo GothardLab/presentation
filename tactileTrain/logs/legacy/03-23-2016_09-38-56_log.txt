@@ -1,0 +1,8 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveOnly_itm.txt
+COND:	gloveOnly_cnd.txt
+DATE:	03/23/2016 09:38:56
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	

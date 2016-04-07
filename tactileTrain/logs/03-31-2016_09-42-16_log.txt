@@ -1,0 +1,29 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	03/31/2016 09:42:16
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	1255	End:	8134	END
+Trl:	2	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	8364	End:	15917	END
+Trl:	3	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	16140	End:	23667	END
+Trl:	4	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	23887	End:	31433	END
+Trl:	5	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	31658	End:	39199	END
+Trl:	6	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	39418	End:	46966	END
+Trl:	7	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	47184	End:	54716	END
+Trl:	8	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	54935	End:	62465	END
+Trl:	9	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	62687	End:	70232	END
+Trl:	10	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	70450	End:	77982	END
+Trl:	11	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	78199	End:	85731	END
+Trl:	12	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	85955	End:	93498	END
+Trl:	13	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	93723	End:	101264	END
+Trl:	14	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	101483	End:	109047	END
+Trl:	15	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	109268	End:	116797	END
+Trl:	16	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	117019	End:	124547	END
+Trl:	17	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	124767	End:	132313	END
+Trl:	18	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	132532	End:	140063	END
+Trl:	19	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	140282	End:	147829	END
+Trl:	20	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	148049	End:	155579	END
+Trl:	21	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	155802	End:	163329	END
+Trl:	22	Blk:	1	Cnd:	6	

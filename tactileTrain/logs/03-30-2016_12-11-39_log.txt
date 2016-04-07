@@ -1,0 +1,9 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	03/30/2016 12:11:39
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	1271	End:	20267	END
+Trl:	2	Blk:	1	Cnd:	10	LVal:	8	RVal:	0	

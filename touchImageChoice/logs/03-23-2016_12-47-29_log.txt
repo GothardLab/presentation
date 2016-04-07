@@ -1,0 +1,21 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cayoDrinking_itm.txt
+COND:	Shuffle1_cnd.txt
+DATE:	03/23/2016 12:47:29
+Showing conditions: 1-->20.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1140	End:	8500	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	0	RVal:	5	Rsp:	Ignore	Start:	8599	End:	24617	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	0	RVal:	1	Rsp:	Miss	Start:	24761	End:	35433	END
+Trl:	4	Blk:	1	Cnd:	3	LVal:	5	RVal:	1	Rsp:	Right	Start:	35558	End:	47466	END
+Trl:	5	Blk:	1	Cnd:	4	LVal:	0	RVal:	5	Rsp:	Ignore	Start:	47564	End:	63632	END
+Trl:	6	Blk:	1	Cnd:	5	LVal:	5	RVal:	0	Rsp:	Left	Start:	63768	End:	76915	END
+Trl:	7	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	77052	End:	84898	END
+Trl:	8	Blk:	1	Cnd:	6	LVal:	9	RVal:	1	Rsp:	Left	Start:	84996	End:	96464	END
+Trl:	9	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	96564	End:	103997	END
+Trl:	10	Blk:	1	Cnd:	7	LVal:	0	RVal:	9	Rsp:	Miss	Start:	104095	End:	114780	END
+Trl:	11	Blk:	1	Cnd:	8	LVal:	1	RVal:	5	Rsp:	Ignore	Start:	114877	End:	130746	END
+Trl:	12	Blk:	1	Cnd:	9	LVal:	1	RVal:	5	Rsp:	Ignore	Start:	130876	End:	146929	END
+Trl:	13	Blk:	1	Cnd:	10	LVal:	0	RVal:	1	Rsp:	Ignore	Start:	147046	End:	163728	END
+Trl:	14	Blk:	1	Cnd:	11	

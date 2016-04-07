@@ -1,0 +1,15 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	glovePincherNothingChoice_cnd.txt
+DATE:	03/26/2016 08:01:24
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	1013	End:	13067	END
+Trl:	2	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	13072	End:	28500	END
+Trl:	3	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	28738	End:	44116	END
+Trl:	4	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	44121	End:	58966	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	59173	End:	74315	END
+Trl:	6	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	74520	End:	89665	END
+Trl:	7	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	89870	End:	104881	END
+Trl:	8	Blk:	2	Cnd:	2	

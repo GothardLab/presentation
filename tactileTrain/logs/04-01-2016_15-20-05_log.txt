@@ -1,0 +1,7 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincher_itm.txt
+COND:	Vibration&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 15:20:05
+Showing ALL conditions.
+Starting Task

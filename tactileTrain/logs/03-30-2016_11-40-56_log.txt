@@ -1,0 +1,32 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	03/30/2016 11:40:56
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	1252	End:	15750	END
+Trl:	2	Blk:	1	Cnd:	7	LVal:	8	RVal:	0	Rsp:	Left	Start:	15980	End:	34033	END
+Trl:	3	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	34251	End:	48549	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	48768	End:	63048	END
+Trl:	5	Blk:	1	Cnd:	11	LVal:	8	RVal:	0	Rsp:	Left	Start:	63272	End:	82314	END
+Trl:	6	Blk:	1	Cnd:	8	LVal:	8	RVal:	0	Rsp:	Left	Start:	82673	End:	100814	END
+Trl:	7	Blk:	1	Cnd:	12	LVal:	8	RVal:	0	Rsp:	Left	Start:	101172	End:	119196	END
+Trl:	8	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	119413	End:	133813	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	0	Rsp:	Left	Start:	134173	End:	148912	END
+Trl:	10	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	149134	End:	163495	END
+Trl:	11	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	163712	End:	178028	END
+Trl:	12	Blk:	1	Cnd:	9	LVal:	8	RVal:	0	Rsp:	Left	Start:	178245	End:	192661	END
+Trl:	13	Blk:	2	Cnd:	10	LVal:	8	RVal:	0	Rsp:	Left	Start:	193018	End:	207343	END
+Trl:	14	Blk:	2	Cnd:	9	LVal:	8	RVal:	0	Rsp:	Left	Start:	207568	End:	225793	END
+Trl:	15	Blk:	2	Cnd:	8	LVal:	8	RVal:	0	Rsp:	Left	Start:	226147	End:	242142	END
+Trl:	16	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	242363	End:	256675	END
+Trl:	17	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	256892	End:	271241	END
+Trl:	18	Blk:	2	Cnd:	7	LVal:	8	RVal:	0	Rsp:	Left	Start:	271459	End:	285707	END
+Trl:	19	Blk:	2	Cnd:	12	LVal:	8	RVal:	0	Rsp:	Left	Start:	286068	End:	300357	END
+Trl:	20	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	300572	End:	314990	END
+Trl:	21	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	315217	End:	329572	END
+Trl:	22	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	329789	End:	344172	END
+Trl:	23	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	344388	End:	358638	END
+Trl:	24	Blk:	2	Cnd:	11	LVal:	8	RVal:	0	Rsp:	Left	Start:	358861	End:	378071	END
+PROGRAM EXIT

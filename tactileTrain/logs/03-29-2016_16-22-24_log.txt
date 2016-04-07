@@ -1,0 +1,29 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	glovePincherNothingChoice_cnd.txt
+DATE:	03/29/2016 16:22:24
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1013	End:	12750	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	12756	End:	25500	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	25730	End:	40232	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	40440	End:	54715	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	54920	End:	72581	END
+Trl:	6	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	72789	End:	86481	END
+Trl:	7	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	86486	End:	102930	END
+Trl:	8	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	103139	End:	114363	END
+Trl:	9	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	114572	End:	126296	END
+Trl:	10	Blk:	2	Cnd:	1	Rsp:	StartCueMiss	Start:	126301	End:	138746	END
+Trl:	11	Blk:	2	Cnd:	1	Rsp:	StartCueMiss	Start:	138751	End:	144679	END
+Trl:	12	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	144684	End:	156462	END
+Trl:	13	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	156667	End:	173344	END
+Trl:	14	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	173355	End:	185228	END
+Trl:	15	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	185440	End:	197027	END
+Trl:	16	Blk:	3	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	197226	End:	215010	END
+Trl:	17	Blk:	3	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	215220	End:	227509	END
+Trl:	18	Blk:	3	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	227514	End:	239042	END
+Trl:	19	Blk:	3	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	239047	End:	250558	END
+Trl:	20	Blk:	3	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	250773	End:	262475	END
+Trl:	21	Blk:	3	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	262687	End:	274191	END
+PROGRAM EXIT

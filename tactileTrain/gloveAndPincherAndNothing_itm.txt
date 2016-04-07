@@ -1,0 +1,5 @@
+item#   |imagename          	|reward              |totalitems=04
+01      |gloveHnd.bmp       	|08
+02      |vibration.bmp       	|08
+03      |nothingn.bmp       	|08
+04      |black.bmp              |00

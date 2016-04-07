@@ -1,0 +1,9 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	Vibration&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 17:29:23
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	1146	End:	16167	END
+Trl:	2	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	

@@ -1,0 +1,13 @@
+Trial	Video_Type_A	Video_Type_B	Video_Type_C	Video_Type_D
+1	bikeRack.avi	snowboard.avi	rome.avi	NYC-Subway.avi
+2	cardriving.avi	kayak.avi	france.avi	waterfalls.avi	
+3	traffic.avi	football.avi	tajIndia.avi	palmTree.avi
+4	bikeRack.avi	snowboard.avi	rome.avi	NYC-Subway.avi
+5	cardriving.avi	kayak.avi	france.avi	waterfalls.avi	
+6	traffic.avi	football.avi	tajIndia.avi	palmTree.avi
+7	bikeRack.avi	snowboard.avi	rome.avi	NYC-Subway.avi
+8	cardriving.avi	kayak.avi	france.avi	waterfalls.avi	
+9	traffic.avi	football.avi	tajIndia.avi	palmTree.avi
+10	bikeRack.avi	snowboard.avi	rome.avi	NYC-Subway.avi
+11	cardriving.avi	kayak.avi	france.avi	waterfalls.avi	
+12	traffic.avi	football.avi	tajIndia.avi	palmTree.avi

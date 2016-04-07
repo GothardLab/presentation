@@ -1,0 +1,28 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cnd.txt
+DATE:	04/05/2016 11:09:51
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	1348	End:	17143	END
+Trl:	2	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Miss	Start:	17540	End:	25800	END
+Trl:	3	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Left	Start:	26194	End:	41949	END
+Trl:	4	Blk:	1	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	42345	End:	52665	END
+Trl:	5	Blk:	1	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Left	Start:	53060	End:	69489	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Miss	Start:	69883	End:	79331	END
+Trl:	7	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Right	Start:	79725	End:	92781	END
+Trl:	8	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Miss	Start:	93176	End:	100647	END
+Trl:	9	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	101042	End:	116297	END
+Trl:	10	Blk:	1	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	116691	End:	130763	END
+Trl:	11	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	131157	End:	140229	END
+Trl:	12	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	140623	End:	157695	END
+Trl:	13	Blk:	1	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Left	Start:	158089	End:	172811	END
+Trl:	14	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	173205	End:	188278	END
+Trl:	15	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Right	Start:	188672	End:	203660	END
+Trl:	16	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	204054	End:	219077	END
+Trl:	17	Blk:	1	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	219472	End:	234676	END
+Trl:	18	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	235070	End:	249176	END
+Trl:	19	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Miss	Start:	249572	End:	256292	END
+Trl:	20	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Left	Start:	256687	End:	271158	END
+Trl:	21	Blk:	1	Cnd:	14	LVal:	8	RVal:	8	

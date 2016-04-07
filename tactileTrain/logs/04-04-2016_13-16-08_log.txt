@@ -1,0 +1,35 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cnd.txt
+DATE:	04/04/2016 13:16:08
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Miss	Start:	1347	End:	8117	END
+Trl:	2	Blk:	1	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	8511	End:	22217	END
+Trl:	3	Blk:	1	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Left	Start:	22612	End:	37649	END
+Trl:	4	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	38043	End:	54099	END
+Trl:	5	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Right	Start:	54493	End:	70065	END
+Trl:	6	Blk:	1	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Left	Start:	70460	End:	84231	END
+Trl:	7	Blk:	1	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	84624	End:	98364	END
+Trl:	8	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	98758	End:	113364	END
+Trl:	9	Blk:	1	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Right	Start:	113757	End:	128546	END
+Trl:	10	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	128940	End:	131913	END
+Trl:	11	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	132307	End:	135596	END
+Trl:	12	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	135990	End:	145062	END
+Trl:	13	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	145458	End:	148529	END
+Trl:	14	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	148923	End:	157995	END
+Trl:	15	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	158389	End:	167462	END
+Trl:	16	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	167856	End:	172062	END
+Trl:	17	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	172458	End:	175278	END
+Trl:	18	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Miss	Start:	175672	End:	178411	END
+Trl:	19	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	178804	End:	192961	END
+Trl:	20	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Miss	Start:	193355	End:	196527	END
+Trl:	21	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Miss	Start:	196925	End:	199994	END
+Trl:	22	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Miss	Start:	200388	End:	203877	END
+Trl:	23	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Miss	Start:	204271	End:	207060	END
+Trl:	24	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	207455	End:	221010	END
+Trl:	25	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Miss	Start:	221404	End:	225893	END
+Trl:	26	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Right	Start:	226287	End:	240109	END
+Trl:	27	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	240503	End:	249576	END
+Trl:	28	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	

@@ -1,0 +1,13 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	all stimuli_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 14:45:59
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	1347	End:	12284	END
+Trl:	2	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	12649	End:	27533	END
+Trl:	3	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Miss	Start:	27890	End:	34166	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Miss	Start:	34526	End:	40616	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	40980	End:	56299	END
+Trl:	6	Blk:	1	Cnd:	2	

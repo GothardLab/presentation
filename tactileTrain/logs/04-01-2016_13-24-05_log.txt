@@ -1,0 +1,82 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	all stimuli_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	04/01/2016 13:24:05
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	1353	End:	20367	END
+Trl:	2	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	20737	End:	31233	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	31604	End:	39149	END
+Trl:	4	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	39519	End:	47049	END
+Trl:	5	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	47417	End:	54965	END
+Trl:	6	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	55333	End:	62865	END
+Trl:	7	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	63236	End:	70782	END
+Trl:	8	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	71152	End:	78681	END
+Trl:	9	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	79051	End:	86581	END
+Trl:	10	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	86980	End:	94531	END
+Trl:	11	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	94901	End:	102431	END
+Trl:	12	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	102803	End:	110364	END
+Trl:	13	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	110733	End:	118263	END
+Trl:	14	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	118633	End:	129080	END
+Trl:	15	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	129477	End:	137029	END
+Trl:	16	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	137401	End:	144950	END
+Trl:	17	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	145317	End:	152862	END
+Trl:	18	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	153230	End:	160762	END
+Trl:	19	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	161128	End:	168662	END
+Trl:	20	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	169040	End:	176578	END
+Trl:	21	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	176953	End:	184478	END
+Trl:	22	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	184846	End:	192394	END
+Trl:	23	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	192763	End:	200294	END
+Trl:	24	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	200668	End:	208194	END
+Trl:	25	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	208571	End:	216110	END
+Trl:	26	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	216483	End:	224010	END
+Trl:	27	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	224379	End:	231926	END
+Trl:	28	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	232292	End:	239826	END
+Trl:	29	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	240191	End:	247726	END
+Trl:	30	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	248092	End:	255642	END
+Trl:	31	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	256010	End:	263542	END
+Trl:	32	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	263907	End:	271475	END
+Trl:	33	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	271846	End:	279375	END
+Trl:	34	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	279742	End:	287275	END
+Trl:	35	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	287643	End:	295191	END
+Trl:	36	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	295560	End:	303091	END
+Trl:	37	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	303458	End:	311007	END
+Trl:	38	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	311379	End:	318907	END
+Trl:	39	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	319275	End:	326807	END
+Trl:	40	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	327179	End:	334723	END
+Trl:	41	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	335091	End:	342623	END
+Trl:	42	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	342994	End:	350539	END
+Trl:	43	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	350911	End:	358439	END
+Trl:	44	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	358805	End:	366339	END
+Trl:	45	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	366716	End:	374272	END
+Trl:	46	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	374672	End:	382205	END
+Trl:	47	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	382618	End:	390171	END
+Trl:	48	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	390571	End:	398121	END
+Trl:	49	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	398521	End:	406054	END
+Trl:	50	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	406437	End:	413987	END
+Trl:	51	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	414368	End:	421903	END
+Trl:	52	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	422283	End:	429820	END
+Trl:	53	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	430193	End:	437736	END
+Trl:	54	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	438117	End:	445653	END
+Trl:	55	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	446051	End:	453602	END
+Trl:	56	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	454025	End:	461552	END
+Trl:	57	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	461928	End:	469452	END
+Trl:	58	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	469826	End:	477368	END
+Trl:	59	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	477740	End:	485268	END
+Trl:	60	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	485649	End:	493201	END
+Trl:	61	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	493576	End:	501101	END
+Trl:	62	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	501490	End:	509017	END
+Trl:	63	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	509391	End:	516934	END
+Trl:	64	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	517313	End:	524833	END
+Trl:	65	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	525245	End:	532783	END
+Trl:	66	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	533154	End:	540683	END
+Trl:	67	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	541062	End:	548599	END
+Trl:	68	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	548983	End:	556532	END
+Trl:	69	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	556904	End:	564432	END
+Trl:	70	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	564802	End:	572349	END
+Trl:	71	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	572737	End:	580265	END
+Trl:	72	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	580634	End:	588165	END
+Trl:	73	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	588554	End:	596098	END
+Trl:	74	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	596502	End:	604031	END
+Trl:	75	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	

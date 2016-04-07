@@ -1,0 +1,10 @@
+Event #		Trial Start	Initial Touch	Held for Video?	Video Choice	Video Start	Video End	Video Time Watched	Reward Taken?	FingerOff Time	Reward Time	Start X-pos	Start Y-pos	Reward X-pos	Reward Y-pos
+
+1		33		2409		false
+2		2933		3941		false
+3		4466		5321		false
+4		5849		6295		false
+5		6816		7281		false
+6		7816		8251		false
+7		8783		9223		false
+8		9749		10201		false

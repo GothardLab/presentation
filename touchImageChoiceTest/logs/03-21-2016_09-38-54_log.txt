@@ -1,0 +1,24 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cayoEatingThings_itm.txt
+COND:	firstFiveMixedFour_cnd.txt
+DATE:	03/21/2016 09:38:54
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1121	End:	13184	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	0	RVal:	9	Rsp:	Ignore	Start:	13283	End:	29767	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	5	RVal:	1	Rsp:	Left	Start:	29863	End:	41616	END
+Trl:	4	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	41717	End:	53749	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	9	RVal:	5	Rsp:	Left	Start:	53844	End:	67832	END
+Trl:	6	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	67929	End:	79965	END
+Trl:	7	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	80060	End:	92098	END
+Trl:	8	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	92193	End:	104231	END
+Trl:	9	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	104326	End:	116347	END
+Trl:	10	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	116442	End:	128480	END
+Trl:	11	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	128575	End:	140597	END
+Trl:	12	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	140692	End:	152713	END
+Trl:	13	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	152809	End:	164846	END
+Trl:	14	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	164947	End:	176979	END
+Trl:	15	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	177073	End:	189112	END
+Trl:	16	Blk:	1	Cnd:	4	Rsp:	StartCueMiss	Start:	189210	End:	201245	END
+Trl:	17	Blk:	1	Cnd:	4	

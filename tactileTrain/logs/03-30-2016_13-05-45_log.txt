@@ -1,0 +1,39 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincherAndNothing_itm.txt
+COND:	Groom&Nothing&Black_L&R_cnd.txt
+DATE:	03/30/2016 13:05:45
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	1242	End:	20317	END
+Trl:	2	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	20671	End:	40649	END
+Trl:	3	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	40868	End:	58299	END
+Trl:	4	Blk:	1	Cnd:	9	LVal:	8	RVal:	0	Rsp:	Left	Start:	58516	End:	72948	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	73161	End:	87698	END
+Trl:	6	Blk:	1	Cnd:	10	LVal:	8	RVal:	0	Rsp:	Ignore	Start:	88071	End:	98480	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	0	Rsp:	Left	Start:	98837	End:	114230	END
+Trl:	8	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	114450	End:	125113	END
+Trl:	9	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	125332	End:	139896	END
+Trl:	10	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	140111	End:	154445	END
+Trl:	11	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	154665	End:	170728	END
+Trl:	12	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	170948	End:	185344	END
+Trl:	13	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	185557	End:	200010	END
+Trl:	14	Blk:	1	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Right	Start:	200232	End:	215076	END
+Trl:	15	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	215294	End:	229693	END
+Trl:	16	Blk:	2	Cnd:	9	LVal:	8	RVal:	0	Rsp:	Left	Start:	229907	End:	248592	END
+Trl:	17	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	248807	End:	263291	END
+Trl:	18	Blk:	2	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	263658	End:	278091	END
+Trl:	19	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	278307	End:	292790	END
+Trl:	20	Blk:	2	Cnd:	11	Rsp:	StartCueMiss	Start:	293011	End:	296940	END
+Trl:	21	Blk:	2	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Right	Start:	297162	End:	311556	END
+Trl:	22	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	311776	End:	326256	END
+Trl:	23	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	326483	End:	339505	END
+Trl:	24	Blk:	2	Cnd:	1	Rsp:	StartCueMiss	Start:	339730	End:	344472	END
+Trl:	25	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	344691	End:	359105	END
+Trl:	26	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	359325	End:	373904	END
+Trl:	27	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	374122	End:	388720	END
+Trl:	28	Blk:	2	Cnd:	10	Rsp:	StartCueMiss	Start:	389079	End:	396620	END
+Trl:	29	Blk:	2	Cnd:	10	Rsp:	StartCueMiss	Start:	396977	End:	400403	END
+Trl:	30	Blk:	2	Cnd:	10	LVal:	8	RVal:	0	Rsp:	Left	Start:	400772	End:	415203	END
+Trl:	31	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	415416	End:	429669	END
+PROGRAM EXIT

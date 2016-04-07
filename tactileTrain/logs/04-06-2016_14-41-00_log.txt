@@ -1,0 +1,9 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cndC.txt
+DATE:	04/06/2016 14:41:00
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	1346	End:	18167	END
+Trl:	2	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	

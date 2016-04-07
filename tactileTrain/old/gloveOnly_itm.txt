@@ -1,0 +1,2 @@
+item#   |imagename          	|reward              |totalitems=01
+01      |gloveHnd.bmp       	|08

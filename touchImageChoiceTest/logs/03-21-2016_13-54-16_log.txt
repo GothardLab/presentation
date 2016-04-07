@@ -1,0 +1,13 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cayoDrinking_itm.txt
+COND:	Shuffle1_cnd.txt
+DATE:	03/21/2016 13:54:16
+Showing conditions: 61-->80.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	9	RVal:	0	Rsp:	Left	Start:	1106	End:	12450	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	9	RVal:	5	Rsp:	Left	Start:	12545	End:	25700	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	5	RVal:	0	Rsp:	Left	Start:	25796	End:	41383	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	0	RVal:	5	Rsp:	Ignore	Start:	41478	End:	57415	END
+Trl:	5	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	57509	End:	69548	END
+Trl:	6	Blk:	1	Cnd:	5	

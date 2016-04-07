@@ -1,0 +1,60 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	Glove&Nothing&Black_L&R_cnd.txt
+DATE:	04/02/2016 11:39:54
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Miss	Start:	1346	End:	9167	END
+Trl:	2	Blk:	1	Cnd:	9	Rsp:	StartCueMiss	Start:	9562	End:	14433	END
+Trl:	3	Blk:	1	Cnd:	9	Rsp:	StartCueMiss	Start:	14827	End:	18200	END
+Trl:	4	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Right	Start:	18594	End:	35166	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	35560	End:	51232	END
+Trl:	6	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	51626	End:	55099	END
+Trl:	7	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	55493	End:	70332	END
+Trl:	8	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	70726	End:	74231	END
+Trl:	9	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Right	Start:	74627	End:	89398	END
+Trl:	10	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	89792	End:	104547	END
+Trl:	11	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Miss	Start:	104941	End:	112564	END
+Trl:	12	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	112958	End:	127746	END
+Trl:	13	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	128140	End:	142846	END
+Trl:	14	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	143240	End:	147262	END
+Trl:	15	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	147656	End:	151112	END
+Trl:	16	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	151506	End:	166212	END
+Trl:	17	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	166607	End:	169978	END
+Trl:	18	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	170372	End:	173812	END
+Trl:	19	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	174206	End:	177561	END
+Trl:	20	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	177955	End:	181395	END
+Trl:	21	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	181790	End:	196844	END
+Trl:	22	Blk:	1	Cnd:	8	Rsp:	StartCueMiss	Start:	197237	End:	200594	END
+Trl:	23	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	200988	End:	217810	END
+Trl:	24	Blk:	1	Cnd:	11	Rsp:	StartCueMiss	Start:	218206	End:	221593	END
+Trl:	25	Blk:	1	Cnd:	11	Rsp:	StartCueMiss	Start:	221987	End:	225426	END
+Trl:	26	Blk:	1	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Left	Start:	225820	End:	238176	END
+Trl:	27	Blk:	1	Cnd:	10	Rsp:	StartCueMiss	Start:	238570	End:	241959	END
+Trl:	28	Blk:	1	Cnd:	10	Rsp:	StartCueMiss	Start:	242353	End:	245826	END
+Trl:	29	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	246220	End:	261542	END
+Trl:	30	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	261937	End:	265425	END
+Trl:	31	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	265820	End:	269208	END
+Trl:	32	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	269603	End:	275833	END
+Trl:	33	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	276227	End:	291058	END
+Trl:	34	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	291452	End:	309724	END
+Trl:	35	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	310119	End:	328873	END
+Trl:	36	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	329268	End:	344123	END
+Trl:	37	Blk:	2	Cnd:	11	Rsp:	StartCueMiss	Start:	344518	End:	348422	END
+Trl:	38	Blk:	2	Cnd:	11	Rsp:	StartCueMiss	Start:	348816	End:	352172	END
+Trl:	39	Blk:	2	Cnd:	11	LVal:	0	RVal:	8	Rsp:	Left	Start:	352566	End:	364505	END
+Trl:	40	Blk:	2	Cnd:	3	Rsp:	StartCueMiss	Start:	364899	End:	368338	END
+Trl:	41	Blk:	2	Cnd:	3	Rsp:	StartCueMiss	Start:	368732	End:	372155	END
+Trl:	42	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	372548	End:	389238	END
+Trl:	43	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	389632	End:	406770	END
+Trl:	44	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	407164	End:	422987	END
+Trl:	45	Blk:	2	Cnd:	10	Rsp:	StartCueMiss	Start:	423380	End:	426803	END
+Trl:	46	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	427196	End:	441469	END
+Trl:	47	Blk:	2	Cnd:	1	Rsp:	StartCueMiss	Start:	441863	End:	445269	END
+Trl:	48	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	445663	End:	460469	END
+Trl:	49	Blk:	2	Cnd:	12	LVal:	0	RVal:	8	Rsp:	Left	Start:	460863	End:	473418	END
+Trl:	50	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Miss	Start:	473813	End:	479018	END
+Trl:	51	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Miss	Start:	479412	End:	486918	END
+Trl:	52	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	487313	End:	502417	END
+PROGRAM EXIT

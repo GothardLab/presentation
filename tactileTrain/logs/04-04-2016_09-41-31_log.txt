@@ -1,0 +1,10 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	Glove&Nothing&Black_L&R_cnd2.txt
+DATE:	04/04/2016 09:41:31
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	1386	End:	20050	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Left	Start:	20444	End:	38316	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	

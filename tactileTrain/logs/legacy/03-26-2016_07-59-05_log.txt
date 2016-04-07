@@ -1,0 +1,8 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	gloveAndPincher_itm.txt
+COND:	glovePincherChoice_cnd.txt
+DATE:	03/26/2016 07:59:05
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	2	

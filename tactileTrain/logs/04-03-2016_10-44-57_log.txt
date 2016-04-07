@@ -1,0 +1,34 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	gloveHnd&vibration&nothing_cnd.txt
+DATE:	04/03/2016 10:44:57
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Right	Start:	1346	End:	25166	END
+Trl:	2	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	25560	End:	40833	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	41227	End:	56449	END
+Trl:	4	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	56849	End:	72432	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	72825	End:	88914	END
+Trl:	6	Blk:	1	Cnd:	11	Rsp:	StartCueMiss	Start:	89307	End:	96331	END
+Trl:	7	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Left	Start:	96724	End:	112514	END
+Trl:	8	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	112907	End:	128330	END
+Trl:	9	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	128724	End:	144046	END
+Trl:	10	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	144440	End:	159712	END
+Trl:	11	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	160105	End:	170412	END
+Trl:	12	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	170806	End:	187028	END
+Trl:	13	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Right	Start:	187422	End:	202761	END
+Trl:	14	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	203154	End:	218194	END
+Trl:	15	Blk:	2	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Right	Start:	218588	End:	234593	END
+Trl:	16	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	234987	End:	250443	END
+Trl:	17	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	250837	End:	266576	END
+Trl:	18	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	266970	End:	282525	END
+Trl:	19	Blk:	2	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Left	Start:	282919	End:	298141	END
+Trl:	20	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	298535	End:	313658	END
+Trl:	21	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	314052	End:	329340	END
+Trl:	22	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Right	Start:	329734	End:	345173	END
+Trl:	23	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Left	Start:	345567	End:	360589	END
+Trl:	24	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Right	Start:	360985	End:	376589	END
+Trl:	25	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	376982	End:	392538	END
+Trl:	26	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	392931	End:	408305	END
+PROGRAM EXIT

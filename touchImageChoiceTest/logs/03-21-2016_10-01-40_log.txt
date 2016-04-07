@@ -1,0 +1,18 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cayoDrinking_itm.txt
+COND:	firstFiveMixedFour_cnd.txt
+DATE:	03/21/2016 10:01:40
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1120	End:	13167	END
+Trl:	2	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	13262	End:	25317	END
+Trl:	3	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	25412	End:	37466	END
+Trl:	4	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	37561	End:	49582	END
+Trl:	5	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	49677	End:	61715	END
+Trl:	6	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	61809	End:	73832	END
+Trl:	7	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	73927	End:	85965	END
+Trl:	8	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	86060	End:	98081	END
+Trl:	9	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	98176	End:	110197	END
+Trl:	10	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	110293	End:	122330	END
+Trl:	11	Blk:	1	Cnd:	1	
