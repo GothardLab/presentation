@@ -8,3 +8,6 @@
 
 # wav audio files
 *.wav
+
+# log files
+*_log.txt
