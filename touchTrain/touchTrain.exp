@@ -15,29 +15,29 @@
 </con>
 <dbi></dbi>
 <dbs>button</dbs>
-<ddi>1</ddi>
+<ddi>2</ddi>
 <dds>
 <display>
-<color>0</color>
-<height>0</height>
+<color>32</color>
+<height>1024</height>
 <icm_profile></icm_profile>
-<index>0</index>
-<name>Primary Display Driver</name>
-<refresh>1</refresh>
+<index>1</index>
+<name>NVIDIA GeForce GTX 960</name>
+<refresh>60</refresh>
 <use_icm>0</use_icm>
-<width>0</width>
+<width>1280</width>
 </display>
 <icm_profile></icm_profile>
 <use_icm>0</use_icm>
 </dds>
-<ddv>NVIDIA NVS 300</ddv>
+<ddv>NVIDIA GeForce GTX 960</ddv>
 <depchg>1</depchg>
 <discard_windows_messages>0</discard_windows_messages>
 <display_status_window>1</display_status_window>
-<dmd>0</dmd>
-<dmh>0</dmh>
-<dmr>1</dmr>
-<dmw>0</dmw>
+<dmd>32</dmd>
+<dmh>1024</dmh>
+<dmr>60</dmr>
+<dmw>1280</dmw>
 <docs>
 <args></args>
 <exfl></exfl>
@@ -239,6 +239,11 @@
 <name>Keyboard</name>
 </device>
 <device>
+<device_type>3</device_type>
+<dx_device_type>0</dx_device_type>
+<name>HID Keyboard Device</name>
+</device>
+<device>
 <abs_axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -279,53 +284,6 @@
 <max_raw_pos>65535</max_raw_pos>
 <min_raw_pos>0</min_raw_pos>
 <name>HID-compliant mouse</name>
-</device>
-<device>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<abs_axis>
-<dead_zone>0</dead_zone>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<saturation>1</saturation>
-</abs_axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>X-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Y-axis</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<axis>
-<max>1000</max>
-<min>-1000</min>
-<name>Wheel</name>
-<restricted>1</restricted>
-<scale>1</scale>
-</axis>
-<device_type>2</device_type>
-<dx_device_type>0</dx_device_type>
-<max_raw_pos>65535</max_raw_pos>
-<min_raw_pos>0</min_raw_pos>
-<name>Microsoft Input Configuration Device</name>
-</device>
-<device>
-<device_type>3</device_type>
-<dx_device_type>0</dx_device_type>
-<name>HID Keyboard Device</name>
 </device>
 <device>
 <abs_axis>

@@ -1,0 +1,54 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cndA.txt
+DATE:	04/08/2016 09:59:46
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	1359	End:	7967	END
+Trl:	2	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Miss	Start:	8361	End:	12867	END
+Trl:	3	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Left	Start:	13261	End:	29900	END
+Trl:	4	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	30295	End:	51829	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	52223	End:	76315	END
+Trl:	6	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	76709	End:	84564	END
+Trl:	7	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	84958	End:	101597	END
+Trl:	8	Blk:	1	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Right	Start:	101991	End:	123063	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	123459	End:	140596	END
+Trl:	10	Blk:	1	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Left	Start:	140990	End:	161962	END
+Trl:	11	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	162357	End:	181334	END
+Trl:	12	Blk:	1	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	181728	End:	198177	END
+Trl:	13	Blk:	1	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	198572	End:	218210	END
+Trl:	14	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	218605	End:	235730	END
+Trl:	15	Blk:	1	Cnd:	11	Rsp:	StartCueMiss	Start:	236124	End:	238412	END
+Trl:	16	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Miss	Start:	238806	End:	244026	END
+Trl:	17	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Left	Start:	244420	End:	261488	END
+Trl:	18	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	261883	End:	278591	END
+Trl:	19	Blk:	1	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Right	Start:	278984	End:	299557	END
+Trl:	20	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	299952	End:	309973	END
+Trl:	21	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Left	Start:	310367	End:	326956	END
+Trl:	22	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	327350	End:	345089	END
+Trl:	23	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	345484	End:	361988	END
+Trl:	24	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	362382	End:	381004	END
+Trl:	25	Blk:	2	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	381398	End:	392570	END
+Trl:	26	Blk:	2	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Left	Start:	392965	End:	409553	END
+Trl:	27	Blk:	2	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	409947	End:	426653	END
+Trl:	28	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	427047	End:	447219	END
+Trl:	29	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	447613	End:	464794	END
+Trl:	30	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	465189	End:	485751	END
+Trl:	31	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	486145	End:	496350	END
+Trl:	32	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	496744	End:	513116	END
+Trl:	33	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	513510	End:	534066	END
+Trl:	34	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	534461	End:	551065	END
+Trl:	35	Blk:	2	Cnd:	12	Rsp:	StartCueMiss	Start:	551460	End:	556340	END
+Trl:	36	Blk:	2	Cnd:	12	Rsp:	StartCueMiss	Start:	556736	End:	560198	END
+Trl:	37	Blk:	2	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Left	Start:	560593	End:	576981	END
+Trl:	38	Blk:	2	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Left	Start:	577376	End:	595588	END
+Trl:	39	Blk:	2	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Left	Start:	595983	End:	613194	END
+Trl:	40	Blk:	2	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Right	Start:	613588	End:	631046	END
+Trl:	41	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	631441	End:	648062	END
+Trl:	42	Blk:	2	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	648456	End:	669194	END
+Trl:	43	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Left	Start:	669589	End:	687327	END
+Trl:	44	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	687722	End:	704193	END
+Trl:	45	Blk:	2	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Right	Start:	704589	End:	721359	END
+Trl:	46	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	721753	End:	738192	END
+PROGRAM EXIT

@@ -1,7 +1,7 @@
-item file: touchcal.txt
+item file: touchcalextratargets.txt
 -----------------------------------------------
-number of trials: 03
-conditions to show: [01 02 03 04]
+number of trials: 01
+conditions to show: all
 condition order: random
 trial retry: ignore
 -----------------------------------------------

@@ -26,7 +26,7 @@
 scenario = "Touch Training (Simple)";
 active_buttons = 2;
 default_font = "Courier New";
-default_font_size = 20;
+default_font_size = 15;
 
 # ---------------------------------------------------------------------------
 #										Begin SDL code
@@ -78,6 +78,12 @@ trial {
 #Screen to show the monkey before the trial begins
 picture {
 	display_index=1;
+	
+	#draw a white box, this is the touchbox, height/width are temporary and are updated later
+	box {color = 0,255,0;height=10;width=10;display_index=1;}touchFeedbackPretrial;
+	
+	#the position of the touchbox
+	x=9999; y=9999;
 
 } pretrialMonkey;
 
@@ -92,13 +98,13 @@ picture {
 	on_top=true; # plot the touch positon on the top layer of the picture
 	
 	text { caption = "Touch_Info"; display_index=2;} touchTextPretrial;
-	x = 500; y = 500; # String to display touch position
+	x = 400; y = 400; # String to display touch position
 	
 	text { caption = "Pre_trial"; display_index=2;} countdownTextPretrial;
 	x = 0; y = 0; # String to display count down until trial
 	
 	text { caption = "Trial_Info"; display_index=2;} trialTextPretrial;
-	x = -700; y = 400; # String to display touch position
+	x = -400; y = 400; # String to display touch position
 
 } pretrialExperimenter;
 
@@ -114,6 +120,12 @@ picture{
 	
 	#the position of the touchbox
 	x=0; y=0;
+	
+	#draw a white box, this is the touchbox, height/width are temporary and are updated later
+	box {color = 0,255,0;height=10;width=10;display_index=1;}touchFeedbackStim;
+	
+	#the position of the touchbox
+	x=9999; y=9999;
 }touchBoxMonkey;
 
 #Touch stimulus (touchbox) to show the experimenter
@@ -140,10 +152,10 @@ picture{
 	on_top=true; 		# Plot the touch positon on the top layer of the picture
 	
 	text { caption = "Touch_Info"; display_index=2;} touchTextTouchbox;
-	x = 500; y = 500; # String to display touch position
+	x = 400; y = 400; # String to display touch position
 	
 	text { caption = "Trial_Info"; display_index=2;} trialTextTouchbox;
-	x = -700; y = 400;# String to display touch position
+	x = -400; y = 400;# String to display touch position
 	
 }touchBoxExperimenter;
 
@@ -152,6 +164,12 @@ picture{
 
 	#display this picture on the monkey's monitor (monitor 1)
 	display_index=1;
+	
+	#draw a white box, this is the touchbox, height/width are temporary and are updated later
+	box {color = 0,255,0;height=10;width=10;display_index=1;}touchFeedbackITI;
+	
+	#the position of the touchbox
+	x=9999; y=9999;
 
 }itiMonkey;
 
@@ -166,10 +184,10 @@ picture{
 	on_top=true; 			# plot the touch positon on the top layer of the picture
 	
 	text { caption = "Touch_Info"; display_index=2;} touchTextITI;
-	x = 500; y = 500;		# String to display touch position
+	x = 400; y =400;		# String to display touch position
 	
 	text { caption = "Trial_Info"; display_index=2;} trialTextITI;
-	x = -700; y = 400;	# String to display touch position
+	x = -400; y = 400;	# String to display touch position
 
 }itiExperimenter;
 
@@ -181,8 +199,8 @@ picture{
 begin_pcl;
 
 # Variables for task settings (You can change these)
-int touchBoxSize	=	200;			# size of touch box (pixels)
-int touchWindow	=	100; 			# this is the extra room that the monkey has around the edge of the touch box (pixels)
+int touchBoxSize	=	175;			# size of touch box (pixels)
+int touchWindow	=	125; 			# this is the extra room that the monkey has around the edge of the touch box (pixels)
 											# if touchWindow is 100, then there is a leniency of 100 pixels on all sides of the touch box
 int touchBoxX		=	0;				# x-position of the touch box (pixels)(Default, can change by condition)
 int touchBoxY		=	0; 			# y-postition of the touch box (pixels)(Default, can change by condition)
@@ -192,7 +210,7 @@ int earlyItiDuration		=	7000;# Duration of the inter-trial-interval(ms) for earl
 int missedItiDuration	=	7000;# Duration of the inter-trial-interval(ms) for missed trials
 int ignoredItiDuration   =	8000;	# Duration of the inter-trial-interval(ms) for ignored trials
 int preTrialTime	=  1000;			# Length of pretrial period in ms
-int monitorXZeroPoint = -1920;	# The pixel touch value of the center of the monkey's monitor (important for calibrating!) (-1920)
+int monitorXZeroPoint = -1280;	# The pixel touch value of the center of the monkey's monitor (important for calibrating!) (-1920)
 int feedbackLength = 250; 			# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
 int numberOfJuiceDrops = 5;		# Number of juice drops to give monkey for a correct response
 int holdTimeLimit = 5000;			# Time (ms) which the monkey can hold the screen before getting an error
@@ -203,6 +221,7 @@ bool catchPreTrialHolding = false;# Set to true to pause progress if monkey is h
 bool catchITITouches = false;		# Set to true to show negative feedback if monkey touches in the ITI
 bool catchITIHolding = false;		# Set to true to pause progress if monkey is holding in the ITI
 bool catchStimulusHolding = false;# Set to true to pause progress if monkey is holding in the ITI
+bool showTouchFeedback = false;
 
 string taskName = "TouchTrain"; # String of task name
 
@@ -499,9 +518,9 @@ begin
 				if (tr.button() == 2) then state = "Up  " end;
 				
 				# Modify the caption in the touch state text
-				touchTextPretrial.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-				"x: " + printf( tr.x(), "%6.1f" ) +
-				"y: " + printf( tr.y(), "%6.1f" ),
+				touchTextPretrial.set_caption( "Touch\nTime: " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+				"\n x: " + printf( tr.x(), "%6.1f" ) +
+				"\n y: " + printf( tr.y(), "%6.1f" ),
 				true );
 					
 				# Update our current touch position trackers
@@ -525,15 +544,27 @@ begin
 					pretrialExperimenter.set_part_y( 1, monkeyY );									
 					pretrialExperimenter.present();
 					
+					if
+						showTouchFeedback == true
+					then
+					touchBoxMonkey.set_part_x( 2, monkeyX );  
+					touchBoxMonkey.set_part_y( 2, monkeyY );
+					itiMonkey.set_part_x( 1, monkeyX );  
+					itiMonkey.set_part_y( 1, monkeyY );
+					pretrialMonkey.set_part_x( 1, monkeyX );  
+					pretrialMonkey.set_part_y( 1, monkeyY );									
+					pretrialMonkey.present();
+					end;
+					
 					# Wait for release
 					if # It was a touch and not a release
 					 state == "Down"
 					then
 						
 						# Modify the caption in the touch state text
-						touchTextPretrial.set_caption( "HOLDING time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-						"x: " + printf( tr.x(), "%6.1f" ) +
-						"y: " + printf( tr.y(), "%6.1f" ),
+						touchTextPretrial.set_caption( "HOLDING time: " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+						"\n x: " + printf( tr.x(), "%6.1f" ) +
+						"\n y: " + printf( tr.y(), "%6.1f" ),
 						true );
 						
 						# Update these elements
@@ -661,9 +692,9 @@ begin
 			if (tr.button() == 2) then state = "Up  " end;
 				
 			# Modify the caption in the touch state text
-			touchTextITI.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-			"x: " + printf( tr.x(), "%6.1f" ) +
-			"y: " + printf( tr.y(), "%6.1f" ),
+			touchTextITI.set_caption( "Touch\nTime: " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+			"\n x: " + printf( tr.x(), "%6.1f" ) +
+			"\n y: " + printf( tr.y(), "%6.1f" ),
 			true );
 			touchTextITI.redraw();
 			
@@ -677,7 +708,21 @@ begin
 			
 			# Update these elements
 			itiExperimenter.present();
-			itiMonkey.present();
+			
+			if
+				showTouchFeedback == true
+			then
+				touchBoxMonkey.set_part_x( 2, monkeyX );  
+				touchBoxMonkey.set_part_y( 2, monkeyY );
+				itiMonkey.set_part_x( 1, monkeyX );  
+				itiMonkey.set_part_y( 1, monkeyY );
+				pretrialMonkey.set_part_x( 1, monkeyX );  
+				pretrialMonkey.set_part_y( 1, monkeyY );	
+				itiMonkey.present();			
+			end;
+			
+			
+			
 			
 				# Wait for release
 				if # It was a touch and not a release
@@ -699,9 +744,9 @@ begin
 					itiMonkey.present();
 					
 					# Modify the caption in the touch state text
-					touchTextITI.set_caption( "HOLDING time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-					"x: " + printf( tr.x(), "%6.1f" ) +
-					"y: " + printf( tr.y(), "%6.1f" ),
+					touchTextITI.set_caption( "HOLDING time: " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+					"\n x: " + printf( tr.x(), "%6.1f" ) +
+					"\n y: " + printf( tr.y(), "%6.1f" ),
 					true );
 					
 					# Update these elements
@@ -825,9 +870,9 @@ begin
 				if (tr.button() == 2) then state = "Up  " end;
 				
 				# Modify the caption in the touch state text
-				touchTextTouchbox.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-				"x: " + printf( tr.x(), "%6.1f" ) +
-				"y: " + printf( tr.y(), "%6.1f" ),
+				touchTextTouchbox.set_caption( "Touch\nTime: " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+				"\n x: " + printf( tr.x(), "%6.1f" ) +
+				"\n y: " + printf( tr.y(), "%6.1f" ),
 				true );
 				
 				# Set the location of the touch marker
@@ -840,6 +885,19 @@ begin
 				
 				# Update the experimenter's screen
 				touchBoxExperimenter.present();
+				
+				if
+					showTouchFeedback == true
+				then
+				touchBoxMonkey.set_part_x( 2, monkeyX );  
+				touchBoxMonkey.set_part_y( 2, monkeyY );
+				itiMonkey.set_part_x( 1, monkeyX );  
+				itiMonkey.set_part_y( 1, monkeyY );
+				pretrialMonkey.set_part_x( 1, monkeyX );  
+				pretrialMonkey.set_part_y( 1, monkeyY );	
+				touchBoxMonkey.present();
+				end;
+				
 				
 				# Wait for release
 				if # It was a touch and not a release
@@ -865,9 +923,9 @@ begin
 					
 						
 						# Modify the caption in the touch state text
-						touchTextTouchbox.set_caption( "HOLDING time: : " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-						"x: " + printf( tr.x(), "%6.1f" ) +
-						"y: " + printf( tr.y(), "%6.1f" ),
+						touchTextTouchbox.set_caption( "HOLDING time: : " + printf( tr.time_double(), "%9.2f" ) + " \n" + state + " " +
+						"\n x: " + printf( tr.x(), "%6.1f" ) +
+						"\n y: " + printf( tr.y(), "%6.1f" ),
 						true );
 						
 						#Update these elements

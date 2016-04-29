@@ -1,0 +1,134 @@
+SCEN:	TactileTrain
+PARM:	tactile_parameters.txt
+ITEM:	hope_itm.txt
+COND:	GNV_3pos_cndA.txt
+DATE:	04/08/2016 10:45:08
+Showing ALL conditions.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Right	Start:	1347	End:	25763	END
+Trl:	2	Blk:	1	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Right	Start:	26158	End:	42566	END
+Trl:	3	Blk:	1	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Right	Start:	42960	End:	64022	END
+Trl:	4	Blk:	1	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Right	Start:	64416	End:	81231	END
+Trl:	5	Blk:	1	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	81625	End:	105756	END
+Trl:	6	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Miss	Start:	106150	End:	115630	END
+Trl:	7	Blk:	1	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Left	Start:	116025	End:	132463	END
+Trl:	8	Blk:	1	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Right	Start:	132858	End:	149262	END
+Trl:	9	Blk:	1	Cnd:	15	Rsp:	StartCueMiss	Start:	149656	End:	151612	END
+Trl:	10	Blk:	1	Cnd:	15	Rsp:	StartCueMiss	Start:	152006	End:	159528	END
+Trl:	11	Blk:	1	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	159923	End:	176611	END
+Trl:	12	Blk:	1	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Right	Start:	177006	End:	195261	END
+Trl:	13	Blk:	1	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Left	Start:	195656	End:	212277	END
+Trl:	14	Blk:	1	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Left	Start:	212671	End:	231743	END
+Trl:	15	Blk:	1	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Right	Start:	232139	End:	249042	END
+Trl:	16	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	249436	End:	256025	END
+Trl:	17	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	256418	End:	262992	END
+Trl:	18	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	263386	End:	269958	END
+Trl:	19	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	270352	End:	276941	END
+Trl:	20	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	277335	End:	283907	END
+Trl:	21	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	284304	End:	290874	END
+Trl:	22	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	291268	End:	297857	END
+Trl:	23	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	298252	End:	304823	END
+Trl:	24	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	305217	End:	311790	END
+Trl:	25	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	312184	End:	318773	END
+Trl:	26	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	319167	End:	325739	END
+Trl:	27	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	326133	End:	332706	END
+Trl:	28	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	333100	End:	339689	END
+Trl:	29	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	340083	End:	346655	END
+Trl:	30	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	347050	End:	354755	END
+Trl:	31	Blk:	1	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	355150	End:	375332	END
+Trl:	32	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	375726	End:	382321	END
+Trl:	33	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	382715	End:	390754	END
+Trl:	34	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	391148	End:	397737	END
+Trl:	35	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	398131	End:	404703	END
+Trl:	36	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	405096	End:	411686	END
+Trl:	37	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	412080	End:	418670	END
+Trl:	38	Blk:	1	Cnd:	2	Rsp:	StartCueMiss	Start:	419066	End:	425653	END
+Trl:	39	Blk:	1	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	426048	End:	442685	END
+Trl:	40	Blk:	1	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	443079	End:	460051	END
+Trl:	41	Blk:	1	Cnd:	16	Rsp:	StartCueMiss	Start:	460445	End:	465335	END
+Trl:	42	Blk:	1	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Left	Start:	465730	End:	481984	END
+Trl:	43	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	482378	End:	488950	END
+Trl:	44	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	489344	End:	495934	END
+Trl:	45	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	496329	End:	502900	END
+Trl:	46	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	503293	End:	507883	END
+Trl:	47	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	508277	End:	514866	END
+Trl:	48	Blk:	1	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	515260	End:	535384	END
+Trl:	49	Blk:	1	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Left	Start:	535779	End:	552632	END
+Trl:	50	Blk:	2	Cnd:	13	Rsp:	StartCueMiss	Start:	553027	End:	562081	END
+Trl:	51	Blk:	2	Cnd:	13	LVal:	8	RVal:	8	Rsp:	Right	Start:	562475	End:	582647	END
+Trl:	52	Blk:	2	Cnd:	16	LVal:	8	RVal:	8	Rsp:	Right	Start:	583042	End:	599547	END
+Trl:	53	Blk:	2	Cnd:	17	LVal:	8	RVal:	8	Rsp:	Right	Start:	599942	End:	617046	END
+Trl:	54	Blk:	2	Cnd:	14	Rsp:	StartCueMiss	Start:	617441	End:	619329	END
+Trl:	55	Blk:	2	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	619723	End:	627146	END
+Trl:	56	Blk:	2	Cnd:	14	Rsp:	StartCueMiss	Start:	627540	End:	641740	END
+Trl:	57	Blk:	2	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	642134	End:	649578	END
+Trl:	58	Blk:	2	Cnd:	14	LVal:	8	RVal:	8	Rsp:	Right	Start:	649975	End:	666461	END
+Trl:	59	Blk:	2	Cnd:	18	LVal:	8	RVal:	8	Rsp:	Left	Start:	666856	End:	684244	END
+Trl:	60	Blk:	2	Cnd:	4	Rsp:	StartCueMiss	Start:	684638	End:	692515	END
+Trl:	61	Blk:	2	Cnd:	4	Rsp:	StartCueMiss	Start:	692910	End:	695343	END
+Trl:	62	Blk:	2	Cnd:	4	Rsp:	StartCueMiss	Start:	695737	End:	698960	END
+Trl:	63	Blk:	2	Cnd:	4	LVal:	8	RVal:	8	Rsp:	Left	Start:	699355	End:	720526	END
+Trl:	64	Blk:	2	Cnd:	1	LVal:	8	RVal:	8	Rsp:	Left	Start:	720921	End:	737675	END
+Trl:	65	Blk:	2	Cnd:	10	Rsp:	StartCueMiss	Start:	738069	End:	747034	END
+Trl:	66	Blk:	2	Cnd:	10	Rsp:	StartCueMiss	Start:	747428	End:	754025	END
+Trl:	67	Blk:	2	Cnd:	10	LVal:	8	RVal:	8	Rsp:	Left	Start:	754420	End:	771424	END
+Trl:	68	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	771818	End:	778424	END
+Trl:	69	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	778818	End:	785390	END
+Trl:	70	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	785784	End:	797473	END
+Trl:	71	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	797867	End:	804440	END
+Trl:	72	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	804835	End:	811406	END
+Trl:	73	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	811800	End:	823106	END
+Trl:	74	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	823501	End:	830072	END
+Trl:	75	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	830467	End:	837055	END
+Trl:	76	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	837450	End:	844038	END
+Trl:	77	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	844432	End:	848321	END
+Trl:	78	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	848716	End:	855304	END
+Trl:	79	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	855699	End:	862288	END
+Trl:	80	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	862683	End:	869254	END
+Trl:	81	Blk:	2	Cnd:	9	Rsp:	StartCueMiss	Start:	869649	End:	876237	END
+Trl:	82	Blk:	2	Cnd:	9	LVal:	8	RVal:	8	Rsp:	Left	Start:	876632	End:	895353	END
+Trl:	83	Blk:	2	Cnd:	8	Rsp:	StartCueMiss	Start:	895748	End:	898803	END
+Trl:	84	Blk:	2	Cnd:	8	Rsp:	StartCueMiss	Start:	899197	End:	905769	END
+Trl:	85	Blk:	2	Cnd:	8	Rsp:	StartCueMiss	Start:	906163	End:	912736	END
+Trl:	86	Blk:	2	Cnd:	8	Rsp:	StartCueMiss	Start:	913130	End:	919719	END
+Trl:	87	Blk:	2	Cnd:	8	LVal:	8	RVal:	8	Rsp:	Right	Start:	920114	End:	936902	END
+Trl:	88	Blk:	2	Cnd:	3	Rsp:	StartCueMiss	Start:	937296	End:	943868	END
+Trl:	89	Blk:	2	Cnd:	3	LVal:	8	RVal:	8	Rsp:	Left	Start:	944263	End:	964501	END
+Trl:	90	Blk:	2	Cnd:	15	Rsp:	StartCueMiss	Start:	964895	End:	971467	END
+Trl:	91	Blk:	2	Cnd:	15	Rsp:	StartCueMiss	Start:	971861	End:	978450	END
+Trl:	92	Blk:	2	Cnd:	15	LVal:	8	RVal:	8	Rsp:	Left	Start:	978844	End:	996183	END
+Trl:	93	Blk:	2	Cnd:	7	Rsp:	StartCueMiss	Start:	996577	End:	1003383	END
+Trl:	94	Blk:	2	Cnd:	7	Rsp:	StartCueMiss	Start:	1003779	End:	1010366	END
+Trl:	95	Blk:	2	Cnd:	7	LVal:	8	RVal:	8	Rsp:	Right	Start:	1010760	End:	1029715	END
+Trl:	96	Blk:	2	Cnd:	12	LVal:	8	RVal:	8	Rsp:	Left	Start:	1030109	End:	1051131	END
+Trl:	97	Blk:	2	Cnd:	5	LVal:	8	RVal:	8	Rsp:	Right	Start:	1051526	End:	1068114	END
+Trl:	98	Blk:	2	Cnd:	6	Rsp:	StartCueMiss	Start:	1068509	End:	1075097	END
+Trl:	99	Blk:	2	Cnd:	6	LVal:	8	RVal:	8	Rsp:	Right	Start:	1075491	End:	1095513	END
+Trl:	100	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1095907	End:	1102513	END
+Trl:	101	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1102907	End:	1109479	END
+Trl:	102	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1109874	End:	1116462	END
+Trl:	103	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1116857	End:	1123429	END
+Trl:	104	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	1123824	End:	1135228	END
+Trl:	105	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	1135623	End:	1143311	END
+Trl:	106	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Ignore	Start:	1143706	End:	1151611	END
+Trl:	107	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1152006	End:	1158594	END
+Trl:	108	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1158989	End:	1165560	END
+Trl:	109	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1165954	End:	1172544	END
+Trl:	110	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1172938	End:	1179527	END
+Trl:	111	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1179922	End:	1186493	END
+Trl:	112	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1186887	End:	1193459	END
+Trl:	113	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1193853	End:	1200443	END
+Trl:	114	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1200837	End:	1207409	END
+Trl:	115	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1207803	End:	1214375	END
+Trl:	116	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1214769	End:	1221359	END
+Trl:	117	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1221753	End:	1228325	END
+Trl:	118	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1228720	End:	1235308	END
+Trl:	119	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1235703	End:	1238758	END
+Trl:	120	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1239153	End:	1242008	END
+Trl:	121	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1242402	End:	1246005	END
+Trl:	122	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1246401	End:	1252974	END
+Trl:	123	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1253370	End:	1259974	END
+Trl:	124	Blk:	2	Cnd:	2	Rsp:	StartCueMiss	Start:	1260370	End:	1266940	END
+Trl:	125	Blk:	2	Cnd:	2	LVal:	8	RVal:	8	Rsp:	Right	Start:	1267335	End:	1283590	END
+Trl:	126	Blk:	2	Cnd:	11	LVal:	8	RVal:	8	Rsp:	Right	Start:	1283985	End:	1304172	END
+PROGRAM EXIT

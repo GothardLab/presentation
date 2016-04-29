@@ -1,0 +1,11 @@
+Starting:	TouchTrain
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	Correct	
+Trl:	2	Blk:	1	Cnd:	2	Rsp:	Correct	
+Trl:	3	Blk:	1	Cnd:	3	Rsp:	Correct	
+Trl:	4	Blk:	1	Cnd:	4	Rsp:	Correct	
+Trl:	5	Blk:	1	Cnd:	5	Rsp:	Missed	
+Trl:	6	Blk:	1	Cnd:	6	Rsp:	Missed	
+Trl:	7	Blk:	1	Cnd:	7	Rsp:	Correct	
+Trl:	8	Blk:	1	Cnd:	8	Rsp:	Correct	
+Trl:	9	Blk:	1	Cnd:	9	Rsp:	Correct	
+Trl:	10	Blk:	1	Cnd:	10	Rsp:	Missed	

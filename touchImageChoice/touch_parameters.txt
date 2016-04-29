@@ -1,8 +1,8 @@
-item file: cayoDrinking_itm.txt
-condition file: Shuffle1_cnd.txt
+item file: cayoEatingThings_itm.txt
+condition file: Shuffle3_cnd.txt
 -----------------------------------------------
 number of trials: 01
-conditions to show: 01-->20
+conditions to show: 61-->80
 condition order: random
 trial retry: ignore
 -----------------------------------------------

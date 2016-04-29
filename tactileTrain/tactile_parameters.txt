@@ -1,5 +1,5 @@
 item file: hope_itm.txt
-condition file: GNV_3pos_cndC.txt
+condition file: GNV_3pos_cndA.txt
 -----------------------------------------------
 number of trials: 02
 conditions to show: all
