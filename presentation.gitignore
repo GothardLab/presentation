@@ -10,4 +10,4 @@
 *.wav
 
 # log files
-*_log.txt
+*log.txt
