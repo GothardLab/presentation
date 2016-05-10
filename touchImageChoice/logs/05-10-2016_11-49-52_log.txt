@@ -1,0 +1,19 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	singleSide.txt
+DATE:	05/10/2016 11:49:52
+Showing conditions: 11-->20.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	0	RVal:	9	Rsp:	Right	Start:	1175	End:	16163	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	9	RVal:	0	Rsp:	Left	Start:	16258	End:	34023	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	0	RVal:	9	Rsp:	Early	Start:	34119	End:	47552	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	0	RVal:	9	Rsp:	Right	Start:	47649	End:	72858	END
+Trl:	5	Blk:	1	Cnd:	5	LVal:	9	RVal:	0	Rsp:	Left	Start:	72954	End:	90885	END
+Trl:	6	Blk:	1	Cnd:	6	LVal:	9	RVal:	0	Rsp:	Left	Start:	90980	End:	105412	END
+Trl:	7	Blk:	1	Cnd:	7	LVal:	0	RVal:	9	Rsp:	Right	Start:	105507	End:	123489	END
+Trl:	8	Blk:	1	Cnd:	8	Rsp:	StartCueMiss	Start:	123586	End:	131869	END
+Trl:	9	Blk:	1	Cnd:	8	LVal:	9	RVal:	0	Rsp:	Early	Start:	131968	End:	144115	END
+Trl:	10	Blk:	1	Cnd:	9	LVal:	9	RVal:	0	Rsp:	Ignore	Start:	144218	End:	165857	END
+Trl:	11	Blk:	1	Cnd:	10	LVal:	0	RVal:	9	Rsp:	Early	Start:	165956	End:	179035	END
+PROGRAM EXIT

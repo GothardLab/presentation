@@ -1,0 +1,8 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	Shuffle3_cnd.txt
+DATE:	05/05/2016 10:02:11
+Showing conditions: 21-->40.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	1	RVal:	5	

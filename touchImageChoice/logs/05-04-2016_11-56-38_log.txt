@@ -1,0 +1,32 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	Shuffle2_cnd.txt
+DATE:	05/04/2016 11:56:38
+Showing conditions: 1-->20.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1156	End:	9533	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	1	RVal:	5	Rsp:	Right	Start:	9627	End:	22494	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	5	RVal:	9	Rsp:	Right	Start:	22591	End:	35289	END
+Trl:	4	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	35386	End:	43836	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	9	RVal:	0	Rsp:	Left	Start:	43932	End:	56598	END
+Trl:	6	Blk:	1	Cnd:	4	LVal:	5	RVal:	1	Rsp:	Ignore	Start:	56693	End:	75342	END
+Trl:	7	Blk:	1	Cnd:	5	LVal:	0	RVal:	1	Rsp:	Right	Start:	75439	End:	85770	END
+Trl:	8	Blk:	1	Cnd:	6	LVal:	0	RVal:	5	Rsp:	Right	Start:	85866	End:	97382	END
+Trl:	9	Blk:	1	Cnd:	7	LVal:	0	RVal:	9	Rsp:	Right	Start:	97479	End:	110160	END
+Trl:	10	Blk:	1	Cnd:	8	LVal:	9	RVal:	1	Rsp:	Left	Start:	110258	End:	122972	END
+Trl:	11	Blk:	1	Cnd:	9	LVal:	5	RVal:	9	Rsp:	Right	Start:	123069	End:	135784	END
+Trl:	12	Blk:	1	Cnd:	10	LVal:	1	RVal:	0	Rsp:	Right	Start:	135886	End:	146480	END
+Trl:	13	Blk:	1	Cnd:	11	LVal:	9	RVal:	0	Rsp:	Left	Start:	146579	End:	159242	END
+Trl:	14	Blk:	1	Cnd:	12	LVal:	0	RVal:	1	Rsp:	Right	Start:	159340	End:	169638	END
+Trl:	15	Blk:	1	Cnd:	13	LVal:	5	RVal:	1	Rsp:	Right	Start:	169735	End:	180034	END
+Trl:	16	Blk:	1	Cnd:	14	Rsp:	StartCueMiss	Start:	180131	End:	188515	END
+Trl:	17	Blk:	1	Cnd:	14	Rsp:	StartCueMiss	Start:	188612	End:	197028	END
+Trl:	18	Blk:	1	Cnd:	14	LVal:	5	RVal:	9	Rsp:	Right	Start:	197127	End:	209839	END
+Trl:	19	Blk:	1	Cnd:	15	LVal:	1	RVal:	9	Rsp:	Right	Start:	209936	End:	222668	END
+Trl:	20	Blk:	1	Cnd:	16	LVal:	1	RVal:	0	Rsp:	Right	Start:	222766	End:	232764	END
+Trl:	21	Blk:	1	Cnd:	17	LVal:	5	RVal:	0	Rsp:	Left	Start:	232864	End:	244359	END
+Trl:	22	Blk:	1	Cnd:	18	LVal:	1	RVal:	9	Rsp:	Right	Start:	244463	End:	257121	END
+Trl:	23	Blk:	1	Cnd:	19	LVal:	0	RVal:	5	Rsp:	Right	Start:	257221	End:	270200	END
+Trl:	24	Blk:	1	Cnd:	20	LVal:	1	RVal:	0	Rsp:	Right	Start:	270298	End:	280329	END
+PROGRAM EXIT

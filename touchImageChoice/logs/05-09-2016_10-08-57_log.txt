@@ -1,0 +1,46 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	singleSide.txt
+DATE:	05/09/2016 10:08:57
+Showing conditions: 1-->30.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1186	End:	10083	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	0	RVal:	9	Rsp:	Early	Start:	10180	End:	20495	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	1	RVal:	0	Rsp:	Left	Start:	20595	End:	30891	END
+Trl:	4	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	30988	End:	40438	END
+Trl:	5	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	40535	End:	49834	END
+Trl:	6	Blk:	1	Cnd:	3	LVal:	5	RVal:	0	Rsp:	Left	Start:	49933	End:	61379	END
+Trl:	7	Blk:	1	Cnd:	4	LVal:	1	RVal:	0	Rsp:	Early	Start:	61479	End:	72505	END
+Trl:	8	Blk:	1	Cnd:	5	LVal:	5	RVal:	0	Rsp:	Left	Start:	72606	End:	83537	END
+Trl:	9	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	83636	End:	92551	END
+Trl:	10	Blk:	1	Cnd:	6	LVal:	9	RVal:	0	Rsp:	Early	Start:	92649	End:	103097	END
+Trl:	11	Blk:	1	Cnd:	7	Rsp:	StartCueMiss	Start:	103197	End:	112527	END
+Trl:	12	Blk:	1	Cnd:	7	LVal:	9	RVal:	0	Rsp:	Left	Start:	112625	End:	124788	END
+Trl:	13	Blk:	1	Cnd:	8	LVal:	1	RVal:	0	Rsp:	Left	Start:	124889	End:	135784	END
+Trl:	14	Blk:	1	Cnd:	9	LVal:	9	RVal:	0	Rsp:	Early	Start:	135885	End:	146464	END
+Trl:	15	Blk:	1	Cnd:	10	Rsp:	StartCueMiss	Start:	146566	End:	155927	END
+Trl:	16	Blk:	1	Cnd:	10	LVal:	5	RVal:	0	Rsp:	Left	Start:	156023	End:	167405	END
+Trl:	17	Blk:	1	Cnd:	11	Rsp:	StartCueMiss	Start:	167506	End:	176736	END
+Trl:	18	Blk:	1	Cnd:	11	LVal:	0	RVal:	5	Rsp:	Right	Start:	176835	End:	188381	END
+Trl:	19	Blk:	1	Cnd:	12	LVal:	0	RVal:	1	Rsp:	Left	Start:	188480	End:	199260	END
+Trl:	20	Blk:	1	Cnd:	13	LVal:	0	RVal:	5	Rsp:	Right	Start:	199366	End:	211056	END
+Trl:	21	Blk:	1	Cnd:	14	LVal:	0	RVal:	5	Rsp:	Early	Start:	211154	End:	221819	END
+Trl:	22	Blk:	1	Cnd:	15	LVal:	5	RVal:	0	Rsp:	Left	Start:	221923	End:	234030	END
+Trl:	23	Blk:	1	Cnd:	16	LVal:	0	RVal:	5	Rsp:	Early	Start:	234130	End:	244527	END
+Trl:	24	Blk:	1	Cnd:	17	Rsp:	StartCueMiss	Start:	244633	End:	254440	END
+Trl:	25	Blk:	1	Cnd:	17	LVal:	0	RVal:	9	Rsp:	Right	Start:	254537	End:	266734	END
+Trl:	26	Blk:	1	Cnd:	18	LVal:	1	RVal:	0	Rsp:	Left	Start:	266834	End:	277597	END
+Trl:	27	Blk:	1	Cnd:	19	LVal:	0	RVal:	1	Rsp:	Left	Start:	277699	End:	287793	END
+Trl:	28	Blk:	1	Cnd:	20	LVal:	1	RVal:	0	Rsp:	Early	Start:	287895	End:	299289	END
+Trl:	29	Blk:	1	Cnd:	21	LVal:	5	RVal:	0	Rsp:	Left	Start:	299389	End:	310765	END
+Trl:	30	Blk:	1	Cnd:	22	LVal:	9	RVal:	0	Rsp:	Left	Start:	310866	End:	323246	END
+Trl:	31	Blk:	1	Cnd:	23	LVal:	0	RVal:	9	Rsp:	Early	Start:	323349	End:	333943	END
+Trl:	32	Blk:	1	Cnd:	24	LVal:	0	RVal:	9	Rsp:	Early	Start:	334043	End:	344739	END
+Trl:	33	Blk:	1	Cnd:	25	LVal:	0	RVal:	5	Rsp:	Right	Start:	344845	End:	357250	END
+Trl:	34	Blk:	1	Cnd:	26	LVal:	9	RVal:	0	Rsp:	Left	Start:	357351	End:	369762	END
+Trl:	35	Blk:	1	Cnd:	27	LVal:	0	RVal:	1	Rsp:	Right	Start:	369868	End:	381424	END
+Trl:	36	Blk:	1	Cnd:	28	LVal:	0	RVal:	1	Rsp:	Right	Start:	381524	End:	392003	END
+Trl:	37	Blk:	1	Cnd:	29	LVal:	0	RVal:	9	Rsp:	Right	Start:	392102	End:	404699	END
+Trl:	38	Blk:	1	Cnd:	30	LVal:	0	RVal:	1	Rsp:	Right	Start:	404799	End:	415494	END
+PROGRAM EXIT

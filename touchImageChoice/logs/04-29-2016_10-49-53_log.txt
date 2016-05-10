@@ -1,0 +1,32 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	Shuffle3_cnd.txt
+DATE:	04/29/2016 10:49:53
+Showing conditions: 81-->99.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1192	End:	9566	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	5	RVal:	9	Rsp:	Right	Start:	9664	End:	22127	END
+Trl:	3	Blk:	1	Cnd:	2	LVal:	5	RVal:	9	Rsp:	Right	Start:	22223	End:	34623	END
+Trl:	4	Blk:	1	Cnd:	3	Rsp:	StartCueMiss	Start:	34720	End:	43587	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	0	RVal:	1	Rsp:	Right	Start:	43687	End:	53849	END
+Trl:	6	Blk:	1	Cnd:	4	LVal:	9	RVal:	5	Rsp:	Left	Start:	53947	End:	66560	END
+Trl:	7	Blk:	1	Cnd:	5	Rsp:	StartCueMiss	Start:	66656	End:	75041	END
+Trl:	8	Blk:	1	Cnd:	5	LVal:	9	RVal:	1	Rsp:	Right	Start:	75137	End:	85087	END
+Trl:	9	Blk:	1	Cnd:	6	Rsp:	StartCueMiss	Start:	85187	End:	94134	END
+Trl:	10	Blk:	1	Cnd:	6	LVal:	0	RVal:	5	Rsp:	Right	Start:	94234	End:	106212	END
+Trl:	11	Blk:	1	Cnd:	7	LVal:	9	RVal:	5	Rsp:	Right	Start:	106313	End:	117974	END
+Trl:	12	Blk:	1	Cnd:	8	LVal:	0	RVal:	1	Rsp:	Right	Start:	118071	End:	130436	END
+Trl:	13	Blk:	1	Cnd:	9	LVal:	1	RVal:	0	Rsp:	Right	Start:	130536	End:	140316	END
+Trl:	14	Blk:	1	Cnd:	10	LVal:	5	RVal:	9	Rsp:	Right	Start:	140413	End:	152944	END
+Trl:	15	Blk:	1	Cnd:	11	LVal:	9	RVal:	0	Rsp:	Right	Start:	153046	End:	163573	END
+Trl:	16	Blk:	1	Cnd:	12	LVal:	5	RVal:	9	Rsp:	Right	Start:	163673	End:	176669	END
+Trl:	17	Blk:	1	Cnd:	13	LVal:	9	RVal:	1	Rsp:	Ignore	Start:	176765	End:	193930	END
+Trl:	18	Blk:	1	Cnd:	14	Rsp:	StartCueMiss	Start:	194035	End:	203409	END
+Trl:	19	Blk:	1	Cnd:	14	LVal:	9	RVal:	0	Rsp:	Left	Start:	203510	End:	216120	END
+Trl:	20	Blk:	1	Cnd:	15	LVal:	0	RVal:	5	Rsp:	Right	Start:	216218	End:	227532	END
+Trl:	21	Blk:	1	Cnd:	16	LVal:	9	RVal:	0	Rsp:	Right	Start:	227632	End:	237912	END
+Trl:	22	Blk:	1	Cnd:	17	LVal:	0	RVal:	1	Rsp:	Right	Start:	238014	End:	248058	END
+Trl:	23	Blk:	1	Cnd:	18	LVal:	9	RVal:	1	Rsp:	Left	Start:	248156	End:	260903	END
+Trl:	24	Blk:	1	Cnd:	19	LVal:	1	RVal:	0	Rsp:	Right	Start:	261007	End:	270816	END
+PROGRAM EXIT

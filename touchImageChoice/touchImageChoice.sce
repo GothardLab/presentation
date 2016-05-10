@@ -1,6 +1,13 @@
 #	Touch Image Choice (touchImageChoice)
 #	Philip Putnam, 2016, University of Arizona
 #
+#	This program is designed to train and test a monkey's ability to choose between
+#	different catagories of image stimuli, shown pairwise. The core functionality is
+#	to present two different images, and the monkey can choose between left or right
+#	to receive variable amounts of juice. The condition and item files determine what
+#	pairwise comparisons are made, and what the catagories, images, and related juice 
+#	values are.
+#
 #	Note that this program is written for two monitors, one is the 
 #	touchscreen the monkey is using (display 1) and one is the
 #	experimenter's monitor (display 2). Depending on the resolution
@@ -11,7 +18,7 @@
 #		v0.1	03/01/16		Branched from touchTrain
 #		v0.2	03/09/16		Now functional
 #		v0.3	04/26/16		Major overhaul for smaller touchscreen size and improvements
-
+#		v0.4 	05/02/15		Added touch cues behind stimuli
 # Scenario file parameters
 scenario = "Touch Image Choice";
 active_buttons = 2;
@@ -33,7 +40,6 @@ wavefile { filename = "quick_fart_x.wav"; } incorrectSoundWav;
 #Define bitmap structures to show two images, don't load them yet
 bitmap { filename = "rose01.bmp"; preload = false; } leftImg;
 bitmap { filename = "apple01.bmp"; preload = false; } rightImg;
-
 
 #Screen to show the monkey for incorrect responses
 picture {
@@ -122,13 +128,21 @@ picture{
 		width=500;
 		height=500;}leftImageMonkey;
 		x=-300; y=0;	# Position of the image on screen
+		on_top=true;
 		
 	bitmap {display_index=1;filename="placeholder.bmp";
 		width=500;
 		height=500;}rightImageMonkey;
 		x=300; y=0;	# Position of the image on screen
+		on_top=true; 
+	
+	box {color = 0,255,0;height=500;width=500;display_index=1;}leftTouchCueMonkey;
+	x=-9999; y=9999;  			# The position of the right touch cue
+	
+	box {color = 0,255,0;height=500;width=500;display_index=1;}rightTouchCueMonkey;
+	x=9999; y=9999;  			# The position of the right touch cue
 		
-	on_top=true; 
+
 	
 }stimulusMonkey;
 
@@ -144,7 +158,7 @@ picture{
 	
 	box {color = 0,0,0; height=9;width=9; display_index=2;}leftTouchBoxBoundaryBlack;
 	x=-300; y=0; 			# The position of the touch box boundary
-	on_top=true; 		# Draw the black box ontop of the touch box: this makes a boundary
+	#on_top=true; 		# Draw the black box ontop of the touch box: this makes a boundary
 	
 	bitmap {display_index=2;filename="placeholder.bmp";
 		width=500;
@@ -157,7 +171,7 @@ picture{
 	
 	box {color = 0,0,0; height=9;width=9; display_index=2;}rightTouchBoxBoundaryBlack;
 	x=300; y=0; 			# The position of the touch box boundary
-	on_top=true; 		# Draw the black box ontop of the touch box: this makes a boundary
+	#on_top=true; 		# Draw the black box ontop of the touch box: this makes a boundary
 		
 	bitmap {display_index=2;filename="placeholder.bmp";
 		width=500;
@@ -183,6 +197,12 @@ picture{
 	x = 450; y = -500;# String to display touch position
 	on_top=true; 
 	
+	box {color = 0,255,0;height=500;width=500;display_index=2;}leftTouchCueExperimenter;
+	x=-9999; y=9999;  			# The position of the right touch cue
+	
+	box {color = 0,255,0;height=500;width=500;display_index=2;}rightTouchCueExperimenter;
+	x=9999; y=9999;  			# The position of the right touch cue
+	
 }stimulusExperimenter;
 
 
@@ -201,6 +221,8 @@ picture{
 		width=500;
 		height=500;}postTrialRightImageMonkey;
 		x=300; y=0;	# Position of the image on screen
+		
+		
 		
 
 	on_top=true; 
@@ -286,23 +308,22 @@ picture{
 begin_pcl;
 
 # Variables for task settings (You can change these)
-int stimulusSize	=	500;					# size of touch box (pixels)
-int stimulusTouchWindow	=	1; 			# this is the extra room that the monkey has around the edge of the touch box (pixels)
+int stimulusSize	=	500;					# Size of touch box (pixels)
+int stimulusTouchWindow	=	15; 			# Extra room (pixels) that the monkey has around the edge of the stimulus(pixels)
 													# if stimulusTouchWindow is 100, then there is a leniency of 100 pixels on all sides of the touch box
 int startCueX		=	0;						# x-position of the touch box (pixels)(Default, can change by condition)
-int startCueY		=	-200; 				# y-postition of the touch box (pixels)(Default, can change by condition)
-int startCueSize = 300;						# size of start cue box (pixels)
-int startCueWindow =100;					# Size of window, in pixels, around the start cue
-int postStartCueDelay = 1000;				# Time delay (ms) after the start cue is touched/not touched
+int startCueY		=-100; 				# y-postition of the touch box (pixels)(Default, can change by condition)
+int startCueSize = 125;						# size of start cue box (pixels)
+int startCueWindow =150;					# Size of window, in pixels, around the start cue
+int postStartCueDelay = 2500;				# Time delay (ms) after the start cue is touched/not touched
 int stimulusTime	=	7000; 				# time that monkey is allowed to get to touch box (ms) per trial
 int correctItiDuration	=	5000; 		# Duration of the inter-trial-interval(ms)for correct trials
-int startCueMissItiDuration=	7000; 	# Duration of the inter-trial-interval(ms) for early touches
+int startCueMissItiDuration=	5000; 	# Duration of the inter-trial-interval(ms) for start cue errors
 int missedItiDuration	=	7000;		 	# Duration of the inter-trial-interval(ms) for missed trials
 int ignoredItiDuration   =	8000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int preTrialTime	=  5000;					# Length of pretrial period in ms
 int monitorXZeroPoint = -1280;			# -1280The pixel touch value of the center of the monkey's monitor (important for calibrating!) (-1920)
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int numberOfJuiceDrops = 5;				# Number of juice drops to give monkey for a correct response
 int holdTimeLimit = 5000;					# Time (ms) which the monkey can hold the screen before getting an error
 int bottomTouchLimit = -300;				# Pixel space below which the monkey can touch free (so that they can hold bottom of monitor)
 bool writeResultsToLog = true;			# Boolean value for writing results to log file 
@@ -310,15 +331,48 @@ bool catchPreTrialTouches = false;		# Set to true to cancel trials if monkey tou
 bool catchPreTrialHolding = false;		# Set to true to pause progress if monkey is holding in the pre-trial period
 bool catchITITouches = false;				# Set to true to show negative feedback if monkey touches in the ITI
 bool catchITIHolding = false;				# Set to true to pause progress if monkey is holding in the ITI
-bool catchStimulusHolding = false;		# Set to true to pause progress if monkey is holding in the ITI
-bool catchMissedStimulusTouches = false;
-int leftStimulusXPosition = -350;
-int rightStimulusXPosition = 350;
-int stimulusYPosition = 250;
-int rewardValueTextYPosition = -300;
-int rewardDelayTime = 2000;		#Time (ms) which the monkey sees the postStim
-bool showStartCue = true;			# Set to 'true' to show start cue, set to 'false' to skip start cue
-string taskName = "TouchImageChoice"; # String of task name
+bool catchStimulusHolding = false;		# Set to true to pause progress if monkey is holding in the stimulus period
+bool catchMissedStimulusTouches = false;# Set to true to  show negative feedback if monkey touches in the stimulus period
+int leftStimulusXPosition = -350;		# X position of left stimulus (in pixels)
+int rightStimulusXPosition = 350;		# X position of right stimulus (in pixels)
+int stimulusYPosition = 250;				# Y position of both stimuli (in pixels)
+int rewardValueTextYPosition = -300;	# Y position of both reward value text on experimenter's screen (in pixels)
+int rewardDelayTime = 1000;				# Time (ms) which the monkey sees the postStim
+bool showStartCue = true;					# Set to 'true' to show start cue, set to 'false' to skip start cue
+bool delayChoice = true;					# Set to 'true' to delay the monkey's ability to make a response
+bool catchTouchesInDelayPeriod = true;	# Set to 'true' to present incorrect feedback to any response made in the delay period
+int delayChoiceLength = 2500;				# Time in ms to delay monkey's ability to make a response
+int delayChoiceFloat = 0;				# Maximal time (ms) +/- range, from which a random number is selected and is added or subtracted to delayChoiceLength
+bool randomizeDelayChoiceLength = true;# Set to 'true' to set the choice delay to +/- a randomized number in the range of delayChoiceFloat
+int touchCueYOffset = -100;				# Offset (in pixels) on y-axis from which the touch cue is offset from the stimuli
+string taskName = "TouchImageChoice";  # String of task name
+
+# Encode Values (You can change these, but have a really good reason)
+int trialStartCode		= 11;
+int trialEndCode			= 21;
+int startCueOnCode 		= 12;
+int startCueHitCode 		= 22;
+int startCueMissCode 	= 23;
+int stimulusOnCode		= 15;
+int stimulusOffCode		= 25;
+int touchAvailableCode 	= 26;
+int leftChoiceCode 		= 16;
+int rightChoiceCode 		= 17;
+int ignoreChoiceCode 	= 18;
+int missChoiceCode 		= 19;
+int ITIStartCode			= 20;
+int ITIEndCode				= 30;
+int correctITICode		= 31;
+int missedITICode			= 32;
+int ignoredITICode		= 33;
+int rewardGivenCode 		= 3;
+int taskStartCode 		= 1;
+int taskEndCode 			= 2;
+int itmNumIDCode 			= 4;
+int cndNumIDCode 			= 5;
+int conditionOffsetValue= 100;
+int frameOffsetValue		= 100;
+int itemOffsetValue 		= 200;
 
 # Variables for running the task (Don't change these)
 int clockticker	=	0; 			# Counter for time
@@ -369,6 +423,8 @@ dio_device card = new dio_device( ni_dio_device, 1, 0 );
 
 # ------------------ Setup output ports  ------------------
 output_port juicePulse = output_port_manager.get_port(1);
+output_port openData = output_port_manager.get_port(2);
+output_port openPulse = output_port_manager.get_port(3);
 
 # ------------------ Check for touch device  ------------------
 touch_device tdevice = touch_device( response_manager.get_mouse( 1 ) );
@@ -395,16 +451,16 @@ logFile.print( "SCEN:\t"+taskName+"\n" );
 
 
 # ------------------ Get the experimental parameters ------------------
-string exp_par="touch_parameters.txt"; # Name of the text file with the experiment information
-input_file exp_info = new input_file;	# Create an input file
-exp_info.open( exp_par );					# Load the experimental parameters into the input file
-string temp_name;								# Create a string variable for temporary use
-temp_name=exp_info.get_line();			# Get the first line of the experimental file (item file)
+string exp_par="touch_parameters.txt"; 				# Name of the text file with the experiment information
+input_file exp_info = new input_file;					# Create an input file
+exp_info.open( exp_par );									# Load the experimental parameters into the input file
+string temp_name;												# Create a string variable for temporary use
+temp_name=exp_info.get_line();							# Get the first line of the experimental file (item file)
 string item_file=temp_name.substring(12,temp_name.count()-11);	# Filename of the item file
-temp_name=exp_info.get_line();  			# Get the next line (just dashes) and ignore
+temp_name=exp_info.get_line();  							# Get the next line (just dashes) and ignore
 string cnd_file=temp_name.substring(17,temp_name.count()-16);	# Filename of the condition file
-temp_name=exp_info.get_line();  			# Get the next line (just dashes) and ignore
-temp_name=exp_info.get_line();			# Get the 4th line (number of trials)
+temp_name=exp_info.get_line();  							# Get the next line (just dashes) and ignore
+temp_name=exp_info.get_line();							# Get the 4th line (number of trials)
 int numberBlocks=int(double(temp_name.substring(temp_name.count()-1,2)));	# Write down the number of trials to be shown
 
 #Print out the parameters from the file
@@ -413,7 +469,7 @@ term.print_line( "Item file: " + item_file);
 term.print_line( "Condition file: " + cnd_file);
 term.print_line( "Number of blocks " + string(numberBlocks));
 
-#Write parameters to log file
+#Write parameters to log fileqqq
 logFile.print( "PARM:\t"+exp_par+"\n" ); 
 logFile.print( "ITEM:\t"+item_file+"\n" );  
 logFile.print( "COND:\t"+cnd_file+"\n" );   
@@ -512,11 +568,11 @@ end;
 
 # ------------------ Determine condition order  ------------------~~
 string order;
-temp_name=exp_info.get_line();			# Get the 6th line of the experimental parameters file (condition order)
-if (temp_name.find("random")!=0) then	# If the specified order is "random"
-	order="random";							# Then store this "random" information as a string
+temp_name=exp_info.get_line();							# Get the 6th line of the experimental parameters file (condition order)
+if (temp_name.find("random")!=0) then					# If the specified order is "random"
+	order="random";											# Then store this "random" information as a string
 else
-	order="incremental";						# Otherwise default to "incremental" order
+	order="incremental";										# Otherwise default to "incremental" order
 end;
 
 numberConditions = cnds_to_show.count();
@@ -526,13 +582,13 @@ term.print_line( "Number of Conditions " + string(numberConditions) + " Order: "
 
 # ------------------ Determine how to deal with error trials  ------------------
 string onErrorBehav;
-temp_name=exp_info.get_line();			# Get the 7th line of the experimental parameters file (trial order)
-if (temp_name.find("delayed")!=0) then	# If the trial order is "delayed"
-	onErrorBehav="delayed";							# Then store this "delayed" information as a string
-elseif (temp_name.find("immediate")!=0) then # If the trial order is "immediate"
-	onErrorBehav="immediate";						# Then store this "incremental" information as a string
+temp_name=exp_info.get_line();							# Get the 7th line of the experimental parameters file (trial order)
+if (temp_name.find("delayed")!=0) then					# If the trial order is "delayed"
+	onErrorBehav="delayed";									# Then store this "delayed" information as a string
+elseif (temp_name.find("immediate")!=0) then 		# If the trial order is "immediate"
+	onErrorBehav="immediate";								# Then store this "incremental" information as a string
 else;
-	onErrorBehav="ignore";							# Otherwise default to "ignore" trial
+	onErrorBehav="ignore";									# Otherwise default to "ignore" trial
 end;
 
 # Print blank line to seperate the pre-trial info from trials
@@ -542,16 +598,25 @@ term.print_line( "");
 sub
 	giveJuiceReward ( int dropsToGive )
 begin
-	int nojo=1;							# Counter for number of juice drops given already
+	int dropsGiven=1;											# Counter for number of juice drops given already
 	loop until 
-		nojo > dropsToGive 
+		dropsGiven > dropsToGive 
 	begin
-		juicePulse.send_code(10,150);	# Give juice to the monkey
+		juicePulse.send_code(10,150);						# Give juice to the monkey
 		wait_interval(150);
-		juicePulse.send_code(0,150);	# Give juice to the monkey
+		juicePulse.send_code(0,150);						# Give juice to the monkey
 		wait_interval(150);
-		nojo=nojo+1;
+		dropsGiven=dropsGiven+1;
 	end;
+end;
+
+# ------------------ Send Encode Subroutine ------------------
+sub
+	encode ( int codeValue )
+begin
+	openData.send_code(codeValue, 2);
+	openPulse.send_code(255,1)
+	#wait_interval(150);
 end;
 
 # ------------------ Present Incorrect Feedback Subroutine ------------------
@@ -622,20 +687,20 @@ begin
 	startCueM.set_width(startCueSize); 
 	int thisTrialStartCueX = startCueX;
 	int thisTrialStartCueY = startCueY;
-	pretrialMonkey.set_part_x( 1, thisTrialStartCueX); 			#set the X position of the touch box on the monkey's monitor
-	pretrialMonkey.set_part_y( 1, thisTrialStartCueY); 			#set the Y position of the touch box on the monkey's monitor
+	pretrialMonkey.set_part_x( 1, thisTrialStartCueX); 			# Set the X position of the touch box on the monkey's monitor
+	pretrialMonkey.set_part_y( 1, thisTrialStartCueY); 			# Set the Y position of the touch box on the monkey's monitor
 	
 	# Update the experimenter's screen
-	startCueBoundary.set_height(startCueSize+2*stimulusTouchWindow); # Set the height boundary of the touchspot (the extra space the monkey is allowed)
-	startCueBoundary.set_width(startCueSize+2*stimulusTouchWindow); # Set the width boundary of the touchspot (the extra space the monkey is allowed)
-	startCueBoundaryBlack.set_height(startCueSize+2*stimulusTouchWindow-2); # The above two lines will set the red box height, this is setting the black box height(see picture code for details)
-	startCueBoundaryBlack.set_width(startCueSize+2*stimulusTouchWindow-2);
-	pretrialExperimenter.set_part_x( 3, thisTrialStartCueX); 	#set the X position of the touch box on the experimenter's monitor
-	pretrialExperimenter.set_part_y( 3, thisTrialStartCueY); 	#set the Y position of the touch box on the experimenter's monitor
-	pretrialExperimenter.set_part_x( 2, thisTrialStartCueX); 	#set the X position of the black touch box on the experimenter's monitor
-	pretrialExperimenter.set_part_y( 2, thisTrialStartCueY); 	#set the Y position of the black touch box on the experimenter's monitor
-	pretrialExperimenter.set_part_x( 1, thisTrialStartCueX); 	#set the X position of the red outline on the experimenter's monitor
-	pretrialExperimenter.set_part_y( 1, thisTrialStartCueY); 	#set the Y position of the red outline on the experimenter's monitor
+	startCueBoundary.set_height(startCueSize+2*startCueWindow); # Set the height boundary of the touchspot (the extra space the monkey is allowed)
+	startCueBoundary.set_width(startCueSize+2*startCueWindow); # Set the width boundary of the touchspot (the extra space the monkey is allowed)
+	startCueBoundaryBlack.set_height(startCueSize+2*startCueWindow-2); # The above two lines will set the red box height, this is setting the black box height(see picture code for details)
+	startCueBoundaryBlack.set_width(startCueSize+2*startCueWindow-2);
+	pretrialExperimenter.set_part_x( 3, thisTrialStartCueX); 	# Set the X position of the touch box on the experimenter's monitor
+	pretrialExperimenter.set_part_y( 3, thisTrialStartCueY); 	# Set the Y position of the touch box on the experimenter's monitor
+	pretrialExperimenter.set_part_x( 2, thisTrialStartCueX); 	# Set the X position of the black touch box on the experimenter's monitor
+	pretrialExperimenter.set_part_y( 2, thisTrialStartCueY); 	# Set the Y position of the black touch box on the experimenter's monitor
+	pretrialExperimenter.set_part_x( 1, thisTrialStartCueX); 	# Set the X position of the red outline on the experimenter's monitor
+	pretrialExperimenter.set_part_y( 1, thisTrialStartCueY); 	# Set the Y position of the red outline on the experimenter's monitor
 	startCueE.set_width(startCueSize); 
 	startCueE.set_height(startCueSize); 
 	
@@ -644,6 +709,8 @@ begin
 	int startCueUpperY = thisTrialStartCueY + (startCueSize/2) + startCueWindow;
 	int startCueLowerX = thisTrialStartCueX - (startCueSize/2) - startCueWindow;
 	int startCueLowerY = thisTrialStartCueY - (startCueSize/2) - startCueWindow;
+	
+	term.print_line("upperX: " +  string(startCueUpperX) + "lowerX: " + string(startCueLowerX) + "upperY: " +  string(startCueUpperY) + "lowerY: " + string(startCueLowerY));
 	
 	# Set the caption of the experimenter's trial information string
 	trialTextPretrial.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
@@ -780,7 +847,7 @@ begin
 		
 	if 	# If the monkey has touched the start cue
 		goodTouch == true
-	then 	#Set the Return variable to be correct
+	then 	# Set the Return variable to be correct
 		monkeyResponseSub = "Correct";
 	elseif
 		hasTouched == 1
@@ -798,7 +865,9 @@ end;
 sub
 	presentITI( int itiDuration )
 begin
-	
+	# Mark that we are starting the ITI
+	encode(ITIStartCode);
+		
 	# Set the caption of the experimenter's trial information string
 	trialTextITI.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
 										"\n Condition: "+ printf( currentConditionIdx, "%2d" ) + "/" + printf( numberConditions, "%2d" ) +
@@ -931,12 +1000,17 @@ begin
 			end;
 		end;
 	end;
+	
+	# Mark that we are finished with the ITI
+	encode(ITIStartCode);	
 end;
 
 # ------------------ Present Post-stimulus Subroutine ------------------
 sub
 	presentPostStimulus ( string choice )
 begin
+	
+	
 
 	
 
@@ -947,16 +1021,22 @@ begin
 	if
 		choice == "Left"
 	then
-		stimulusMonkey.set_part_x( 2, 9999); 			#Move the right stimulus off the monkey's screen
-		stimulusMonkey.set_part_y( 2, 9999); 			#Move the right stimulus off the monkey's  screen
-		stimulusMonkey.present();							#Update the monkey's screen
-		stimulusExperimenter.set_part_x( 6, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 6, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_x( 5, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 5, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_x( 4, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 4, 9999); 	#Move the right stimulus off the the experimenter's monitor
-		stimulusExperimenter.present();					#Update the experimenter's screen
+		stimulusMonkey.set_part_x( 2, 9999); 			# Move the right stimulus off the monkey's screen
+		stimulusMonkey.set_part_y( 2, 9999); 			# Move the right stimulus off the monkey's  screen
+		stimulusMonkey.set_part_x( 4, 9999); 			# Move the right touch cue box on the monkey's monitor
+		stimulusMonkey.set_part_y( 4, 9999);   		# Move the right touch cue box on the monkey's monitor
+		leftTouchCueMonkey.set_color( 0, 0, 255 );	# Set the left touch cue color on the monkey's monitor
+		stimulusMonkey.present();							# Update the monkey's screen
+		stimulusExperimenter.set_part_x( 6, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 6, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 5, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 5, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 4, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 4, 9999); 	# Move the right stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 13, -9999); # Move the right touch cue box on the experimenter's monitor
+		stimulusExperimenter.set_part_y( 13, -9999); # Move the right touch cue box on theexperimenter's monitor
+		leftTouchCueExperimenter.set_color( 0, 0, 255 );	# Set the right touch cue color on the monkey's monitor
+		stimulusExperimenter.present();					# Update the experimenter's screen
 		
 		#Get the current time
 		postStimClockticker=clock.time();
@@ -975,18 +1055,24 @@ begin
 	elseif
 		choice == "Right"
 	then
-		#set the Y position of the touch box on the monkey's monitor
+		# Set the Y position of the touch box on the monkey's monitor
 		
-		stimulusMonkey.set_part_x( 1, 9999); 			#Move the left stimulus off the monkey's screen
-		stimulusMonkey.set_part_y( 1, 9999); 			#Move the left stimulus off the monkey's screen
-		stimulusMonkey.present();							#Update the monkey's screen
-		stimulusExperimenter.set_part_x( 3, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 3, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_x( 2, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 2, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_x( 1, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.set_part_y( 1, 9999); 	#Move the left stimulus off the the experimenter's monitor
-		stimulusExperimenter.present();					#Update the experimenter's screen
+		stimulusMonkey.set_part_x( 1, 9999); 			# Move the left stimulus off the monkey's screen
+		stimulusMonkey.set_part_y( 1, 9999); 			# Move the left stimulus off the monkey's screen
+		stimulusMonkey.set_part_x( 3, -9999); 			# Move the left touch cue on the monkey's monitor
+		stimulusMonkey.set_part_y( 3, 9999); 			# Move the left touch cue on the monkey's monitor
+		rightTouchCueMonkey.set_color( 0, 0, 255 );	# Set the right touch cue color on the monkey's monitor
+		stimulusMonkey.present();							# Update the monkey's screen
+		stimulusExperimenter.set_part_x( 3, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 3, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 2, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 2, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 1, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_y( 1, 9999); 	# Move the left stimulus off the the experimenter's monitor
+		stimulusExperimenter.set_part_x( 12, -9999); # Move the left touch cue box on the experimenter's monitor
+		stimulusExperimenter.set_part_y( 12, -9999); # Move the left touch cue box on theexperimenter's monitor
+		rightTouchCueExperimenter.set_color( 0, 0, 255 );	# Set the right touch cue color on the monkey's monitor
+		stimulusExperimenter.present();					# Update the experimenter's screen
 
 		#Get the current time
 		postStimClockticker=clock.time();
@@ -1007,8 +1093,22 @@ begin
 	end;
 	
 	
+	stimulusMonkey.set_part_x( 3, -9999); 						# Set the X position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_y( 3, 9999); 						# Set the Y position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_x( 4, 9999); 						# Set the X position of the right touch cue box on the monkey's monitor
+	stimulusMonkey.set_part_y( 4, 9999);   					# Set the Y position of the right touch cue box on the monkey's monitor
+	leftTouchCueMonkey.set_color( 0, 255, 0 );				# Set the left touch cue color on the monkey's monitor
+	rightTouchCueMonkey.set_color( 0, 255, 0 );				# Set the right touch cue color on the monkey's monitor
 	
-
+	stimulusExperimenter.set_part_x( 12, -9999); 			# Set the X position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 12, 9999); 				# Set the Y position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 13, 9999); 				# Set the X position of the right touch cue box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 13, 9999);   			# Set the Y position of the right touch cue box on the experimenter's monitor
+	leftTouchCueExperimenter.set_color( 0, 255, 0 );		# Set the left touch cue color on the experimenter's monitor
+	rightTouchCueExperimenter.set_color( 0, 255, 0 );		# Set the right touch cue color on the experimenter's monitor
+	
+	stimulusMonkey.present();
+	stimulusExperimenter.present();
 
 	
 
@@ -1022,6 +1122,10 @@ begin
    string monkeyResponseSub = ""; # String to return with results of trial
 	int goodTouch = 0; # Variable for tracking if the touch was correct or not
 	timeRemainingPostChoice = 0;
+	bool noEarlyStimTouch = true;
+	
+	
+	
 	
 	# Find juice values of left and right stimulus
 	int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
@@ -1033,7 +1137,7 @@ begin
 		rightPossibleCorrect = rightPossibleCorrect+1;
 	end;
 	
-	/*#Set the images to be shown on this trial
+	/*# Set the images to be shown on this trial
 	string leftImageFilename = images[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))]+".bmp";
 	string rightImageFilename = images[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))]+".bmp";
 		
@@ -1047,46 +1151,70 @@ begin
 	rightImageMonkey.set_filename(rightImageFilename); #get the sample item filename and set it to the Monkeys monitor
 	rightImageMonkey.load();	#load the sample item filename for display on the Monkeys monitor*/
 	
+	stimulusMonkey.set_part_x( 3, -9999); 						# Set the X position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_y( 3, 9999); 						# Set the Y position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_x( 4, 9999); 						# Set the X position of the right touch cue box on the monkey's monitor
+	stimulusMonkey.set_part_y( 4, 9999);   					# Set the Y position of the right touch cue box on the monkey's monitor
+	leftTouchCueMonkey.set_color( 0, 255, 0 );				# Set the left touch cue color on the monkey's monitor
+	rightTouchCueMonkey.set_color( 0, 255, 0 );				# Set the right touch cue color on the monkey's monitor
 	
+	stimulusExperimenter.set_part_x( 12, -9999); 			# Set the X position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 12, 9999); 				# Set the Y position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 13, 9999); 				# Set the X position of the right touch cue box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 13, 9999);   			# Set the Y position of the right touch cue box on the experimenter's monitor
 	
 	
 	# Update the monkey's screen
-	int leftStimulusX = leftStimulusXPosition;				#touchspotXs[ordered_cnds_to_show[currentConditionIdx]];
-	int leftStimulusY = stimulusYPosition;						#touchspotYs[ordered_cnds_to_show[currentConditionIdx]];
-	stimulusMonkey.set_part_x( 1, leftStimulusX); 			#set the X position of the left stimulus on the monkey's monitor
-	stimulusMonkey.set_part_y( 1, leftStimulusY); 			#set the Y position of the left stimulus on the monkey's monitor
-	int rightStimulusX = rightStimulusXPosition;				#touchspotXs[ordered_cnds_to_show[currentConditionIdx]];
-	int rightStimulusY = stimulusYPosition;					#touchspotYs[ordered_cnds_to_show[currentConditionIdx]];
-	stimulusMonkey.set_part_x( 2, rightStimulusX); 			#set the X position of the touch box on the monkey's monitor
-	stimulusMonkey.set_part_y( 2, rightStimulusY); 			#set the Y position of the touch box on the monkey's monitor
+	int leftStimulusX = leftStimulusXPosition;							# Get the left stimulus X position
+	int leftStimulusY = stimulusYPosition;									# Get the left stimulus Y position
+	stimulusMonkey.set_part_x( 1, leftStimulusX); 						# Set the X position of the left stimulus on the monkey's monitor
+	stimulusMonkey.set_part_y( 1, leftStimulusY); 						# Set the Y position of the left stimulus on the monkey's monitor
+	int rightStimulusX = rightStimulusXPosition;							# Get the right stimulus X position
+	int rightStimulusY = stimulusYPosition;								# Get the right stimulus Y position
+	stimulusMonkey.set_part_x( 2, rightStimulusX); 						# Set the X position of the right stimulus on the monkey's monitor
+	stimulusMonkey.set_part_y( 2, rightStimulusY); 						# Set the Y position of the right stimulus on the monkey's monitor
+	
+
 	
 	# Update the experimenter's screen
 	leftRewardValueText.set_caption(printf( leftJuiceValue, "%2d" ), true );
 	rightRewardValueText.set_caption(printf( rightJuiceValue, "%2d" ), true );
 	
-	leftTouchBoxBoundary.set_height(stimulusSize+2*stimulusTouchWindow); # Set the height boundary of the touchspot (the extra space the monkey is allowed)
-	leftTouchBoxBoundary.set_width(stimulusSize+2*stimulusTouchWindow); # Set the width boundary of the touchspot (the extra space the monkey is allowed)
+	leftTouchBoxBoundary.set_height(stimulusSize+2*stimulusTouchWindow);# Set the height boundary of the stimulus (the extra space the monkey is allowed)
+	leftTouchBoxBoundary.set_width(stimulusSize+2*stimulusTouchWindow); # Set the width boundary of the stimulus (the extra space the monkey is allowed)
 	leftTouchBoxBoundaryBlack.set_height(stimulusSize+2*stimulusTouchWindow-2); # The above two lines will set the red box height, this is setting the black box height(see picture code for details)
 	leftTouchBoxBoundaryBlack.set_width(stimulusSize+2*stimulusTouchWindow-2);
-	stimulusExperimenter.set_part_x( 3, leftStimulusX); 	#set the X position of the touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 3, leftStimulusY); 	#set the Y position of the touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_x( 2, leftStimulusX); 	#set the X position of the black touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 2, leftStimulusY); 	#set the Y position of the black touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_x( 1, leftStimulusX); 	#set the X position of the red outline on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 1, leftStimulusY); 	#set the Y position of the red outline on the experimenter's monitor
-	rightTouchBoxBoundary.set_height(stimulusSize+2*stimulusTouchWindow); # Set the height boundary of the touchspot (the extra space the monkey is allowed)
-	rightTouchBoxBoundary.set_width(stimulusSize+2*stimulusTouchWindow); # Set the width boundary of the touchspot (the extra space the monkey is allowed)
+	stimulusExperimenter.set_part_x( 3, leftStimulusX); 				# Set the X position of the touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 3, leftStimulusY); 				# Set the Y position of the touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 2, leftStimulusX); 				# Set the X position of the black touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 2, leftStimulusY +touchCueYOffset); 				# Set the Y position of the black touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 1, leftStimulusX); 				# Set the X position of the red outline on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 1, leftStimulusY +touchCueYOffset); 				# Set the Y position of the red outline on the experimenter's monitor
+	rightTouchBoxBoundary.set_height(stimulusSize+2*stimulusTouchWindow);# Set the height boundary of the stimulus (the extra space the monkey is allowed)
+	rightTouchBoxBoundary.set_width(stimulusSize+2*stimulusTouchWindow); # Set the width boundary of the stimulus (the extra space the monkey is allowed)
 	rightTouchBoxBoundaryBlack.set_height(stimulusSize+2*stimulusTouchWindow-2); # The above two lines will set the red box height, this is setting the black box height(see picture code for details)
 	rightTouchBoxBoundaryBlack.set_width(stimulusSize+2*stimulusTouchWindow-2);
-	stimulusExperimenter.set_part_x( 6, rightStimulusX); 	#set the X position of the touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 6, rightStimulusY); 	#set the Y position of the touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_x( 5, rightStimulusX); 	#set the X position of the black touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 5, rightStimulusY); 	#set the Y position of the black touch box on the experimenter's monitor
-	stimulusExperimenter.set_part_x( 4, rightStimulusX); 	#set the X position of the red outline on the experimenter's monitor
-	stimulusExperimenter.set_part_y( 4, rightStimulusY); 	#set the Y position of the red outline on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 6, rightStimulusX); 				# Set the X position of the touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 6, rightStimulusY); 				# Set the Y position of the touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 5, rightStimulusX); 				# Set the X position of the black touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 5, rightStimulusY +touchCueYOffset); 				# Set the Y position of the black touch box on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 4, rightStimulusX); 				# Set the X position of the red outline on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 4, rightStimulusY +touchCueYOffset); 				# Set the Y position of the red outline on the experimenter's monitor
 	
-	#Get the current time
-	clockticker=clock.time();
+	
+	# Offset existing pixel boundry for correct touch on left stimulus
+	int leftUpperX = leftStimulusX + upperX;
+	int leftLowerX = leftStimulusX - lowerX;
+	int leftUpperY = leftStimulusY + upperY +touchCueYOffset;
+	int leftLowerY = leftStimulusY - lowerY +touchCueYOffset;
+
+
+	
+	# Offset existing pixel boundry for correct touch on right stimulus	
+	int rightUpperX = rightStimulusX + upperX;
+	int rightLowerX = rightStimulusX - lowerX;
+	int rightUpperY = rightStimulusY + upperY +touchCueYOffset;
+	int rightLowerY = rightStimulusY - lowerY +touchCueYOffset;
 	
 	# Update the trial text to the current trial
 	trialTextStimulus.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
@@ -1099,159 +1227,294 @@ begin
 										"\n Left: "+ printf( leftTouchCount, "%2d" ) + "/" +  printf( leftPossibleCorrect, "%2d" )  + "\tRight" + printf( rightTouchCount, "%2d" ) + "/" +  printf( rightPossibleCorrect, "%2d" ) +
 										"\n Ignored: "+ printf( ignoredTouches, "%2d" ) + "/" + printf( trialCount, "%2d" ) +
 										"\n ITI: "+ printf( ITItouches, "%2d" ), true );
-										
-	# Offset existing pixel boundry for correct touch on left stimulus
-	int leftUpperX = leftStimulusX + upperX;
-	int leftLowerX = leftStimulusX - lowerX;
-	int leftUpperY = leftStimulusY + upperY;
-	int leftLowerY = leftStimulusY - lowerY;
-
-
 	
-	# Offset existing pixel boundry for correct touch on right stimulus	
-	int rightUpperX = rightStimulusX + upperX;
-	int rightLowerX = rightStimulusX - lowerX;
-	int rightUpperY = rightStimulusY + upperY;
-	int rightLowerY = rightStimulusY - lowerY;
-	
-	# Write stimulus values to log file
-	logFile.print( "LVal:\t"+string(leftJuiceValue)+"\tRVal:\t"+string(rightJuiceValue)+"\t" );  
-	
-	# Present the updated touch boxes
-	stimulusMonkey.present();
-	stimulusExperimenter.present();
-	
-	# Variable for tracking if the monkey has touched on this trial
-	hasTouched = 0;
-	
-	loop until # Loop until time is up or the monkey has touched
-			(clock.time()-clockticker) > stimulusTime || hasTouched == 1
-	begin
+	if # If we are delaying the monkey's choice
+		delayChoice ==  true
+	then
+		# Present the updated stimuli screens
+		stimulusMonkey.present();
+		stimulusExperimenter.present();
 		
+		int actualDelayChoiceLength = delayChoiceLength;
 		
-		if # Check if the monkey has touched since last count
-			(response_manager.response_data_count() > response_count)
+		if 
+			randomizeDelayChoiceLength == true
 		then
+			int randomFloatAddition = random( -delayChoiceFloat, delayChoiceFloat );
+			actualDelayChoiceLength = delayChoiceLength + randomFloatAddition;
+		end;
+		
+		
+		# Wait until the choice delay is up
+		postStimClockticker=clock.time(); # Get the current time
+		loop until 								 # Loop until time is up
+			(clock.time()-postStimClockticker) > actualDelayChoiceLength || noEarlyStimTouch == false
+		begin
 			
-			#Update the response count
-			response_count = response_manager.response_data_count();
-			
-			#Record the last touch
-			lastTouch = response_manager.last_response_data();
-			touch_response tr = touch_response( lastTouch );
-			
-			# Get the X/Y positon of the touch
-			currentX = tr.x();
-			currentY = tr.y();
-			
-			if # If this touch was above the Y-axis limit
-				tr.y() > bottomTouchLimit
+			if
+				catchTouchesInDelayPeriod == true
 			then
-				
-				timeRemainingPostChoice = (clockticker+stimulusTime) - clock.time();
-				
-				# Convert to relative coordinates on the monkey's monitor
-				monkeyX = currentX - monitorXZeroPoint;
-				monkeyY = currentY ;
-				
-				# Set the default state of the touch to donw
-				string state = "Down";
-				
-				# If this was a release, mark state as "Up "
-				if (tr.button() == 2) then state = "Up  " end;
-				
-				# Modify the caption in the touch state text
-				touchTextStimulus.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
-				"\nx: " + printf( tr.x(), "%6.1f" ) +
-				"\ny: " + printf( tr.y(), "%6.1f" ),
-				true );
-				
-				# Set the location of the touch marker
-				stimulusExperimenter.set_part_x( 7, monkeyX );  
-				stimulusExperimenter.set_part_y( 7, monkeyY );
-				itiExperimenter.set_part_x( 1, monkeyX );  
-				itiExperimenter.set_part_y( 1, monkeyY );
-				pretrialExperimenter.set_part_x( 4, monkeyX );  
-				pretrialExperimenter.set_part_y( 4, monkeyY );
-				
-				# Update the experimenter's screen
-				stimulusExperimenter.present();
-				
-				# Wait for release
-				if # It was a touch and not a release
-					state == "Down"
+				if # Check if the monkey has touched since last count
+					(response_manager.response_data_count() > response_count)
 				then
 					
+					#Update the response count
+					response_count = response_manager.response_data_count();
 					
-						#term.print("rUpX:"+string(rightUpperX)+"\trLwX:"+string(rightLowerX)+"\trUpY:"+string(rightUpperY)+"\trLwY:"+string(rightUpperY)+"\n");
-						#term.print("lUpX:"+string(leftUpperX)+"\tlLwX:"+string(leftLowerX)+"\tlUpY:"+string(leftUpperY)+"\tlLwY:"+string(leftUpperY)+"\n");
-						#term.print("mkyX:"+string(monkeyX)+"\tmkyY:"+string(currentY)+"\n");
+					#Record the last touch
+					lastTouch = response_manager.last_response_data();
+					touch_response tr = touch_response( lastTouch );
+					
+					# Get the X/Y positon of the touch
+					currentX = tr.x();
+					currentY = tr.y();
+					
+					if # If this touch was above the Y-axis limit
+						tr.y() > bottomTouchLimit
+					then
 						
-							if # The touch was within the boundy of the touch box
-								monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY && state == "Down"
-							then # Record that the monkey has made a correct touch
-								goodTouch = 1; 							# Set our correct touch boolean to true
-								monkeyResponseSub = "Left";
-								presentPostStimulus( monkeyResponseSub);
-								hasTouched = 1;							#Record that the monkey has made a touch response	
-									
-							elseif # Otherwise, if the monkey released on the square
-								monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY && state == "Down"
-							then
-								goodTouch = 1; 							# Set our correct touch boolean to true
-								monkeyResponseSub = "Right";
-								#giveJuiceReward (rightJuiceValue )
-								presentPostStimulus( monkeyResponseSub);
-								hasTouched = 1;							#Record that the monkey has made a touch response
-							else # If the monkey did not touch within the correct boundry
-								if 
-									catchMissedStimulusTouches == true
-								then
-									hasTouched = 1;
-									presentIncorrectFeedback();		# Present the incorrect feedback
-									monkeyResponseSub = "Miss";
-								end;
-							end;
-							
+						timeRemainingPostChoice = (clockticker+stimulusTime) - clock.time();
+						
+						# Convert to relative coordinates on the monkey's monitor
+						monkeyX = currentX - monitorXZeroPoint;
+						monkeyY = currentY ;
+						
+						# Set the default state of the touch to donw
+						string state = "Down";
+						
+						# If this was a release, mark state as "Up "
+						if (tr.button() == 2) then state = "Up  " end;
+						
 						# Modify the caption in the touch state text
-						touchTextStimulus.set_caption( "HOLDING time: : " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
+						touchTextStimulus.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
 						"\nx: " + printf( tr.x(), "%6.1f" ) +
 						"\ny: " + printf( tr.y(), "%6.1f" ),
 						true );
 						
-						#Update these elements
-						touchTextStimulus.redraw();
+						# Set the location of the touch marker
+						stimulusExperimenter.set_part_x( 7, monkeyX );  
+						stimulusExperimenter.set_part_y( 7, monkeyY );
+						itiExperimenter.set_part_x( 1, monkeyX );  
+						itiExperimenter.set_part_y( 1, monkeyY );
+						pretrialExperimenter.set_part_x( 4, monkeyX );  
+						pretrialExperimenter.set_part_y( 4, monkeyY );
+						
+						# Update the experimenter's screen
 						stimulusExperimenter.present();
 						
-						if
-							catchStimulusHolding == true
+						if # It was a touch and not a release
+							state == "Down"
 						then
-							holdticker=clock.time(); 
-							
-							loop until # Loop until there is another touch event, the release
-								(response_manager.response_data_count() > response_count)
-							begin
-								if 
-									(clock.time()-holdticker) > holdTimeLimit
-								then
+							if # The touch was within the boundy of the left touch box
+								monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY && state == "Down"
+							then 
+								# Present incorrect feedback
+								noEarlyStimTouch = false;
+								presentIncorrectFeedback();
+								#stimulusMonkey.present();
+								#stimulusExperimenter.present();
+									
+							elseif # The touch was within the boundy of the right touch box
+								monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY && state == "Down"
+							then
+									# Present incorrect feedback
+									noEarlyStimTouch = false;
 									presentIncorrectFeedback();
-									#Reset current time
-									holdticker=clock.time(); 
-								end
+									#stimulusMonkey.present();
+									#stimulusExperimenter.present();
 							end;
+							
+								stimulusMonkey.set_part_x( 3, -9999); 						# Set the X position of the left touch cue on the monkey's monitor
+								stimulusMonkey.set_part_y( 3, 9999); 						# Set the Y position of the left touch cue on the monkey's monitor
+								stimulusMonkey.set_part_x( 4, 9999); 						# Set the X position of the right touch cue box on the monkey's monitor
+								stimulusMonkey.set_part_y( 4, 9999);   					# Set the Y position of the right touch cue box on the monkey's monitor
+								leftTouchCueMonkey.set_color( 0, 255, 0 );				# Set the left touch cue color on the monkey's monitor
+								rightTouchCueMonkey.set_color( 0, 255, 0 );				# Set the right touch cue color on the monkey's monitor
+								
+								stimulusExperimenter.set_part_x( 12, -9999); 			# Set the X position of the left touch cue on the experimenter's monitor
+								stimulusExperimenter.set_part_y( 12, 9999); 				# Set the Y position of the left touch cue on the experimenter's monitor
+								stimulusExperimenter.set_part_x( 13, 9999); 				# Set the X position of the right touch cue box on the experimenter's monitor
+								stimulusExperimenter.set_part_y( 13, 9999);   			# Set the Y position of the right touch cue box on the experimenter's monitor
+														
 						end;
-					end; 
-			else
-			end;
-		end;	
+					end;
+				end;
+			end;		
+		end;
+	end;
+	
+	# Show the touch cue
+	stimulusMonkey.set_part_x( 3, leftStimulusX); 						# Set the X position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_y( 3, leftStimulusY+touchCueYOffset); 	# Set the Y position of the left touch cue on the monkey's monitor
+	stimulusMonkey.set_part_x( 4, rightStimulusX); 						# Set the X position of the right touch cue box on the monkey's monitor
+	stimulusMonkey.set_part_y( 4, rightStimulusY+touchCueYOffset); # Set the Y position of the right touch cue box on the monkey's monitor
+	leftTouchCueMonkey.set_height(stimulusSize+2*stimulusTouchWindow);	# Set the left touch cue height on the monkey's monitor
+	leftTouchCueMonkey.set_width(stimulusSize+2*stimulusTouchWindow);	# Set the left touch cue width on the monkey's monitor
+	rightTouchCueMonkey.set_height(stimulusSize+2*stimulusTouchWindow); # Set the right touch cue height on the monkey's monitor
+	rightTouchCueMonkey.set_width(stimulusSize+2*stimulusTouchWindow);  # Set the right touch cue width on the monkey's monitor
+	leftTouchCueMonkey.set_color( 0, 255, 0 );							# Set the left touch cue color on the monkey's monitor
+	rightTouchCueMonkey.set_color( 0, 255, 0 );							# Set the right touch cue color on the monkey's monitor
+	stimulusExperimenter.set_part_x( 12, leftStimulusX); 						# Set the X position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_y( 12, leftStimulusY+touchCueYOffset); # Set the Y position of the left touch cue on the experimenter's monitor
+	stimulusExperimenter.set_part_x( 13, rightStimulusX); 				   # Set the X position of the right touch cue box on tthe experimenter's monitor
+	stimulusExperimenter.set_part_y( 13, rightStimulusY+touchCueYOffset);# Set the Y position of the right touch cue box on the experimenter's monitor
+	leftTouchCueExperimenter.set_height(stimulusSize+2*stimulusTouchWindow);	# Set the left touch cue height on the experimenter's monitor
+	leftTouchCueExperimenter.set_width(stimulusSize+2*stimulusTouchWindow);	# Set the left touch cue width on the experimenter's monitor
+	rightTouchCueExperimenter.set_height(stimulusSize+2*stimulusTouchWindow); # Set the right touch cue height on the experimenter's monitor
+	rightTouchCueExperimenter.set_width(stimulusSize+2*stimulusTouchWindow);  # Set the right touch cue width on the experimenter's monitor
+	leftTouchCueExperimenter.set_color( 0, 255, 0 );							# Set the left touch cue color on the experimenter's monitor
+	rightTouchCueExperimenter.set_color( 0, 255, 0 );							# Set the right touch cue color on the experimenter's monitor
+	
+	#Get the current time
+	clockticker=clock.time();
+
+	# Write stimulus values to log file
+	logFile.print( "LVal:\t"+string(leftJuiceValue)+"\tRVal:\t"+string(rightJuiceValue)+"\t" );  
+	
+	# Present the updated stimuli screens
+	stimulusMonkey.present();
+	stimulusExperimenter.present();
+	if 
+		noEarlyStimTouch == true
+	then
+		# Variable for tracking if the monkey has touched on this trial
+		hasTouched = 0;
+		
+		loop until # Loop until time is up or the monkey has touched
+				(clock.time()-clockticker) > stimulusTime || hasTouched == 1
+		begin
+			
+			
+			if # Check if the monkey has touched since last count
+				(response_manager.response_data_count() > response_count)
+			then
+				
+				#Update the response count
+				response_count = response_manager.response_data_count();
+				
+				#Record the last touch
+				lastTouch = response_manager.last_response_data();
+				touch_response tr = touch_response( lastTouch );
+				
+				# Get the X/Y positon of the touch
+				currentX = tr.x();
+				currentY = tr.y();
+				
+				if # If this touch was above the Y-axis limit
+					tr.y() > bottomTouchLimit
+				then
+					
+					timeRemainingPostChoice = (clockticker+stimulusTime) - clock.time();
+					
+					# Convert to relative coordinates on the monkey's monitor
+					monkeyX = currentX - monitorXZeroPoint;
+					monkeyY = currentY ;
+					
+					# Set the default state of the touch to donw
+					string state = "Down";
+					
+					# If this was a release, mark state as "Up "
+					if (tr.button() == 2) then state = "Up  " end;
+					
+					# Modify the caption in the touch state text
+					touchTextStimulus.set_caption( "Touch time: " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
+					"\nx: " + printf( tr.x(), "%6.1f" ) +
+					"\ny: " + printf( tr.y(), "%6.1f" ),
+					true );
+					
+					# Set the location of the touch marker
+					stimulusExperimenter.set_part_x( 7, monkeyX );  
+					stimulusExperimenter.set_part_y( 7, monkeyY );
+					itiExperimenter.set_part_x( 1, monkeyX );  
+					itiExperimenter.set_part_y( 1, monkeyY );
+					pretrialExperimenter.set_part_x( 4, monkeyX );  
+					pretrialExperimenter.set_part_y( 4, monkeyY );
+					
+					# Update the experimenter's screen
+					stimulusExperimenter.present();
+					
+					# Wait for release
+					if # It was a touch and not a release
+						state == "Down"
+					then
+						
+						
+							#term.print("rUpX:"+string(rightUpperX)+"\trLwX:"+string(rightLowerX)+"\trUpY:"+string(rightUpperY)+"\trLwY:"+string(rightUpperY)+"\n");
+							#term.print("lUpX:"+string(leftUpperX)+"\tlLwX:"+string(leftLowerX)+"\tlUpY:"+string(leftUpperY)+"\tlLwY:"+string(leftUpperY)+"\n");
+							#term.print("mkyX:"+string(monkeyX)+"\tmkyY:"+string(currentY)+"\n");
+							
+								if # The touch was within the boundy of the touch box
+									monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY && state == "Down"
+								then # Record that the monkey has made a correct touch
+									goodTouch = 1; 							# Set our correct touch boolean to true
+									monkeyResponseSub = "Left";
+									presentPostStimulus( monkeyResponseSub);
+									hasTouched = 1;							#Record that the monkey has made a touch response	
+										
+								elseif # Otherwise, if the monkey released on the square
+									monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY && state == "Down"
+								then
+									goodTouch = 1; 							# Set our correct touch boolean to true
+									monkeyResponseSub = "Right";
+									#giveJuiceReward (rightJuiceValue )
+									presentPostStimulus( monkeyResponseSub);
+									hasTouched = 1;							#Record that the monkey has made a touch response
+								else # If the monkey did not touch within the correct boundry
+									if 
+										catchMissedStimulusTouches == true
+									then
+										hasTouched = 1;
+										presentIncorrectFeedback();		# Present the incorrect feedback
+										monkeyResponseSub = "Miss";
+									end;
+								end;
+								
+							# Modify the caption in the touch state text
+							touchTextStimulus.set_caption( "HOLDING time: : " + printf( tr.time_double(), "%9.2f" ) + " " + state + " " +
+							"\nx: " + printf( tr.x(), "%6.1f" ) +
+							"\ny: " + printf( tr.y(), "%6.1f" ),
+							true );
+							
+							#Update these elements
+							touchTextStimulus.redraw();
+							stimulusExperimenter.present();
+							
+							if
+								catchStimulusHolding == true
+							then
+								holdticker=clock.time(); 
+								
+								loop until # Loop until there is another touch event, the release
+									(response_manager.response_data_count() > response_count)
+								begin
+									if 
+										(clock.time()-holdticker) > holdTimeLimit
+									then
+										presentIncorrectFeedback();
+										#Reset current time
+										holdticker=clock.time(); 
+									end
+								end;
+							end;
+						end; 
+				else
+				end;
+			end;	
+		end;
 	end;
 	
 	# Parse out the boolean markers to determine the outcome of the trial
 
 	if # If no response was recorded
 		hasTouched != 1
-	then # Set the response string to 'ignore'
+	then # Set the response string to 'Ignore'
 		monkeyResponseSub = "Ignore";
+	end;
+	
+	if #If the monkey touched early
+		noEarlyStimTouch == false
+	then # Set the response string to 'Early'
+		monkeyResponseSub = "Early";
 	end;
 	
 	# Return the monkey's response
@@ -1294,7 +1557,7 @@ begin
 		#Get the value (NOT index) of the current condition 
 		currentConditionVal = ordered_cnds_to_show[currentConditionIdx];
 		
-		#Set the images to be shown on this trial
+		# Set the images to be shown on this trial
 		string leftImageFilename = images[int(double(left_itm[currentConditionVal].substring(1,2)))]+".bmp";
 		string rightImageFilename = images[int(double(right_itm[currentConditionVal].substring(1,2)))]+".bmp";
 			
@@ -1362,6 +1625,18 @@ begin
 				
 				# If we are ignoring incorrect trials, advance to the next condition
 				if onErrorBehav == "ignore" then currentConditionIdx=currentConditionIdx+1; end;
+			
+			elseif # If the monkey missed any of the targets
+				stimulusResponse == "Early"
+			then
+				# Present the correct ITI period
+				presentITI(missedItiDuration );
+				
+				#Increment the missed touch counter
+				missedTouches = missedTouches + 1;
+				
+				# If we are ignoring incorrect trials, advance to the next condition
+				if onErrorBehav == "ignore" then currentConditionIdx=currentConditionIdx+1; end;
 				
 			else
 				# Present the correct ITI period
@@ -1419,8 +1694,8 @@ logFile.print( "PROGRAM EXIT" );
 logFile.close();
 
 #Print out behavior information in terminal
-term.print_line( "Correct touches: " + string( goodTouches ) + "/" + string(trialCount));
-term.print_line( " Missed touches: " + string( missedTouches ) + "/" + string(trialCount) );
-term.print_line( "  Early touches: " + string( startCueMisses ) + "/" + string(trialCount) );
-term.print_line( "Ignored touches: " + string( ignoredTouches ) + "/" + string(trialCount) );
+term.print_line( " Correct touches: " + string( goodTouches ) + "/" + string(trialCount));
+term.print_line( "  Missed touches: " + string( missedTouches ) + "/" + string(trialCount) );
+term.print_line( "Start Cue errors: " + string( startCueMisses ) + "/" + string(trialCount) );
+term.print_line( " Ignored touches: " + string( ignoredTouches ) + "/" + string(trialCount) );
 

@@ -1,0 +1,34 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	singleSide.txt
+DATE:	05/06/2016 12:16:37
+Showing conditions: 1-->30.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	1	RVal:	0	Rsp:	Left	Start:	1188	End:	11831	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	5	RVal:	0	Rsp:	Right	Start:	11933	End:	22177	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	5	RVal:	0	Rsp:	Left	Start:	22274	End:	35072	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	0	RVal:	1	Rsp:		Start:	35169	End:	47402	END
+Trl:	5	Blk:	1	Cnd:	5	LVal:	0	RVal:	1	Rsp:		Start:	47501	End:	59581	END
+Trl:	6	Blk:	1	Cnd:	6	LVal:	1	RVal:	0	Rsp:		Start:	59679	End:	70743	END
+Trl:	7	Blk:	1	Cnd:	7	LVal:	0	RVal:	5	Rsp:	Right	Start:	70843	End:	82421	END
+Trl:	8	Blk:	1	Cnd:	8	LVal:	9	RVal:	0	Rsp:		Start:	82519	End:	94018	END
+Trl:	9	Blk:	1	Cnd:	9	LVal:	0	RVal:	9	Rsp:		Start:	94118	End:	105630	END
+Trl:	10	Blk:	1	Cnd:	10	LVal:	0	RVal:	9	Rsp:	Right	Start:	105729	End:	121489	END
+Trl:	11	Blk:	1	Cnd:	11	LVal:	0	RVal:	1	Rsp:	Right	Start:	121588	End:	132085	END
+Trl:	12	Blk:	1	Cnd:	12	Rsp:	StartCueMiss	Start:	132186	End:	142166	END
+Trl:	13	Blk:	1	Cnd:	12	LVal:	0	RVal:	9	Rsp:		Start:	142266	End:	153062	END
+Trl:	14	Blk:	1	Cnd:	13	LVal:	9	RVal:	0	Rsp:		Start:	153164	End:	164141	END
+Trl:	15	Blk:	1	Cnd:	14	LVal:	0	RVal:	9	Rsp:	Right	Start:	164241	End:	176235	END
+Trl:	16	Blk:	1	Cnd:	15	LVal:	5	RVal:	0	Rsp:		Start:	176334	End:	187982	END
+Trl:	17	Blk:	1	Cnd:	16	LVal:	9	RVal:	0	Rsp:		Start:	188084	End:	200277	END
+Trl:	18	Blk:	1	Cnd:	17	LVal:	9	RVal:	0	Rsp:		Start:	200376	End:	211773	END
+Trl:	19	Blk:	1	Cnd:	18	LVal:	0	RVal:	9	Rsp:	Right	Start:	211880	End:	223801	END
+Trl:	20	Blk:	1	Cnd:	19	LVal:	0	RVal:	5	Rsp:		Start:	223902	End:	236497	END
+Trl:	21	Blk:	1	Cnd:	20	Rsp:	StartCueMiss	Start:	236599	End:	246093	END
+Trl:	22	Blk:	1	Cnd:	20	LVal:	0	RVal:	1	Rsp:		Start:	246196	End:	258372	END
+Trl:	23	Blk:	1	Cnd:	21	LVal:	1	RVal:	0	Rsp:		Start:	258476	End:	271334	END
+Trl:	24	Blk:	1	Cnd:	22	LVal:	0	RVal:	5	Rsp:		Start:	271434	End:	283945	END
+Trl:	25	Blk:	1	Cnd:	23	LVal:	0	RVal:	1	Rsp:		Start:	284047	End:	296557	END
+Trl:	26	Blk:	1	Cnd:	24	LVal:	5	RVal:	0	Rsp:		Start:	296658	End:	307870	END
+Trl:	27	Blk:	1	Cnd:	25	

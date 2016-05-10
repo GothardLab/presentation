@@ -1,0 +1,29 @@
+SCEN:	TouchImageChoice
+PARM:	touch_parameters.txt
+ITEM:	cagetraingimg_itm.txt
+COND:	singleSide.txt
+DATE:	05/06/2016 11:20:47
+Showing conditions: 1-->20.
+Starting Task
+Trl:	1	Blk:	1	Cnd:	1	LVal:	9	RVal:	0	Rsp:		Start:	1207	End:	12016	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	0	RVal:	0	Rsp:		Start:	12118	End:	24228	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	9	RVal:	0	Rsp:		Start:	24327	End:	35690	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	0	RVal:	0	Rsp:		Start:	35788	End:	47802	END
+Trl:	5	Blk:	1	Cnd:	5	LVal:	0	RVal:	9	Rsp:	Right	Start:	47904	End:	60463	END
+Trl:	6	Blk:	1	Cnd:	6	LVal:	0	RVal:	0	Rsp:	Ignore	Start:	60561	End:	78340	END
+Trl:	7	Blk:	1	Cnd:	7	LVal:	9	RVal:	0	Rsp:	Left	Start:	78438	End:	90485	END
+Trl:	8	Blk:	1	Cnd:	8	LVal:	0	RVal:	0	Rsp:		Start:	90583	End:	102581	END
+Trl:	9	Blk:	1	Cnd:	9	Rsp:	StartCueMiss	Start:	102679	End:	112011	END
+Trl:	10	Blk:	1	Cnd:	9	LVal:	0	RVal:	9	Rsp:	Right	Start:	112111	End:	124172	END
+Trl:	11	Blk:	1	Cnd:	10	LVal:	0	RVal:	0	Rsp:	Right	Start:	124271	End:	134851	END
+Trl:	12	Blk:	1	Cnd:	11	LVal:	0	RVal:	0	Rsp:	Ignore	Start:	134952	End:	153562	END
+Trl:	13	Blk:	1	Cnd:	12	LVal:	9	RVal:	0	Rsp:		Start:	153662	End:	165174	END
+Trl:	14	Blk:	1	Cnd:	13	LVal:	0	RVal:	0	Rsp:		Start:	165278	End:	175820	END
+Trl:	15	Blk:	1	Cnd:	14	LVal:	9	RVal:	0	Rsp:		Start:	175921	End:	187516	END
+Trl:	16	Blk:	1	Cnd:	15	LVal:	0	RVal:	9	Rsp:		Start:	187632	End:	199428	END
+Trl:	17	Blk:	1	Cnd:	16	LVal:	0	RVal:	9	Rsp:		Start:	199528	End:	210840	END
+Trl:	18	Blk:	1	Cnd:	17	LVal:	0	RVal:	0	Rsp:	Right	Start:	210943	End:	221651	END
+Trl:	19	Blk:	1	Cnd:	18	LVal:	0	RVal:	0	Rsp:	Left	Start:	221755	End:	231198	END
+Trl:	20	Blk:	1	Cnd:	19	LVal:	0	RVal:	9	Rsp:	Left	Start:	231303	End:	240811	END
+Trl:	21	Blk:	1	Cnd:	20	LVal:	0	RVal:	0	Rsp:	Right	Start:	240911	End:	250707	END
+PROGRAM EXIT

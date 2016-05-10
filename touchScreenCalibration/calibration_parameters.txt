@@ -1,10 +1,9 @@
-item file: cagetraingimg_itm.txt
-condition file: singleSide.txt
+item file: angledTouchscreenGrid.txt
 -----------------------------------------------
-number of trials: 01
-conditions to show: 11-->20
-condition order: random
-trial retry: ignore
+number of trials: 10
+conditions to show: all
+condition order: incremental
+trial retry: immediate
 -----------------------------------------------
 
 MAKE SURE THERE IS A SINGLE SPACE AFTER EACH COLON FOR THE CODE TO WORK!!!
@@ -23,6 +22,7 @@ condition order--> how the conditions will be presented
 	to show incrementally in the order provided, "condition order: incremental"
 		default order is incremental
 
-trial retry--> immediate, ignore
+trial retry--> immediate, delayed, ignore
 	if the monkey gets an error retry that trial immediately, "trial retry: immediate"
+	if the monkey gets an error retry that trial later on, "trial retry: delayed"
 	if the monkey gets an error don't show that trial again, "trial retry: ignore"
