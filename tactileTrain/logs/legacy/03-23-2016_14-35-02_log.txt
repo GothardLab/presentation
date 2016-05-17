@@ -1,9 +1,0 @@
-SCEN:	TactileTrain
-PARM:	tactile_parameters.txt
-ITEM:	gloveOnly_itm.txt
-COND:	gloveOnly_cnd.txt
-DATE:	03/23/2016 14:35:02
-Showing ALL conditions.
-Starting Task
-Trl:	1	Blk:	1	Cnd:	1	Rsp:	StartCueMiss	Start:	1038	End:	8450	END
-Trl:	2	Blk:	1	Cnd:	1	

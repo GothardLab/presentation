@@ -1,5 +1,0 @@
-SCEN:	TactileTrain
-PARM:	tactile_parameters.txt
-ITEM:	gloveAndPincher_itm.txt
-COND:	glovePincherLeftOnly_cnd
-DATE:	03/23/2016 15:56:08

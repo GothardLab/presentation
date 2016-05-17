@@ -1,0 +1,5 @@
+item#	|moviename   		|reward		|totalitems=08   		
+05   	|CY_bbmm1.avi		|01 	
+06   	|CY_bbmm1.avi		|01 	
+07   	|CY_kidsgm1.avi		|00 	
+08   	|CY_kidsgm2.avi		|00 	

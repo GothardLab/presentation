@@ -1,0 +1,17 @@
+item#	|moviename		|reward		|totalitems=16
+01   	|HU_brianNo.avi		|00    	
+02   	|HU_brianQt.avi		|00    	
+03   	|HU_katiNo.avi		|01    	
+04   	|HU_katiQt.avi		|01    	
+05   	|HU_saraNo.avi		|08    	
+06   	|HU_saraQt.avi		|08    	
+07   	|HU_clayNo.avi		|05    	
+08   	|HU_clayQT.avi		|05    	
+09   	|76_coo_01.avi		|05    	
+10   	|76_coo_03.avi		|05    	
+11   	|67_bark_01.avi		|08    
+12   	|67_bark_02.avi		|08 	
+13   	|CY_bbmm1.avi		|01 	
+14   	|CY_bbmm1.avi		|01 	
+15   	|CY_kidsgm1.avi		|00 	
+16   	|CY_kidsgm2.avi		|00 	

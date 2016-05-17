@@ -1,0 +1,5 @@
+item#	|moviename		|reward	|start	|end	|totalitems=04
+01   	|3ne.avi  		|01    	|001  	|150	
+02   	|28ne.avi 		|08    	|001  	|150	
+03   	|53ne.avi 		|00    	|001  	|150	
+04   	|122ne.avi		|05    	|001  	|150	

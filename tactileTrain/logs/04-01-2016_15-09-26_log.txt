@@ -1,5 +1,0 @@
-SCEN:	TactileTrain
-PARM:	tactile_parameters.txt
-ITEM:	all stimuli_itm.txt
-COND:	Vibration&Nothing&Black_L&R_cnd.txt
-DATE:	04/01/2016 15:09:26

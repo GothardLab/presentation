@@ -1,9 +1,0 @@
-SCEN:	TouchImageChoice
-PARM:	touch_parameters.txt
-ITEM:	cagetraingimg_itm.txt
-COND:	singleSide.txt
-DATE:	05/09/2016 10:55:31
-Showing conditions: 1-->30.
-Starting Task
-Trl:	1	Blk:	1	Cnd:	1	LVal:	0	RVal:	5	Rsp:	Early	Start:	1178	End:	12698	END
-Trl:	2	Blk:	1	Cnd:	2	LVal:	0	RVal:	9	

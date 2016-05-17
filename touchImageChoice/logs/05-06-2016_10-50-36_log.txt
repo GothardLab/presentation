@@ -1,5 +1,0 @@
-SCEN:	TouchImageChoice
-PARM:	touch_parameters.txt
-ITEM:	cagetraingimg_itm.txt
-COND:	Shuffle5_cnd
-DATE:	05/06/2016 10:50:36

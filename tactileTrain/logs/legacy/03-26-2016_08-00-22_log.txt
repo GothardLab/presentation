@@ -1,5 +1,0 @@
-SCEN:	TactileTrain
-PARM:	tactile_parameters.txt
-ITEM:	gloveAndPincherAndNothing_itm.txt
-COND:	glovePincherNothingChoice_cnd.txt
-DATE:	03/26/2016 08:00:22

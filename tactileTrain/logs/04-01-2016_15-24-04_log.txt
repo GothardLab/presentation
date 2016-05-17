@@ -1,8 +1,0 @@
-SCEN:	TactileTrain
-PARM:	tactile_parameters.txt
-ITEM:	hope_itm.txt
-COND:	Vibration&Nothing&Black_L&R_cnd.txt
-DATE:	04/01/2016 15:24:04
-Showing ALL conditions.
-Starting Task
-Trl:	1	Blk:	1	Cnd:	6	

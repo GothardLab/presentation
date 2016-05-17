@@ -1,2 +1,0 @@
-Starting:	TacticleTrain
-Trl:	1	Blk:	1	Cnd:	1	
