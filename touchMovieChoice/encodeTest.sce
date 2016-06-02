@@ -23,8 +23,7 @@
 #		v0.6 	05/11/16		Added encodes
 #		v0.7	05/12/16		Branched to touchMovieChoice, plays movies frame by frame using BMPs
 #		v0.8	05/13/16		Converted to read AVI files instead of folders of BMPs
-#		v0.9	05/16/16		Now manually plays AVIs frame by frame, and can log frame encodes
-#		v1.0	05/26/16		Tweaked encodes, timing, and prevented monkey from choosing hidden option
+#		v0.8	05/16/16		Now manually plays AVIs frame by frame, and can log frame encodes
 
 # Scenario file parameters
 scenario = "Touch Movie Choice";
@@ -419,10 +418,10 @@ int name_index;												# Create variable to hold name index in item file
 int juiceDrops_index; 										# Create variable to hold amount of juice reward index in item file	
 int startFrame_index;										# Create variable to hold starting frame index in item file	
 int endFrame_index;											# Create variable to hold ending frame index in item file									
-string currentLine;							  				# Create a string variable for the item names
+string currentLine;							  		# Create a string variable for the item names
 input_file fil = new input_file;   						# Create an input file
 fil.open( item_file );										# Load the item file data into the input file
-currentLine=fil.get_line();								# Get the first line of the item file (column headers)
+currentLine=fil.get_line();							# Get the first line of the item file (column headers)
 name_index=currentLine.find("moviename");
 juiceDrops_index=currentLine.find("reward");
 
@@ -437,8 +436,8 @@ loop  # Loop through each line in the item file
 until
 	i>(num_items) 
 begin 
-		
-   currentLine = fil.get_line();							# Get the list of characters that compose the current line in the itm file
+	
+   currentLine = fil.get_line();					# Get the list of characters that compose the current line in the itm file
 
 	movies[i] = currentLine.substring(name_index,currentLine.find(".avi")-name_index);	# Get the item filename
  	juiceDrops[i] = int(double(currentLine.substring(juiceDrops_index,2))); 						# Get the number of juice drops
@@ -640,7 +639,7 @@ begin
 	
 	# Update the experimenter's screen
 	startCueBoundary.set_height(startCueSize+2*startCueWindow); # Set the height boundary of the touchspot (the extra space the monkey is allowed)
-	startCueBoundary.set_width(startCueSize+2*startCueWindow);	# Set the width boundary of the touchspot (the extra space the monkey is allowed)
+	startCueBoundary.set_width(startCueSize+2*startCueWindow); # Set the width boundary of the touchspot (the extra space the monkey is allowed)
 	startCueBoundaryBlack.set_height(startCueSize+2*startCueWindow-2); # The above two lines will set the red box height, this is setting the black box height(see picture code for details)
 	startCueBoundaryBlack.set_width(startCueSize+2*startCueWindow-2);
 	pretrialExperimenter.set_part_x( 3, thisTrialStartCueX); 	# Set the X position of the touch box on the experimenter's monitor
@@ -1064,9 +1063,6 @@ begin
 	# Variable which tracks the start time of the video
 	int video_start_time = stimulus_manager.last_stimulus_data().time();
 	
-	# Mark that we are starting the movie
-	encode(stimulusOnCode);
-	
 	# Loop through the frames of the video until the video stream is over
 	loop
 		int next_frame = video_start_time + int( leftStream.current_frame_end() )
@@ -1141,7 +1137,7 @@ begin
 							leftStream.frame_position() > touchCueDelayLength
 						then
 							if # The touch was on the left stimulus
-								monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY && goodTouch == false
+								monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY
 							then # Record that the monkey has made a correct touch
 								goodTouch = true; 							# Set our correct touch boolean to true
 								hasTouched = true;							# Record that the monkey has made a touch response
@@ -1156,7 +1152,7 @@ begin
 								stimulusExperimenter.set_part_y( 7, 9999); 	# Move the right touchCue off the screen on the experimenter's monitor
 							
 							elseif # The touch was on the right stimulus
-								monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY && goodTouch == false
+								monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY
 							then
 								goodTouch = true; 							# Set our correct touch boolean to true
 								hasTouched = true;							#Record that the monkey has made a touch response
@@ -1181,15 +1177,15 @@ begin
 								end;
 							end;
 						else
-							
+							term.print_line("A\n");
 							if 
 								catchEarlyStimulusTouches  
 							then
-								
+								term.print_line("B\n");
 								if
 									monkeyX <= leftUpperX && monkeyX >= leftLowerX && currentY <= leftUpperY && currentY >= leftLowerY 
 								then
-									
+									term.print_line("C\n");
 									monkeyResponseStr = "Early"; 
 									hasTouched = true;
 									earlyTouch = true;
@@ -1201,7 +1197,7 @@ begin
 								elseif
 									monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY
 								then
-						
+									term.print_line("D\n");
 									monkeyResponseStr = "Early"; 
 									hasTouched = true;
 									earlyTouch = true;
@@ -1231,11 +1227,6 @@ begin
 		end;
 	end;
 	
-	
-	# Mark that we are finished the movie
-	wait_interval(15);
-	encode(stimulusOffCode);
-	
 	if
 		monkeyResponseStr == "Left"
 	then	
@@ -1254,7 +1245,7 @@ begin
 	then
 		stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
 		stimulusPictureMonkey.present();
-		term.print_line("Monkey choose right stimulus, giving " + string(rightJuiceValue) + "drops of juice.");
+		term.print_line("Monkey choose right stimulus, giving " + string(leftJuiceValue) + "drops of juice.");
 		giveJuiceReward (rightJuiceValue );
 		wait_interval(postStimDelay);
 		rightTouchCount = rightTouchCount+1;
@@ -1342,9 +1333,6 @@ begin
 		
 		#Get the value (NOT index) of the current condition 
 		currentConditionVal = ordered_cnds_to_show[currentConditionIdx];
-		
-		#Print trial information out to terminal
-		term.print_line( "\nBlock: " + string (currentBlock) + "\tCnd: " + string(currentConditionVal));
 		
 		# Mark the current condition
 		encode(cndNumIDCode);
@@ -1510,8 +1498,11 @@ begin
 		logFile.print( "END\n");
 		
 		#Print trial information out to terminal
-		term.print_line( "Correct choices: "+string(correctTrials) + "/" + string(trialsCompleted) + " Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Early touches: " + string( earlyTouches ) + "/" + string(trialsAttempted));
+		term.print_line( "Block: " + string (currentBlock) + "\tCnd: " + string(currentConditionIdx));
+		term.print_line( "Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Early touches: " + string( earlyTouches ) + "/" + string(trialsAttempted));
+		term.print_line( "Correct choices: "+string(correctTrials) + "/" + string(trialsCompleted) );
 		term.print_line( "\n");
+			
 		
 	end; # End of condition loop
 	

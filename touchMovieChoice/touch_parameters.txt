@@ -1,9 +1,9 @@
-item file: cayoMonkeysPair_itm.txt
-condition file: test_cnd.txt
+item file: movieChoice1_itm.txt
+condition file: movieChoice1_cnd.txt
 -----------------------------------------------
 number of trials: 01
-conditions to show: 001-->004
-condition order: random
+conditions to show: 291-->300
+condition order: incremental
 trial retry: ignore
 -----------------------------------------------
 
@@ -15,7 +15,7 @@ number of trials--> how many times do you want to show each condition
 
 conditions to show--> the conditions which you want to show
 	to show all cnds,	"conditions to show: all" (just type "all")
-	to show a range of cnds,"conditions to show: 05-->08" (type the start trial, an arrow, and the end trial)
+	to show a range of cnds,"conditions to show: 005-->008" (type the start trial, an arrow, and the end trial)
 	to show specific cnds,	"conditions to show: [03 08 09]"
 
 condition order--> how the conditions will be presented
