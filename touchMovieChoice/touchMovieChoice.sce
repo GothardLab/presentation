@@ -190,14 +190,14 @@ picture{
 	x = 400; y = -300; # String to display touch position
 	
 	text { caption = "Trial_Info"; display_index=2;} trialTextStimulus;
-	x = -400; y = -300;# String to display touch position
+	x = -400; y = -300;# String to display trial info
 	
 	text { caption = "LeftVal"; font_size = 30; display_index=2;} leftRewardValueText;
-	x = -450; y = -150;# String to display touch position
+	x = -450; y = -150;# String to display left value
 	on_top=true; 
 	
 	text { caption = "RightVal"; font_size = 30; display_index=2;} rightRewardValueText;
-	x = 450; y = -150;# String to display touch position
+	x = 450; y = -150;# String to display right value
 	on_top=true; 
 	
 
@@ -564,8 +564,6 @@ begin
 		dropsGiven=dropsGiven+1;
 	end;
 end;
-
-
 
 # ------------------ Present Incorrect Feedback Subroutine ------------------
 sub
