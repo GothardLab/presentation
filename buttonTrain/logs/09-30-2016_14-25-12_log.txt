@@ -1,0 +1,4 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonTrainExamples_cnd.txt
+DATE:	09/30/2016 14:25:12

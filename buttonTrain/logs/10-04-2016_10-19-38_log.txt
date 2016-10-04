@@ -1,0 +1,45 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonTrain_cnd.txt
+DATE:	10/04/2016 10:19:38
+Showing conditions: 1-->10.
+MagicNumbers:	162	213	221	169	1	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	Rsp:	Hold	Start:	1203	End:	3687	END
+Trl:	1	Blk:	1	Cnd:	2	Rsp:	Hold	Start:	3740	End:	5005	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Hold	Start:	5058	End:	5272	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	Correct	Start:	5325	End:	18218	END
+Trl:	4	Blk:	1	Cnd:	5	Rsp:	Ignored	Start:	18271	End:	31564	END
+Trl:	5	Blk:	1	Cnd:	6	Rsp:	Correct	Start:	31618	End:	38003	END
+Trl:	6	Blk:	1	Cnd:	7	Rsp:	Hold	Start:	38057	End:	45010	END
+Trl:	7	Blk:	1	Cnd:	8	Rsp:	Hold	Start:	45064	End:	45811	END
+Trl:	8	Blk:	1	Cnd:	9	Rsp:	Hold	Start:	45867	End:	57872	END
+Trl:	9	Blk:	1	Cnd:	10	Rsp:	Ignored	Start:	57927	End:	71218	END
+Trl:	10	Blk:	2	Cnd:	1	Rsp:	Ignored	Start:	71273	End:	84565	END
+Trl:	11	Blk:	2	Cnd:	2	Rsp:	Ignored	Start:	84621	End:	97911	END
+Trl:	12	Blk:	2	Cnd:	3	Rsp:	Ignored	Start:	97965	End:	111257	END
+Trl:	13	Blk:	2	Cnd:	4	Rsp:	Correct	Start:	111312	End:	126121	END
+Trl:	14	Blk:	2	Cnd:	5	Rsp:	Hold	Start:	126176	End:	130042	END
+Trl:	15	Blk:	2	Cnd:	6	Rsp:	Ignored	Start:	130096	End:	143388	END
+Trl:	16	Blk:	2	Cnd:	7	Rsp:	Ignored	Start:	143443	End:	156734	END
+Trl:	17	Blk:	2	Cnd:	8	Rsp:	Correct	Start:	156789	End:	162005	END
+Trl:	18	Blk:	2	Cnd:	9	Rsp:	Ignored	Start:	162061	End:	175352	END
+Trl:	19	Blk:	2	Cnd:	10	Rsp:	Hold	Start:	175407	End:	182742	END
+Trl:	20	Blk:	3	Cnd:	1	Rsp:	Ignored	Start:	182797	End:	196088	END
+Trl:	21	Blk:	3	Cnd:	2	Rsp:	Hold	Start:	196144	End:	211169	END
+Trl:	22	Blk:	3	Cnd:	3	Rsp:	Ignored	Start:	211228	End:	224515	END
+Trl:	23	Blk:	3	Cnd:	4	Rsp:	Hold	Start:	224571	End:	258081	END
+Trl:	24	Blk:	3	Cnd:	5	Rsp:	Ignored	Start:	258137	End:	271427	END
+Trl:	25	Blk:	3	Cnd:	6	Rsp:	Correct	Start:	271483	End:	277016	END
+Trl:	26	Blk:	3	Cnd:	7	Rsp:	Hold	Start:	277072	End:	280703	END
+Trl:	27	Blk:	3	Cnd:	8	Rsp:	Correct	Start:	280758	End:	286475	END
+Trl:	28	Blk:	3	Cnd:	9	Rsp:	Hold	Start:	286531	End:	289461	END
+Trl:	29	Blk:	3	Cnd:	10	Rsp:	Correct	Start:	289517	End:	295200	END
+Trl:	30	Blk:	4	Cnd:	1	Rsp:	Hold	Start:	295256	End:	297902	END
+Trl:	31	Blk:	4	Cnd:	2	Rsp:	Correct	Start:	297959	End:	303608	END
+Trl:	32	Blk:	4	Cnd:	3	Rsp:	Hold	Start:	303664	End:	307378	END
+Trl:	33	Blk:	4	Cnd:	4	Rsp:	Correct	Start:	307435	End:	312967	END
+Trl:	34	Blk:	4	Cnd:	5	Rsp:	Hold	Start:	313024	End:	316237	END
+Trl:	35	Blk:	4	Cnd:	6	Rsp:	Correct	Start:	316293	End:	325195	END
+Trl:	36	Blk:	4	Cnd:	7	Rsp:	Hold	Start:	325252	End:	329449	END
+Trl:	37	Blk:	4	Cnd:	8	

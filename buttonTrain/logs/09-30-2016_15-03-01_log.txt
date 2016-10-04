@@ -1,0 +1,8 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonTrainExamples_cnd.txt
+DATE:	09/30/2016 15:03:01
+Showing conditions: 1-->10.
+MagicNumbers:	234	83	5	204	180	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	

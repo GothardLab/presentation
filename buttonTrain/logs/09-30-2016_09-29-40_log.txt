@@ -1,0 +1,8 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	centerOnly_cnd.txt
+DATE:	09/30/2016 09:29:40
+Showing conditions: 1-->5.
+MagicNumbers:	198	218	163	189	169	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	

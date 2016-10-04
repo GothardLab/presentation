@@ -1,0 +1,23 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	anyButton_cnd.txt
+DATE:	09/30/2016 11:05:51
+Showing conditions: 1-->5.
+MagicNumbers:	142	3	86	187	24	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	Rsp:	Ignored	Start:	1176	End:	8550	END
+Trl:	1	Blk:	1	Cnd:	2	Rsp:	Ignored	Start:	8604	End:	16000	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Ignored	Start:	16054	End:	23433	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	Ignored	Start:	23487	End:	30882	END
+Trl:	4	Blk:	1	Cnd:	5	Rsp:	Ignored	Start:	30936	End:	38315	END
+Trl:	5	Blk:	2	Cnd:	1	Rsp:	Ignored	Start:	38369	End:	45748	END
+Trl:	6	Blk:	2	Cnd:	2	Rsp:	Ignored	Start:	45802	End:	53181	END
+Trl:	7	Blk:	2	Cnd:	3	Rsp:	Ignored	Start:	53236	End:	60614	END
+Trl:	8	Blk:	2	Cnd:	4	Rsp:	Ignored	Start:	60669	End:	68064	END
+Trl:	9	Blk:	2	Cnd:	5	Rsp:	Ignored	Start:	68119	End:	75497	END
+Trl:	10	Blk:	3	Cnd:	1	Rsp:	Ignored	Start:	75551	End:	82946	END
+Trl:	11	Blk:	3	Cnd:	2	Rsp:	Ignored	Start:	83001	End:	90379	END
+Trl:	12	Blk:	3	Cnd:	3	Rsp:	Ignored	Start:	90434	End:	97829	END
+Trl:	13	Blk:	3	Cnd:	4	Rsp:	Ignored	Start:	97884	End:	105262	END
+Trl:	14	Blk:	3	Cnd:	5	Rsp:	Ignored	Start:	105317	End:	112711	END
+Trl:	15	Blk:	4	Cnd:	1	

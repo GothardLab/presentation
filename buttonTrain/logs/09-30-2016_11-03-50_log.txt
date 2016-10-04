@@ -1,0 +1,6 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	anyButton_cnd.txt
+DATE:	09/30/2016 11:03:50
+Showing conditions: 1-->5.
+MagicNumbers:	142	131	138	110	148	
