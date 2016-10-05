@@ -1,0 +1,13 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonCenterOnlyWithDistractors_cnd.txt
+DATE:	10/05/2016 12:41:31
+Showing conditions: 1-->10.
+MagicNumbers:	111	200	76	75	165	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	9	Rsp:	Correct	Start:	1203	End:	8658	END
+Trl:	1	Blk:	1	Cnd:	7	Rsp:	Hold	Start:	8717	End:	10360	END
+Trl:	2	Blk:	1	Cnd:	5	Rsp:	Correct	Start:	10416	End:	17467	END
+Trl:	3	Blk:	1	Cnd:	6	Rsp:	Correct	Start:	17522	End:	24590	END
+Trl:	4	Blk:	1	Cnd:	10	Rsp:	Hold	Start:	24646	End:	26092	END
+Trl:	5	Blk:	1	Cnd:	1	

@@ -1,0 +1,6 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonCenterOnly_cnd.txt
+DATE:	10/05/2016 12:09:14
+Showing conditions: 1-->10.
+MagicNumbers:	217	96	199	44	91	

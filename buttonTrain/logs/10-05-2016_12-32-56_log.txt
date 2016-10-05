@@ -1,0 +1,15 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonCenterOnlyWithDistractors_cnd.txt
+DATE:	10/05/2016 12:32:56
+Showing conditions: 1-->10.
+MagicNumbers:	206	52	33	71	161	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	5	Rsp:	Missed	Start:	1196	End:	8258	END
+Trl:	1	Blk:	1	Cnd:	4	Rsp:	Missed	Start:	8316	End:	13813	END
+Trl:	2	Blk:	1	Cnd:	1	Rsp:	Missed	Start:	13870	End:	18868	END
+Trl:	3	Blk:	1	Cnd:	2	Rsp:	Hold	Start:	18924	End:	28344	END
+Trl:	4	Blk:	1	Cnd:	10	Rsp:	Missed	Start:	28399	End:	33399	END
+Trl:	5	Blk:	1	Cnd:	7	Rsp:	Hold	Start:	33454	End:	34150	END
+Trl:	6	Blk:	1	Cnd:	9	Rsp:	Missed	Start:	34205	End:	39154	END
+Trl:	7	Blk:	1	Cnd:	8	

@@ -1,0 +1,18 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	CueGoLeftOrRight_cnd.txt
+DATE:	10/05/2016 11:28:31
+Showing conditions: 1-->10.
+MagicNumbers:	21	8	85	184	22	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	5	Rsp:	Correct	Start:	1200	End:	12779	END
+Trl:	1	Blk:	1	Cnd:	3	Rsp:	Correct	Start:	12833	End:	23940	END
+Trl:	2	Blk:	1	Cnd:	7	Rsp:	Correct	Start:	23993	End:	33466	END
+Trl:	3	Blk:	1	Cnd:	10	Rsp:	Correct	Start:	33519	End:	42975	END
+Trl:	4	Blk:	1	Cnd:	9	Rsp:	Hold	Start:	43029	End:	46745	END
+Trl:	5	Blk:	1	Cnd:	2	Rsp:	Correct	Start:	46801	End:	55987	END
+Trl:	6	Blk:	1	Cnd:	8	Rsp:	Ignored	Start:	56041	End:	72903	END
+Trl:	7	Blk:	1	Cnd:	1	Rsp:	Correct	Start:	72958	End:	80060	END
+Trl:	8	Blk:	1	Cnd:	6	Rsp:	Ignored	Start:	80115	End:	95659	END
+Trl:	9	Blk:	1	Cnd:	4	Rsp:	Hold	Start:	95714	End:	95875	END
+PROGRAM EXIT

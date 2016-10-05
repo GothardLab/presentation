@@ -1,0 +1,8 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonRightOnlyWithDistractors_cnd.txt
+DATE:	10/05/2016 12:32:37
+Showing conditions: 1-->10.
+MagicNumbers:	194	2	61	247	218	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	9	
