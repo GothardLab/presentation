@@ -161,27 +161,43 @@ begin_pcl;
 # Variables for task settings (You can change these)
 int stimulusHeight	=	250;				# Height of stimulus (pixels)341
 int stimulusWidth	=	250;					# Width of stimulus (pixels)512
-int stimulusDuration	=	10000; 				# time that monkey is allowed to get to button box (ms) per trial
+int stimulusDuration	=	10000; 			# time that monkey is allowed to touch button (ms) per trial
+int cueDuration	=	10000; 				# time that monkey is allowed to get to center pre-trial cue box (ms) 
 int correctItiDuration	=	3000; 		# Duration of the inter-trial-interval(ms)for correct trials
 int missedItiDuration	=	3000;		 	# Duration of the inter-trial-interval(ms) for missed trials
-int holdItiDuration	=	100;		 	# Duration of the inter-trial-interval(ms) for holding the button before the trial
+int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
 int ignoredItiDuration   =	3000;			# Duration of the inter-trial-interval(ms) for ignored trials
-int feedbackLength = 250; 					 # Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 0;					# Time (ms) the monkey has to touch the button for to make a response
-int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response
+int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
+int buttonTouchTime = 0;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -400;		# X position of left stimulus (in pixels)
-int centerStimulusXPosition = 0;		# X position of left stimulus (in pixels)
+int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
 int rightStimulusXPosition = 400;		# X position of right stimulus (in pixels)
 int stimulusYPosition = 250;				# Y position of both stimuli (in pixels)
 int numMagicNumbers = 5;					# Number of magic numbers to log/encode out
-string taskName = "ButtonTrain";  # String of task name
-double voltageThreshold = 1.0;	# Voltage threshold the sensor needs to reach before being considered active (they should hover around +/- mV and go to +5V if wired correctly)
-int juiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a correct button is pressed
-bool catchHolding	= true;				#Set 'true' for the program to catch when a button is being held before trial start
+string taskName = "ButtonTrain";  		# String of task name
+double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach before being considered active (they should hover around +/- mV and go to +5V if wired correctly)
+int juiceRewardDrops = 5;					# Number of drops of juice to give the monkey when a correct button is pressed
+bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool giveIncorrectFeedbackOnIgnore = false; #Set 'true' for the program to provide incorrect feedback when a trial is ignored
 bool giveIncorrectFeedbackOnMissed = false; #Set 'true' for the program to provide incorrect feedback when the wrong button is pressed
 bool giveIncorrectFeedbackOnHold = false; #Set 'true' for the program to provide incorrect feedback when a button is being held before trial start, requires (catchHolding == true)
+bool catchMissedCueResponse = false ;	#Set 'true' for the program to catch a wrong button press during the start cue (left or right)
+int cueJuiceRewardDrops = 3;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
+int cueChoiceSizeIncrease = 50; 			# Size to increase the chosen cue
+int leftColorR = 204;
+int leftColorG = 0;
+int leftColorB = 204; 
+int centerColorR = 255; 
+int centerColorG = 255;
+int centerColorB = 22;
+int rightColorR = 0;
+int rightColorG = 0;
+int rightColorB = 255;
+int neutralColorR = 111;
+int neutralColorG = 111;
+int neutralColorB = 111;
 
 # Encode Values (You can change these, but have a really good reason)
 int trialStartCode		= 11;				# Code for start of trial
@@ -237,7 +253,7 @@ int leftButtonTrials = 0;			# Tracks number of left buttons presses
 int rightButtonTrials  = 0;			# Trackers number of right buttons presses
 int centerButtonTrials  = 0;			# Trackers number of center buttons presses
 string monkeyResponse = "";		# String to hold monkey's response from trial subroutines	
-
+int correctCuePresses = 0;
 
 
 
@@ -525,6 +541,262 @@ begin
 	#encode(ITIEndCode);	
 end;
 
+# ------------------ Present Start Cue Subroutine ------------------
+sub
+   string presentCue 
+begin
+	
+	# Assume the default behavior of the monkey is to ignore the stimulus
+	string monkeyCueResponseStr = "Ignored";
+	
+	
+	# Update the trial text to the current trial
+	trialTextStimulus.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
+										"\n Condition: "+ printf( currentConditionIdx, "%2d" ) + "/" + printf( numberConditions, "%2d" ) + " (" + printf( currentConditionVal, "%2d" )+ ")" +
+										"\n Completed: "+ printf( trialsCompleted, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
+										"\n Missed: "+ printf( missedTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
+										"\n Ignored: "+ printf( ignoredTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
+										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
+										
+	buttonTextStimulus.set_caption( "Left: " + printf( leftButtonPresses, "%2d" ) + "/" + printf( leftButtonTrials, "%2d" ) + 
+										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
+										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
+										
+	#Assume we are not going to present the start cue
+	bool presentStartCue= false;
+	
+	if # As long as the monkey is not holding one of the buttons
+		leftButtonV < voltageThreshold && centerButtonV < voltageThreshold && rightButtonV < voltageThreshold
+	then # Present the start cue
+		presentStartCue = true;
+	else # Otherwise (if the monkey is holding one of the buttons)
+	
+		#Present incorrect feedback, if this is enabled
+		if
+			giveIncorrectFeedbackOnHold == true
+		then
+			presentIncorrectFeedback();
+		end;	
+		
+		if # If we are going to pause the trial until the monkey releases
+			pauseTrialUntilStopHolding == true
+		then
+			loop until # Loop until the monkey releases all of the buttons
+				leftButtonV < voltageThreshold && centerButtonV < voltageThreshold && rightButtonV < voltageThreshold
+			begin
+				#Read the voltages
+				leftButtonV =card.read_analog(lV); 
+				centerButtonV =card.read_analog(cV);
+				rightButtonV =card.read_analog(rV);
+			end; 
+			#The monkey has released, so now we can present the start cue
+			presentStartCue = true;
+		else #Otherwise, return the response of 'Hold'
+			monkeyCueResponseStr = "Hold";
+		end;
+		
+	end;
+	
+	# Move the left button off screen
+	stimulusMonkey.set_part_x(1, 9999);
+	stimulusMonkey.set_part_y(1, 9999);
+	stimulusExperimenter.set_part_x(1, 9999);
+	stimulusExperimenter.set_part_y(1, 9999);
+	
+	# Move the right button off screen
+	stimulusMonkey.set_part_x(3, 9999);
+	stimulusMonkey.set_part_y(3, 9999);
+	stimulusExperimenter.set_part_x(3, 9999);
+	stimulusExperimenter.set_part_y(3, 9999);
+	
+	# Move the center button to the middle
+	stimulusMonkey.set_part_x(2, centerStimulusXPosition);
+	stimulusMonkey.set_part_y(2, stimulusYPosition);
+	stimulusExperimenter.set_part_x(2, centerStimulusXPosition);
+	stimulusExperimenter.set_part_y(2, stimulusYPosition);
+	monkeyCenterButtonCue.set_height(stimulusHeight);
+	monkeyCenterButtonCue.set_width(stimulusWidth);
+	experimenterCenterButtonCue.set_height(stimulusHeight);
+	experimenterCenterButtonCue.set_width(stimulusWidth);
+	monkeyCenterButtonCue.set_color(centerColorR,  centerColorG, centerColorB);
+	experimenterCenterButtonCue.set_color(centerColorR, centerColorG, centerColorB);
+	
+	# Get the current time
+	clockticker=clock.time();
+	
+	if #If we should present the start cue (monkey is not holding)
+		presentStartCue == true
+	then
+		
+		# Update the monkey's and experimenter's screens
+		stimulusExperimenter.present();
+		stimulusMonkey.present();
+		
+		loop until # Loop until the cue duration is over
+				((clock.time()-clockticker) > cueDuration) || monkeyCueResponseStr != "Ignored"
+		begin
+			#Read the button voltages
+			leftButtonV =card.read_analog(lV); 
+			centerButtonV =card.read_analog(cV);
+			rightButtonV =card.read_analog(rV);
+			
+			if # If the monkey is touching the center button (cue)
+				centerButtonV > voltageThreshold
+			then
+				
+				# Set 'monkeyTouching' to true to track that he is touching
+				bool monkeyTouching = true;
+				
+				# If the monkey is required to hold for any period of time
+				if buttonTouchTime > 0 then
+					
+					#Get the current time
+					holdticker=clock.time();
+				
+					loop until # Loop until the hold time is over OR the monkey stopped holding
+							((clock.time()-clockticker) > buttonTouchTime ) || monkeyTouching == false
+					begin
+						#Update the curent voltage of the center button
+						centerButtonV = card.read_analog(cV);
+						
+						#If the monkey is no longer touching, update the 'monkeyTouching' boolean
+						if centerButtonV < voltageThreshold then monkeyTouching = false end;
+					end; 
+				end;
+				
+				#If the monkey touched (and held) the center button
+				if monkeyTouching ==  true then 
+					monkeyCenterButtonCue.set_color(0, 255, 0);
+					experimenterCenterButtonCue.set_color(0, 255, 0);
+					monkeyCenterButtonCue.set_height(stimulusHeight+cueChoiceSizeIncrease); 
+					monkeyCenterButtonCue.set_width(stimulusWidth+cueChoiceSizeIncrease); 
+					stimulusExperimenter.present();
+					stimulusMonkey.present();
+					monkeyCueResponseStr = "Correct";
+					correctCuePresses = correctCuePresses + 1;
+					giveJuiceReward(cueJuiceRewardDrops);
+				end
+				
+			elseif # If we are tracking the other buttons and the left button was pressed
+				catchMissedCueResponse == true && leftButtonV > voltageThreshold
+			then
+				monkeyCueResponseStr = "Missed";
+			elseif # If we are tracking the other buttons and the right button was pressed
+				catchMissedCueResponse == true && rightButtonV > voltageThreshold
+			then
+				monkeyCueResponseStr = "Missed";
+			end;
+			
+		end;
+	end;	
+	
+	# Reset the stimulus screen back to what it should be
+	
+	int trialLeftButton = int(left_cnd[ordered_cnds_to_show[currentConditionIdx]].substring(1,3));
+	int trialCenterButton = int(cent_cnd[ordered_cnds_to_show[currentConditionIdx]].substring(1,3));
+	int trialRightButton = int(right_cnd[ordered_cnds_to_show[currentConditionIdx]].substring(1,3));
+	int trialCue = int(cue_cnd[ordered_cnds_to_show[currentConditionIdx]].substring(1,3));
+	
+	# Set position/size/color of the left button cue
+	if
+		trialLeftButton > 0
+	then
+		stimulusMonkey.set_part_x(1, leftStimulusXPosition);
+		stimulusMonkey.set_part_y(1, stimulusYPosition);
+		stimulusExperimenter.set_part_x(1, leftStimulusXPosition);
+		stimulusExperimenter.set_part_y(1, stimulusYPosition);
+		monkeyLeftButtonCue.set_height(stimulusHeight);
+		monkeyLeftButtonCue.set_width(stimulusWidth);
+		experimenterLeftButtonCue.set_height(stimulusHeight);
+		experimenterLeftButtonCue.set_width(stimulusWidth);
+		
+		if 
+			trialLeftButton == 1
+		then
+			monkeyLeftButtonCue.set_color(neutralColorR, neutralColorB, neutralColorG);
+			experimenterLeftButtonCue.set_color(neutralColorR, neutralColorB, neutralColorG);
+		elseif 
+			trialLeftButton == 2
+		then
+			leftButtonTrials = leftButtonTrials +1;
+			monkeyLeftButtonCue.set_color(leftColorR, leftColorG, leftColorB);
+			experimenterLeftButtonCue.set_color(leftColorR, leftColorG, leftColorB);
+		end;
+	else
+		stimulusMonkey.set_part_x(1, 9999);
+		stimulusMonkey.set_part_y(1, 9999);
+		stimulusExperimenter.set_part_x(1, 9999);
+		stimulusExperimenter.set_part_y(1, 9999);
+	end;
+	
+	# Set position/size/color of the center button cue
+	if
+		trialCenterButton > 0
+	then
+		stimulusMonkey.set_part_x(2, centerStimulusXPosition);
+		stimulusMonkey.set_part_y(2, stimulusYPosition);
+		stimulusExperimenter.set_part_x(2, centerStimulusXPosition);
+		stimulusExperimenter.set_part_y(2, stimulusYPosition);
+		monkeyCenterButtonCue.set_height(stimulusHeight);
+		monkeyCenterButtonCue.set_width(stimulusWidth); 
+		experimenterCenterButtonCue.set_height(stimulusHeight);
+		experimenterCenterButtonCue.set_width(stimulusWidth);
+		
+		if 
+			trialCenterButton == 1
+		then
+			monkeyCenterButtonCue.set_color(neutralColorR, neutralColorG, neutralColorB);
+			experimenterCenterButtonCue.set_color(neutralColorR, neutralColorG, neutralColorB);
+		elseif 
+			trialCenterButton == 2
+		then
+			centerButtonTrials = centerButtonTrials +1;
+			monkeyCenterButtonCue.set_color(centerColorR, centerColorG, centerColorG);
+			experimenterCenterButtonCue.set_color(centerColorR, centerColorG, centerColorG);
+		end;
+	else
+		stimulusMonkey.set_part_x(2, 9999);
+		stimulusMonkey.set_part_y(2, 9999);
+		stimulusExperimenter.set_part_x(2, 9999);
+		stimulusExperimenter.set_part_y(2, 9999);
+	end;
+	
+	# Set position/size/color of the right button cue
+	if
+		trialRightButton > 0
+	then
+		stimulusMonkey.set_part_x(3, rightStimulusXPosition);
+		stimulusMonkey.set_part_y(3, stimulusYPosition);
+		stimulusExperimenter.set_part_x(3, rightStimulusXPosition);
+		stimulusExperimenter.set_part_y(3, stimulusYPosition);
+		monkeyRightButtonCue.set_height(stimulusHeight);
+		monkeyRightButtonCue.set_width(stimulusWidth);
+		experimenterRightButtonCue.set_height(stimulusHeight);
+		experimenterRightButtonCue.set_width(stimulusWidth);
+		
+		if 
+			trialRightButton == 1
+		then
+			monkeyRightButtonCue.set_color(neutralColorR, neutralColorG, neutralColorB);
+			experimenterRightButtonCue.set_color(neutralColorR, neutralColorG, neutralColorB);
+		elseif 
+			trialRightButton == 2
+		then
+			rightButtonTrials = rightButtonTrials +1;
+			monkeyRightButtonCue.set_color(rightColorR, rightColorG, rightColorB);
+			experimenterRightButtonCue.set_color(rightColorR, rightColorG, rightColorB);
+		end;
+	else
+		stimulusMonkey.set_part_x(3, 9999);
+		stimulusMonkey.set_part_y(3, 9999);
+		stimulusExperimenter.set_part_x(3, 9999);
+		stimulusExperimenter.set_part_y(3, 9999);
+	end;
+	
+
+	return monkeyCueResponseStr;
+end;
+
 
 # ------------------ Present Stimulus Subroutine ------------------
 sub
@@ -652,7 +924,7 @@ begin
 	centerButtonV =card.read_analog(cV);
 	rightButtonV =card.read_analog(rV);
 	
-	bool presentTrial = false;
+	bool presentStimulus = false;
 	
 	if 
 		catchHolding == true 
@@ -660,7 +932,7 @@ begin
 			if  
 				leftButtonV < voltageThreshold && centerButtonV < voltageThreshold && rightButtonV < voltageThreshold
 			then
-				presentTrial = true;
+				presentStimulus = true;
 			else
 				monkeyResponseStr = "Hold";
 				
@@ -674,7 +946,7 @@ begin
 					pauseTrialUntilStopHolding == true
 				then
 					
-					loop until # Loop until the ITI is over
+					loop until 
 						leftButtonV < voltageThreshold && centerButtonV < voltageThreshold && rightButtonV < voltageThreshold
 					begin
 						leftButtonV =card.read_analog(lV); 
@@ -686,54 +958,75 @@ begin
 			end;
 			
 	else
-		presentTrial = true;
+		presentStimulus = true;
 	end;
 	
-	if # If we are to present a start cue on this condition
-		trialCue > 0
+
+	if #If we are meant to present the start cue on this trial, 'presentStimulus' is true
+		trialCue == 1 && presentStimulus == true
 	then
+		#Present the start cue
+		string cueResponse = presentCue();
+		
+		if #If the monkey correctly responded to the start cue
+			cueResponse == "Correct"
+		then
+			#Set 'presentStimulus' to true to continue presenting the trial
+			presentStimulus = true;
+		else
+			#Otherwise set 'presentStimulus' to false so that the stimulus is not presented
+			presentStimulus = false;
+		end;
+		
 	end;
-	
 	
 	
 	# Get the current time
 	clockticker=clock.time();
 	
-	if 
-		presentTrial == true
+	if #If 'presentStimulus' is true, we present the stimulus
+		presentStimulus == true
 	then
 		
-		
+		# Get the experimenter's and monkey's screens
 		stimulusExperimenter.present();
 		stimulusMonkey.present();
 		
-		loop until # Loop until the ITI is over
+		# Loop until the stimulus presentation is over OR the monkey has made a response
+		loop until
 				((clock.time()-clockticker) > stimulusDuration) || monkeyResponseStr != "Ignored"
 		begin
+			
+			# Sample the button voltages
 			leftButtonV =card.read_analog(lV); 
 			centerButtonV =card.read_analog(cV);
 			rightButtonV =card.read_analog(rV);
 			
-			if 
+			if # If the left button voltage is active, and above threshold
 				trialLeftButton > 0 && leftButtonV > voltageThreshold
 			then
-				holdticker=clock.time();
 				
-				bool monkeyStillTouching = true;
+				bool monkeyTouching = true; # The monkey is currently touching the button
 				
-				if buttonTouchTime > 0 then
-					loop until # Loop until the ITI is over
-							((clock.time()-clockticker) > buttonTouchTime ) || monkeyStillTouching == false
+				if buttonTouchTime > 0 then #If the monkey is required to hold the button for any amount of time
+					
+					holdticker=clock.time(); # Get the current time
+					
+					loop until #Loop until the holding time is over or the monkey stopped touching
+							((clock.time()-clockticker) > buttonTouchTime ) || monkeyTouching == false
 					begin
-						leftButtonV =card.read_analog(lV);
+						leftButtonV =card.read_analog(lV); # Sample the button voltage
 						
-						if leftButtonV < voltageThreshold then monkeyStillTouching = false end;
+						# If the monkey releases the button, set 'monkeyTouching' to false
+						if leftButtonV < voltageThreshold then monkeyTouching = false end;
 					end; 
 				end;
 				
-				if monkeyStillTouching ==  true then
+				if monkeyTouching ==  true then
 					monkeyLeftButtonCue.set_color(0, 255, 0);
 					experimenterLeftButtonCue.set_color(0, 255, 0);
+					monkeyLeftButtonCue.set_height(stimulusHeight+cueChoiceSizeIncrease); 
+					monkeyLeftButtonCue.set_width(stimulusWidth+cueChoiceSizeIncrease); 
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Left";
@@ -741,26 +1034,32 @@ begin
 				end
 			end;
 			
-			if 
+			if # If the center button voltage is active, and above threshold
 				trialCenterButton > 0 && centerButtonV > voltageThreshold
 			then
-				holdticker=clock.time();
 				
-				bool monkeyStillTouching = true;
 				
-				if buttonTouchTime > 0 then
-					loop until # Loop until the ITI is over
-							((clock.time()-clockticker) > buttonTouchTime ) || monkeyStillTouching == false
+				bool monkeyTouching = true; # The monkey is currently touching the button
+				
+				if buttonTouchTime > 0 then #If the monkey is required to hold the button for any amount of time
+				
+					holdticker=clock.time(); # Get the current time
+					
+					loop until #Loop until the holding time is over or the monkey stopped touching
+							((clock.time()-clockticker) > buttonTouchTime ) || monkeyTouching == false
 					begin
-						centerButtonV =card.read_analog(cV);
+						centerButtonV =card.read_analog(cV); # Sample the button voltage
 						
-						if centerButtonV < voltageThreshold then monkeyStillTouching = false end;
+						# If the monkey releases the button, set 'monkeyTouching' to false
+						if centerButtonV < voltageThreshold then monkeyTouching = false end;
 					end; 
 				end;
 				
-				if monkeyStillTouching ==  true then
+				if monkeyTouching ==  true then
 					monkeyCenterButtonCue.set_color(0, 255, 0);
 					experimenterCenterButtonCue.set_color(0, 255, 0);
+					monkeyCenterButtonCue.set_height(stimulusHeight+cueChoiceSizeIncrease); 
+					monkeyCenterButtonCue.set_width(stimulusWidth+cueChoiceSizeIncrease); 
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Center";
@@ -769,26 +1068,31 @@ begin
 				
 			end;
 			
-			if 
+			if # If the right button voltage is active, and above threshold
 				trialRightButton > 0 && rightButtonV > voltageThreshold
 			then
-				holdticker=clock.time();
 				
-				bool monkeyStillTouching = true;
+				bool monkeyTouching = true; # The monkey is currently touching the button
+								
+				if buttonTouchTime > 0 then  #If the monkey is required to hold the button for any amount of time
 				
-				if buttonTouchTime > 0 then
-					loop until # Loop until the ITI is over
-							((clock.time()-clockticker) > buttonTouchTime ) || monkeyStillTouching == false
-					begin
-						rightButtonV =card.read_analog(rV);
+				holdticker=clock.time(); # Get the current time
+				
+					loop until #Loop until the holding time is over or the monkey stopped touching
+							((clock.time()-clockticker) > buttonTouchTime ) || monkeyTouching == false
+					begin 
+						rightButtonV =card.read_analog(rV); # Sample the button voltage
 						
-						if rightButtonV < voltageThreshold then monkeyStillTouching = false end;
+						# If the monkey releases the button, set 'monkeyTouching' to false
+						if rightButtonV < voltageThreshold then monkeyTouching = false end;
 					end; 
 				end;
 				
-				if monkeyStillTouching ==  true then
+				if monkeyTouching ==  true then
 					monkeyRightButtonCue.set_color(0, 255, 0);
 					experimenterRightButtonCue.set_color(0, 255, 0);
+					monkeyRightButtonCue.set_height(stimulusHeight+cueChoiceSizeIncrease); 
+					monkeyRightButtonCue.set_width(stimulusWidth+cueChoiceSizeIncrease); 
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Right";
@@ -839,6 +1143,8 @@ begin
 			end;
 			
 		end; 
+	else
+		term.print_line("NoNoNo");	
 	end;
 	
 	

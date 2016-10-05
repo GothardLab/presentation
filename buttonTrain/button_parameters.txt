@@ -1,4 +1,4 @@
-condition file: buttonTrain_cnd.txt
+condition file: CueGoLeftOrRight_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show: 001-->010
