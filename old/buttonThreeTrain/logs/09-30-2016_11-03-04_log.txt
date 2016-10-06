@@ -1,0 +1,16 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	anyButton_cnd.txt
+DATE:	09/30/2016 11:03:04
+Showing conditions: 1-->5.
+MagicNumbers:	23	126	226	74	250	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	Rsp:	Correct	Start:	1177	End:	3367	END
+Trl:	1	Blk:	1	Cnd:	2	Rsp:	Correct	Start:	3421	End:	5617	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Correct	Start:	5673	End:	7867	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	Correct	Start:	7921	End:	10100	END
+Trl:	4	Blk:	1	Cnd:	5	Rsp:	Correct	Start:	10154	End:	12333	END
+Trl:	5	Blk:	2	Cnd:	1	Rsp:	Correct	Start:	12387	End:	14583	END
+Trl:	6	Blk:	2	Cnd:	2	Rsp:	Correct	Start:	14637	End:	16866	END
+Trl:	7	Blk:	2	Cnd:	3	Rsp:	Correct	Start:	16925	End:	19116	END
+Trl:	8	Blk:	2	Cnd:	4	

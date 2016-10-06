@@ -1,8 +1,8 @@
-condition file: CueGoLeftOrRight_cnd.txt
+condition file: anyButton_cnd.txt
 -----------------------------------------------
-number of trials: 01
-conditions to show: 001-->010
-condition order: random
+number of trials: 99
+conditions to show: 001-->005
+condition order: incremental
 trial retry: ignore
 -----------------------------------------------
 

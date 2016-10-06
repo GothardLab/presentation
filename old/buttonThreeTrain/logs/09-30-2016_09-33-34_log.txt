@@ -1,0 +1,11 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	centerOnly_cnd.txt
+DATE:	09/30/2016 09:33:34
+Showing conditions: 1-->5.
+MagicNumbers:	47	153	85	216	154	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	Rsp:	Correct	Start:	1165	End:	9067	END
+Trl:	1	Blk:	1	Cnd:	2	Rsp:	Missed	Start:	9117	End:	18500	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Missed	Start:	18551	End:	27849	END
+Trl:	3	Blk:	1	Cnd:	4	

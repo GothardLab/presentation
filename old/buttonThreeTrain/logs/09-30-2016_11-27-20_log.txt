@@ -1,0 +1,58 @@
+SCEN:	ButtonThreeTrain
+PARM:	button_parameters.txt
+COND:	anyButton_cnd.txt
+DATE:	09/30/2016 11:27:20
+Showing conditions: 1-->5.
+MagicNumbers:	133	12	71	183	148	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	Rsp:	Hold	Start:	1179	End:	2217	END
+Trl:	1	Blk:	1	Cnd:	2	Rsp:	Hold	Start:	2271	End:	3300	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Hold	Start:	3354	End:	4384	END
+Trl:	3	Blk:	1	Cnd:	4	Rsp:	Hold	Start:	4438	End:	5467	END
+Trl:	4	Blk:	1	Cnd:	5	Rsp:	Hold	Start:	5521	End:	6550	END
+Trl:	5	Blk:	2	Cnd:	1	Rsp:	Hold	Start:	6604	End:	7633	END
+Trl:	6	Blk:	2	Cnd:	2	Rsp:	Hold	Start:	7687	End:	8717	END
+Trl:	7	Blk:	2	Cnd:	3	Rsp:	Hold	Start:	8771	End:	9800	END
+Trl:	8	Blk:	2	Cnd:	4	Rsp:	Hold	Start:	9855	End:	10883	END
+Trl:	9	Blk:	2	Cnd:	5	Rsp:	Hold	Start:	10938	End:	11967	END
+Trl:	10	Blk:	3	Cnd:	1	Rsp:	Hold	Start:	12022	End:	13050	END
+Trl:	11	Blk:	3	Cnd:	2	Rsp:	Hold	Start:	13105	End:	14133	END
+Trl:	12	Blk:	3	Cnd:	3	Rsp:	Hold	Start:	14188	End:	15233	END
+Trl:	13	Blk:	3	Cnd:	4	Rsp:	Hold	Start:	15288	End:	16333	END
+Trl:	14	Blk:	3	Cnd:	5	Rsp:	Hold	Start:	16388	End:	17433	END
+Trl:	15	Blk:	4	Cnd:	1	Rsp:	Hold	Start:	17488	End:	18533	END
+Trl:	16	Blk:	4	Cnd:	2	Rsp:	Hold	Start:	18589	End:	19633	END
+Trl:	17	Blk:	4	Cnd:	3	Rsp:	Hold	Start:	19689	End:	20733	END
+Trl:	18	Blk:	4	Cnd:	4	Rsp:	Hold	Start:	20790	End:	21833	END
+Trl:	19	Blk:	4	Cnd:	5	Rsp:	Hold	Start:	21889	End:	22916	END
+Trl:	20	Blk:	5	Cnd:	1	Rsp:	Hold	Start:	22971	End:	23999	END
+Trl:	21	Blk:	5	Cnd:	2	Rsp:	Hold	Start:	24055	End:	25083	END
+Trl:	22	Blk:	5	Cnd:	3	Rsp:	Hold	Start:	25139	End:	26166	END
+Trl:	23	Blk:	5	Cnd:	4	Rsp:	Hold	Start:	26222	End:	27249	END
+Trl:	24	Blk:	5	Cnd:	5	Rsp:	Hold	Start:	27305	End:	28332	END
+Trl:	25	Blk:	6	Cnd:	1	Rsp:	Hold	Start:	28388	End:	29416	END
+Trl:	26	Blk:	6	Cnd:	2	Rsp:	Hold	Start:	29472	End:	30499	END
+Trl:	27	Blk:	6	Cnd:	3	Rsp:	Hold	Start:	30555	End:	31599	END
+Trl:	28	Blk:	6	Cnd:	4	Rsp:	Hold	Start:	31655	End:	32699	END
+Trl:	29	Blk:	6	Cnd:	5	Rsp:	Hold	Start:	32755	End:	33799	END
+Trl:	30	Blk:	7	Cnd:	1	Rsp:	Hold	Start:	33856	End:	34899	END
+Trl:	31	Blk:	7	Cnd:	2	Rsp:	Hold	Start:	34956	End:	35999	END
+Trl:	32	Blk:	7	Cnd:	3	Rsp:	Hold	Start:	36056	End:	37099	END
+Trl:	33	Blk:	7	Cnd:	4	Rsp:	Hold	Start:	37156	End:	38199	END
+Trl:	34	Blk:	7	Cnd:	5	Rsp:	Correct	Start:	38256	End:	43915	END
+Trl:	35	Blk:	8	Cnd:	1	Rsp:	Hold	Start:	43972	End:	44998	END
+Trl:	36	Blk:	8	Cnd:	2	Rsp:	Hold	Start:	45055	End:	46082	END
+Trl:	37	Blk:	8	Cnd:	3	Rsp:	Hold	Start:	46139	End:	47165	END
+Trl:	38	Blk:	8	Cnd:	4	Rsp:	Hold	Start:	47222	End:	48265	END
+Trl:	39	Blk:	8	Cnd:	5	Rsp:	Ignored	Start:	48322	End:	55714	END
+Trl:	40	Blk:	9	Cnd:	1	Rsp:	Hold	Start:	55772	End:	56798	END
+Trl:	41	Blk:	9	Cnd:	2	Rsp:	Hold	Start:	56856	End:	57881	END
+Trl:	42	Blk:	9	Cnd:	3	Rsp:	Hold	Start:	57939	End:	58964	END
+Trl:	43	Blk:	9	Cnd:	4	Rsp:	Hold	Start:	59026	End:	60064	END
+Trl:	44	Blk:	9	Cnd:	5	Rsp:	Hold	Start:	60122	End:	61147	END
+Trl:	45	Blk:	10	Cnd:	1	Rsp:	Hold	Start:	61205	End:	62231	END
+Trl:	46	Blk:	10	Cnd:	2	Rsp:	Hold	Start:	62289	End:	63314	END
+Trl:	47	Blk:	10	Cnd:	3	Rsp:	Hold	Start:	63372	End:	64414	END
+Trl:	48	Blk:	10	Cnd:	4	Rsp:	Hold	Start:	64472	End:	65514	END
+Trl:	49	Blk:	10	Cnd:	5	Rsp:	Hold	Start:	65572	End:	66614	END
+PROGRAM EXIT

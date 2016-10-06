@@ -1,0 +1,9 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	CueGoLeftOrRight_cnd.txt
+DATE:	10/05/2016 15:10:54
+Showing conditions: 1-->10.
+MagicNumbers:	90	189	85	83	181	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	4	Rsp:	Correct	Start:	1201	End:	17234	END
+Trl:	1	Blk:	1	Cnd:	2	
