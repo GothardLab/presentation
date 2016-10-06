@@ -1,4 +1,0 @@
-Video_Type_1	bikeRack.avi	cardriving.avi	traffic.avi
-Video_Type_2	snowboard.avi	kayak.avi	football.avi
-Video_Type_3	rome.avi	france.avi	tajIndia.avi
-Video_Type_4	NYC-Subway.avi	waterfalls.avi	palmTree.avi
