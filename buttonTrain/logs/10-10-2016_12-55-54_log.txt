@@ -1,0 +1,5 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	singleButton_cnd.txt
+DATE:	10/10/2016 12:55:54
+Showing conditions: 1-->10.

@@ -1,0 +1,13 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	singleButton_cnd.txt
+DATE:	10/10/2016 16:07:20
+Showing conditions: 1-->10.
+MagicNumbers:	161	29	145	162	5	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	4	Rsp:	Ignored	Start:	1213	End:	15016	END
+Trl:	1	Blk:	1	Cnd:	8	Rsp:	Ignored	Start:	15076	End:	28912	END
+Trl:	2	Blk:	1	Cnd:	3	Rsp:	Ignored	Start:	28969	End:	42809	END
+Trl:	3	Blk:	1	Cnd:	7	Rsp:	Correct	Start:	42866	End:	57023	END
+Trl:	4	Blk:	1	Cnd:	2	Rsp:	Ignored	Start:	57079	End:	74573	END
+Trl:	5	Blk:	1	Cnd:	9	
