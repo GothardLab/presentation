@@ -155,8 +155,29 @@ picture{
       color = 0, 255, 0;
       rotation = 30;
 		display_index=2;
-   }experimenterStimulusChoiceEllipse;
+   }experimenterLeftStimulusChoiceEllipse;
 	x = 0; y = 0;
+	
+	#5
+	ellipse_graphic {
+      ellipse_width = 300;
+      ellipse_height = 300;
+      color = 0, 255, 0;
+      rotation = 30;
+		display_index=2;
+   }experimenterCenterStimulusChoiceEllipse;
+	x = 0; y = 0;
+	
+	#6
+	ellipse_graphic {
+      ellipse_width = 300;
+      ellipse_height = 300;
+      color = 0, 255, 0;
+      rotation = 30;
+		display_index=2;
+   }experimenterRightStimulusChoiceEllipse;
+	x = 0; y = 0;
+	
 	
 	text { caption = "Button_Info"; display_index=2;} buttonTextStimulus;
 	x = 400; y = -300; # String to display button position
@@ -194,7 +215,27 @@ picture{
       color = 0, 255, 0;
       rotation = 30;
 		display_index=1;
-   }monkeyStimulusChoiceEllipse;
+   }monkeyLeftStimulusChoiceEllipse;
+	x = 0; y = 0;
+	
+	#5
+	ellipse_graphic {
+      ellipse_width = 300;
+      ellipse_height = 300;
+      color = 0, 255, 0;
+      rotation = 30;
+		display_index=1;
+   }monkeyCenterStimulusChoiceEllipse;
+	x = 0; y = 0;
+	
+	#6
+	ellipse_graphic {
+      ellipse_width = 300;
+      ellipse_height = 300;
+      color = 0, 255, 0;
+      rotation = 30;
+		display_index=1;
+   }monkeyRightStimulusChoiceEllipse;
 	x = 0; y = 0;
 	
 }stimulusMonkey;
@@ -250,10 +291,10 @@ int stimulusYPosition = 250;				# Y position of both stimuli (in pixels)
 int numMagicNumbers = 5;					# Number of magic numbers to log/encode out
 string taskName = "ButtonTrain";  		# String of task name
 double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach before being considered active (they should hover around +/- mV and go to +5V if wired correctly)
-int juiceRewardDrops = 8;					# Number of drops of juice to give the monkey when a correct button is pressed
-int leftJuiceRewardDrops = 10;	
-int centerJuiceRewardDrops = 4;	
-int rightJuiceRewardDrops = 4;	
+#int juiceRewardDrops = 8;					# Number of drops of juice to give the monkey when a correct button is pressed
+int leftJuiceRewardDrops = 5;	
+int centerJuiceRewardDrops = 5;	
+int rightJuiceRewardDrops = 5;	
 bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool giveIncorrectFeedbackOnIgnore = false; #Set 'true' for the program to provide incorrect feedback when a trial is ignored
@@ -278,6 +319,9 @@ int neutralColorB = 111;
 int chosenColorR = 255; #86
 int chosenColorG = 255;#237
 int chosenColorB = 255;#253
+int correctColorR = 0; #86
+int correctColorG = 255;#237
+int correctColorB = 0;#253
 
 # Encode Values (You can change these, but have a really good reason)
 int trialStartCode		= 11;				# Code for start of trial
@@ -808,8 +852,22 @@ begin
 	stimulusMonkey.set_part_y(4, 9999);
 	stimulusExperimenter.set_part_x(4, 9999);
 	stimulusExperimenter.set_part_y(4, 9999);
-	experimenterStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
-	monkeyStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	experimenterLeftStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	monkeyLeftStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	
+	stimulusMonkey.set_part_x(5, 9999);
+	stimulusMonkey.set_part_y(5, 9999);
+	stimulusExperimenter.set_part_x(5, 9999);
+	stimulusExperimenter.set_part_y(5, 9999);
+	experimenterCenterStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	monkeyCenterStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	
+	stimulusMonkey.set_part_x(6, 9999);
+	stimulusMonkey.set_part_y(6, 9999);
+	stimulusExperimenter.set_part_x(6, 9999);
+	stimulusExperimenter.set_part_y(6, 9999);
+	experimenterRightStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
+	monkeyRightStimulusChoiceEllipse.set_dimensions( stimulusHeight+cueChoiceSizeIncrease, stimulusWidth+cueChoiceSizeIncrease);
 	
 	# Set position/size/color of the left button cue
 	if
@@ -991,6 +1049,73 @@ begin
 			centerButtonV =card.read_analog(cV);
 			rightButtonV =card.read_analog(rV);
 			
+			if leftButtonV > voltageThreshold then
+				stimulusMonkey.set_part_x(4, leftStimulusXPosition);
+				stimulusMonkey.set_part_y(4, stimulusYPosition);
+				stimulusExperimenter.set_part_x(4, leftStimulusXPosition);
+				stimulusExperimenter.set_part_y(4, stimulusYPosition);
+				experimenterLeftStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				monkeyLeftStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterLeftStimulusChoiceEllipse.redraw();
+				monkeyLeftStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			else
+				stimulusMonkey.set_part_x(4, 9999);
+				stimulusMonkey.set_part_y(4, 9999);
+				stimulusExperimenter.set_part_x(4, 9999);
+				stimulusExperimenter.set_part_y(4, 9999);
+				experimenterLeftStimulusChoiceEllipse.redraw();
+				monkeyLeftStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			end;
+			
+			if centerButtonV > voltageThreshold then
+				stimulusMonkey.set_part_x(5, centerStimulusXPosition);
+				stimulusMonkey.set_part_y(5, stimulusYPosition);
+				stimulusExperimenter.set_part_x(5, centerStimulusXPosition);
+				stimulusExperimenter.set_part_y(5, stimulusYPosition);
+				experimenterCenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				monkeyCenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterCenterStimulusChoiceEllipse.redraw();
+				monkeyCenterStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			else
+				stimulusMonkey.set_part_x(5, 9999);
+				stimulusMonkey.set_part_y(5, 9999);
+				stimulusExperimenter.set_part_x(5, 9999);
+				stimulusExperimenter.set_part_y(5, 9999);
+				experimenterCenterStimulusChoiceEllipse.redraw();
+				monkeyCenterStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			end;
+			
+			if rightButtonV > voltageThreshold then
+				stimulusMonkey.set_part_x(6, rightStimulusXPosition);
+				stimulusMonkey.set_part_y(6, stimulusYPosition);
+				stimulusExperimenter.set_part_x(6, rightStimulusXPosition);
+				stimulusExperimenter.set_part_y(6, stimulusYPosition);
+				experimenterRightStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				monkeyRightStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterRightStimulusChoiceEllipse.redraw();
+				monkeyRightStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			else
+				stimulusMonkey.set_part_x(6, 9999);
+				stimulusMonkey.set_part_y(6, 9999);
+				stimulusExperimenter.set_part_x(6, 9999);
+				stimulusExperimenter.set_part_y(6, 9999);
+				experimenterRightStimulusChoiceEllipse.redraw();
+				monkeyRightStimulusChoiceEllipse.redraw();
+				stimulusExperimenter.present();
+				stimulusMonkey.present();
+			end;
+			
+			
 			if # If the left button voltage is active, and above threshold
 				trialLeftButton > 0 && leftButtonV > voltageThreshold
 			then
@@ -1017,10 +1142,10 @@ begin
 					stimulusMonkey.set_part_y(4, stimulusYPosition);
 					stimulusExperimenter.set_part_x(4, leftStimulusXPosition);
 					stimulusExperimenter.set_part_y(4, stimulusYPosition);
-					experimenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					monkeyStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					experimenterStimulusChoiceEllipse.redraw();
-					monkeyStimulusChoiceEllipse.redraw();
+					experimenterLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					monkeyLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					experimenterLeftStimulusChoiceEllipse.redraw();
+					monkeyLeftStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Left";
@@ -1051,14 +1176,14 @@ begin
 				
 				if monkeyTouching ==  true then
 					
-					stimulusMonkey.set_part_x(4, centerStimulusXPosition);
-					stimulusMonkey.set_part_y(4, stimulusYPosition);
-					stimulusExperimenter.set_part_x(4, centerStimulusXPosition);
-					stimulusExperimenter.set_part_y(4, stimulusYPosition);
-					experimenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					monkeyStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					experimenterStimulusChoiceEllipse.redraw();
-					monkeyStimulusChoiceEllipse.redraw();
+					stimulusMonkey.set_part_x(5, centerStimulusXPosition);
+					stimulusMonkey.set_part_y(5, stimulusYPosition);
+					stimulusExperimenter.set_part_x(5, centerStimulusXPosition);
+					stimulusExperimenter.set_part_y(5, stimulusYPosition);
+					experimenterCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					monkeyCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					experimenterCenterStimulusChoiceEllipse.redraw();
+					monkeyCenterStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Center";
@@ -1088,14 +1213,14 @@ begin
 				end;
 				
 				if monkeyTouching ==  true then
-					stimulusMonkey.set_part_x(4, rightStimulusXPosition);
-					stimulusMonkey.set_part_y(4, stimulusYPosition);
-					stimulusExperimenter.set_part_x(4, rightStimulusXPosition);
-					stimulusExperimenter.set_part_y(4, stimulusYPosition);
-					experimenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					monkeyStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					experimenterStimulusChoiceEllipse.redraw();
-					monkeyStimulusChoiceEllipse.redraw();
+					stimulusMonkey.set_part_x(6, rightStimulusXPosition);
+					stimulusMonkey.set_part_y(6, stimulusYPosition);
+					stimulusExperimenter.set_part_x(6, rightStimulusXPosition);
+					stimulusExperimenter.set_part_y(6, stimulusYPosition);
+					experimenterRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					monkeyRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					experimenterRightStimulusChoiceEllipse.redraw();
+					monkeyRightStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					monkeyResponseStr = "Right";

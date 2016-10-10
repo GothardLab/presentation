@@ -1,0 +1,8 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonMostlyLeft_cnd.txt
+DATE:	10/10/2016 12:13:50
+Showing conditions: 1-->10.
+MagicNumbers:	168	242	41	83	110	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	6	

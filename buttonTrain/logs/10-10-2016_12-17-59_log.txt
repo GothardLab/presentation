@@ -1,0 +1,18 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonMostlyLeft_cnd.txt
+DATE:	10/10/2016 12:17:59
+Showing conditions: 1-->10.
+MagicNumbers:	16	16	80	88	213	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	2	Rsp:	Hold	Start:	1207	End:	2720	END
+Trl:	1	Blk:	1	Cnd:	9	Rsp:	Correct	Start:	2776	End:	14232	END
+Trl:	2	Blk:	1	Cnd:	8	Rsp:	Correct	Start:	14287	End:	22906	END
+Trl:	3	Blk:	1	Cnd:	5	Rsp:	Hold	Start:	22962	End:	23974	END
+Trl:	4	Blk:	1	Cnd:	1	Rsp:	Correct	Start:	24030	End:	32866	END
+Trl:	5	Blk:	1	Cnd:	4	Rsp:	Hold	Start:	32922	End:	33667	END
+Trl:	6	Blk:	1	Cnd:	6	Rsp:	Correct	Start:	33722	End:	42976	END
+Trl:	7	Blk:	1	Cnd:	3	Rsp:	Correct	Start:	43032	End:	50483	END
+Trl:	8	Blk:	1	Cnd:	7	Rsp:	Correct	Start:	50539	End:	62678	END
+Trl:	9	Blk:	1	Cnd:	10	Rsp:	Correct	Start:	62734	End:	73755	END
+PROGRAM EXIT
