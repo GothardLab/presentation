@@ -1,0 +1,14 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonRightOrLeft_cnd.txt
+DATE:	10/07/2016 12:24:25
+Showing conditions: 1-->10.
+MagicNumbers:	250	90	154	171	61	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	2	Rsp:	Correct	Start:	1210	End:	8693	END
+Trl:	1	Blk:	1	Cnd:	3	Rsp:	Ignored	Start:	8748	End:	22539	END
+Trl:	2	Blk:	1	Cnd:	8	Rsp:	Hold	Start:	22595	End:	33450	END
+Trl:	3	Blk:	1	Cnd:	10	Rsp:	Ignored	Start:	33507	End:	47297	END
+Trl:	4	Blk:	1	Cnd:	1	Rsp:	Hold	Start:	47352	End:	48131	END
+Trl:	5	Blk:	1	Cnd:	7	Rsp:	Ignored	Start:	48186	End:	61977	END
+Trl:	6	Blk:	1	Cnd:	9	

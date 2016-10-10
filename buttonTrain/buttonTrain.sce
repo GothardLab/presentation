@@ -241,7 +241,7 @@ int missedItiDuration	=	3000;		 	# Duration of the inter-trial-interval(ms) for 
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
 int ignoredItiDuration   =	3000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 500;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int buttonTouchTime = 1000;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
 int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -500;		# X position of left stimulus (in pixels)
 int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
@@ -251,6 +251,9 @@ int numMagicNumbers = 5;					# Number of magic numbers to log/encode out
 string taskName = "ButtonTrain";  		# String of task name
 double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach before being considered active (they should hover around +/- mV and go to +5V if wired correctly)
 int juiceRewardDrops = 8;					# Number of drops of juice to give the monkey when a correct button is pressed
+int leftJuiceRewardDrops = 10;	
+int centerJuiceRewardDrops = 4;	
+int rightJuiceRewardDrops = 4;	
 bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool giveIncorrectFeedbackOnIgnore = false; #Set 'true' for the program to provide incorrect feedback when a trial is ignored
@@ -260,9 +263,9 @@ bool catchMissedCueResponse = false ;	#Set 'true' for the program to catch a wro
 bool endTrialOnEarlyRelease = false;
 int cueJuiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int cueChoiceSizeIncrease = 100; 			# Size to increase the chosen cue
-int leftColorR = 204;
+int leftColorR = 255;
 int leftColorG = 0;
-int leftColorB = 204; 
+int leftColorB = 127; 
 int centerColorR = 255; 
 int centerColorG = 255;
 int centerColorB = 0;#22
@@ -1105,7 +1108,7 @@ begin
 		if 
 			trialLeftButton == 2 && monkeyResponseStr == "Left"
 		then 
-			giveJuiceReward(juiceRewardDrops);
+			giveJuiceReward(leftJuiceRewardDrops);
 			wait_interval(750);
 			presentCorrectFeedback();
 			
@@ -1113,14 +1116,14 @@ begin
 		elseif 
 			trialCenterButton == 2 && monkeyResponseStr == "Center" 
 		then 
-			giveJuiceReward(juiceRewardDrops);
+			giveJuiceReward(centerJuiceRewardDrops);
 			wait_interval(750);
 			presentCorrectFeedback();
 			monkeyResponseStr = "Correct";
 		elseif 
 			trialRightButton == 2  && monkeyResponseStr == "Right"
 		then 
-			giveJuiceReward(juiceRewardDrops);
+			giveJuiceReward(rightJuiceRewardDrops);
 			wait_interval(750);
 			presentCorrectFeedback();
 			monkeyResponseStr = "Correct";

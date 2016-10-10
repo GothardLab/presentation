@@ -1,0 +1,6 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	buttonLeftOnly_cnd.txt
+DATE:	10/07/2016 12:05:44
+Showing conditions: 1-->10.
+MagicNumbers:	220	
