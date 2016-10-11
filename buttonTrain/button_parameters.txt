@@ -1,4 +1,4 @@
-condition file: singleButton_cnd.txt
+condition file: CueGoLeftOrRightWithDistractors_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show: 001-->010

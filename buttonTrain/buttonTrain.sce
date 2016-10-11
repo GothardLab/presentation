@@ -99,7 +99,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=2;
 	}experimenterLeftButtonStartHoldCue;
@@ -109,7 +109,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=2;
 	} experimenterCenterButtonStartHoldCue;
@@ -119,7 +119,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=2;
 	}experimenterRightButtonStartHoldCue;
@@ -158,7 +158,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=1;
 	}monkeyLeftButtonStartHoldCue;
@@ -168,7 +168,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=1;
 	} monkeyCenterButtonStartHoldCue;
@@ -178,7 +178,7 @@ picture{
 	line_graphic {
 		coordinates = 100, 100, -100, -100;
 		coordinates = -100, 100, 100, -100;
-		line_width = 10;
+		line_width = 15;
 		line_color = 255, 0, 0, 255;
 		display_index=1;
 	}monkeyRightButtonStartHoldCue;
@@ -355,20 +355,22 @@ int stimulusYPosition = 250;				# Y position of both stimuli (in pixels)
 int numMagicNumbers = 5;					# Number of magic numbers to log/encode out
 string taskName = "ButtonTrain";  		# String of task name
 double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach before being considered active (they should hover around +/- mV and go to +5V if wired correctly)
-#int juiceRewardDrops = 8;					# Number of drops of juice to give the monkey when a correct button is pressed
-int leftJuiceRewardDrops = 5;	
-int centerJuiceRewardDrops = 5;	
-int rightJuiceRewardDrops = 5;	
+int leftJuiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a correct (left) button is pressed
+int centerJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (center) button is pressed	
+int rightJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (right)button is pressed	
 bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool giveIncorrectFeedbackOnIgnore = false; #Set 'true' for the program to provide incorrect feedback when a trial is ignored
 bool giveIncorrectFeedbackOnMissed = true; #Set 'true' for the program to provide incorrect feedback when the wrong button is pressed
 bool giveIncorrectFeedbackOnHold = false; #Set 'true' for the program to provide incorrect feedback when a button is being held before trial start, requires (catchHolding == true)
 bool catchMissedCueResponse = false ;	#Set 'true' for the program to catch a wrong button press during the start cue (left or right)
-bool endTrialOnEarlyRelease = false;
+bool endTrialOnEarlyRelease = false;	#Ends trial if monkey releases button early
+bool showImmediateCorrectFeedback = true; # Set
+bool showCorrectOrIncorrectFeedback = true;
 int cueJuiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
-int cueChoiceSizeIncrease = 100; 			# Size to increase the chosen cue
+int cueChoiceSizeIncrease = 100; 		# Size to increase the chosen cue
 
+# Colors of the shape stimuli (You can change these)
 int leftColorR = 255;
 int leftColorG = 0;
 int leftColorB = 127; 
@@ -381,12 +383,22 @@ int rightColorB = 255;
 int neutralColorR = 111;
 int neutralColorG = 111;
 int neutralColorB = 111;
-int chosenColorR = 255; #86
-int chosenColorG = 255;#237
-int chosenColorB = 255;#253
+int touchColorR = 255; #86
+int touchColorG = 255;#237
+int touchColorB = 255;#253
 int correctColorR = 0; #86
 int correctColorG = 255;#237
 int correctColorB = 0;#253
+int incorrectColorR =255; #86
+int incorrectColorG = 0;#237
+int incorrectColorB = 0;#253
+int correctlyChoosingColorR = 153;
+int correctlyChoosingColorG = 255;
+int correctlyChoosingColorB = 153;
+int incorrectlyChoosingColorR = 255;
+int incorrectlyChoosingColorG = 204;
+int incorrectlyChoosingColorB = 204;
+
 
 # Encode Values (You can change these, but have a really good reason)
 int trialStartCode		= 11;				# Code for start of trial
@@ -443,7 +455,7 @@ int rightButtonTrials  = 0;			# Trackers number of right buttons presses
 int centerButtonTrials  = 0;			# Trackers number of center buttons presses
 string monkeyResponse = "";		# String to hold monkey's response from trial subroutines	
 int correctCuePresses = 0;
-
+int timeTouchingProportion = 0;
 
 
 # ------------------ Access national instruments card ------------------
@@ -943,8 +955,8 @@ begin
 					startCueMonkey.set_part_y(2, stimulusYPosition);
 					startCueExperimenter.set_part_x(2, centerStimulusXPosition);
 					startCueExperimenter.set_part_y(2, stimulusYPosition);
-					experimenterStartChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-					monkeyStartChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+					experimenterStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+					monkeyStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
 					experimenterStartChoiceEllipse.redraw();
 					monkeyStartChoiceEllipse.redraw();
 					startCueExperimenter.present();
@@ -1169,8 +1181,8 @@ begin
 				stimulusMonkey.set_part_y(4, stimulusYPosition);
 				stimulusExperimenter.set_part_x(4, leftStimulusXPosition);
 				stimulusExperimenter.set_part_y(4, stimulusYPosition);
-				experimenterLeftStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-				monkeyLeftStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterLeftStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+				monkeyLeftStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
 				experimenterLeftStimulusChoiceEllipse.redraw();
 				monkeyLeftStimulusChoiceEllipse.redraw();
 				stimulusExperimenter.present();
@@ -1191,8 +1203,8 @@ begin
 				stimulusMonkey.set_part_y(5, stimulusYPosition);
 				stimulusExperimenter.set_part_x(5, centerStimulusXPosition);
 				stimulusExperimenter.set_part_y(5, stimulusYPosition);
-				experimenterCenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-				monkeyCenterStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterCenterStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+				monkeyCenterStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
 				experimenterCenterStimulusChoiceEllipse.redraw();
 				monkeyCenterStimulusChoiceEllipse.redraw();
 				stimulusExperimenter.present();
@@ -1213,8 +1225,8 @@ begin
 				stimulusMonkey.set_part_y(6, stimulusYPosition);
 				stimulusExperimenter.set_part_x(6, rightStimulusXPosition);
 				stimulusExperimenter.set_part_y(6, stimulusYPosition);
-				experimenterRightStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
-				monkeyRightStimulusChoiceEllipse.set_color(chosenColorR, chosenColorG, chosenColorB, 255);
+				experimenterRightStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+				monkeyRightStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
 				experimenterRightStimulusChoiceEllipse.redraw();
 				monkeyRightStimulusChoiceEllipse.redraw();
 				stimulusExperimenter.present();
@@ -1239,8 +1251,25 @@ begin
 				
 				if buttonTouchTime > 0 then #If the monkey is required to hold the button for any amount of time
 					
-					holdticker=clock.time(); # Get the current time
+					if showImmediateCorrectFeedback == true && trialLeftButton == 2 then
+						experimenterLeftStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						monkeyLeftStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						experimenterLeftStimulusChoiceEllipse.redraw();
+						monkeyLeftStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+						
+					elseif showImmediateCorrectFeedback == true then
+						experimenterLeftStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						monkeyLeftStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						experimenterLeftStimulusChoiceEllipse.redraw();
+						monkeyLeftStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+					end;
 					
+					holdticker=clock.time(); # Get the current time
+
 					loop until #Loop until the holding time is over or the monkey stopped touching
 							((clock.time()-holdticker) > buttonTouchTime ) || monkeyTouching == false
 					begin
@@ -1257,8 +1286,17 @@ begin
 					stimulusMonkey.set_part_y(4, stimulusYPosition);
 					stimulusExperimenter.set_part_x(4, leftStimulusXPosition);
 					stimulusExperimenter.set_part_y(4, stimulusYPosition);
-					experimenterLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
-					monkeyLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					
+					if showCorrectOrIncorrectFeedback == true && trialLeftButton == 2 then
+						experimenterLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+						monkeyLeftStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					elseif showCorrectOrIncorrectFeedback == true then
+						experimenterLeftStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+						monkeyLeftStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+					else
+						experimenterLeftStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+						monkeyLeftStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+					end;
 					experimenterLeftStimulusChoiceEllipse.redraw();
 					monkeyLeftStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
@@ -1279,6 +1317,22 @@ begin
 				
 					holdticker=clock.time(); # Get the current time
 					
+					if showImmediateCorrectFeedback == true && trialCenterButton == 2 then
+						experimenterCenterStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						monkeyCenterStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						experimenterCenterStimulusChoiceEllipse.redraw();
+						monkeyCenterStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+					elseif showImmediateCorrectFeedback == true then
+						experimenterCenterStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						monkeyCenterStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						experimenterCenterStimulusChoiceEllipse.redraw();
+						monkeyCenterStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+					end;
+					
 					loop until #Loop until the holding time is over or the monkey stopped touching
 							((clock.time()-holdticker) > buttonTouchTime ) || monkeyTouching == false
 					begin
@@ -1295,8 +1349,19 @@ begin
 					stimulusMonkey.set_part_y(5, stimulusYPosition);
 					stimulusExperimenter.set_part_x(5, centerStimulusXPosition);
 					stimulusExperimenter.set_part_y(5, stimulusYPosition);
-					experimenterCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
-					monkeyCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					
+					
+					if showCorrectOrIncorrectFeedback == true && trialCenterButton == 2 then
+						experimenterCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+						monkeyCenterStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					elseif showCorrectOrIncorrectFeedback == true then
+						experimenterCenterStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+						monkeyCenterStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+					else
+						experimenterCenterStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+						monkeyCenterStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+					end;
+					
 					experimenterCenterStimulusChoiceEllipse.redraw();
 					monkeyCenterStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
@@ -1315,7 +1380,23 @@ begin
 								
 				if buttonTouchTime > 0 then  #If the monkey is required to hold the button for any amount of time
 				
-				holdticker=clock.time(); # Get the current time
+					holdticker=clock.time(); # Get the current time
+				
+					if showImmediateCorrectFeedback == true && trialRightButton == 2 then
+						experimenterRightStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						monkeyRightStimulusChoiceEllipse.set_color(correctlyChoosingColorR, correctlyChoosingColorG, correctlyChoosingColorB, 255);
+						experimenterRightStimulusChoiceEllipse.redraw();
+						monkeyRightStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+					elseif showImmediateCorrectFeedback == true then
+						experimenterRightStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						monkeyRightStimulusChoiceEllipse.set_color(incorrectlyChoosingColorR, incorrectlyChoosingColorG, incorrectlyChoosingColorB, 255);
+						experimenterRightStimulusChoiceEllipse.redraw();
+						monkeyRightStimulusChoiceEllipse.redraw();
+						stimulusExperimenter.present();
+						stimulusMonkey.present();
+					end;
 				
 					loop until #Loop until the holding time is over or the monkey stopped touching
 							((clock.time()-holdticker) > buttonTouchTime ) || monkeyTouching == false
@@ -1332,8 +1413,19 @@ begin
 					stimulusMonkey.set_part_y(6, stimulusYPosition);
 					stimulusExperimenter.set_part_x(6, rightStimulusXPosition);
 					stimulusExperimenter.set_part_y(6, stimulusYPosition);
-					experimenterRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
-					monkeyRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					
+					
+					if showCorrectOrIncorrectFeedback == true && trialRightButton == 2 then
+						experimenterRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+						monkeyRightStimulusChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+					elseif showCorrectOrIncorrectFeedback == true then
+						experimenterRightStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+						monkeyRightStimulusChoiceEllipse.set_color(incorrectColorR, incorrectColorG, incorrectColorB, 255);
+					else
+						experimenterRightStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+						monkeyRightStimulusChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 127);
+					end;
+					
 					experimenterRightStimulusChoiceEllipse.redraw();
 					monkeyRightStimulusChoiceEllipse.redraw();
 					stimulusExperimenter.present();
@@ -1391,9 +1483,6 @@ begin
 		
 	end;
 	
-	
-	
-	#Move the button cue into place
 	
 	# Return the monkey's response
 	return monkeyResponseStr;
