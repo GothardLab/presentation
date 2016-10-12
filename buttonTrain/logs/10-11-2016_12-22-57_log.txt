@@ -1,0 +1,6 @@
+SCEN:	ButtonTrain
+PARM:	button_parameters.txt
+COND:	equalOfEachButton_cnd.txt
+DATE:	10/11/2016 12:22:57
+Showing conditions: 1-->12.
+MagicNumbers:	243	19	136	55	50	

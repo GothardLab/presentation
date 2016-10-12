@@ -346,7 +346,7 @@ int missedItiDuration	=	3000;		 	# Duration of the inter-trial-interval(ms) for 
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
 int ignoredItiDuration   =	3000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 1000;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int buttonTouchTime = 1250;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
 int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -500;		# X position of left stimulus (in pixels)
 int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
@@ -922,6 +922,7 @@ begin
 			leftButtonV =card.read_analog(lV); 
 			centerButtonV =card.read_analog(cV);
 			rightButtonV =card.read_analog(rV);
+			
 				
 			if # If the monkey is touching the center button (cue)
 				centerButtonV > voltageThreshold
@@ -929,7 +930,18 @@ begin
 					
 				# Set 'monkeyTouching' to true to track that he is touching
 				bool monkeyTouching = true;
-					
+				
+				startCueMonkey.set_part_x(2, centerStimulusXPosition);
+				startCueMonkey.set_part_y(2, stimulusYPosition);
+				startCueExperimenter.set_part_x(2, centerStimulusXPosition);
+				startCueExperimenter.set_part_y(2, stimulusYPosition);
+				experimenterStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+				monkeyStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
+				experimenterStartChoiceEllipse.redraw();
+				monkeyStartChoiceEllipse.redraw();
+				startCueExperimenter.present();
+				startCueMonkey.present();
+				
 				# If the monkey is required to hold for any period of time
 				if cueTouchTime > 0 then
 					
@@ -943,7 +955,19 @@ begin
 					centerButtonV = card.read_analog(cV);
 					
 					#If the monkey is no longer touching, update the 'monkeyTouching' boolean
-					if centerButtonV < voltageThreshold then monkeyTouching = false end;
+					if 
+						centerButtonV < voltageThreshold 
+					then 
+						monkeyTouching = false;
+						startCueMonkey.set_part_x(2, 9999);
+						startCueMonkey.set_part_y(2, 9999);
+						startCueExperimenter.set_part_x(2, 9999);
+						startCueExperimenter.set_part_y(2, 9999);
+						experimenterStartChoiceEllipse.redraw();
+						monkeyStartChoiceEllipse.redraw();
+						startCueExperimenter.present();
+						startCueMonkey.present();
+					end;
 					
 					end; 
 				end;
@@ -951,16 +975,21 @@ begin
 				#If the monkey touched (and held) the center button
 				if monkeyTouching ==  true then 
 					
-					startCueMonkey.set_part_x(2, centerStimulusXPosition);
-					startCueMonkey.set_part_y(2, stimulusYPosition);
-					startCueExperimenter.set_part_x(2, centerStimulusXPosition);
-					startCueExperimenter.set_part_y(2, stimulusYPosition);
-					experimenterStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
-					monkeyStartChoiceEllipse.set_color(touchColorR, touchColorG, touchColorB, 255);
-					experimenterStartChoiceEllipse.redraw();
-					monkeyStartChoiceEllipse.redraw();
-					startCueExperimenter.present();
-					startCueMonkey.present();
+					#startCueMonkey.set_part_x(2, centerStimulusXPosition);
+					#startCueMonkey.set_part_y(2, stimulusYPosition);
+					#startCueExperimenter.set_part_x(2, centerStimulusXPosition);
+					#startCueExperimenter.set_part_y(2, stimulusYPosition);
+					if showCorrectOrIncorrectFeedback == true then
+						experimenterStartChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+						monkeyStartChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
+						experimenterStartChoiceEllipse.redraw();
+						monkeyStartChoiceEllipse.redraw();
+						startCueExperimenter.present();
+						startCueMonkey.present();
+					else
+						
+					end;
+					
 					monkeyCueResponseStr = "Correct";
 					correctCuePresses = correctCuePresses + 1;
 					giveJuiceReward(cueJuiceRewardDrops);
