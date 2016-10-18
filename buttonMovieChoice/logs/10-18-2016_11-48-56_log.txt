@@ -1,0 +1,14 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	movieChoice1_itm.txt
+COND:	movieChoice1_cnd.txt
+DATE:	10/18/2016 11:48:56
+Showing conditions: 100-->300.
+MagicNumbers:	45	35	51	35	184	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	100	LName:	NS_whttp1	RName:	NS_wrstrppr3	Rsp:	Left	Start:	1651	End:	13314	END
+Trl:	1	Blk:	1	Cnd:	101	LName:	5S_61ne2	RName:	5S_59th	Rsp:	Left	Start:	13840	End:	26393	END
+Trl:	2	Blk:	1	Cnd:	102	LName:	5S_63th2	RName:	5S_61ne2	Rsp:	Ignored	Start:	26905	End:	36920	END
+Trl:	3	Blk:	1	Cnd:	103	LName:	NS_whttp4	RName:	NS_wrstrppr2	Rsp:	Ignored	Start:	37351	End:	42125	END
+Trl:	4	Blk:	1	Cnd:	104	LName:	5S_63ne	RName:	5S_59ne	Rsp:	Right	Start:	42638	End:	53119	END
+Trl:	5	Blk:	1	Cnd:	105	LName:	NS_whttp3	RName:	NS_wtrbttl3	

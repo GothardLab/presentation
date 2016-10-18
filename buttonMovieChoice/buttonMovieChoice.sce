@@ -216,6 +216,22 @@ picture{
 	text { caption = "Trial_Info"; display_index=2;} trialTextStimulus;
 	x = -400; y = -300;# String to display trial info
 	
+	#6
+	text { caption = "Left_Stimulus"; display_index=2;} leftStimulusText;
+	x = -500; y = 0;# String to display trial info
+	
+	#7
+	text { caption = "Right_Stimulus"; display_index=2;} rightStimulusText;
+	x = 500; y = 0;# String to display trial info
+	
+	#8
+	text { caption = "Left_Value"; display_index=2;} leftRewardValueText;
+	x = -500; y = -100;# String to display trial info
+	
+	#9
+	text { caption = "Right_Value"; display_index=2;} rightRewardValueText;
+	x = 500; y = -100;# String to display trial info
+	
 }stimulusExperimenter;
 
 #Button stimulus to show the monkey
@@ -956,11 +972,7 @@ begin
 				
 				#If the monkey touched (and held) the center button
 				if monkeyTouching ==  true then 
-					
-					#startCueMonkey.set_part_x(2, centerStimulusXPosition);
-					#startCueMonkey.set_part_y(2, stimulusYPosition);
-					#startCueExperimenter.set_part_x(2, centerStimulusXPosition);
-					#startCueExperimenter.set_part_y(2, stimulusYPosition);
+
 					if showCorrectOrIncorrectFeedback == true then
 						experimenterStartChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
 						monkeyStartChoiceEllipse.set_color(correctColorR, correctColorG, correctColorB, 255);
@@ -1025,17 +1037,30 @@ begin
 										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
 										
-	# Set position of left of choice cue off the screen
-	stimulusPictureMonkey.set_part_x(1, 9999);
-	stimulusPictureMonkey.set_part_y(1, 9999);
-	stimulusExperimenter.set_part_x(1, 9999);
-	stimulusExperimenter.set_part_y(1, 9999);
+	# Find juice values of left and right stimulus
+	int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+	int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+	
+	# Find juice values of left and right stimulus
+	#string leftStimulusName =  movies[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))]; 
+	#string rightStimulusName =  movies[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+	
+
+	leftRewardValueText.set_caption(printf( leftJuiceValue, "%2d" ), true );
+	rightRewardValueText.set_caption(printf( rightJuiceValue, "%2d" ), true );
+	
+	#leftStimulusText.set_caption(printf( leftJuiceValue, "%8s" ), true );
+	#rightStimulusText.set_caption(printf( rightJuiceValue, "%8s" ), true );
+										
+	# Set position of left of choice cue
+	stimulusPictureMonkey.set_part_x(1, leftStimulusXPosition);
+	stimulusPictureMonkey.set_part_y(1, stimulusYPosition);
+	stimulusExperimenter.set_part_x(1, leftStimulusXPosition);
+	stimulusExperimenter.set_part_y(1, stimulusYPosition);
 	experimenterLeftStimulusChoiceMarker.set_height( videoStimulusHeight);
 	experimenterLeftStimulusChoiceMarker.set_width( videoStimulusWidth);
 	monkeyLeftStimulusChoiceMarker.set_height( videoStimulusHeight);
 	monkeyLeftStimulusChoiceMarker.set_width( videoStimulusWidth);
-	
-
 	
 	# Set position of center of choice cue off the screen
 	stimulusPictureMonkey.set_part_x(2, 9999);
@@ -1047,15 +1072,21 @@ begin
 	monkeyCenterStimulusChoiceMarker.set_height( videoStimulusHeight);
 	monkeyCenterStimulusChoiceMarker.set_width( videoStimulusWidth);
 	
-	# Set position of right of choice cue off the screen
-	stimulusPictureMonkey.set_part_x(3, 9999);
-	stimulusPictureMonkey.set_part_y(3, 9999);
-	stimulusExperimenter.set_part_x(3, 9999);
-	stimulusExperimenter.set_part_y(3, 9999);
+	# Set position of right of choice cue
+	stimulusPictureMonkey.set_part_x(3, rightStimulusXPosition);
+	stimulusPictureMonkey.set_part_y(3, stimulusYPosition);
+	stimulusExperimenter.set_part_x(3, rightStimulusXPosition);
+	stimulusExperimenter.set_part_y(3, stimulusYPosition);
 	experimenterRightStimulusChoiceMarker.set_height( videoStimulusHeight);
 	experimenterRightStimulusChoiceMarker.set_width( videoStimulusWidth);
 	monkeyRightStimulusChoiceMarker.set_height( videoStimulusHeight);
 	monkeyRightStimulusChoiceMarker.set_width( videoStimulusWidth);
+	
+	# Set the colors
+	experimenterLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+	monkeyLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+	experimenterRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+	monkeyRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
 
 	
 	# Set position/size of the left video plane
@@ -1063,10 +1094,6 @@ begin
 	
 	# Set position/size of the right video plane
 	stimulusPictureMonkey.set_3dpart_xyz( 2 , rightStimulusXPosition, stimulusYPosition, 0 );
-	
-	# Find juice values of left and right stimulus
-	int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
-	int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
 	
 	# Read in the voltages from each button
 	leftButtonV =card.read_analog(lV); 
@@ -1180,6 +1207,7 @@ begin
 					monkeyLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
 					experimenterRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
 					monkeyRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+					stimulusExperimenter.present();
 			elseif (leftStream.frame_position() < buttonCueDelayLength)  && endTrialOnEarlyCenterRelease == true then
 				centerButtonV =card.read_analog(cV);
 				
@@ -1196,6 +1224,7 @@ begin
 				leftButtonV =card.read_analog(lV); 
 				rightButtonV =card.read_analog(rV);
 				
+				#If the monkey has 
 				if leftButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
 					if leftHoldTicker > 0 then #If the monkey has been holding already
 						if ((clock.time()-leftHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time
@@ -1229,9 +1258,8 @@ begin
 					monkeyLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
-				end;
-				
-				if rightButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
+					
+				elseif rightButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
 					
 					if rightHoldTicker > 0 then
 						if ((clock.time()-rightHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time

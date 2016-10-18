@@ -2,7 +2,7 @@ item file: movieChoice1_itm.txt
 condition file: movieChoice1_cnd.txt
 -----------------------------------------------
 number of trials: 01
-conditions to show: 100-->300
+conditions to show: 001-->010
 condition order: incremental
 trial retry: ignore
 -----------------------------------------------
