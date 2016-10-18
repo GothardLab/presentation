@@ -1,0 +1,9 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	movieChoice1_itm.txt
+COND:	movieChoice1_cnd.txt
+DATE:	10/18/2016 09:02:28
+Showing conditions: 100-->300.
+MagicNumbers:	104	97	176	16	54	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	100	

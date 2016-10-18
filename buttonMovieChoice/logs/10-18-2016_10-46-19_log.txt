@@ -1,0 +1,10 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	movieChoice1_itm.txt
+COND:	movieChoice1_cnd.txt
+DATE:	10/18/2016 10:46:19
+Showing conditions: 100-->300.
+MagicNumbers:	60	167	131	158	172	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	100	LName:	NS_whttp1	RName:	NS_wrstrppr3	Rsp:	Ignored	Start:	1637	End:	14098	END
+Trl:	1	Blk:	1	Cnd:	101	LName:	5S_61ne2	RName:	5S_59th	
