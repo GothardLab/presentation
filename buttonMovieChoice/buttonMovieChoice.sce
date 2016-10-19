@@ -329,7 +329,7 @@ double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach b
 int leftJuiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a correct (left) button is pressed
 int centerJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (center) button is pressed	
 int rightJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (right)button is pressed	
-bool showStartCue = true;
+bool showStartCue = false;
 bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool endTrialOnEarlyCenterRelease = true;	#Ends trial if monkey releases center button before other choices are available
@@ -339,8 +339,8 @@ bool endTrialOnEarlyRelease = true;
 bool catchMissedCueResponse = false;
 int cueJuiceRewardDrops = 0;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int startCueChoiceSizeIncrease = 50; 		# Size to increase the chosen cue
-int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cue
-int buttonCueDelayLength = 10;
+int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cque
+int buttonCueDelayLength = 25;
 int postStimDelay = 500;
 
 # Colors of the shape stimuli (You can change these)
@@ -356,6 +356,9 @@ int rightColorB = 255;
 int neutralColorR = 111;
 int neutralColorG = 111;
 int neutralColorB = 111;
+int readyColorR = 0;
+int readyColorG = 0;
+int readyColorB = 255;
 int touchColorR = 153; #86
 int touchColorG = 255;#237
 int touchColorB = 153;#253
@@ -1045,7 +1048,7 @@ begin
 	#string leftStimulusName =  movies[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))]; 
 	#string rightStimulusName =  movies[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
 	
-
+	# Set the text for the reward values on the monitor
 	leftRewardValueText.set_caption(printf( leftJuiceValue, "%2d" ), true );
 	rightRewardValueText.set_caption(printf( rightJuiceValue, "%2d" ), true );
 	
@@ -1165,7 +1168,10 @@ begin
 				#Get the current frame being shown
 				currentFrame = leftStream.frame_position();
 				
+				#If the monkey makes an early touch, break from the loop
 				if earlyTouch then break end;
+				
+				#If the monkey makes an early release, break from the loop
 				if earlyRelease then break end;
 				
 				# Encode the current frame + offset value
@@ -1203,16 +1209,21 @@ begin
 					stimulusExperimenter.set_part_y(3, stimulusYPosition);
 					
 					# Set the colors
-					experimenterLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
-					monkeyLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
-					experimenterRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
-					monkeyRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+					experimenterLeftStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
+					monkeyLeftStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
+					experimenterRightStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
+					monkeyRightStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
 					stimulusExperimenter.present();
-			elseif (leftStream.frame_position() < buttonCueDelayLength)  && endTrialOnEarlyCenterRelease == true then
+			elseif # If we are still in the delay period & and are catching early releases & we showed a start cue
+				(leftStream.frame_position() < buttonCueDelayLength)  && endTrialOnEarlyCenterRelease == true && showStartCue == true 
+			then
+				# Check the voltage of the center button
 				centerButtonV =card.read_analog(cV);
 				
-				if centerButtonV < voltageThreshold
+				if #If the center button voltage is below threshold
+					centerButtonV < voltageThreshold
 				then
+					# Record that the monkey released early
 					monkeyResponseStr = "Released";
 					earlyRelease = true;
 				end;
@@ -1228,11 +1239,14 @@ begin
 				if leftButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
 					if leftHoldTicker > 0 then #If the monkey has been holding already
 						if ((clock.time()-leftHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time
+							# Change the color of the right choiceMarker to "correct" color
 							experimenterLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							monkeyLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							stimulusExperimenter.present();
 							stimulusMonkey.present();
+							# Record the response
 							monkeyResponseStr = "Left";
+							# Mark that a choice has been made
 							choiceMade = true;
 						end
 						
@@ -1254,22 +1268,27 @@ begin
 				elseif leftHoldTicker > 0 && choiceMade == false then # If the monkey had been holding the left button but released
 					leftHoldTicker = 0;
 					
-					experimenterLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
-					monkeyLeftStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+					experimenterLeftStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
+					monkeyLeftStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 					
 				elseif rightButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
 					
-					if rightHoldTicker > 0 then
+					if rightHoldTicker > 0 then #If the monkey has already been holding down the button
+					
 						if ((clock.time()-rightHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time
+							# Change the color of the right choiceMarker to "correct" color
 							experimenterRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							monkeyRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							stimulusExperimenter.present();
 							stimulusMonkey.present();
+							# Record the response
 							monkeyResponseStr = "Right";
+							# Mark that a choice has been made
 							choiceMade = true;
 						end
+						
 					else
 						# Set the time at which the monkey starting holding
 						rightHoldTicker = clock.time(); 
@@ -1283,12 +1302,13 @@ begin
 				elseif rightButtonV > voltageThreshold then #If the monkey touched early
 					earlyTouch = true;
 					monkeyResponseStr = "Early";
-				elseif rightHoldTicker > 0 && choiceMade == false then # If the monkey had been holding the left button but released
+				elseif rightHoldTicker > 0 && choiceMade == false then # If the monkey had been holding the right button but released
+					# Reset the rightHoldTicker to zero
 					rightHoldTicker = 0;
 					
-					# Set the right button to proper color to show the monkey he's touching
-					experimenterRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
-					monkeyRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
+					# Set the right button color back to normal to show he's not longer touching
+					experimenterRightStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
+					monkeyRightStimulusChoiceMarker.set_color(readyColorR, readyColorG, readyColorB);
 					stimulusExperimenter.present();
 					stimulusMonkey.present();
 				end;
