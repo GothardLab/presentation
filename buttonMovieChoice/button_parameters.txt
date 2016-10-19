@@ -1,5 +1,5 @@
-item file: movieChoice1_itm.txt
-condition file: movieChoice1_cnd.txt
+item file: movieChoiceTraining1_itm.txt
+condition file: movieChoiceTraining1_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show: 001-->010

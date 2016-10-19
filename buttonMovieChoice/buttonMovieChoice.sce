@@ -329,7 +329,7 @@ double voltageThreshold = 1.0;			# Voltage threshold the sensor needs to reach b
 int leftJuiceRewardDrops = 5;				# Number of drops of juice to give the monkey when a correct (left) button is pressed
 int centerJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (center) button is pressed	
 int rightJuiceRewardDrops = 5;			# Number of drops of juice to give the monkey when a correct (right)button is pressed	
-bool showStartCue = false;
+bool showStartCue = true;
 bool catchHolding	= true;					#Set 'true' for the program to catch when a button is being held before trial start
 bool pauseTrialUntilStopHolding = true; #Set 'true' for the program to pause a trial when a button is being held before trial start, requires (catchHolding == true), if false the trial is aborted
 bool endTrialOnEarlyCenterRelease = true;	#Ends trial if monkey releases center button before other choices are available
@@ -340,7 +340,7 @@ bool catchMissedCueResponse = false;
 int cueJuiceRewardDrops = 0;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int startCueChoiceSizeIncrease = 50; 		# Size to increase the chosen cue
 int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cque
-int buttonCueDelayLength = 25;
+int buttonCueDelayLength = 20;
 int postStimDelay = 500;
 
 # Colors of the shape stimuli (You can change these)
@@ -764,6 +764,7 @@ begin
 										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
 										
+	# Set the position of the holding cue for the left button
 	startCueMonkey.set_part_x(3, 9999);
 	startCueMonkey.set_part_y(3, 9999);
 	startCueExperimenter.set_part_x(3, 9999);
@@ -771,6 +772,7 @@ begin
 	monkeyLeftButtonStartHoldCue.redraw();
 	experimenterLeftButtonStartHoldCue.redraw();
 
+	# Set the position of the holding cue for the center button
 	startCueMonkey.set_part_x(4, 9999);
 	startCueMonkey.set_part_y(4, 9999);
 	startCueExperimenter.set_part_x(4, 9999);
@@ -778,6 +780,7 @@ begin
 	monkeyCenterButtonStartHoldCue.redraw();
 	experimenterCenterButtonStartHoldCue.redraw();
 	
+	# Set the position of the holding cue for the right button
 	startCueMonkey.set_part_x(5, 9999);
 	startCueMonkey.set_part_y(5, 9999);
 	startCueExperimenter.set_part_x(5, 9999);
@@ -785,6 +788,7 @@ begin
 	monkeyCenterButtonStartHoldCue.redraw();
 	experimenterCenterButtonStartHoldCue.redraw();
 	
+	# Move the start cue elements off screen for now
 	startCueMonkey.set_part_x(1, 9999);
 	startCueMonkey.set_part_y(1, 9999);
 	startCueExperimenter.set_part_x(1, 9999);
@@ -816,12 +820,16 @@ begin
 			loop until # Loop until the monkey releases all of the buttons
 				leftButtonV < voltageThreshold && centerButtonV < voltageThreshold && rightButtonV < voltageThreshold
 			begin
+				
 				#Read the voltages
 				leftButtonV =card.read_analog(lV); 
 				centerButtonV =card.read_analog(cV);
 				rightButtonV =card.read_analog(rV);
 				
-				if leftButtonV > voltageThreshold then
+				if # If the left button is above the voltage threshold
+					leftButtonV > voltageThreshold 
+				then
+					# Move the left buttton holding marker into place and redraw it
 					startCueMonkey.set_part_x(3, leftStimulusXPosition);
 					startCueMonkey.set_part_y(3, stimulusYPosition);
 					startCueExperimenter.set_part_x(3, leftStimulusXPosition);
@@ -831,6 +839,7 @@ begin
 					startCueExperimenter.present();
 					startCueMonkey.present();
 				else
+					# Otherwise move the left button off screen
 					startCueMonkey.set_part_x(3, 9999);
 					startCueMonkey.set_part_y(3, 9999);
 					startCueExperimenter.set_part_x(3, 9999);
@@ -841,7 +850,10 @@ begin
 					startCueMonkey.present();
 				end;
 				
-				if centerButtonV > voltageThreshold then
+				if # If the center button is above the voltage threshold
+					centerButtonV > voltageThreshold 
+				then
+					# Move the center button holding marker into place and redraw it
 					startCueMonkey.set_part_x(4, centerStimulusXPosition);
 					startCueMonkey.set_part_y(4, stimulusYPosition);
 					startCueExperimenter.set_part_x(4, centerStimulusXPosition);
@@ -851,6 +863,7 @@ begin
 					startCueExperimenter.present();
 					startCueMonkey.present();
 				else
+					# Otherwise move the center button off screen
 					startCueMonkey.set_part_x(4, 9999);
 					startCueMonkey.set_part_y(4, 9999);
 					startCueExperimenter.set_part_x(4, 9999);
@@ -861,7 +874,10 @@ begin
 					startCueMonkey.present();
 				end;
 				
-				if rightButtonV > voltageThreshold then
+				if # If the right button is above the voltage threshold
+					rightButtonV > voltageThreshold 
+				then
+					# Move the right button holding marker into place and redraw it
 					startCueMonkey.set_part_x(5, rightStimulusXPosition);
 					startCueMonkey.set_part_y(5, stimulusYPosition);
 					startCueExperimenter.set_part_x(5, rightStimulusXPosition);
@@ -871,6 +887,7 @@ begin
 					startCueExperimenter.present();
 					startCueMonkey.present();
 				else
+					# Otherwise move the right button off screen
 					startCueMonkey.set_part_x(5, 9999);
 					startCueMonkey.set_part_y(5, 9999);
 					startCueExperimenter.set_part_x(5, 9999);
@@ -881,17 +898,20 @@ begin
 					startCueMonkey.present();
 				end;
 			end; 
+			
 			#The monkey has released, so now we can present the start cue
 			continueStartCue = true;
+			
 		else #Otherwise, return the response of 'Hold'
 			monkeyCueResponseStr = "Hold";
 		end;
 		
 	end;
 	
-	if (showStartCue ==  true && continueStartCue == true) then 
-	
-		# Set up the start cue
+	if #If we are showing the start cue, and the monkey has not failed up until this point
+		(showStartCue ==  true && continueStartCue == true) 
+	then 
+		# Set up the start cue position, color, and size
 		startCueMonkey.set_part_x(1, centerStimulusXPosition);
 		startCueMonkey.set_part_y(1, stimulusYPosition);
 		startCueExperimenter.set_part_x(1, centerStimulusXPosition);
@@ -923,7 +943,6 @@ begin
 			leftButtonV =card.read_analog(lV); 
 			centerButtonV =card.read_analog(cV);
 			rightButtonV =card.read_analog(rV);
-			
 				
 			if # If the monkey is touching the center button (cue)
 				centerButtonV > voltageThreshold
@@ -1570,7 +1589,7 @@ begin
 		logFile.print( "END\n");
 		
 		#Print trial information out to terminal
-		term.print_line( "Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Holding Trials: " + string( holdTrials ) + "/" + string(trialsAttempted));
+		term.print_line( "Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Correct trials: " + string( correctTrials  ) + "/" + string(trialsCompleted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Holding Trials: " + string( holdTrials ) + "/" + string(trialsAttempted));
 		term.print_line( "\n");
 		
 	end; # End of condition loop
@@ -1589,5 +1608,6 @@ logFile.close();
 
 #Print out behavior information in terminal
 term.print_line( " Completed Trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted));
+term.print_line( " Correct Trials: " + string( correctTrials ) + "/" + string(trialsCompleted));
 term.print_line( "  Missed Trials: " + string( missedTrials ) + "/" + string(trialsAttempted) );
 term.print_line( " Ignored Trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) );
