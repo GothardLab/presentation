@@ -309,15 +309,14 @@ int startCueHeight	=	200;				# Height of stimulus (pixels)341
 int startCueWidth	=	200;					# Width of stimulus (pixels)512
 int videoStimulusHeight	=	480;				# Height of stimulus (pixels)341
 int videoStimulusWidth	=	720;					# Width of stimulus (pixels)512
-
 int stimulusDuration	=	5000; 			# time that monkey is allowed to touch button (ms) per trial
 int cueDuration	=	5000; 				# time that monkey is allowed to get to center pre-trial cue box (ms) 
 int correctItiDuration	=	3000; 		# Duration of the inter-trial-interval(ms)for correct trials
-int missedItiDuration	=	3000;		 	# Duration of the inter-trial-interval(ms) for missed trials
+int missedItiDuration	=	5000;		 	# Duration of the inter-trial-interval(ms) for missed trials
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
-int ignoredItiDuration   =	3000;			# Duration of the inter-trial-interval(ms) for ignored trials
+int ignoredItiDuration   =	4000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 500;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int buttonTouchTime = 100;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
 int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -500;		# X position of left stimulus (in pixels)
 int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
@@ -340,7 +339,7 @@ bool catchMissedCueResponse = false;
 int cueJuiceRewardDrops = 0;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int startCueChoiceSizeIncrease = 50; 		# Size to increase the chosen cue
 int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cque
-int buttonCueDelayLength = 20;
+int buttonCueDelayLength = 15;	#Number of frames until the monkey can make a response (75 = 2.5 seconds GOAL!)********************************************************************************************
 int postStimDelay = 500;
 
 # Colors of the shape stimuli (You can change these)
@@ -1058,10 +1057,61 @@ begin
 	buttonTextStimulus.set_caption( "Left: " + printf( leftButtonPresses, "%2d" ) + "/" + printf( leftButtonTrials, "%2d" ) + 
 										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
+	
+	# Create boolean variable to set left and right button/stimuli to active or inactive
+	bool rightActive = true;
+	bool leftActive = true;
+	
+	# Create two intergers to track the left and right juice rewards
+	int leftJuiceValue = 0;
+	int rightJuiceValue = 0;
+	
+	# Get the item numbers for the left and right items									
+	int leftItemNumber = int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)));
+	int rightItemNumber = int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)));
+	
+	if # If this is a normal trial where we are showing both left and right stimuli
+		leftItemNumber > 0 && rightItemNumber > 0 
+	then
+		# Find juice values of left and right stimulus
+		leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+		rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+		
+		# Set both sides to active
+		rightActive = true;
+		leftActive = true;
+			
+	elseif # If this is a trial where we only showing the left stimulus
+		leftItemNumber > 0 && rightItemNumber <= 0 
+	then
+		# Find juice values of left stimulus
+		leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+		
+		# Set the right juice value to zero
+		rightJuiceValue = 0;
+		
+		# Set the left side to active
+		leftActive = true;
+		
+		# Set he right side to inactive
+		rightActive = false;
+	elseif # If this is a trial where we only showing the right stimulus
+		rightItemNumber > 0 && leftItemNumber <= 0 
+	then
+		# Find juice values of right stimulus
+		rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+		
+		# Set the left juice value to zero
+		leftJuiceValue = 0;
+		
+		# Set the right side to active
+		rightActive = true;
+		
+		# Set the left side to inactive
+		leftActive = false;
+	end;
 										
-	# Find juice values of left and right stimulus
-	int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
-	int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+
 	
 	# Find juice values of left and right stimulus
 	#string leftStimulusName =  movies[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))]; 
@@ -1111,11 +1161,25 @@ begin
 	monkeyRightStimulusChoiceMarker.set_color(neutralColorR, neutralColorG, neutralColorB);
 
 	
-	# Set position/size of the left video plane
-	stimulusPictureMonkey.set_3dpart_xyz( 1, leftStimulusXPosition, stimulusYPosition, 0 );
+	if 
+		leftActive == true
+	then
+		# Set position of the left video plane
+		stimulusPictureMonkey.set_3dpart_xyz( 1, leftStimulusXPosition, stimulusYPosition, 0 );
+	else
+		# Move left video plane off the monitor
+		stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
+	end;
 	
-	# Set position/size of the right video plane
-	stimulusPictureMonkey.set_3dpart_xyz( 2 , rightStimulusXPosition, stimulusYPosition, 0 );
+	if 
+		rightActive == true
+	then
+		# Set position of the right video plane
+		stimulusPictureMonkey.set_3dpart_xyz( 2 , rightStimulusXPosition, stimulusYPosition, 0 );
+	else
+		# Move right video plane off the monitor
+		stimulusPictureMonkey.set_3dpart_xyz( 2 , 9999, 9999, 0 );
+	end;
 	
 	# Read in the voltages from each button
 	leftButtonV =card.read_analog(lV); 
@@ -1263,6 +1327,7 @@ begin
 							monkeyLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							stimulusExperimenter.present();
 							stimulusMonkey.present();
+							giveJuiceReward (leftJuiceValue );
 							# Record the response
 							monkeyResponseStr = "Left";
 							# Mark that a choice has been made
@@ -1302,6 +1367,7 @@ begin
 							monkeyRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 							stimulusExperimenter.present();
 							stimulusMonkey.present();
+							giveJuiceReward (rightJuiceValue );
 							# Record the response
 							monkeyResponseStr = "Right";
 							# Mark that a choice has been made
@@ -1350,7 +1416,7 @@ begin
 		stimulusPictureMonkey.set_3dpart_xyz( 2 , 9999, 9999, 0 );
 		stimulusPictureMonkey.present();
 		term.print_line("Monkey choose left stimulus, giving " + string(leftJuiceValue) + "drops of juice.");
-		giveJuiceReward ( leftJuiceValue );
+		#giveJuiceReward ( leftJuiceValue );
 		wait_interval(postStimDelay);
 		leftButtonPresses = leftButtonPresses+1;
 		if leftJuiceValue > rightJuiceValue
@@ -1363,7 +1429,7 @@ begin
 		stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
 		stimulusPictureMonkey.present();
 		term.print_line("Monkey choose right stimulus, giving " + string(rightJuiceValue) + "drops of juice.");
-		giveJuiceReward (rightJuiceValue );
+		#giveJuiceReward (rightJuiceValue );
 		wait_interval(postStimDelay);
 		rightButtonPresses = rightButtonPresses+1;
 		if rightJuiceValue > leftJuiceValue
@@ -1474,14 +1540,45 @@ begin
 		leftItemValue = int(double(left_itm[currentConditionVal].substring(1,2)));
 		rightItemValue = int(double(right_itm[currentConditionVal].substring(1,2)));
 		
-		# Get the amount of juice drops associated with the left and right stimulus
-		int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
-		int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+	
 		
-		# Set the movies to be shown on this trial
-		leftMovieName = movies[leftItemValue];
-		rightMovieName = movies[rightItemValue];
+		if # If we are presenting the left stimulus
+			leftItemValue > 0
+		then
+			# Get the amount of juice drops associated with the left stimulus
+			int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+			
+			# Get the left movie name to be shown on this trial
+			leftMovieName = movies[leftItemValue];
+			
+		else
+			# Set the amount of juice drops associated with the left stimulus
+			int leftJuiceValue = 0;
+			
+			# Set the left movie name as the placeholder
+			leftMovieName = "placeholder";
+
+		end;
 		
+		if # If we are presenting the right stimulus
+			rightItemValue > 0
+		then
+			# Get the amount of juice drops associated with the right stimulus
+			int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+			
+			# Get the right movie name to be shown on this trial
+			rightMovieName = movies[rightItemValue];
+			
+		else
+			# Set the amount of juice drops associated with the right stimulus
+			int rightJuiceValue = 0;
+			
+			# Set the right movie name as the placeholder
+			rightMovieName = "placeholder";
+		end;
+		
+		
+
 		# Write stimulus values to log file
 		logFile.print( "LName:\t"+leftMovieName+"\tRName:\t"+rightMovieName+"\t" );  
 		
@@ -1491,13 +1588,15 @@ begin
 		leftStream.prepare(); # not using audio
 		leftVideoPlane.set_texture( leftStream.get_texture() );
 		leftVideoPlane.set_size( videoStimulusWidth, videoStimulusHeight );
-		
+			
 		# Load and prepare the right movie
 		rightStream.set_filename( rightMovieName+".avi" );
 		rightStream.set_use_audio( false );
 		rightStream.prepare(); # not using audio
 		rightVideoPlane.set_texture( rightStream.get_texture() );
 		rightVideoPlane.set_size( videoStimulusWidth, videoStimulusHeight );
+		
+	
 
 		#Increment the trial counter
 		trialsAttempted = trialsAttempted +1;

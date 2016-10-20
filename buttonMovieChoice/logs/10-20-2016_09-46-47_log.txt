@@ -1,0 +1,10 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	movieChoiceTraining1_itm.txt
+COND:	movieChoiceTrainingTest_cnd.txt
+DATE:	10/20/2016 09:46:47
+Showing conditions: 1-->10.
+MagicNumbers:	108	139	194	234	191	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LName:	nikehat9	RName:	BLANK	Rsp:	Ignored	Start:	1551	End:	10611	END
+Trl:	1	Blk:	1	Cnd:	1	LName:	nikehat9	RName:	BLANK	

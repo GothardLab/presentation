@@ -1,10 +1,10 @@
 item file: movieChoiceTraining1_itm.txt
-condition file: movieChoiceTraining1_cnd.txt
+condition file: movieChoiceTrainingTest_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show: 001-->010
 condition order: incremental
-trial retry: ignore
+trial retry: immediate
 -----------------------------------------------
 
 MAKE SURE THERE IS A SINGLE SPACE AFTER EACH COLON FOR THE CODE TO WORK!!!

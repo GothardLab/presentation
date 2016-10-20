@@ -1,0 +1,19 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	movieChoiceTraining1_itm.txt
+COND:	movieChoiceTraining1_cnd.txt
+DATE:	10/19/2016 13:14:37
+Showing conditions: 1-->10.
+MagicNumbers:	10	41	82	158	115	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LName:	nikehat9	RName:	blenderlid10	Rsp:	Ignored	Start:	1698	End:	6790	END
+Trl:	1	Blk:	1	Cnd:	2	LName:	blenderlid6	RName:	nikehat3	Rsp:	Right	Start:	7329	End:	19436	END
+Trl:	2	Blk:	1	Cnd:	3	LName:	blenderlid5	RName:	nikehat4	Rsp:	Ignored	Start:	19929	End:	31330	END
+Trl:	3	Blk:	1	Cnd:	4	LName:	nikehat9	RName:	blenderlid5	Rsp:	Right	Start:	31816	End:	42558	END
+Trl:	4	Blk:	1	Cnd:	5	LName:	nikehat9	RName:	blenderlid7	Rsp:	Released	Start:	43056	End:	48764	END
+Trl:	5	Blk:	1	Cnd:	6	LName:	blenderlid9	RName:	nikehat5	Rsp:	Ignored	Start:	49237	End:	54519	END
+Trl:	6	Blk:	1	Cnd:	7	LName:	blenderlid10	RName:	nikehat3	Rsp:	Right	Start:	55050	End:	66764	END
+Trl:	7	Blk:	1	Cnd:	8	LName:	nikehat4	RName:	blenderlid1	Rsp:	Ignored	Start:	67302	End:	72803	END
+Trl:	8	Blk:	1	Cnd:	9	LName:	nikehat9	RName:	blenderlid4	Rsp:	Right	Start:	73314	End:	84098	END
+Trl:	9	Blk:	1	Cnd:	10	LName:	blenderlid6	RName:	nikehat5	Rsp:	Right	Start:	84583	End:	97093	END
+PROGRAM EXIT
