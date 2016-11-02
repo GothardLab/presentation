@@ -1,5 +1,0 @@
-SCEN:	buttonMovieChoice
-PARM:	button_parameters.txt
-ITEM:	movieChoiceTraning1_itm.txt
-COND:	movieChoiceTraning1_cnd.txt
-DATE:	10/19/2016 12:24:22

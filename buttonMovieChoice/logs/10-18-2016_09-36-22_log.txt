@@ -1,9 +1,0 @@
-SCEN:	buttonMovieChoice
-PARM:	button_parameters.txt
-ITEM:	movieChoice1_itm.txt
-COND:	movieChoice1_cnd.txt
-DATE:	10/18/2016 09:36:22
-Showing conditions: 100-->300.
-MagicNumbers:	120	122	77	163	179	
-Starting Task
-Trl:	0	Blk:	1	Cnd:	100	LName:	NS_whttp1	RName:	NS_wrstrppr3	

@@ -310,13 +310,13 @@ int startCueWidth	=	200;					# Width of stimulus (pixels)512
 int videoStimulusHeight	=	480;				# Height of stimulus (pixels)341
 int videoStimulusWidth	=	720;					# Width of stimulus (pixels)512
 int stimulusDuration	=	5000; 			# time that monkey is allowed to touch button (ms) per trial
-int cueDuration	=	5000; 				# time that monkey is allowed to get to center pre-trial cue box (ms) 
+int cueDuration	=	7000; 				# time that monkey is allowed to get to center pre-trial cue box (ms) 
 int correctItiDuration	=	3000; 		# Duration of the inter-trial-interval(ms)for correct trials
 int missedItiDuration	=	5000;		 	# Duration of the inter-trial-interval(ms) for missed trials
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
 int ignoredItiDuration   =	4000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 100;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int buttonTouchTime = 350;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
 int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -500;		# X position of left stimulus (in pixels)
 int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
@@ -339,7 +339,7 @@ bool catchMissedCueResponse = false;
 int cueJuiceRewardDrops = 0;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int startCueChoiceSizeIncrease = 50; 		# Size to increase the chosen cue
 int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cque
-int buttonCueDelayLength = 15;	#Number of frames until the monkey can make a response (75 = 2.5 seconds GOAL!)********************************************************************************************
+int buttonCueDelayLength =50;	#Number of frames until the monkey can make a response (75 = 2.5 seconds GOAL!)********************************************************************************************
 int postStimDelay = 500;
 
 # Colors of the shape stimuli (You can change these)
@@ -1080,6 +1080,11 @@ begin
 		# Set both sides to active
 		rightActive = true;
 		leftActive = true;
+		
+		# Increase the left/right trial counters
+		leftButtonTrials = leftButtonTrials +1;
+		rightButtonTrials = rightButtonTrials +1;
+		
 			
 	elseif # If this is a trial where we only showing the left stimulus
 		leftItemNumber > 0 && rightItemNumber <= 0 
@@ -1095,6 +1100,10 @@ begin
 		
 		# Set he right side to inactive
 		rightActive = false;
+		
+		# Increase the left trial counter
+		leftButtonTrials = leftButtonTrials +1;
+		
 	elseif # If this is a trial where we only showing the right stimulus
 		rightItemNumber > 0 && leftItemNumber <= 0 
 	then
@@ -1109,6 +1118,9 @@ begin
 		
 		# Set the left side to inactive
 		leftActive = false;
+		
+		# Increase the right trial counter
+		rightButtonTrials = rightButtonTrials +1;
 	end;
 										
 
@@ -1322,16 +1334,32 @@ begin
 				if leftButtonV > voltageThreshold && (leftStream.frame_position() >= buttonCueDelayLength) then
 					if leftHoldTicker > 0 then #If the monkey has been holding already
 						if ((clock.time()-leftHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time
-							# Change the color of the right choiceMarker to "correct" color
-							experimenterLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
-							monkeyLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
-							stimulusExperimenter.present();
-							stimulusMonkey.present();
-							giveJuiceReward (leftJuiceValue );
-							# Record the response
-							monkeyResponseStr = "Left";
+							
+						
 							# Mark that a choice has been made
 							choiceMade = true;
+							
+							if leftActive then
+								# Change the color of the right choiceMarker to "correct" color
+								experimenterLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
+								monkeyLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
+								stimulusExperimenter.present();
+								stimulusMonkey.present();
+								giveJuiceReward (leftJuiceValue );
+								
+								# Record the response
+								monkeyResponseStr = "Left";
+							else
+								# Change the color of the right choiceMarker to "correct" color
+								experimenterLeftStimulusChoiceMarker.set_color(incorrectColorR, incorrectColorG, incorrectColorB);
+								monkeyLeftStimulusChoiceMarker.set_color(incorrectColorR, incorrectColorG, incorrectColorB);
+								stimulusExperimenter.present();
+								stimulusMonkey.present();
+								presentIncorrectFeedback();
+								
+								# Record the response
+								monkeyResponseStr = "Missed";
+							end;
 						end
 						
 					else
@@ -1362,16 +1390,38 @@ begin
 					if rightHoldTicker > 0 then #If the monkey has already been holding down the button
 					
 						if ((clock.time()-rightHoldTicker) > buttonTouchTime) then #If the monkey has held for the appropriate amount of time
-							# Change the color of the right choiceMarker to "correct" color
-							experimenterRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
-							monkeyRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
-							stimulusExperimenter.present();
-							stimulusMonkey.present();
-							giveJuiceReward (rightJuiceValue );
-							# Record the response
-							monkeyResponseStr = "Right";
+							
 							# Mark that a choice has been made
 							choiceMade = true;
+							
+							if rightActive then
+								# Change the color of the right choiceMarker to "correct" color
+								experimenterRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
+								monkeyRightStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
+								stimulusExperimenter.present();
+								stimulusMonkey.present();
+								
+								# Record the response
+								monkeyResponseStr = "Right";
+								
+								# Give the monkey the juice reward (only here for training)
+								giveJuiceReward (rightJuiceValue );
+								
+							else
+								# Change the color of the right choiceMarker to "correct" color
+								experimenterRightStimulusChoiceMarker.set_color(incorrectColorR, incorrectColorG, incorrectColorB);
+								monkeyRightStimulusChoiceMarker.set_color(incorrectColorR, incorrectColorG, incorrectColorB);
+								stimulusExperimenter.present();
+								stimulusMonkey.present();
+								
+								# Present incorrect feedback
+								presentIncorrectFeedback();
+								
+								# Record the response
+								monkeyResponseStr = "Missed";
+							end;
+							
+							
 						end
 						
 					else

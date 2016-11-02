@@ -1,5 +1,5 @@
 item#	|moviename        	|reward	|totalitems=20
-01   	|blenderlid1.avi  	|01    
+01   	|blenderlid1.avi  	|01   
 02   	|blenderlid10.avi 	|01    
 03   	|blenderlid2.avi  	|01    
 04   	|blenderlid3.avi  	|01    
@@ -12,7 +12,7 @@ item#	|moviename        	|reward	|totalitems=20
 11   	|nikehat1.avi     	|05    
 12   	|nikehat10.avi    	|05    
 13   	|nikehat2.avi     	|05    
-14   	|nikehat3.avi     	|05    
+14   	|nikehat3.avi     	|05   
 15   	|nikehat4.avi     	|05    
 16   	|nikehat5.avi     	|05    
 17   	|nikehat6.avi     	|05    

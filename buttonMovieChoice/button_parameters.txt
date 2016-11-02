@@ -1,9 +1,9 @@
 item file: movieChoiceTraining1_itm.txt
-condition file: movieChoiceTrainingTest_cnd.txt
+condition file: movieChoiceTrainingOneSided_cnd.txt
 -----------------------------------------------
-number of trials: 01
+number of trials: 02
 conditions to show: 001-->010
-condition order: incremental
+condition order: random
 trial retry: immediate
 -----------------------------------------------
 
