@@ -316,7 +316,7 @@ int missedItiDuration	=	5000;		 	# Duration of the inter-trial-interval(ms) for 
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
 int ignoredItiDuration   =	4000;			# Duration of the inter-trial-interval(ms) for ignored trials
 int feedbackLength = 250; 					# Time (ms) per trial which the monkey gets visual feedback of correct or incorrect response
-int buttonTouchTime = 350;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
+int buttonTouchTime = 800;					# Time (ms) the monkey has to touch the button for to make a response, set to zero to make instantanous 
 int cueTouchTime = 1000;					# Time (ms) the monkey has to touch the starting cue for to make a response, set to zero to make instantanous 
 int leftStimulusXPosition = -500;		# X position of left stimulus (in pixels)
 int centerStimulusXPosition = 0;			# X position of left stimulus (in pixels)
@@ -336,11 +336,13 @@ bool giveIncorrectFeedbackOnHold = false;
 bool showCorrectOrIncorrectFeedback = true;
 bool endTrialOnEarlyRelease = true;
 bool catchMissedCueResponse = false;
+bool giveImmediateReward = false;
 int cueJuiceRewardDrops = 0;				# Number of drops of juice to give the monkey when a the start cue button is correctly pressed
 int startCueChoiceSizeIncrease = 50; 		# Size to increase the chosen cue
 int stimulusChoiceSizeIncrease = 300; 		# Size to increase the chosen cque
-int buttonCueDelayLength =50;	#Number of frames until the monkey can make a response (75 = 2.5 seconds GOAL!)********************************************************************************************
+int buttonCueDelayLength =75;	#Number of frames until the monkey can make a response (75 = 2.5 seconds GOAL!)********************************************************************************************
 int postStimDelay = 500;
+int timeLengthFloat = 25; # Range of randomization in ms, (-X:+X), for timing
 
 # Colors of the shape stimuli (You can change these)
 int leftColorR = 255;
@@ -425,6 +427,7 @@ int centerButtonTrials  = 0;			# Trackers number of center buttons presses
 string monkeyResponse = "";		# String to hold monkey's response from trial subroutines	
 int correctCuePresses = 0;
 int timeTouchingProportion = 0;
+int randomTimeFloat = 0;
 int leftItemValue = 0;				# The value (not index!) of the left item
 int rightItemValue = 0;				# The value (not index!) of the right item
 int currentFrame = 0;				# Counter for the frame being shown
@@ -635,7 +638,7 @@ begin
 		wait_interval(150);
 		juicePulse.send_code(0,150);						# Give juice to the monkey
 		wait_interval(150);
-		#encode(rewardGivenCode); 							# Mark that we are giving juice
+		encode(rewardGivenCode); 							# Mark that we are giving juice
 		dropsGiven=dropsGiven+1;
 	end;
 end;
@@ -703,19 +706,20 @@ sub
 begin
 	# Mark that we are starting the ITI
 	wait_interval(10);
-	#encode(ITIStartCode);
+	encode(ITIStartCode);
 	
 		
 	# Update the trial text to the current trial
 	trialTextITI.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
 										"\n Condition: "+ printf( currentConditionIdx, "%2d" ) + "/" + printf( numberConditions, "%2d" ) + " (" + printf( currentConditionVal, "%2d" )+ ")" +
+										"\n Correct: "+ printf( correctTrials, "%2d" ) + "/" + printf( trialsCompleted, "%2d" ) +
 										"\n Completed: "+ printf( trialsCompleted, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Missed: "+ printf( missedTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Ignored: "+ printf( ignoredTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	buttonTextITI.set_caption( "Left: " + printf( leftButtonPresses, "%2d" ) + "/" + printf( leftButtonTrials, "%2d" ) + 
-										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
+										"\n Start-cues: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
 	
 	# Present the ITI screen to the monkey and the experimenter
@@ -727,20 +731,24 @@ begin
 	
 	int timeRemaining = 0;
 	
+	randomTimeFloat = random(-timeLengthFloat, timeLengthFloat);
+	
+	int itiDurationRandom = itiDuration +randomTimeFloat;
+	
 	# Create a response_data class for the last button
 	response_data lastButton;
 	
 	loop until # Loop until the ITI is over
-			(clock.time()-clockticker) > itiDuration 
+			(clock.time()-clockticker) > itiDurationRandom 
 	begin
-		timeRemaining = (itiDuration - (clock.time()-clockticker));
+		timeRemaining = (itiDurationRandom - (clock.time()-clockticker));
 		timeTextITI.set_caption( "Time Remaining: " + printf(timeRemaining, "%6d" ));
 		timeTextITI.redraw();
 		itiExperimenter.present();
 	end;
 	
 	# Mark that we are finished with the ITI
-	#encode(ITIEndCode);	
+	encode(ITIEndCode);	
 end;
 
 # ------------------------------------------------------ Present Start Cue Subroutine ------------------------------------------------------
@@ -754,13 +762,14 @@ begin
 	# Update the trial text to the current trial
 	trialTextCue.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
 										"\n Condition: "+ printf( currentConditionIdx, "%2d" ) + "/" + printf( numberConditions, "%2d" ) + " (" + printf( currentConditionVal, "%2d" )+ ")" +
+										"\n Correct: "+ printf( correctTrials, "%2d" ) + "/" + printf( trialsCompleted, "%2d" ) +
 										"\n Completed: "+ printf( trialsCompleted, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Missed: "+ printf( missedTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Ignored: "+ printf( ignoredTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	buttonTextCue.set_caption( "Left: " + printf( leftButtonPresses, "%2d" ) + "/" + printf( leftButtonTrials, "%2d" ) + 
-										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
+										"\n Start-cues: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
 										
 	# Set the position of the holding cue for the left button
@@ -930,10 +939,16 @@ begin
 		
 		# Get the current time
 		clockticker=clock.time();
+		
+		# Send out the startCue encode
+		encode(startCueOnCode);
 
 		# Update the monkey's and experimenter's screens
 		startCueExperimenter.present();
 		startCueMonkey.present();
+		
+		#Increase the start-cue counter
+		centerButtonTrials = centerButtonTrials+1;
 			
 		loop until # Loop until the cue duration is over
 				((clock.time()-clockticker) > cueDuration) || monkeyCueResponseStr != "Ignored"
@@ -1004,24 +1019,28 @@ begin
 					else
 						
 					end;
-					
+					centerButtonPresses = centerButtonPresses+1;
 					monkeyCueResponseStr = "Correct";
 					correctCuePresses = correctCuePresses + 1;
+					encode(startCueHitCode);
 					giveJuiceReward(cueJuiceRewardDrops);
 				elseif
 					endTrialOnEarlyRelease == true
 				then
 					monkeyCueResponseStr = "EarlyRelease";
+					encode(startCueMissCode);
 				end;
 				
 			elseif # If we are tracking the other buttons and the left button was pressed
 				catchMissedCueResponse == true && leftButtonV > voltageThreshold
 			then
 				monkeyCueResponseStr = "Missed";
+				encode(startCueMissCode);
 			elseif # If we are tracking the other buttons and the right button was pressed
 				catchMissedCueResponse == true && rightButtonV > voltageThreshold
 			then
 					monkeyCueResponseStr = "Missed";
+					encode(startCueMissCode);
 			end;
 			
 		end;
@@ -1049,13 +1068,14 @@ begin
 	# Update the trial text to the current trial 
 	trialTextStimulus.set_caption( "Block: " + printf( currentBlock, "%2d" ) + "/" + printf( numberBlocks, "%2d" ) + 
 										"\n Condition: "+ printf( currentConditionIdx, "%2d" ) + "/" + printf( numberConditions, "%2d" ) + " (" + printf( currentConditionVal, "%2d" )+ ")" +
+										"\n Correct: "+ printf( correctTrials, "%2d" ) + "/" + printf( trialsCompleted, "%2d" ) +
 										"\n Completed: "+ printf( trialsCompleted, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Missed: "+ printf( missedTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Ignored: "+ printf( ignoredTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ) +
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	buttonTextStimulus.set_caption( "Left: " + printf( leftButtonPresses, "%2d" ) + "/" + printf( leftButtonTrials, "%2d" ) + 
-										"\n Center: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
+										"\n Start-cues: "+ printf( centerButtonPresses, "%2d" ) + "/" + printf( centerButtonTrials, "%2d" ) +
 										"\n Right: "+ printf( rightButtonPresses, "%2d" ) + "/" + printf( rightButtonTrials, "%2d" ), true );
 	
 	# Create boolean variable to set left and right button/stimuli to active or inactive
@@ -1233,6 +1253,9 @@ begin
 		# Create a variable to track if the monkey has made a choice
 		bool choiceMade = false;
 		
+		# Create a variable to track if the monkey is touching both buttons
+		bool doubleTouch = false;
+		
 		# Get the experimenter's and monkey's screens
 		stimulusExperimenter.present();
 		
@@ -1249,7 +1272,7 @@ begin
 		int video_start_time = stimulus_manager.last_stimulus_data().time();
 		
 		# Mark that we are starting the movie
-		#encode(stimulusOnCode);
+		encode(stimulusOnCode);
 		
 		# Loop through the frames of the video until the video stream is over
 		loop
@@ -1264,13 +1287,25 @@ begin
 				currentFrame = leftStream.frame_position();
 				
 				#If the monkey makes an early touch, break from the loop
-				if earlyTouch then break end;
+				if earlyTouch then 
+					encode(earlyTouchCode);
+					break 
+				end;
 				
 				#If the monkey makes an early release, break from the loop
-				if earlyRelease then break end;
+				if earlyRelease then
+					encode(earlyTouchCode);
+					break 
+				end;
+				
+				# If the monkey is touching both buttons, break out of the loop
+				if doubleTouch then
+					encode(earlyTouchCode);
+					break 
+				end;
 				
 				# Encode the current frame + offset value
-				#encode(currentFrame + frameOffsetValue);
+				encode(currentFrame + frameOffsetValue);
 				
 				# Get the time of the next frame
 				next_frame = video_start_time + int( leftStream.current_frame_end()  )
@@ -1321,8 +1356,15 @@ begin
 					# Record that the monkey released early
 					monkeyResponseStr = "Released";
 					earlyRelease = true;
+					wait_interval( 10 );
+					encode(missChoiceCode);
 				end;
 				
+			end;
+			
+			# If the monkey is holding the left and right buttons down
+			if leftButtonV > voltageThreshold && rightButtonV > voltageThreshold then
+				doubleTouch = true;
 			end;
 			
 			if choiceMade == false then
@@ -1345,10 +1387,17 @@ begin
 								monkeyLeftStimulusChoiceMarker.set_color(correctColorR, correctColorG, correctColorB);
 								stimulusExperimenter.present();
 								stimulusMonkey.present();
-								giveJuiceReward (leftJuiceValue );
+								
+								if giveImmediateReward then
+									giveJuiceReward (leftJuiceValue );
+								end;
 								
 								# Record the response
 								monkeyResponseStr = "Left";
+								
+								wait_interval(10);
+								encode(leftChoiceCode);
+								
 							else
 								# Change the color of the right choiceMarker to "correct" color
 								experimenterLeftStimulusChoiceMarker.set_color(incorrectColorR, incorrectColorG, incorrectColorB);
@@ -1359,6 +1408,8 @@ begin
 								
 								# Record the response
 								monkeyResponseStr = "Missed";
+								wait_interval( 10 );
+								encode(missChoiceCode);
 							end;
 						end
 						
@@ -1376,6 +1427,8 @@ begin
 				elseif leftButtonV > voltageThreshold then #If the monkey touched early
 					earlyTouch = true;
 					monkeyResponseStr = "Early";
+					wait_interval( 10 );
+					encode(missChoiceCode);
 					
 				elseif leftHoldTicker > 0 && choiceMade == false then # If the monkey had been holding the left button but released
 					leftHoldTicker = 0;
@@ -1404,8 +1457,13 @@ begin
 								# Record the response
 								monkeyResponseStr = "Right";
 								
-								# Give the monkey the juice reward (only here for training)
-								giveJuiceReward (rightJuiceValue );
+								wait_interval(10);
+								encode(rightChoiceCode);
+								
+								if giveImmediateReward then
+									# Give the monkey the juice reward (only here for training)
+									giveJuiceReward (rightJuiceValue );
+								end;
 								
 							else
 								# Change the color of the right choiceMarker to "correct" color
@@ -1419,6 +1477,8 @@ begin
 								
 								# Record the response
 								monkeyResponseStr = "Missed";
+								wait_interval( 10 );
+								encode(missChoiceCode);
 							end;
 							
 							
@@ -1466,7 +1526,9 @@ begin
 		stimulusPictureMonkey.set_3dpart_xyz( 2 , 9999, 9999, 0 );
 		stimulusPictureMonkey.present();
 		term.print_line("Monkey choose left stimulus, giving " + string(leftJuiceValue) + "drops of juice.");
-		#giveJuiceReward ( leftJuiceValue );
+		if giveImmediateReward == false then
+			giveJuiceReward ( leftJuiceValue );
+		end;
 		wait_interval(postStimDelay);
 		leftButtonPresses = leftButtonPresses+1;
 		if leftJuiceValue > rightJuiceValue
@@ -1479,7 +1541,9 @@ begin
 		stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
 		stimulusPictureMonkey.present();
 		term.print_line("Monkey choose right stimulus, giving " + string(rightJuiceValue) + "drops of juice.");
-		#giveJuiceReward (rightJuiceValue );
+		if giveImmediateReward == false then
+			giveJuiceReward (rightJuiceValue );
+		end;
 		wait_interval(postStimDelay);
 		rightButtonPresses = rightButtonPresses+1;
 		if rightJuiceValue > leftJuiceValue
@@ -1522,10 +1586,10 @@ until
 begin
 	
 	# Encode 
-	#encode(magicNumberCode);
+	encode(magicNumberCode);
 	magicNumber = random(1, 255);
 	wait_interval(10);
-	#encode(magicNumber);
+	encode(magicNumber);
 	logFile.print(string(magicNumber) + "\t");
 	wait_interval(10);
 	
@@ -1535,7 +1599,7 @@ end;
 logFile.print("\n");
 
 # Mark that we are starting the main task
-#encode(taskStartCode);
+encode(taskStartCode);
 wait_interval(10);
 
 # Calculate the total number of buttonbox presentations (number of trails X number of conditions) 
@@ -1568,6 +1632,8 @@ begin
 	until 
 		currentConditionIdx > ordered_cnds_to_show.count() 
 	begin
+		encode(trialStartCode);
+		wait_interval(25);
 		
 		#Get the value (NOT index) of the current condition 
 		currentConditionVal = ordered_cnds_to_show[currentConditionIdx];
@@ -1576,9 +1642,9 @@ begin
 		term.print_line( "\nBlock: " + string (currentBlock) + "\tCondition: " + string(currentConditionVal) + "\tAttempt: " + string(trialsAttempted));
 		
 		# Mark the current condition
-		#encode(cndNumIDCode);
+		encode(cndNumIDCode);
 		wait_interval(25);
-		#encode(conditionOffsetValue+currentConditionVal);
+		encode(conditionOffsetValue+currentConditionVal);
 		wait_interval(25);
 		
 		#Print the trial information to the log file
@@ -1590,20 +1656,33 @@ begin
 		leftItemValue = int(double(left_itm[currentConditionVal].substring(1,2)));
 		rightItemValue = int(double(right_itm[currentConditionVal].substring(1,2)));
 		
+		# Mark the current items
+		encode(leftItmNumIDCode);
+		wait_interval(10);
+		encode(itemOffsetValue+leftItemValue);
+		wait_interval(10);
+		encode(rightItmNumIDCode);
+		wait_interval(10);
+		encode(itemOffsetValue+rightItemValue);
+		wait_interval(10);
+		
+
+		int leftJuiceValue = 0;
+		int rightJuiceValue = 0;
 	
 		
 		if # If we are presenting the left stimulus
 			leftItemValue > 0
 		then
 			# Get the amount of juice drops associated with the left stimulus
-			int leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+			 leftJuiceValue = juiceDrops[int(double(left_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
 			
 			# Get the left movie name to be shown on this trial
 			leftMovieName = movies[leftItemValue];
 			
 		else
 			# Set the amount of juice drops associated with the left stimulus
-			int leftJuiceValue = 0;
+			 leftJuiceValue = 0;
 			
 			# Set the left movie name as the placeholder
 			leftMovieName = "placeholder";
@@ -1614,20 +1693,21 @@ begin
 			rightItemValue > 0
 		then
 			# Get the amount of juice drops associated with the right stimulus
-			int rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
+			 rightJuiceValue = juiceDrops[int(double(right_itm[ordered_cnds_to_show[currentConditionIdx]].substring(1,2)))];
 			
 			# Get the right movie name to be shown on this trial
 			rightMovieName = movies[rightItemValue];
 			
 		else
 			# Set the amount of juice drops associated with the right stimulus
-			int rightJuiceValue = 0;
+			rightJuiceValue = 0;
 			
 			# Set the right movie name as the placeholder
 			rightMovieName = "placeholder";
 		end;
 		
-		
+		# Write stimulus values to log file
+		logFile.print( "LVal:\t"+string(leftJuiceValue)+"\tRVal:\t"+string(rightJuiceValue)+"\t" );  
 
 		# Write stimulus values to log file
 		logFile.print( "LName:\t"+leftMovieName+"\tRName:\t"+rightMovieName+"\t" );  
@@ -1737,6 +1817,9 @@ begin
 		# Terminate the line on the logfile, indicating the end of a trial
 		logFile.print( "END\n");
 		
+		encode(trialEndCode);
+		wait_interval(25);
+		
 		#Print trial information out to terminal
 		term.print_line( "Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Correct trials: " + string( correctTrials  ) + "/" + string(trialsCompleted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Holding Trials: " + string( holdTrials ) + "/" + string(trialsAttempted));
 		term.print_line( "\n");
@@ -1753,7 +1836,7 @@ logFile.print( "PROGRAM EXIT" );
 logFile.close();
 
 # Mark that we are finished the main task
-#encode(taskEndCode);
+encode(taskEndCode);
 
 #Print out behavior information in terminal
 term.print_line( " Completed Trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted));

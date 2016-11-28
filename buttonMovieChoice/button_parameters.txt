@@ -1,10 +1,10 @@
-item file: movieChoiceTraining1_itm.txt
-condition file: movieChoiceTrainingOneSided_cnd.txt
+item file: movieChoiceTraining4_itm.txt
+condition file: movieChoiceTraining4_cnd.txt
 -----------------------------------------------
-number of trials: 02
-conditions to show: 001-->010
+number of trials: 01
+conditions to show: 181-->200
 condition order: random
-trial retry: immediate
+trial retry: ignore
 -----------------------------------------------
 
 MAKE SURE THERE IS A SINGLE SPACE AFTER EACH COLON FOR THE CODE TO WORK!!!
