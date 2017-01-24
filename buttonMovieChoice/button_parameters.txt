@@ -1,13 +1,20 @@
-item file: movieChoiceTraining4_itm.txt
-condition file: movieChoiceTraining4_cnd.txt
+item file: movieChoiceRemix5_itm.txt
+condition file: movieChoiceAlternatingBlocks5_cnd.txt
 -----------------------------------------------
 number of trials: 01
-conditions to show: 181-->200
-condition order: random
+conditions to show: 211-->220
+condition order: incremental
 trial retry: ignore
 -----------------------------------------------
 
 MAKE SURE THERE IS A SINGLE SPACE AFTER EACH COLON FOR THE CODE TO WORK!!!
+
+
+************************************************************************************
+####################################################################################
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!MAKE SURE YOU ARE SAVING DATA!!!!!!!!!!!!!!!!!!!!!!!!!!!
+####################################################################################
+************************************************************************************
 
 
 number of trials--> how many times do you want to show each condition

@@ -1,0 +1,21 @@
+item#	|moviename        	|reward	|totalitems=20
+01   	|blenderlid1.avi  	|00   
+02   	|blenderlid10.avi 	|00    
+03   	|blenderlid2.avi  	|00    
+04   	|blenderlid3.avi  	|00    
+05   	|blenderlid4.avi  	|00    
+06   	|blenderlid5.avi  	|00    
+07   	|blenderlid6.avi  	|00    
+08   	|blenderlid7.avi  	|00    
+09   	|blenderlid8.avi  	|00    
+10   	|blenderlid9.avi  	|00    
+11   	|nikehat1.avi     	|05    
+12   	|nikehat10.avi    	|05    
+13   	|nikehat2.avi     	|05    
+14   	|nikehat3.avi     	|05   
+15   	|nikehat4.avi     	|05    
+16   	|nikehat5.avi     	|05    
+17   	|nikehat6.avi     	|05    
+18   	|nikehat7.avi     	|05    
+19   	|nikehat8.avi     	|05    
+20   	|nikehat9.avi     	|05    
