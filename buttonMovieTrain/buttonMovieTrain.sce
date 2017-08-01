@@ -1,12 +1,12 @@
 #	Button Movie Choice (buttonMovieChoice)
-#	Philip Putnam, 2016, University of Arizona
+#	Philip Putnam, 2017, University of Arizona
 #
 #	Note that this program is written for two monitors, one is the 
 #	buttonscreen the monkey is using (display 1) and one is the
 #	experimenter's monitor (display 2). 
 #
 #	Verison History
-#		v0.1	10/17/16		Branched buttonMovieChoice from buttonTrain
+#		v0.1	7/31/17		Branched buttonMovieTrain from buttonMovieChoice
 #
 
 # Scenario file parameters
@@ -304,8 +304,6 @@ picture{
 # ---------------------------------------------------------------------------------------------------------------------------------
 begin_pcl;
 
-bool testMode =false;
-
 # Variables for task settings (You can change these)
 int startCueHeight	=	200;				# Height of stimulus (pixels)341
 int startCueWidth	=	200;					# Width of stimulus (pixels)512
@@ -346,6 +344,7 @@ int stimulusChoiceSizeIncrease = 300; 	# Size to increase the chosen cue
 int buttonCueDelayLength =75;				# Number of frames until the monkey can make a response (75 == 2.5 seconds == GOAL!)
 int postStimDelay = 500;					# Post stimulus time delay
 int timeLengthFloat = 25; 					# Range of randomization in ms, (-X:+X), for timing
+int postStimChoicePeriod = 5000;			# Time (ms) per trial which the monkey gets to choose either the left or right stimulus while the last frame is held on screen 
 
 # Colors of the shape stimuli (You can change these)
 int leftColorR = 255;
@@ -440,6 +439,7 @@ string leftMovieName = "";			# String containing the location of the frames in t
 string rightMovieName = "";		# String containing the location of the frames in the right movie
 video rightStream = new video;	# Video stream object for the right movie
 video leftStream = new video;		# Video stream object for the left movie
+int thisTrialFrameLength = 0;
 
 # ------------------------------------------------------ Access national instruments card ------------------------------------------------------
 dio_device card = new dio_device( ni_dio_device, 1, 0 );
@@ -510,12 +510,18 @@ fil.open( item_file );										# Load the item file data into the input file
 currentLine=fil.get_line();								# Get the first line of the item file (column headers)
 name_index=currentLine.find("moviename");
 juiceDrops_index=currentLine.find("reward");
+startFrame_index=currentLine.find("start");
+endFrame_index=currentLine.find("end");
 
 int num_items=int(double(currentLine.substring(currentLine.find("totalitems=")+11,2))); # Assign how many items there are to a avariable
 array<int>juiceDrops[num_items];							# Create an array which will contain the associated juice drops for each movie
 array<string>movies[num_items];							# Create an array which will movie filenames
+array<int>startFrames[num_items];					   # Create an array which will contain the associated starting frame for each movie
+array<int>endFrames[num_items];							# Create an array which will contain the associated end frame for each movie
 
 term.print_line("Reading " + string(num_items) + " items from file.");
+
+term.print_line("\tName Idx: " + string(name_index) + "\tReward Idx: " + string(juiceDrops_index) + "\tStart Frame Idx: " + string(startFrame_index) + "\tEnd Frame Idx: " + string(endFrame_index));
 
 loop  # Loop through each line in the item file
 	i=1
@@ -524,10 +530,12 @@ until
 begin 
 		
    currentLine = fil.get_line();							# Get the list of characters that compose the current line in the itm file
-
+	
 	movies[i] = currentLine.substring(name_index,currentLine.find(".avi")-name_index);	# Get the item filename
  	juiceDrops[i] = int(double(currentLine.substring(juiceDrops_index,2))); 						# Get the number of juice drops
-   term.print_line( "Item: " + string(i) + "\tName: " + movies[i] + "\tReward: " + string(juiceDrops[i]));
+	startFrames[i] = int(double(currentLine.substring(startFrame_index,3))); 						# Get the number of juice drops
+	endFrames[i] = int(double(currentLine.substring(endFrame_index,3))); 						# Get the number of juice drops
+   term.print_line( "Item: " + string(i) + "\tName: " + movies[i] + "\tReward: " + string(juiceDrops[i]) + "\tStart Frame: " + string(startFrames[i]) + "\tEnd Frame: " + string(endFrames[i]));
 	i=i+1;														# Increment the counter                 
 end;
 
@@ -571,7 +579,7 @@ elseif (temp_name.find("-->")!=0) then					# If an arrow --> is typed in the con
 	int start_cnd = int(double(temp_name.substring(temp_name.find("-->")-3,3)));	# Get the number before the arrow
 	int end_cnd = int(double(temp_name.substring(temp_name.find("-->")+3,3)));		# Get the number after the arrow
 	array<int>cnds_temp[end_cnd-start_cnd+1];			# Create an array the length of the number of cnds in the range
-	#fill the array with cnds in the specified range
+	cnds_temp.fill(1, end_cnd-start_cnd+1, start_cnd, 1);	#fill the array with cnds in the specified range
 	cnds_to_show.append(cnds_temp);						# Append the cnd array to the global cnd array
 	logFile.print( "Showing conditions: "+string(start_cnd)+"-->"+string(end_cnd)+".\n" );  
 	term.print_line( "Showing conditions: "+string(start_cnd)+"-->"+string(end_cnd)+".\n" );
@@ -621,12 +629,6 @@ end;
 
 # Print blank line to seperate the pre-trial info from trials
 term.print_line( "");
-
-if testMode == true then
-	ignoredItiDuration = 10;
-	showStartCue = false;
-	catchHolding = false;
-	end;
 
 # ------------------------------------------------------ Send Encode Subroutine ------------------------------------------------------
 sub
@@ -1242,16 +1244,8 @@ begin
 	# Assume we are NOT going to present this stimulus
 	bool presentStimulus = false;
 	
-	string cueResponse = "Error";
-	if 
-		showStartCue 
-	then #Present the start cue
-		 cueResponse = presentCue();
-	else
-		 cueResponse = "CueCorrect";
-	end;
-	
-	
+	#Present the start cue
+	string cueResponse = presentCue();
 		
 	if #If the monkey correctly responded to the start cue
 		cueResponse == "CueCorrect"

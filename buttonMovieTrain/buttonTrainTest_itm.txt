@@ -1,0 +1,25 @@
+item#	|moviename      	|reward	|start	|end	|totalitems=24
+01   	|5S_17ls.avi    	|00    	|001  	|030
+02   	|5S_17ls2.avi   	|00    	|001  	|030
+03   	|5S_17ne.avi    	|00    	|001  	|030
+04   	|5S_17ne2.avi   	|00    	|001  	|030
+05   	|5S_17th.avi    	|00    	|001  	|030
+06   	|5S_17th2.avi   	|00    	|001  	|030
+07   	|5s_052_ls3.avi 	|00    	|001  	|030
+08   	|5s_052_ls4.avi 	|00    	|001  	|030
+09   	|5s_052_ne1.avi 	|00    	|001  	|030
+10   	|5s_052_ne2.avi 	|00    	|001  	|030
+11   	|5s_052_th2.avi 	|00    	|001  	|030
+12   	|5s_052_th3.avi 	|00    	|001  	|030
+13   	|NS_cuttr1.avi  	|00    	|001  	|030
+14   	|NS_cuttr2.avi  	|00    	|001  	|030
+15   	|NS_cuttr3.avi  	|00    	|001  	|030
+16   	|NS_cuttr4.avi  	|00    	|001  	|030
+17   	|NS_cuttr5.avi  	|00    	|001  	|030
+18   	|NS_cuttr6.avi  	|00    	|001  	|030
+19   	|NS_nkht1.avi   	|00    	|001  	|030
+20   	|NS_nkht2.avi   	|00    	|001  	|030
+21   	|NS_nkht3.avi   	|00    	|001  	|030
+22   	|NS_nkht4.avi   	|00    	|001  	|030
+23   	|NS_nkht5.avi   	|00    	|001  	|030
+24   	|NS_nkht6.avi   	|00    	|001  	|030

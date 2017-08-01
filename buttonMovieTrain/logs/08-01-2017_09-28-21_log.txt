@@ -1,0 +1,9 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	buttonTrainTest_itm.txt
+COND:	movieChoiceAlternatingBlocks1_cnd.txt
+DATE:	08/01/2017 09:28:21
+Showing conditions: 1-->150.
+MagicNumbers:	244	241	212	166	29	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	5S_17th2	RName:	5s_052_ne2	
