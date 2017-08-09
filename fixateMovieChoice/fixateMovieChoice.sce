@@ -413,10 +413,10 @@ int trialStartTime;					# Time when trial starts
 int trialResponseTime; 				# Time when the trial response occurs
 int leftStimulusChoices = 0;			# Tracks number of left buttons presses
 int rightStimulusChoices = 0;		# Tracks number of right buttons presses
-int startCuePresses = 0;		# Tracks number of center buttons presses
+int startCuesFixated = 0;		# Tracks number of center buttons presses
 int leftStimulusTrials = 0;			# Tracks number of left buttons presses
 int rightStimulusTrials  = 0;		# Tracks number of right buttons presses
-int startCuesCompleted  = 0;		# Tracks number of center buttons presses
+int startCuesPresented  = 0;		# Tracks number of center buttons presses
 int leftStimulusCorrectTrials = 0; # Tracks number of trials where the left buttons is correct
 int rightStimulusCorrectTrials = 0;# Tracks number of trials where the left buttons is correct
 string monkeyResponse = "";		# String to hold monkey's response from trial subroutines	
@@ -720,7 +720,7 @@ begin
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	responseTextITI.set_caption( "Left: " + printf( leftStimulusChoices, "%2d" ) + "/" + printf( leftStimulusCorrectTrials, "%2d" )  + 
-										"\n Start-cues: "+ printf( startCuePresses, "%2d" ) + "/" + printf( startCuesCompleted, "%2d" ) +
+										"\n Start-cues: "+ printf( startCuesFixated, "%2d" ) + "/" + printf( startCuesPresented, "%2d" ) +
 										"\n Right: "+ printf( rightStimulusChoices, "%2d" ) + "/" + printf( rightStimulusCorrectTrials, "%2d" ) , true );
 	
 	# Present the ITI screen to the monkey and the experimenter
@@ -768,7 +768,7 @@ begin
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	responseTextCue.set_caption( "Left: " + printf( leftStimulusChoices, "%2d" ) + "/" + printf( leftStimulusCorrectTrials, "%2d" )  + 
-										"\n Start-cues: "+ printf( startCuePresses, "%2d" ) + "/" + printf( startCuesCompleted, "%2d" ) +
+										"\n Start-cues: "+ printf( startCuesFixated, "%2d" ) + "/" + printf( startCuesPresented, "%2d" ) +
 										"\n Right: "+ printf( rightStimulusChoices, "%2d" ) + "/" + printf( rightStimulusCorrectTrials, "%2d" ) , true );
 	
 	# Assume the default behavior of the monkey is to ignore the stimulus
@@ -805,6 +805,7 @@ begin
 		startCueExperimenter.present();
 		startCueMonkey.present();
 		
+		startCuesPresented = startCuesPresented+1;
 		
 		# Boolean variable to indicate if we need to break out of the current fixation loop
 		bool breakFixationLoop = false;
@@ -874,7 +875,8 @@ begin
 					breakFixationLoop =  true;
 					
 					#Increase the start-cue counter
-					startCuesCompleted = startCuesCompleted+1;
+					startCuesFixated = startCuesFixated +1;
+					
 					
 					#If we are to give juice to the monkey for fixation on the start cue, do so
 					if 
@@ -939,7 +941,7 @@ begin
 										"\n Hold Errors: "+ printf( holdTrials, "%2d" ) + "/" + printf( trialsAttempted, "%2d" ), true );
 										
 	responseTextStimulus.set_caption( "Left: " + printf( leftStimulusChoices, "%2d" ) + "/" + printf( leftStimulusCorrectTrials, "%2d" )  + 
-										"\n Start-cues: "+ printf( startCuePresses, "%2d" ) + "/" + printf( startCuesCompleted, "%2d" ) +
+										"\n Start-cues: "+ printf( startCuesFixated, "%2d" ) + "/" + printf( startCuesPresented, "%2d" ) +
 										"\n Right: "+ printf( rightStimulusChoices, "%2d" ) + "/" + printf( rightStimulusCorrectTrials, "%2d" ) , true );
 	
 	# Create boolean variable to set left and right button/stimuli to active or inactive
@@ -1130,293 +1132,299 @@ begin
 			leftStimulusCorrectTrials = leftStimulusCorrectTrials+1;
 			rightStimulusCorrectTrials = rightStimulusCorrectTrials+1;	
 		end;
+	
+	
+		# Mark that we are finished the movie
+		wait_interval(15);
+		encode(stimulusOffCode);
+		
+		
+		
+		#------------------------------------------------------------------
+		
+		# Move the two stimuli off the screen for now so that the monkey can do a fixation
+		stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
+		stimulusPictureMonkey.set_3dpart_xyz( 2, 9999, 9999, 0 );
+		
+		# Move the monkeyStimulusFixspotDot back in position
+		stimulusPictureMonkey.set_part_x( 1, fixspotX );  
+		stimulusPictureMonkey.set_part_y( 1, fixspotY );  
+		
+		# Move the experimenter's fix spot back in position
+		stimulusExperimenter.set_part_x( 1, fixspotX );  
+		stimulusExperimenter.set_part_y( 1, fixspotY );  
+		stimulusExperimenter.set_part_x( 2, fixspotX );  
+		stimulusExperimenter.set_part_y( 2, fixspotY );  
+		stimulusExperimenter.set_part_x( 3, fixspotX );  
+		stimulusExperimenter.set_part_y( 3, fixspotY );  
+		
+		# Refresh the experimenter's and monkey's screens
+		stimulusExperimenter.present();
+		stimulusMonkey.present();
+		
+		# Boolean variable to indicate if we need to break out of the current fixation loop
+		bool breakFixationLoop = false;
+		string postStimFixationResponseStr = "PostStimFixIgnored";
+		
+		# Get the current time
+		clockTicker=clock.time();
+			
+		loop until # Loop until the cue duration is over
+				((clock.time()-clockTicker) > postStimFixationWindow) || breakFixationLoop ==  true
+		begin
+			# Update the eye position
+			eyeX =card.read_analog(xV)*ratioX; # get the X eye position
+			eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
+				
+			# Update the eye position on the experimenter's screen
+			stimulusExperimenter.set_part_x( 4, eyeX );  
+			stimulusExperimenter.set_part_y( 4, eyeY );  
+			stimulusExperimenter.present();  
+				
+			if # If the monkey enters the fixation window
+				eyeX<double(fixspotX+fixspotDotSize/2+fixationWindowSize) &&
+				eyeX>double(fixspotX-fixspotDotSize/2-fixationWindowSize) &&
+				eyeY<double(fixspotY+fixspotDotSize/2+fixationWindowSize) && 
+				eyeY>double(fixspotY-fixspotDotSize/2-fixationWindowSize)
+			then
+				# Start the fixation timer at the current time
+				fixationTicker = clock.time();
+				
+				#Set the response string to 'CueFixating'
+				postStimFixationResponseStr = "PostStimFixating";
+					
+				loop until # Loop until the cue duration is over
+					((clock.time()-fixationTicker) > postStimFixationDuration) || breakFixationLoop ==  true
+				begin
+			
+					# Update the eye position
+					eyeX =card.read_analog(xV)*ratioX; # get the X eye position
+					eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
+			
+					# Update the eye position on the experimenter's screen
+					stimulusExperimenter.set_part_x( 4, eyeX );  
+					stimulusExperimenter.set_part_y( 4, eyeY );  
+					stimulusExperimenter.present();
+						
+					if # If the monkey leaves the fixation window after fixating
+						eyeX>double(fixspotX+fixspotDotSize/2+fixationWindowSize) ||
+						eyeX<double(fixspotX-fixspotDotSize/2-fixationWindowSize) ||
+						eyeY>double(fixspotY+fixspotDotSize/2+fixationWindowSize) || 
+						eyeY<double(fixspotY-fixspotDotSize/2-fixationWindowSize)
+					then
+						#Set the response string to 'CueBrokeFixation'
+						postStimFixationResponseStr = "PostStimBrokeFixation";
+						
+						#Break out of fixation loop
+						breakFixationLoop =  true;
+					end;
+				end;
+				
+				if # If the monkey didn't break fixation
+					postStimFixationResponseStr == "PostStimFixating"
+				then
+					#Set the response string to 'CueFixated'
+					postStimFixationResponseStr = "PostStimFixated";
+					
+					#Break out of fixation loop
+					breakFixationLoop =  true;
+					
+					#Increase the start-cue counter
+					postStimFixationsCompleted = postStimFixationsCompleted+1;
+				end;
+			end;
+		end;
+		
+		#------------------------------------------------------------------
+		
+		if 
+			leftActive == true
+		then
+			stimulusPictureMonkey.set_3dpart_xyz( 1, leftStimulusXPosition, stimulusYPosition, 0 );
+		end;
+			
+		if
+			rightActive == true
+		then
+			stimulusPictureMonkey.set_3dpart_xyz( 2, rightStimulusXPosition, stimulusYPosition, 0 );
+		end;
+		
+		# Move the monkey's fix spot off the screen again
+		stimulusPictureMonkey.set_part_x( 1, 9999 );  
+		stimulusPictureMonkey.set_part_y( 1, 9999 );  
+		
+		# Move the experimenter's fix spot off the screen again
+		stimulusExperimenter.set_part_x( 1, 9999 );  
+		stimulusExperimenter.set_part_y( 1, 9999 );  
+		stimulusExperimenter.set_part_x( 2, 9999 );  
+		stimulusExperimenter.set_part_y( 2, 9999 );  
+		stimulusExperimenter.set_part_x( 3, 9999 );  
+		stimulusExperimenter.set_part_y( 3, 9999 );  
+		
+		# Move the experimenter's fixation windows for the left and right stimulus into place
+		stimulusExperimenter.set_part_x( 5, leftStimulusXPosition );  
+		stimulusExperimenter.set_part_y( 5, stimulusYPosition );  
+		stimulusExperimenter.set_part_x( 6, leftStimulusXPosition );  
+		stimulusExperimenter.set_part_y( 6, stimulusYPosition );  
+		stimulusExperimenter.set_part_x( 7, rightStimulusXPosition );  
+		stimulusExperimenter.set_part_y( 7, stimulusYPosition );  
+		stimulusExperimenter.set_part_x( 8, rightStimulusXPosition );  
+		stimulusExperimenter.set_part_y( 8, stimulusYPosition );  
+		
+		# Calculate the bounds for the left stimulus
+		int leftStimulusUpperBounds = (stimulusYPosition + (videoStimulusHeight/2) ) + stimulusWindowSize;
+		int leftStimulusLowerBounds = (stimulusYPosition - (videoStimulusHeight/2) ) - stimulusWindowSize;
+		int leftStimulusOuterBounds = (leftStimulusXPosition - (videoStimulusWidth/2) ) - stimulusWindowSize;
+		int leftStimulusInnerBounds = (leftStimulusXPosition + (videoStimulusWidth/2) ) + stimulusWindowSize;
+		
+		# Calculate the bounds for the right stimulus
+		int rightStimulusUpperBounds = (stimulusYPosition + (videoStimulusHeight/2) ) + stimulusWindowSize;
+		int rightStimulusLowerBounds = (stimulusYPosition - (videoStimulusHeight/2) ) - stimulusWindowSize;
+		int rightStimulusInnerBounds = (rightStimulusXPosition - (videoStimulusWidth/2) ) - stimulusWindowSize;
+		int rightStimulusOuterBounds = (rightStimulusXPosition + (videoStimulusWidth/2) ) + stimulusWindowSize;
+		
+		#Set the size of the fixation window and black boundry on the experimenter's screen for the left stimulus
+		experimenterStimulusLeftBoundary.set_height(videoStimulusHeight + (2*stimulusWindowSize)); 
+		experimenterStimulusLeftBoundary.set_width(videoStimulusWidth + (2*stimulusWindowSize));
+		experimenterStimulusLeftBoundaryBlack.set_height(videoStimulusHeight + ((2*stimulusWindowSize)-2)); 
+		experimenterStimulusLeftBoundaryBlack.set_width(videoStimulusWidth + ((2*stimulusWindowSize)-2)); 
+		
+		#Set the size of the fixation window and black boundry on the experimenter's screen for the right stimulus
+		experimenterStimulusRightBoundary.set_height(videoStimulusHeight + (2*stimulusWindowSize)); 
+		experimenterStimulusRightBoundary.set_width(videoStimulusWidth + (2*stimulusWindowSize));
+		experimenterStimulusRightBoundaryBlack.set_height(videoStimulusHeight + ((2*stimulusWindowSize)-2)); 
+		experimenterStimulusRightBoundaryBlack.set_width(videoStimulusWidth + ((2*stimulusWindowSize)-2)); 
+		
+		# Refresh the experimenter's and monkey's screens
+		stimulusExperimenter.present();
+		stimulusMonkey.present();
+		
+		bool madeChoice = false;
+		monkeyResponseStr = "choiceIgnored";
+		
+		# Get the current time
+		clockTicker=clock.time();
+			
+		loop until # Loop until the post-stim period is over
+				((clock.time()-clockTicker) > postStimChoiceDuration) || madeChoice ==  true
+		begin
+			# Update the eye position
+			eyeX =card.read_analog(xV)*ratioX; # get the X eye position
+			eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
+				
+			# Update the eye position on the experimenter's screen
+			stimulusExperimenter.set_part_x( 4, eyeX );  
+			stimulusExperimenter.set_part_y( 4, eyeY );  
+			stimulusExperimenter.present(); 
+			
+			if # If the monkey enters the left stimulus fixation window
+				eyeX<double(leftStimulusInnerBounds) &&
+				eyeX>double(leftStimulusOuterBounds) &&
+				eyeY<double(leftStimulusUpperBounds) && 
+				eyeY>double(leftStimulusLowerBounds)
+			then
+				# Start the fixation timer at the current time
+				fixationTicker = clock.time();
+				
+				#Set the response string to 'leftStimFixating'
+				monkeyResponseStr = "leftStimFixating";
+					
+				loop until # Loop until the cue duration is over
+					((clock.time()-fixationTicker) > choiceFixationDuration) || breakFixationLoop ==  true
+				begin
+			
+					# Update the eye position
+					eyeX =card.read_analog(xV)*ratioX; # get the X eye position
+					eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
+			
+					# Update the eye position on the experimenter's screen
+					stimulusExperimenter.set_part_x( 4, eyeX );  
+					stimulusExperimenter.set_part_y( 4, eyeY );  
+					stimulusExperimenter.present();
+						
+					if # If the monkey leaves the fixation window after fixating
+						eyeX>double(leftStimulusInnerBounds) ||
+						eyeX<double(leftStimulusOuterBounds) ||
+						eyeY>double(leftStimulusUpperBounds) || 
+						eyeY<double(leftStimulusLowerBounds)
+					then
+						#Set the response string to 'PostStimBrokeFixation'
+						monkeyResponseStr = "choiceStimBrokeFixation";
+						
+						#Break out of fixation loop
+						breakFixationLoop =  true;
+					end;
+				end;
+				
+				if # If the monkey didn't break fixation
+					monkeyResponseStr == "leftStimFixating"
+				then
+					#Set the response string to 'CueFixated'
+					monkeyResponseStr = "Left";
+					
+					#Break out of fixation loop
+					madeChoice =  true;
+				end;
+				
+			end;
+				
+			if # If the monkey enters the right stimulus fixation window
+				eyeX>double(rightStimulusInnerBounds) &&
+				eyeX<double(rightStimulusOuterBounds) &&
+				eyeY<double(rightStimulusUpperBounds) && 
+				eyeY>double(rightStimulusLowerBounds)
+			then
+				# Start the fixation timer at the current time
+				fixationTicker = clock.time();
+				
+				#Set the response string to 'rightStimFixating'
+				monkeyResponseStr = "rightStimFixating";
+					
+				loop until # Loop until the cue duration is over
+					((clock.time()-fixationTicker) > choiceFixationDuration) || breakFixationLoop ==  true
+				begin
+			
+					# Update the eye position
+					eyeX =card.read_analog(xV)*ratioX; # get the X eye position
+					eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
+			
+					# Update the eye position on the experimenter's screen
+					stimulusExperimenter.set_part_x( 4, eyeX );  
+					stimulusExperimenter.set_part_y( 4, eyeY );  
+					stimulusExperimenter.present();
+						
+					if # If the monkey leaves the fixation window after fixating
+						eyeX>double(rightStimulusInnerBounds) ||
+						eyeX<double(rightStimulusOuterBounds) ||
+						eyeY>double(rightStimulusUpperBounds) || 
+						eyeY<double(rightStimulusLowerBounds)
+					then
+						#Set the response string to 'PostStimBrokeFixation'
+						monkeyResponseStr = "choiceStimBrokeFixation";
+						
+						#Break out of fixation loop
+						breakFixationLoop =  true;
+					end;
+				end;
+				
+				if # If the monkey didn't break fixation
+					monkeyResponseStr == "rightStimFixating"
+				then
+					#Set the response string to 'CueFixated'
+					monkeyResponseStr = "Right";
+					
+					#Break out of fixation loop
+					madeChoice =  true;
+				end;
+			end;
+		end;
+		
+		
 	else
 		
 	end;
 	
-	# Mark that we are finished the movie
-	wait_interval(15);
-	encode(stimulusOffCode);
 	
-	
-	
-	#------------------------------------------------------------------
-	
-	# Move the two stimuli off the screen for now so that the monkey can do a fixation
-	stimulusPictureMonkey.set_3dpart_xyz( 1, 9999, 9999, 0 );
-	stimulusPictureMonkey.set_3dpart_xyz( 2, 9999, 9999, 0 );
-	
-	# Move the monkeyStimulusFixspotDot back in position
-	stimulusPictureMonkey.set_part_x( 1, fixspotX );  
-	stimulusPictureMonkey.set_part_y( 1, fixspotY );  
-	
-	# Move the experimenter's fix spot back in position
-	stimulusExperimenter.set_part_x( 1, fixspotX );  
-	stimulusExperimenter.set_part_y( 1, fixspotY );  
-	stimulusExperimenter.set_part_x( 2, fixspotX );  
-	stimulusExperimenter.set_part_y( 2, fixspotY );  
-	stimulusExperimenter.set_part_x( 3, fixspotX );  
-	stimulusExperimenter.set_part_y( 3, fixspotY );  
-	
-	# Refresh the experimenter's and monkey's screens
-	stimulusExperimenter.present();
-	stimulusMonkey.present();
-	
-	# Boolean variable to indicate if we need to break out of the current fixation loop
-	bool breakFixationLoop = false;
-	string postStimFixationResponseStr = "PostStimFixIgnored";
-	
-	# Get the current time
-	clockTicker=clock.time();
-		
-	loop until # Loop until the cue duration is over
-			((clock.time()-clockTicker) > postStimFixationWindow) || breakFixationLoop ==  true
-	begin
-		# Update the eye position
-		eyeX =card.read_analog(xV)*ratioX; # get the X eye position
-		eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
-			
-		# Update the eye position on the experimenter's screen
-		stimulusExperimenter.set_part_x( 4, eyeX );  
-		stimulusExperimenter.set_part_y( 4, eyeY );  
-		stimulusExperimenter.present();  
-			
-		if # If the monkey enters the fixation window
-			eyeX<double(fixspotX+fixspotDotSize/2+fixationWindowSize) &&
-			eyeX>double(fixspotX-fixspotDotSize/2-fixationWindowSize) &&
-			eyeY<double(fixspotY+fixspotDotSize/2+fixationWindowSize) && 
-			eyeY>double(fixspotY-fixspotDotSize/2-fixationWindowSize)
-		then
-			# Start the fixation timer at the current time
-			fixationTicker = clock.time();
-			
-			#Set the response string to 'CueFixating'
-			postStimFixationResponseStr = "PostStimFixating";
-				
-			loop until # Loop until the cue duration is over
-				((clock.time()-fixationTicker) > postStimFixationDuration) || breakFixationLoop ==  true
-			begin
-		
-				# Update the eye position
-				eyeX =card.read_analog(xV)*ratioX; # get the X eye position
-				eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
-		
-				# Update the eye position on the experimenter's screen
-				stimulusExperimenter.set_part_x( 4, eyeX );  
-				stimulusExperimenter.set_part_y( 4, eyeY );  
-				stimulusExperimenter.present();
-					
-				if # If the monkey leaves the fixation window after fixating
-					eyeX>double(fixspotX+fixspotDotSize/2+fixationWindowSize) ||
-					eyeX<double(fixspotX-fixspotDotSize/2-fixationWindowSize) ||
-					eyeY>double(fixspotY+fixspotDotSize/2+fixationWindowSize) || 
-					eyeY<double(fixspotY-fixspotDotSize/2-fixationWindowSize)
-				then
-					#Set the response string to 'CueBrokeFixation'
-					postStimFixationResponseStr = "PostStimBrokeFixation";
-					
-					#Break out of fixation loop
-					breakFixationLoop =  true;
-				end;
-			end;
-			
-			if # If the monkey didn't break fixation
-				postStimFixationResponseStr == "PostStimFixating"
-			then
-				#Set the response string to 'CueFixated'
-				postStimFixationResponseStr = "PostStimFixated";
-				
-				#Break out of fixation loop
-				breakFixationLoop =  true;
-				
-				#Increase the start-cue counter
-				postStimFixationsCompleted = postStimFixationsCompleted+1;
-			end;
-		end;
-	end;
-	
-	#------------------------------------------------------------------
-	
-	if 
-		leftActive == true
-	then
-		stimulusPictureMonkey.set_3dpart_xyz( 1, leftStimulusXPosition, stimulusYPosition, 0 );
-	end;
-		
-	if
-		rightActive == true
-	then
-		stimulusPictureMonkey.set_3dpart_xyz( 2, rightStimulusXPosition, stimulusYPosition, 0 );
-	end;
-	
-	# Move the monkey's fix spot off the screen again
-	stimulusPictureMonkey.set_part_x( 1, 9999 );  
-	stimulusPictureMonkey.set_part_y( 1, 9999 );  
-	
-	# Move the experimenter's fix spot off the screen again
-	stimulusExperimenter.set_part_x( 1, 9999 );  
-	stimulusExperimenter.set_part_y( 1, 9999 );  
-	stimulusExperimenter.set_part_x( 2, 9999 );  
-	stimulusExperimenter.set_part_y( 2, 9999 );  
-	stimulusExperimenter.set_part_x( 3, 9999 );  
-	stimulusExperimenter.set_part_y( 3, 9999 );  
-	
-	# Move the experimenter's fixation windows for the left and right stimulus into place
-	stimulusExperimenter.set_part_x( 5, leftStimulusXPosition );  
-	stimulusExperimenter.set_part_y( 5, stimulusYPosition );  
-	stimulusExperimenter.set_part_x( 6, leftStimulusXPosition );  
-	stimulusExperimenter.set_part_y( 6, stimulusYPosition );  
-	stimulusExperimenter.set_part_x( 7, rightStimulusXPosition );  
-	stimulusExperimenter.set_part_y( 7, stimulusYPosition );  
-	stimulusExperimenter.set_part_x( 8, rightStimulusXPosition );  
-	stimulusExperimenter.set_part_y( 8, stimulusYPosition );  
-	
-	int leftStimulusUpperBounds = (stimulusYPosition + (videoStimulusHeight/2) ) + stimulusWindowSize;
-	int leftStimulusLowerBounds = (stimulusYPosition - (videoStimulusHeight/2) ) - stimulusWindowSize;
-	int leftStimulusOuterBounds = (leftStimulusXPosition - (videoStimulusWidth/2) ) - stimulusWindowSize;
-	int leftStimulusInnerBounds = (leftStimulusXPosition + (videoStimulusWidth/2) ) + stimulusWindowSize;
-	
-	int rightStimulusUpperBounds = (stimulusYPosition + (videoStimulusHeight/2) ) + stimulusWindowSize;
-	int rightStimulusLowerBounds = (stimulusYPosition - (videoStimulusHeight/2) ) - stimulusWindowSize;
-	int rightStimulusInnerBounds = (rightStimulusXPosition - (videoStimulusWidth/2) ) - stimulusWindowSize;
-	int rightStimulusOuterBounds = (rightStimulusXPosition + (videoStimulusWidth/2) ) + stimulusWindowSize;
-	
-	#Set the size of the fixation window and black boundry on the experimenter's screen for the left stimulus
-	experimenterStimulusLeftBoundary.set_height(videoStimulusHeight + (2*stimulusWindowSize)); 
-	experimenterStimulusLeftBoundary.set_width(videoStimulusWidth + (2*stimulusWindowSize));
-	experimenterStimulusLeftBoundaryBlack.set_height(videoStimulusHeight + ((2*stimulusWindowSize)-2)); 
-	experimenterStimulusLeftBoundaryBlack.set_width(videoStimulusWidth + ((2*stimulusWindowSize)-2)); 
-	
-	#Set the size of the fixation window and black boundry on the experimenter's screen for the right stimulus
-	experimenterStimulusRightBoundary.set_height(videoStimulusHeight + (2*stimulusWindowSize)); 
-	experimenterStimulusRightBoundary.set_width(videoStimulusWidth + (2*stimulusWindowSize));
-	experimenterStimulusRightBoundaryBlack.set_height(videoStimulusHeight + ((2*stimulusWindowSize)-2)); 
-	experimenterStimulusRightBoundaryBlack.set_width(videoStimulusWidth + ((2*stimulusWindowSize)-2)); 
-	
-	# Refresh the experimenter's and monkey's screens
-	stimulusExperimenter.present();
-	stimulusMonkey.present();
-	
-	bool madeChoice = false;
-   monkeyResponseStr = "choiceIgnored";
-	
-	# Get the current time
-	clockTicker=clock.time();
-		
-	loop until # Loop until the post-stim period is over
-			((clock.time()-clockTicker) > postStimChoiceDuration) || madeChoice ==  true
-	begin
-		# Update the eye position
-		eyeX =card.read_analog(xV)*ratioX; # get the X eye position
-		eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
-			
-		# Update the eye position on the experimenter's screen
-		stimulusExperimenter.set_part_x( 4, eyeX );  
-		stimulusExperimenter.set_part_y( 4, eyeY );  
-		stimulusExperimenter.present(); 
-		
-		if # If the monkey enters the left stimulus fixation window
-			eyeX<double(leftStimulusInnerBounds) &&
-			eyeX>double(leftStimulusOuterBounds) &&
-			eyeY<double(leftStimulusUpperBounds) && 
-			eyeY>double(leftStimulusLowerBounds)
-		then
-			# Start the fixation timer at the current time
-			fixationTicker = clock.time();
-			
-			#Set the response string to 'leftStimFixating'
-			monkeyResponseStr = "leftStimFixating";
-				
-			loop until # Loop until the cue duration is over
-				((clock.time()-fixationTicker) > choiceFixationDuration) || breakFixationLoop ==  true
-			begin
-		
-				# Update the eye position
-				eyeX =card.read_analog(xV)*ratioX; # get the X eye position
-				eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
-		
-				# Update the eye position on the experimenter's screen
-				stimulusExperimenter.set_part_x( 4, eyeX );  
-				stimulusExperimenter.set_part_y( 4, eyeY );  
-				stimulusExperimenter.present();
-					
-				if # If the monkey leaves the fixation window after fixating
-					eyeX>double(leftStimulusInnerBounds) ||
-					eyeX<double(leftStimulusOuterBounds) ||
-					eyeY>double(leftStimulusUpperBounds) || 
-					eyeY<double(leftStimulusLowerBounds)
-				then
-					#Set the response string to 'PostStimBrokeFixation'
-					monkeyResponseStr = "choiceStimBrokeFixation";
-					
-					#Break out of fixation loop
-					breakFixationLoop =  true;
-				end;
-			end;
-			
-			if # If the monkey didn't break fixation
-				monkeyResponseStr == "leftStimFixating"
-			then
-				#Set the response string to 'CueFixated'
-				monkeyResponseStr = "Left";
-				
-				#Break out of fixation loop
-				madeChoice =  true;
-			end;
-			
-		end;
-			
-		if # If the monkey enters the right stimulus fixation window
-			eyeX>double(rightStimulusInnerBounds) &&
-			eyeX<double(rightStimulusOuterBounds) &&
-			eyeY<double(rightStimulusUpperBounds) && 
-			eyeY>double(rightStimulusLowerBounds)
-		then
-			# Start the fixation timer at the current time
-			fixationTicker = clock.time();
-			
-			#Set the response string to 'rightStimFixating'
-			monkeyResponseStr = "rightStimFixating";
-				
-			loop until # Loop until the cue duration is over
-				((clock.time()-fixationTicker) > choiceFixationDuration) || breakFixationLoop ==  true
-			begin
-		
-				# Update the eye position
-				eyeX =card.read_analog(xV)*ratioX; # get the X eye position
-				eyeY =card.read_analog(yV)*ratioY; # get the Y eye position
-		
-				# Update the eye position on the experimenter's screen
-				stimulusExperimenter.set_part_x( 4, eyeX );  
-				stimulusExperimenter.set_part_y( 4, eyeY );  
-				stimulusExperimenter.present();
-					
-				if # If the monkey leaves the fixation window after fixating
-					eyeX>double(rightStimulusInnerBounds) ||
-					eyeX<double(rightStimulusOuterBounds) ||
-					eyeY>double(rightStimulusUpperBounds) || 
-					eyeY<double(rightStimulusLowerBounds)
-				then
-					#Set the response string to 'PostStimBrokeFixation'
-					monkeyResponseStr = "choiceStimBrokeFixation";
-					
-					#Break out of fixation loop
-					breakFixationLoop =  true;
-				end;
-			end;
-			
-			if # If the monkey didn't break fixation
-				monkeyResponseStr == "rightStimFixating"
-			then
-				#Set the response string to 'CueFixated'
-				monkeyResponseStr = "Right";
-				
-				#Break out of fixation loop
-				madeChoice =  true;
-			end;
-		end;
-	end;
-
 	if
 		monkeyResponseStr == "Left"
 	then	
@@ -1717,7 +1725,7 @@ begin
 		
 		#Print trial information out to terminal
 		term.print_line( "Completed trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted) + "   Correct trials: " + string( correctTrials  ) + "/" + string(trialsCompleted) + "   Missed trials: " + string( missedTrials ) + "/" + string(trialsAttempted) + "   Ignored trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) + "   Holding Trials: " + string( holdTrials ) + "/" + string(trialsAttempted));
-		term.print_line( "Start-cues: " + string( startCuePresses ) + "/" + string(startCuesCompleted) + "   Left Choices: " + string( leftStimulusChoices  ) + "/" + string(leftStimulusCorrectTrials) + "   Right Presses: " + string( rightStimulusChoices ) + "/" + string(rightStimulusCorrectTrials) + "   Early trials: " + string( earlyTrials ) + "/" + string(trialsAttempted));
+		term.print_line( "Start-cues: " + string( startCuesFixated ) + "/" + string(startCuesPresented) + "   Left Choices: " + string( leftStimulusChoices  ) + "/" + string(leftStimulusCorrectTrials) + "   Right Presses: " + string( rightStimulusChoices ) + "/" + string(rightStimulusCorrectTrials) + "   Early trials: " + string( earlyTrials ) + "/" + string(trialsAttempted));
 		term.print_line( "\n");
 		
 	end; # End of condition loop
@@ -1737,7 +1745,7 @@ encode(taskEndCode);
 #Print out behavior information in terminal
 term.print_line( "  Correct Trials: " + string( correctTrials ) + "/" + string(trialsCompleted));
 term.print_line( "Completed Trials: " + string( trialsCompleted ) + "/" + string(trialsAttempted));
-term.print_line( "      Start Cues: " + string( startCuePresses ) + "/" + string(startCuesCompleted) );
+term.print_line( "      Start Cues: " + string( startCuesFixated ) + "/" + string(startCuesPresented) );
 term.print_line( "   Missed Trials: " + string( missedTrials ) + "/" + string(trialsAttempted) );
 term.print_line( "  Ignored Trials: " + string( ignoredTrials ) + "/" + string(trialsAttempted) );
 term.print_line( "   Left Choices: " + string( leftStimulusChoices ) + "/" + string(leftStimulusCorrectTrials) );

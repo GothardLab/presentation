@@ -1,0 +1,15 @@
+SCEN:	fixationMovieChoice
+PARM:	button_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	testAlternatingBlocks1_cnd.txt
+DATE:	08/09/2017 16:10:07
+Showing conditions: 1-->150.
+MagicNumbers:	116	70	250	225	219	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	8	RVal:	0	LName:	5S_18th2	RName:	5S_17th	Rsp:	Right	Start:	1817	End:	17935	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	3	LName:	5S_17ne	RName:	5s_052_th3	Rsp:	Right	Start:	18607	End:	31081	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	NS_cuttr5	RName:	NS_ducttp5	Rsp:	Right	Start:	31635	End:	45879	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	8	RVal:	0	LName:	NS_ducttp1	RName:	NS_nkht6	Rsp:	Left	Start:	46407	End:	60760	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	8	RVal:	3	LName:	NS_ducttp3	RName:	NS_cuttr4	Rsp:	Left	Start:	61348	End:	76591	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_18th2	RName:	5s_052_ne1	Rsp:	Left	Start:	77254	End:	95827	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	3	RVal:	0	LName:	5s_052_th2	RName:	5S_17th	
