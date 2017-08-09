@@ -1,0 +1,10 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	testAlternatingBlocks1_cnd.txt
+DATE:	08/09/2017 10:21:44
+Showing conditions: 1-->150.
+MagicNumbers:	254	34	73	155	19	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	8	RVal:	0	LName:	5S_18th2	RName:	5S_17th	Rsp:	Ignored	Start:	1813	End:	16968	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	3	LName:	5S_17ne	RName:	5s_052_th3	

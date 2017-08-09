@@ -1,0 +1,18 @@
+SCEN:	buttonMovieChoice
+PARM:	button_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	testAlternatingBlocks1_cnd.txt
+DATE:	08/09/2017 10:22:24
+Showing conditions: 1-->150.
+MagicNumbers:	145	219	129	237	34	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	8	RVal:	0	LName:	5S_18th2	RName:	5S_17th	Rsp:	Ignored	Start:	1818	End:	16934	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	3	LName:	5S_17ne	RName:	5s_052_th3	Rsp:	Ignored	Start:	17557	End:	32666	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	NS_cuttr5	RName:	NS_ducttp5	Rsp:	Ignored	Start:	33221	End:	48264	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	8	RVal:	0	LName:	NS_ducttp1	RName:	NS_nkht6	Rsp:	Ignored	Start:	48815	End:	63929	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	8	RVal:	3	LName:	NS_ducttp3	RName:	NS_cuttr4	Rsp:	Ignored	Start:	64501	End:	79578	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_18th2	RName:	5s_052_ne1	Rsp:	Ignored	Start:	80237	End:	95343	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	3	RVal:	0	LName:	5s_052_th2	RName:	5S_17th	Rsp:	Ignored	Start:	95988	End:	111075	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	3	RVal:	8	LName:	5s_052_th3	RName:	5S_18th	Rsp:	Ignored	Start:	111719	End:	126823	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	0	RVal:	8	LName:	5S_17ne2	RName:	5S_18th2	Rsp:	Ignored	Start:	127467	End:	142571	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	0	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp2	
