@@ -1,0 +1,21 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks2FirstMovie_cnd.txt
+DATE:	08/15/2017 13:57:47
+Showing conditions: 1-->10.
+MagicNumbers:	239	64	162	44	91	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	1867	End:	14265	END
+Trl:	1	Blk:	1	Cnd:	6	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Right	Start:	14889	End:	24725	END
+Trl:	2	Blk:	1	Cnd:	8	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	25396	End:	37070	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	37724	End:	50016	END
+Trl:	4	Blk:	1	Cnd:	4	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	50648	End:	62261	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	62900	End:	67199	END
+Trl:	5	Blk:	1	Cnd:	2	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	67833	End:	79311	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	79963	End:	91673	END
+Trl:	7	Blk:	1	Cnd:	7	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	92333	End:	104068	END
+Trl:	8	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	104707	End:	109323	END
+Trl:	8	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	109962	End:	122018	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	122679	End:	133997	END
+PROGRAM EXIT

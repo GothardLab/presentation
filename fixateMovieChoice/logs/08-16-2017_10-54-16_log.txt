@@ -1,0 +1,25 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks2ndMovie_cnd.txt
+DATE:	08/16/2017 10:54:16
+Showing conditions: 1-->10.
+MagicNumbers:	238	52	50	66	236	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	1851	End:	13347	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	14004	End:	25976	END
+Trl:	2	Blk:	1	Cnd:	4	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	26619	End:	39639	END
+Trl:	3	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	40272	End:	45061	END
+Trl:	3	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	45713	End:	50133	END
+Trl:	3	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	50741	End:	55254	END
+Trl:	3	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	55866	End:	67316	END
+Trl:	4	Blk:	1	Cnd:	8	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	67944	End:	72721	END
+Trl:	4	Blk:	1	Cnd:	8	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	73352	End:	85367	END
+Trl:	5	Blk:	1	Cnd:	7	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	86010	End:	97361	END
+Trl:	6	Blk:	1	Cnd:	1	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	98010	End:	109657	END
+Trl:	7	Blk:	1	Cnd:	6	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	110294	End:	114912	END
+Trl:	7	Blk:	1	Cnd:	6	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	115560	End:	127640	END
+Trl:	8	Blk:	1	Cnd:	10	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	128272	End:	132829	END
+Trl:	8	Blk:	1	Cnd:	10	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	133478	End:	145474	END
+Trl:	9	Blk:	1	Cnd:	3	LVal:	1	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	146118	End:	158303	END
+PROGRAM EXIT

@@ -1,5 +1,5 @@
-item file: buttonMovieTrain_TrainSet1_Frames1to30_itm.txt
-condition file: buttonMovieTrain_TrainSet1_AlternateBlocks_OneSided_cnd.txt
+item file: novelMonkeysTraining1_itm.txt
+condition file: movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks4thMovie_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show:001-->010

@@ -1,0 +1,25 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks1FirstMovie_cnd.txt
+DATE:	08/10/2017 15:16:46
+Showing conditions: 1-->20.
+MagicNumbers:	244	28	204	50	224	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	19	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	1778	End:	14565	END
+Trl:	1	Blk:	1	Cnd:	7	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	15210	End:	19637	END
+Trl:	1	Blk:	1	Cnd:	7	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Left	Start:	20306	End:	31215	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	31866	End:	44244	END
+Trl:	3	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Right	Start:	44881	End:	55738	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	56387	End:	69134	END
+Trl:	5	Blk:	1	Cnd:	17	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	69702	End:	81680	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	82352	End:	86651	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	87308	End:	91856	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	92478	End:	96911	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	97525	End:	103601	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	104244	End:	110324	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	110965	End:	117047	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	117681	End:	122052	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	122682	End:	126973	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	127623	End:	133730	END
+Trl:	6	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	

@@ -1,0 +1,27 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks1FirstMovie_cnd.txt
+DATE:	08/11/2017 09:55:15
+Showing conditions: 1-->10.
+MagicNumbers:	217	250	45	17	181	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	5	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	StartCueMiss	Start:	1820	End:	6391	END
+Trl:	0	Blk:	1	Cnd:	5	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	7029	End:	19153	END
+Trl:	1	Blk:	1	Cnd:	1	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	19834	End:	31982	END
+Trl:	2	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Right	Start:	32652	End:	43093	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	43731	End:	55738	END
+Trl:	4	Blk:	1	Cnd:	8	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Right	Start:	56388	End:	67016	END
+Trl:	5	Blk:	1	Cnd:	4	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	67652	End:	72020	END
+Trl:	5	Blk:	1	Cnd:	4	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Right	Start:	72654	End:	83131	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	83792	End:	95927	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	96588	End:	101215	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	101840	End:	106570	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	107225	End:	113277	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	113906	End:	118732	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	119396	End:	125488	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	StartCueMiss	Start:	126122	End:	131427	END
+Trl:	7	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Right	Start:	132058	End:	142788	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls	RName:	5S_17ls	Rsp:	Right	Start:	143403	End:	155350	END
+Trl:	9	Blk:	1	Cnd:	2	LVal:	8	RVal:	3	LName:	5S_17ls	RName:	5S_18ls	Rsp:	Left	Start:	155963	End:	168463	END
+PROGRAM EXIT

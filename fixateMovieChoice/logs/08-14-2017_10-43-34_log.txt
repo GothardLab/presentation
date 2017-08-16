@@ -1,0 +1,46 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks2FirstMovie_cnd.txt
+DATE:	08/14/2017 10:43:34
+Showing conditions: 1-->10.
+MagicNumbers:	147	169	129	51	39	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	1819	End:	13447	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Right	Start:	14097	End:	24742	END
+Trl:	2	Blk:	1	Cnd:	9	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	25395	End:	37504	END
+Trl:	3	Blk:	1	Cnd:	1	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	38148	End:	50366	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	51041	End:	57106	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	57728	End:	63829	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	64463	End:	70552	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	71177	End:	77242	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	77865	End:	83932	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	84553	End:	90638	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	91258	End:	97311	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	97928	End:	104018	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	104650	End:	110724	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	111364	End:	117464	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	118101	End:	124187	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	124816	End:	130877	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	131506	End:	137583	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	138190	End:	142738	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	143392	End:	148611	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	149237	End:	154016	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	154664	End:	160739	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	161365	End:	167479	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	168119	End:	174202	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	174839	End:	180875	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	181510	End:	187615	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	StartCueMiss	Start:	188272	End:	194371	END
+Trl:	4	Blk:	1	Cnd:	6	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Left	Start:	194990	End:	206816	END
+Trl:	5	Blk:	1	Cnd:	5	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	207443	End:	219495	END
+Trl:	6	Blk:	1	Cnd:	4	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Right	Start:	220130	End:	230873	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	231507	End:	235911	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	236557	End:	242667	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	243287	End:	249391	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	250019	End:	255680	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	StartCueMiss	Start:	256319	End:	260768	END
+Trl:	7	Blk:	1	Cnd:	3	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	261416	End:	273781	END
+Trl:	8	Blk:	1	Cnd:	8	LVal:	8	RVal:	3	LName:	5S_17ls2	RName:	5S_18ls2	Rsp:	Right	Start:	274410	End:	284858	END
+Trl:	9	Blk:	1	Cnd:	7	LVal:	3	RVal:	8	LName:	5S_18ls2	RName:	5S_17ls2	Rsp:	Right	Start:	285508	End:	297854	END
+PROGRAM EXIT

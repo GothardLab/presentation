@@ -1,0 +1,26 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks3rdMovie_cnd.txt
+DATE:	08/16/2017 10:38:47
+Showing conditions: 1-->10.
+MagicNumbers:	126	30	164	72	195	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	4	LVal:	8	RVal:	1	LName:	5S_17ne	RName:	5S_18ne	Rsp:	Right	Start:	1829	End:	11562	END
+Trl:	1	Blk:	1	Cnd:	3	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	StartCueMiss	Start:	12229	End:	16651	END
+Trl:	1	Blk:	1	Cnd:	3	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	StartCueMiss	Start:	17282	End:	23390	END
+Trl:	1	Blk:	1	Cnd:	3	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	Left	Start:	24035	End:	33567	END
+Trl:	2	Blk:	1	Cnd:	1	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	Right	Start:	34207	End:	45745	END
+Trl:	3	Blk:	1	Cnd:	7	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	Left	Start:	46376	End:	59609	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	StartCueMiss	Start:	60238	End:	64580	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	StartCueMiss	Start:	65208	End:	69635	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	StartCueMiss	Start:	70285	End:	74823	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	Right	Start:	75459	End:	87402	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	8	RVal:	1	LName:	5S_17ne	RName:	5S_18ne	Rsp:	Right	Start:	88022	End:	97495	END
+Trl:	6	Blk:	1	Cnd:	2	LVal:	8	RVal:	1	LName:	5S_17ne	RName:	5S_18ne	Rsp:	StartCueMiss	Start:	98132	End:	102666	END
+Trl:	6	Blk:	1	Cnd:	2	LVal:	8	RVal:	1	LName:	5S_17ne	RName:	5S_18ne	Rsp:	Left	Start:	103303	End:	115028	END
+Trl:	7	Blk:	1	Cnd:	9	LVal:	1	RVal:	8	LName:	5S_18ne	RName:	5S_17ne	Rsp:	Right	Start:	115664	End:	127624	END
+Trl:	8	Blk:	1	Cnd:	8	LVal:	8	RVal:	1	LName:	5S_17ne	RName:	5S_18ne	Rsp:	Right	Start:	128306	End:	137984	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ne	Rsp:	StartCueMiss	Start:	138646	End:	143389	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	1	LName:	5S_17ls2	RName:	5S_18ne	Rsp:	Left	Start:	144000	End:	155567	END
+PROGRAM EXIT

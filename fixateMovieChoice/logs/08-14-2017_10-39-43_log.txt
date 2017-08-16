@@ -1,0 +1,31 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks2FirstMovie_cnd.txt
+DATE:	08/14/2017 10:39:43
+Showing conditions: 11-->20.
+MagicNumbers:	167	18	182	161	193	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	13	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	Left	Start:	1823	End:	13397	END
+Trl:	1	Blk:	1	Cnd:	19	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	StartCueMiss	Start:	13985	End:	18652	END
+Trl:	1	Blk:	1	Cnd:	19	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	Left	Start:	19208	End:	31048	END
+Trl:	2	Blk:	1	Cnd:	18	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	31618	End:	37721	END
+Trl:	2	Blk:	1	Cnd:	18	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	38299	End:	42792	END
+Trl:	2	Blk:	1	Cnd:	18	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	43322	End:	49399	END
+Trl:	2	Blk:	1	Cnd:	18	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	Right	Start:	49927	End:	61927	END
+Trl:	3	Blk:	1	Cnd:	11	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	Left	Start:	62480	End:	75857	END
+Trl:	4	Blk:	1	Cnd:	15	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	Left	Start:	76410	End:	88069	END
+Trl:	5	Blk:	1	Cnd:	16	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	Right	Start:	88614	End:	101282	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	101817	End:	106320	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	106870	End:	112926	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	113460	End:	119533	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	120049	End:	126156	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	126683	End:	132795	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	133340	End:	139418	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	139929	End:	146025	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	StartCueMiss	Start:	146553	End:	150746	END
+Trl:	6	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	Right	Start:	151276	End:	163091	END
+Trl:	7	Blk:	1	Cnd:	14	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	Left	Start:	163634	End:	174969	END
+Trl:	8	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht2	RName:	NS_ducttp2	Rsp:	Right	Start:	175520	End:	188716	END
+Trl:	9	Blk:	1	Cnd:	17	LVal:	8	RVal:	3	LName:	NS_ducttp2	RName:	NS_nkht2	Rsp:	Right	Start:	189259	End:	200127	END
+PROGRAM EXIT

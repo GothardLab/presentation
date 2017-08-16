@@ -302,24 +302,24 @@ begin_pcl;
 bool testMode =false;
 
 # Variables for task settings (You can change these)
-int fixspotDotSize = 15;					# The size (in pixels) of the fixation spot
-int fixationWindowSize =  50;				# The amount (in pixels) added around the edges of the fixation spot for it's fixation window
-int stimulusWindowSize =  50;				# The amount (in pixels) added around the edges of the stimulus for it's fixation window
+int fixspotDotSize = 30;					# The size (in pixels) of the fixation spot
+int fixationWindowSize =  70;				# The amount (in pixels) added around the edges of the fixation spot for it's fixation window
+int stimulusWindowSize =  70;				# The amount (in pixels) added around the edges of the stimulus for it's fixation window
 double monitorX=1920; 						# Monitor width (pixels)1024.0
 double monitorY=1080; 						# Monitor height (pixels)768.0
 double ratioX=((monitorX/2.0)/4.0); 	# Ratio to multiply X voltage by (want 5Volts to be at least 1/2 the width of the monitor)
 double ratioY=((monitorY/2.0)/4.0); 	# Ratio to multiply X voltage by (want 5Volts to be at least 1/2 the height of the monitor)
 int fixspotX = 0;								# X position (in pixels) for the fixation spot
 int fixspotY = 0;								# Y position (in pixels) for the fixation spot
-int postStimFixationWindow = 5000; 		# How long the monkey has to complete a fixation
-int postStimFixationDuration = 500; 	# How long the monkey has to stay within fixation window to complete post-stim fixation
+int postStimFixationWindow = 3000; 		# How long the monkey has to complete a fixation
+int postStimFixationDuration = 400; 	# How long the monkey has to stay within fixation window to complete post-stim fixation
 int choiceFixationDuration = 500; 		# How long the monkey has to stay within fixation window to make left/right choice
-int postStimChoiceDuration = 20000;		# How long the monkey has to choose between left or right stimulus
+int postStimChoiceDuration = 2000;		# How long the monkey has to choose between left or right stimulus
 int videoStimulusHeight	=	480;			# Height of stimulus (pixels)341
 int videoStimulusWidth	=	720;			# Width of stimulus (pixels)512
 int stimulusDuration	=	5000; 			# Time that monkey is allowed to touch button (ms) per trial
-int cueDuration	=	10000; 				# Time that monkey is allowed to get to center pre-trial cue box (ms) 
-int cueFixationDuration	=	1000; 		# Time that monkey is allowed to get to center pre-trial cue box (ms) 
+int cueDuration	=	2000; 				# Time that monkey is allowed to get to center pre-trial cue box (ms) 
+int cueFixationDuration	=	300; 		# Time that monkey is allowed to get to center pre-trial cue box (ms) 
 int correctItiDuration	=	3000; 		# Duration of the inter-trial-interval(ms)for correct trials
 int missedItiDuration	=	5000;		 	# Duration of the inter-trial-interval(ms) for missed trials
 int holdItiDuration	=	100;		 		# Duration of the inter-trial-interval(ms) for holding the button before the trial
@@ -372,8 +372,10 @@ int startCueMissCode 	= 23;				# Code for monkey hitting start cue
 int startCueIgnoreCode 	= 24;				# Code for monkey ignoring start cue
 int stimulusOnCode		= 15;				# Code for stimulus onset
 int stimulusOffCode		= 25;				# Code for stimulus offset
-int earlyButtonCode		= 14;				# Code for monkey making an early button
-int buttonAvailableCode = 26;				# Code for availability of choice
+int postStimFixOnCode 	= 40;
+int postStimFixHitCode	= 41;
+int postStimFixMissCode	= 42;
+int postStimFixIgnoreCode = 43;
 int leftChoiceCode 		= 16;				# Code for left option chosen
 int rightChoiceCode 		= 17;				# Code for right option chosen
 int ignoreChoiceCode 	= 18;				# Code for ignored stimulus
@@ -464,7 +466,7 @@ logFile.open( logFileName, false ); # Don't overwrite
 logFile.print( "SCEN:\t"+taskName+"\n" );  
 
 # ------------------------------------------------------ Get the experimental parameters ------------------------------------------------------
-string exp_par="button_parameters.txt"; 				# Name of the text file with the experiment information
+string exp_par="fixate_parameters.txt"; 				# Name of the text file with the experiment information
 input_file exp_info = new input_file;					# Create an input file
 exp_info.open( exp_par );									# Load the experimental parameters into the input file
 string temp_name;												# Create a string variable for temporary use
@@ -871,6 +873,9 @@ begin
 					#Set the response string to 'CueFixated'
 					monkeyCueResponseStr = "CueFixated";
 					
+					encode(startCueHitCode);
+					wait_interval(10);
+					
 					#Break out of fixation loop
 					breakFixationLoop =  true;
 					
@@ -884,11 +889,20 @@ begin
 					then
 						giveJuiceReward(cueJuiceRewardDrops);
 					end;
-					
+				else
+					encode(startCueMissCode);
+			wait_interval(10);
 				end;
 				
 			end;
 			
+		end;
+		
+		if 
+			monkeyCueResponseStr != "CueFixated"
+		then
+			encode(startCueIgnoreCode);
+			wait_interval(10);
 		end;
 
 	return monkeyCueResponseStr;
@@ -1166,6 +1180,9 @@ begin
 		bool breakFixationLoop = false;
 		string postStimFixationResponseStr = "PostStimFixIgnored";
 		
+		encode(postStimFixOnCode);
+		wait_interval(10);
+		
 		# Get the current time
 		clockTicker=clock.time();
 			
@@ -1215,6 +1232,10 @@ begin
 						#Set the response string to 'CueBrokeFixation'
 						postStimFixationResponseStr = "PostStimBrokeFixation";
 						
+						encode(postStimFixMissCode);
+						wait_interval(10);
+					
+						
 						#Break out of fixation loop
 						breakFixationLoop =  true;
 					end;
@@ -1226,6 +1247,9 @@ begin
 					#Set the response string to 'CueFixated'
 					postStimFixationResponseStr = "PostStimFixated";
 					
+					encode(postStimFixHitCode);
+					wait_interval(10);
+					
 					#Break out of fixation loop
 					breakFixationLoop =  true;
 					
@@ -1234,6 +1258,14 @@ begin
 				end;
 			end;
 		end;
+		
+		if 
+			postStimFixationResponseStr != "PostStimFixated"
+		then
+			encode(postStimFixIgnoreCode);
+			wait_interval(10);
+		end;
+					
 		
 		#------------------------------------------------------------------
 		
@@ -1362,6 +1394,10 @@ begin
 					#Set the response string to 'CueFixated'
 					monkeyResponseStr = "Left";
 					
+					encode(leftChoiceCode);
+					wait_interval(10);
+
+					
 					#Break out of fixation loop
 					madeChoice =  true;
 				end;
@@ -1412,6 +1448,9 @@ begin
 				then
 					#Set the response string to 'CueFixated'
 					monkeyResponseStr = "Right";
+					
+					encode(rightChoiceCode);
+					wait_interval(10);
 					
 					#Break out of fixation loop
 					madeChoice =  true;

@@ -1,0 +1,24 @@
+SCEN:	fixationMovieChoice
+PARM:	fixate_parameters.txt
+ITEM:	novelMonkeysTraining1_itm.txt
+COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks1FirstMovie_cnd.txt
+DATE:	08/10/2017 11:58:39
+Showing conditions: 11-->20.
+MagicNumbers:	202	21	135	204	127	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	11	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	1776	End:	13865	END
+Trl:	1	Blk:	1	Cnd:	12	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	Right	Start:	14452	End:	26610	END
+Trl:	2	Blk:	1	Cnd:	13	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	27176	End:	39506	END
+Trl:	3	Blk:	1	Cnd:	14	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	StartCueMiss	Start:	40070	End:	44344	END
+Trl:	3	Blk:	1	Cnd:	14	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	Right	Start:	44914	End:	57323	END
+Trl:	4	Blk:	1	Cnd:	15	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	57894	End:	70102	END
+Trl:	5	Blk:	1	Cnd:	16	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	Right	Start:	70650	End:	82914	END
+Trl:	6	Blk:	1	Cnd:	17	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	83476	End:	95743	END
+Trl:	7	Blk:	1	Cnd:	18	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	Right	Start:	96283	End:	111275	END
+Trl:	8	Blk:	1	Cnd:	19	LVal:	8	RVal:	3	LName:	NS_ducttp1	RName:	NS_nkht1	Rsp:	Left	Start:	111830	End:	124287	END
+Trl:	9	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	StartCueMiss	Start:	124847	End:	129509	END
+Trl:	9	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	StartCueMiss	Start:	130068	End:	136182	END
+Trl:	9	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	StartCueMiss	Start:	136736	End:	142805	END
+Trl:	9	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	StartCueMiss	Start:	143360	End:	149461	END
+Trl:	9	Blk:	1	Cnd:	20	LVal:	3	RVal:	8	LName:	NS_nkht1	RName:	NS_ducttp1	Rsp:	Right	Start:	150034	End:	162140	END
+PROGRAM EXIT
