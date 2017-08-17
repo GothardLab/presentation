@@ -270,10 +270,10 @@ int leftStimulusXPosition = -320;		# X position of left stimulus (in pixels)
 int rightStimulusXPosition = 320;		# X position of right stimulus (in pixels)
 int stimulusYPosition = 250;				# Y position of both stimuli (in pixels)
 int rewardValueTextYPosition = -300;	# Y position of both reward value text on experimenter's screen (in pixels)
-bool showStartCue = true  ;				# Set to 'true' to show start cue, set to 'false' to skip start cue
+bool showStartCue = false;					# Set to 'true' to show start cue, set to 'false' to skip start cue
 bool catchEarlyStimulusTouches = true;	# Set to 'true' to present incorrect feedback to any response made in the delay period
 int touchCueDelayLength = 75;				# Number of frames to delay monkey's ability to make a response
-int touchCueYOffset = -100;				# Offset (in pixels) on y-axis from which the touch cue is offset from the stimuli
+int touchCueYOffset = -250;				# Offset (in pixels) on y-axis from which the touch cue is offset from the stimuli
 int numMagicNumbers = 5;					# Number of magic numbers to log/encode out
 string taskName = "TouchMovieChoice";  # String of task name
 
@@ -1157,8 +1157,8 @@ begin
 								monkeyX <= rightUpperX && monkeyX >= rightLowerX && currentY <= rightUpperY && currentY >= rightLowerY && goodTouch == false
 							then
 								goodTouch = true; 							# Set our correct touch boolean to true
-								hasTouched = true;							#Record that the monkey has made a touch response
-								monkeyResponseStr = "Right";				#Mark that the monkey has chosen the right option
+								hasTouched = true;							# Record that the monkey has made a touch response
+								monkeyResponseStr = "Right";				# Mark that the monkey has chosen the right option
 								wait_interval(10);
 								encode(rightChoiceCode);
 								stimulusPictureMonkey.set_part_x(1, -9999);

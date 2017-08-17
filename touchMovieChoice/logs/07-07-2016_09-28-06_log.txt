@@ -1,0 +1,74 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice7_itm.txt
+COND:	movieChoice7_cnd.txt
+DATE:	07/07/2016 09:28:06
+Showing conditions: 1-->300.
+MagicNumbers:	121	205	112	68	232	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	NS_clmp1	RName:	NS_drll4	Rsp:	Ignore	Start:	1646	End:	6782	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	0	LName:	5S_103ne2	RName:	5S_126th	Rsp:	Ignore	Start:	7316	End:	12430	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_clmp1	RName:	NS_cuttr5	Rsp:	Ignore	Start:	12837	End:	17945	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	0	RVal:	0	LName:	5S_133ls	RName:	5S_103th	Rsp:	Ignore	Start:	18459	End:	23576	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	0	RVal:	0	LName:	5S_133ls	RName:	5S_126ne2	Rsp:	Ignore	Start:	24115	End:	29224	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	0	RVal:	0	LName:	5S_103ls	RName:	5S_133th2	Rsp:	Ignore	Start:	29739	End:	34855	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	0	RVal:	0	LName:	NS_cuttr2	RName:	NS_clmp1	Rsp:	Ignore	Start:	35285	End:	40403	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	0	RVal:	0	LName:	NS_drll2	RName:	NS_cuttr2	Rsp:	Ignore	Start:	40803	End:	45917	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	0	RVal:	0	LName:	NS_cuttr2	RName:	NS_drll6	Rsp:	Ignore	Start:	46305	End:	51415	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	0	RVal:	0	LName:	5S_126ls2	RName:	5S_133th2	Rsp:	Ignore	Start:	51939	End:	57047	END
+Trl:	10	Blk:	1	Cnd:	11	LVal:	0	RVal:	0	LName:	NS_drll2	RName:	NS_clmp2	Rsp:	Ignore	Start:	57491	End:	62595	END
+Trl:	11	Blk:	1	Cnd:	12	LVal:	0	RVal:	0	LName:	5S_126ls2	RName:	5S_103ne2	Rsp:	Ignore	Start:	63096	End:	68209	END
+Trl:	12	Blk:	1	Cnd:	13	LVal:	0	RVal:	0	LName:	5S_133th2	RName:	5S_126th2	Rsp:	Ignore	Start:	68741	End:	73857	END
+Trl:	13	Blk:	1	Cnd:	14	LVal:	0	RVal:	0	LName:	NS_drll1	RName:	NS_clmp6	Rsp:	Ignore	Start:	74304	End:	79422	END
+Trl:	14	Blk:	1	Cnd:	15	LVal:	0	RVal:	0	LName:	5S_126ls2	RName:	5S_133ne2	Rsp:	Ignore	Start:	79960	End:	85069	END
+Trl:	15	Blk:	1	Cnd:	16	LVal:	0	RVal:	0	LName:	5S_133ne	RName:	5S_103ne	Rsp:	Ignore	Start:	85580	End:	90684	END
+Trl:	16	Blk:	1	Cnd:	17	LVal:	0	RVal:	0	LName:	NS_cuttr1	RName:	NS_drll3	Rsp:	Ignore	Start:	91114	End:	96232	END
+Trl:	17	Blk:	1	Cnd:	18	LVal:	0	RVal:	0	LName:	5S_126th	RName:	5S_103ls	Rsp:	Ignore	Start:	96710	End:	101813	END
+Trl:	18	Blk:	1	Cnd:	19	LVal:	0	RVal:	0	LName:	NS_cuttr3	RName:	NS_clmp4	Rsp:	Ignore	Start:	102240	End:	107344	END
+Trl:	19	Blk:	1	Cnd:	20	LVal:	0	RVal:	0	LName:	NS_drll6	RName:	NS_cuttr6	Rsp:	Ignore	Start:	107753	End:	112859	END
+Trl:	20	Blk:	1	Cnd:	21	LVal:	0	RVal:	0	LName:	5S_103ne	RName:	5S_133ne2	Rsp:	Ignore	Start:	113410	End:	118523	END
+Trl:	21	Blk:	1	Cnd:	22	LVal:	0	RVal:	0	LName:	NS_clmp4	RName:	NS_drll5	Rsp:	Ignore	Start:	118946	End:	124055	END
+Trl:	22	Blk:	1	Cnd:	23	LVal:	0	RVal:	0	LName:	5S_103ls	RName:	5S_126th2	Rsp:	Ignore	Start:	124552	End:	129669	END
+Trl:	23	Blk:	1	Cnd:	24	LVal:	0	RVal:	0	LName:	NS_clmp3	RName:	NS_cuttr3	Rsp:	Ignore	Start:	130094	End:	135200	END
+Trl:	24	Blk:	1	Cnd:	25	LVal:	0	RVal:	0	LName:	5S_103ne	RName:	5S_126ne2	Rsp:	Ignore	Start:	135710	End:	140815	END
+Trl:	25	Blk:	1	Cnd:	26	LVal:	0	RVal:	0	LName:	5S_133ne	RName:	5S_126ls2	Rsp:	Ignore	Start:	141320	End:	146430	END
+Trl:	26	Blk:	1	Cnd:	27	LVal:	0	RVal:	0	LName:	NS_drll4	RName:	NS_clmp3	Rsp:	Ignore	Start:	146837	End:	151944	END
+Trl:	27	Blk:	1	Cnd:	28	LVal:	0	RVal:	0	LName:	NS_cuttr5	RName:	NS_drll4	Rsp:	Ignore	Start:	152365	End:	157475	END
+Trl:	28	Blk:	1	Cnd:	29	LVal:	0	RVal:	0	LName:	5S_126ne	RName:	5S_133th	Rsp:	Ignore	Start:	158022	End:	163140	END
+Trl:	29	Blk:	1	Cnd:	30	LVal:	0	RVal:	0	LName:	NS_drll3	RName:	NS_cuttr4	Rsp:	Ignore	Start:	163553	End:	168671	END
+Trl:	30	Blk:	1	Cnd:	31	LVal:	0	RVal:	0	LName:	NS_clmp1	RName:	NS_cuttr6	Rsp:	Ignore	Start:	169134	End:	174252	END
+Trl:	31	Blk:	1	Cnd:	32	LVal:	0	RVal:	0	LName:	NS_cuttr1	RName:	NS_clmp1	Rsp:	Ignore	Start:	174677	End:	179784	END
+Trl:	32	Blk:	1	Cnd:	33	LVal:	0	RVal:	0	LName:	5S_133ls2	RName:	5S_103th	Rsp:	Ignore	Start:	180302	End:	185415	END
+Trl:	33	Blk:	1	Cnd:	34	LVal:	0	RVal:	0	LName:	5S_103ls2	RName:	5S_133th2	Rsp:	Ignore	Start:	185906	End:	191013	END
+Trl:	34	Blk:	1	Cnd:	35	LVal:	0	RVal:	0	LName:	NS_clmp5	RName:	NS_drll1	Rsp:	Ignore	Start:	191445	End:	196561	END
+Trl:	35	Blk:	1	Cnd:	36	LVal:	0	RVal:	0	LName:	5S_126th2	RName:	5S_103th	Rsp:	Ignore	Start:	197064	End:	202175	END
+Trl:	36	Blk:	1	Cnd:	37	LVal:	0	RVal:	0	LName:	NS_drll5	RName:	NS_cuttr6	Rsp:	Ignore	Start:	202615	End:	207723	END
+Trl:	37	Blk:	1	Cnd:	38	LVal:	0	RVal:	0	LName:	NS_clmp2	RName:	NS_drll1	Rsp:	Ignore	Start:	208146	End:	213254	END
+Trl:	38	Blk:	1	Cnd:	39	LVal:	0	RVal:	0	LName:	NS_drll2	RName:	NS_clmp1	Rsp:	Ignore	Start:	213656	End:	218769	END
+Trl:	39	Blk:	1	Cnd:	40	LVal:	0	RVal:	0	LName:	5S_126ne2	RName:	5S_103th	Rsp:	Ignore	Start:	219258	End:	224367	END
+Trl:	40	Blk:	1	Cnd:	41	LVal:	0	RVal:	0	LName:	5S_103th2	RName:	5S_133ne	Rsp:	Ignore	Start:	224882	End:	229998	END
+Trl:	41	Blk:	1	Cnd:	42	LVal:	0	RVal:	0	LName:	NS_cuttr4	RName:	NS_drll2	Rsp:	Ignore	Start:	230459	End:	235562	END
+Trl:	42	Blk:	1	Cnd:	43	LVal:	0	RVal:	0	LName:	NS_cuttr5	RName:	NS_clmp3	Rsp:	Ignore	Start:	235960	End:	241077	END
+Trl:	43	Blk:	1	Cnd:	44	LVal:	0	RVal:	0	LName:	5S_133ls2	RName:	5S_126ls	Rsp:	Ignore	Start:	241581	End:	246692	END
+Trl:	44	Blk:	1	Cnd:	45	LVal:	0	RVal:	0	LName:	NS_clmp6	RName:	NS_cuttr5	Rsp:	Ignore	Start:	247096	End:	252206	END
+Trl:	45	Blk:	1	Cnd:	46	LVal:	0	RVal:	0	LName:	5S_133ne2	RName:	5S_103ne	Rsp:	Ignore	Start:	252720	End:	257837	END
+Trl:	46	Blk:	1	Cnd:	47	LVal:	0	RVal:	0	LName:	5S_126th	RName:	5S_133ls2	Rsp:	Ignore	Start:	258343	End:	263452	END
+Trl:	47	Blk:	1	Cnd:	48	LVal:	0	RVal:	0	LName:	5S_103ls	RName:	5S_126ls2	Rsp:	Ignore	Start:	263959	End:	269066	END
+Trl:	48	Blk:	1	Cnd:	49	LVal:	0	RVal:	0	LName:	NS_drll5	RName:	NS_clmp1	Rsp:	Ignore	Start:	269471	End:	274581	END
+Trl:	49	Blk:	1	Cnd:	50	LVal:	0	RVal:	0	LName:	5S_126th2	RName:	5S_103ne	Rsp:	Ignore	Start:	275085	End:	280196	END
+Trl:	50	Blk:	1	Cnd:	51	LVal:	0	RVal:	0	LName:	NS_cuttr2	RName:	NS_clmp2	Rsp:	Ignore	Start:	280615	End:	285727	END
+Trl:	51	Blk:	1	Cnd:	52	LVal:	0	RVal:	0	LName:	NS_cuttr6	RName:	NS_drll4	Rsp:	Ignore	Start:	286132	End:	291241	END
+Trl:	52	Blk:	1	Cnd:	53	LVal:	0	RVal:	0	LName:	5S_133th	RName:	5S_103th2	Rsp:	Ignore	Start:	291771	End:	296889	END
+Trl:	53	Blk:	1	Cnd:	54	LVal:	0	RVal:	0	LName:	NS_clmp4	RName:	NS_cuttr4	Rsp:	Ignore	Start:	297329	End:	302437	END
+Trl:	54	Blk:	1	Cnd:	55	LVal:	0	RVal:	0	LName:	NS_clmp3	RName:	NS_drll5	Rsp:	Ignore	Start:	302845	End:	307952	END
+Trl:	55	Blk:	1	Cnd:	56	LVal:	0	RVal:	0	LName:	5S_126ls2	RName:	5S_133ne	Rsp:	Ignore	Start:	308489	End:	313600	END
+Trl:	56	Blk:	1	Cnd:	57	LVal:	0	RVal:	0	LName:	5S_133th	RName:	5S_126ne2	Rsp:	Ignore	Start:	314112	End:	319214	END
+Trl:	57	Blk:	1	Cnd:	58	LVal:	0	RVal:	0	LName:	5S_103ls2	RName:	5S_133ne	Rsp:	Ignore	Start:	319739	End:	324845	END
+Trl:	58	Blk:	1	Cnd:	59	LVal:	0	RVal:	0	LName:	5S_103ls	RName:	5S_126ne2	Rsp:	Ignore	Start:	325346	End:	330460	END
+Trl:	59	Blk:	1	Cnd:	60	LVal:	0	RVal:	0	LName:	NS_drll5	RName:	NS_cuttr3	Rsp:	Ignore	Start:	330896	End:	336008	END
+Trl:	60	Blk:	1	Cnd:	61	LVal:	0	RVal:	0	LName:	NS_clmp6	RName:	NS_cuttr4	Rsp:	Ignore	Start:	336425	End:	341539	END
+Trl:	61	Blk:	1	Cnd:	62	LVal:	0	RVal:	0	LName:	5S_133ne	RName:	5S_103th	Rsp:	Ignore	Start:	342055	End:	347170	END
+Trl:	62	Blk:	1	Cnd:	63	LVal:	0	RVal:	0	LName:	5S_126ls	RName:	5S_133ls2	Rsp:	Ignore	Start:	347688	End:	352801	END
+Trl:	63	Blk:	1	Cnd:	64	LVal:	0	RVal:	0	LName:	NS_drll6	RName:	NS_clmp2	Rsp:	Ignore	Start:	353238	End:	358349	END
+Trl:	64	Blk:	1	Cnd:	65	LVal:	0	RVal:	0	LName:	NS_drll4	RName:	NS_cuttr4	Rsp:	Ignore	Start:	358758	End:	363864	END
+Trl:	65	Blk:	1	Cnd:	66	LVal:	0	RVal:	0	LName:	5S_126ne	RName:	5S_103ls	

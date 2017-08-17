@@ -1,0 +1,28 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice3_itm.txt
+COND:	movieChoice3_cnd.txt
+DATE:	06/14/2016 09:30:22
+Showing conditions: 1-->450.
+MagicNumbers:	188	57	115	213	12	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	5S_95th2	RName:	5S_56th	Rsp:	Ignore	Start:	1716	End:	6849	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	0	LName:	5S_56ne	RName:	5S_111th2	Rsp:	Ignore	Start:	7375	End:	12480	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_chn5	RName:	NS_blckexp5	Rsp:	Ignore	Start:	12925	End:	18028	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	0	RVal:	0	LName:	NS_blckexp1	RName:	NS_bnc6	Rsp:	Ignore	Start:	18469	End:	23559	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	0	RVal:	0	LName:	NS_blckexp3	RName:	NS_chn4	Rsp:	Ignore	Start:	23967	End:	29074	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	0	RVal:	0	LName:	5S_95th2	RName:	5S_111ne	Rsp:	Ignore	Start:	29561	End:	34672	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	0	RVal:	0	LName:	5S_111th	RName:	5S_56th	Rsp:	Ignore	Start:	35174	End:	40286	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	0	RVal:	0	LName:	5S_111th2	RName:	5S_95th	Rsp:	Ignore	Start:	40800	End:	45917	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	0	RVal:	0	LName:	5S_56ne2	RName:	5S_95th2	Rsp:	Ignore	Start:	46406	End:	51515	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	0	RVal:	0	LName:	NS_bnc1	RName:	NS_blckexp2	Rsp:	Ignore	Start:	51938	End:	57047	END
+Trl:	10	Blk:	1	Cnd:	11	LVal:	0	RVal:	0	LName:	NS_bnc6	RName:	NS_chn1	Rsp:	Ignore	Start:	57448	End:	62561	END
+Trl:	11	Blk:	1	Cnd:	12	LVal:	0	RVal:	0	LName:	NS_chn6	RName:	NS_bnc4	Rsp:	Ignore	Start:	63011	End:	68109	END
+Trl:	12	Blk:	1	Cnd:	13	LVal:	0	RVal:	0	LName:	NS_blckexp5	RName:	NS_chn2	Rsp:	Ignore	Start:	68512	End:	73624	END
+Trl:	13	Blk:	1	Cnd:	14	LVal:	0	RVal:	0	LName:	NS_bnc2	RName:	NS_chn6	Rsp:	Ignore	Start:	74031	End:	79138	END
+Trl:	14	Blk:	1	Cnd:	15	LVal:	0	RVal:	0	LName:	NS_chn6	RName:	NS_blckexp5	Rsp:	Ignore	Start:	79529	End:	84636	END
+Trl:	15	Blk:	1	Cnd:	16	LVal:	0	RVal:	0	LName:	5S_95ls	RName:	5S_56ls2	Rsp:	Ignore	Start:	85111	End:	90217	END
+Trl:	16	Blk:	1	Cnd:	17	LVal:	0	RVal:	0	LName:	NS_bnc3	RName:	NS_blckexp5	Rsp:	Ignore	Start:	90637	End:	95748	END
+Trl:	17	Blk:	1	Cnd:	18	LVal:	0	RVal:	0	LName:	5S_56ne	RName:	5S_95ls2	Rsp:	Ignore	Start:	96236	End:	101346	END
+Trl:	18	Blk:	1	Cnd:	19	LVal:	0	RVal:	0	LName:	5S_95th	RName:	5S_111ne	Rsp:	Ignore	Start:	101844	End:	106961	END
+Trl:	19	Blk:	1	Cnd:	20	LVal:	0	RVal:	0	LName:	5S_111th	RName:	5S_56ne2	

@@ -1,0 +1,11 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice3_itm.txt
+COND:	movieChoice3_cnd.txt
+DATE:	06/14/2016 12:55:54
+Showing conditions: 198-->200.
+MagicNumbers:	56	69	116	183	11	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	198	LVal:	0	RVal:	8	LName:	NS_chn1	RName:	NS_blckexp3	Rsp:	Right	Start:	1584	End:	17862	END
+Trl:	1	Blk:	1	Cnd:	199	LVal:	0	RVal:	8	LName:	5S_56ne	RName:	5S_111th	Rsp:	startCueIgnore	Start:	18387	End:	30957	END
+Trl:	2	Blk:	1	Cnd:	199	LVal:	0	RVal:	8	LName:	5S_56ne	RName:	5S_111th	

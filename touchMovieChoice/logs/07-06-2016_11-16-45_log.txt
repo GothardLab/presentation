@@ -1,0 +1,13 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice6_itm.txt
+COND:	movieChoice6_cnd.txt
+DATE:	07/06/2016 11:16:45
+Showing conditions: 81-->90.
+MagicNumbers:	104	109	210	184	220	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	81	LVal:	8	RVal:	3	LName:	NS_pst1	RName:	NS_orngspl5	Rsp:	Ignore	Start:	1797	End:	18247	END
+Trl:	1	Blk:	1	Cnd:	82	LVal:	8	RVal:	0	LName:	NS_pst1	RName:	NS_mus6	Rsp:	Right	Start:	18676	End:	32690	END
+Trl:	2	Blk:	1	Cnd:	83	LVal:	3	RVal:	0	LName:	NS_orngspl6	RName:	NS_mus5	Rsp:	Left	Start:	33124	End:	48317	END
+Trl:	3	Blk:	1	Cnd:	84	LVal:	3	RVal:	8	LName:	NS_orngspl6	RName:	NS_pst2	Rsp:	Right	Start:	48753	End:	66461	END
+Trl:	4	Blk:	1	Cnd:	85	LVal:	8	RVal:	3	LName:	5S_130ne2	RName:	5S_123ls2	

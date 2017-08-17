@@ -1,0 +1,31 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice9_itm.txt
+COND:	movieChoice9_cnd.txt
+DATE:	07/18/2016 10:54:33
+Showing conditions: 251-->270.
+MagicNumbers:	64	249	198	118	163	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	251	LVal:	0	RVal:	8	LName:	NS_sprytp1	RName:	NS_wd3	Rsp:	StartCueMiss	Start:	1606	End:	9882	END
+Trl:	1	Blk:	1	Cnd:	251	LVal:	0	RVal:	8	LName:	NS_sprytp1	RName:	NS_wd3	Rsp:	Right	Start:	10274	End:	26576	END
+Trl:	2	Blk:	1	Cnd:	252	LVal:	0	RVal:	3	LName:	5S_107ls	RName:	5S_96th	Rsp:	Right	Start:	27087	End:	41987	END
+Trl:	3	Blk:	1	Cnd:	253	LVal:	8	RVal:	0	LName:	5S_98th2	RName:	5S_107th2	Rsp:	Early	Start:	42493	End:	53550	END
+Trl:	4	Blk:	1	Cnd:	254	LVal:	0	RVal:	3	LName:	5S_107ne2	RName:	5S_96ne	Rsp:	Right	Start:	54070	End:	68926	END
+Trl:	5	Blk:	1	Cnd:	255	LVal:	0	RVal:	3	LName:	NS_sprytp4	RName:	NS_vg2	Rsp:	Left	Start:	69370	End:	83304	END
+Trl:	6	Blk:	1	Cnd:	256	LVal:	0	RVal:	8	LName:	NS_sprytp2	RName:	NS_wd3	Rsp:	Right	Start:	83711	End:	100031	END
+Trl:	7	Blk:	1	Cnd:	257	LVal:	0	RVal:	8	LName:	5S_107ne	RName:	5S_98th2	Rsp:	Right	Start:	100503	End:	117175	END
+Trl:	8	Blk:	1	Cnd:	258	LVal:	3	RVal:	8	LName:	5S_96ne2	RName:	5S_98ne2	Rsp:	Right	Start:	117664	End:	133985	END
+Trl:	9	Blk:	1	Cnd:	259	LVal:	3	RVal:	0	LName:	5S_96ls	RName:	5S_107ls2	Rsp:	Right	Start:	134497	End:	148396	END
+Trl:	10	Blk:	1	Cnd:	260	LVal:	8	RVal:	3	LName:	5S_98th	RName:	5S_96ne	Rsp:	Right	Start:	148898	End:	163724	END
+Trl:	11	Blk:	1	Cnd:	261	LVal:	8	RVal:	3	LName:	NS_wd1	RName:	NS_vg2	Rsp:	Right	Start:	164137	End:	178968	END
+Trl:	12	Blk:	1	Cnd:	262	LVal:	3	RVal:	0	LName:	NS_vg4	RName:	NS_sprytp2	Rsp:	Right	Start:	179385	End:	193329	END
+Trl:	13	Blk:	1	Cnd:	263	LVal:	3	RVal:	8	LName:	NS_vg6	RName:	NS_wd2	Rsp:	Right	Start:	193745	End:	210140	END
+Trl:	14	Blk:	1	Cnd:	264	LVal:	8	RVal:	0	LName:	NS_wd3	RName:	NS_sprytp1	Rsp:	Early	Start:	210541	End:	221886	END
+Trl:	15	Blk:	1	Cnd:	265	LVal:	8	RVal:	0	LName:	5S_98ls	RName:	5S_107ne2	Rsp:	Right	Start:	222400	End:	236396	END
+Trl:	16	Blk:	1	Cnd:	266	LVal:	8	RVal:	3	LName:	5S_98ne	RName:	5S_96th	Rsp:	StartCueMiss	Start:	236912	End:	244793	END
+Trl:	17	Blk:	1	Cnd:	266	LVal:	8	RVal:	3	LName:	5S_98ne	RName:	5S_96th	Rsp:	Early	Start:	245259	End:	259722	END
+Trl:	18	Blk:	1	Cnd:	267	LVal:	3	RVal:	0	LName:	NS_vg3	RName:	NS_sprytp5	Rsp:	Right	Start:	260151	End:	274082	END
+Trl:	19	Blk:	1	Cnd:	268	LVal:	8	RVal:	3	LName:	NS_wd6	RName:	NS_vg5	Rsp:	Left	Start:	274506	End:	290859	END
+Trl:	20	Blk:	1	Cnd:	269	LVal:	0	RVal:	8	LName:	NS_sprytp4	RName:	NS_wd1	Rsp:	Early	Start:	291320	End:	302189	END
+Trl:	21	Blk:	1	Cnd:	270	LVal:	3	RVal:	8	LName:	NS_vg5	RName:	NS_wd3	Rsp:	Right	Start:	302568	End:	318982	END
+PROGRAM EXIT

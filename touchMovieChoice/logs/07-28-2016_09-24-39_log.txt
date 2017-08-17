@@ -1,0 +1,61 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice12_itm.txt
+COND:	movieChoice12_cnd.txt
+DATE:	07/28/2016 09:24:39
+Showing conditions: 1-->300.
+MagicNumbers:	240	48	6	183	137	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	3	RVal:	0	LName:	5S_94th2	RName:	5S_62th	Rsp:	Ignore	Start:	2092	End:	7232	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	8	LName:	5S_62ne	RName:	5S_134th2	Rsp:	Ignore	Start:	7761	End:	12863	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	8	RVal:	0	LName:	NS_mtlcup5	RName:	NS_mllt5	Rsp:	Ignore	Start:	13291	End:	18394	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	0	RVal:	3	LName:	NS_mllt1	RName:	NS_mp6	Rsp:	Ignore	Start:	18822	End:	23926	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	0	RVal:	8	LName:	NS_mllt3	RName:	NS_mtlcup4	Rsp:	Ignore	Start:	24352	End:	29457	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	3	RVal:	8	LName:	5S_94th2	RName:	5S_134ne	Rsp:	Ignore	Start:	29979	End:	35088	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	8	RVal:	0	LName:	5S_134th	RName:	5S_62th	Rsp:	Ignore	Start:	35606	End:	40719	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	8	RVal:	3	LName:	5S_134th2	RName:	5S_94th	Rsp:	Ignore	Start:	41240	End:	46351	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	0	RVal:	3	LName:	5S_62ne2	RName:	5S_94th2	Rsp:	Ignore	Start:	46842	End:	51948	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	3	RVal:	0	LName:	NS_mp1	RName:	NS_mllt2	Rsp:	Ignore	Start:	52386	End:	57496	END
+Trl:	10	Blk:	1	Cnd:	11	LVal:	3	RVal:	8	LName:	NS_mp6	RName:	NS_mtlcup1	Rsp:	Ignore	Start:	57901	End:	63011	END
+Trl:	11	Blk:	1	Cnd:	12	LVal:	8	RVal:	3	LName:	NS_mtlcup6	RName:	NS_mp4	Rsp:	Ignore	Start:	63510	End:	68625	END
+Trl:	12	Blk:	1	Cnd:	13	LVal:	0	RVal:	8	LName:	NS_mllt5	RName:	NS_mtlcup2	Rsp:	Ignore	Start:	69040	End:	74157	END
+Trl:	13	Blk:	1	Cnd:	14	LVal:	3	RVal:	8	LName:	NS_mp2	RName:	NS_mtlcup6	Rsp:	Ignore	Start:	74573	End:	79688	END
+Trl:	14	Blk:	1	Cnd:	15	LVal:	8	RVal:	0	LName:	NS_mtlcup6	RName:	NS_mllt5	Rsp:	Ignore	Start:	80115	End:	85219	END
+Trl:	15	Blk:	1	Cnd:	16	LVal:	3	RVal:	0	LName:	5S_94ls	RName:	5S_62ls2	Rsp:	Ignore	Start:	85727	End:	90834	END
+Trl:	16	Blk:	1	Cnd:	17	LVal:	3	RVal:	0	LName:	NS_mp3	RName:	NS_mllt5	Rsp:	Ignore	Start:	91279	End:	96381	END
+Trl:	17	Blk:	1	Cnd:	18	LVal:	0	RVal:	3	LName:	5S_62ne	RName:	5S_94ls2	Rsp:	Ignore	Start:	96865	End:	101979	END
+Trl:	18	Blk:	1	Cnd:	19	LVal:	3	RVal:	8	LName:	5S_94th	RName:	5S_134ne	Rsp:	Ignore	Start:	102510	End:	107627	END
+Trl:	19	Blk:	1	Cnd:	20	LVal:	8	RVal:	0	LName:	5S_134th	RName:	5S_62ne2	Rsp:	Ignore	Start:	108135	End:	113242	END
+Trl:	20	Blk:	1	Cnd:	21	LVal:	0	RVal:	3	LName:	NS_mllt2	RName:	NS_mp2	Rsp:	Ignore	Start:	113698	End:	118806	END
+Trl:	21	Blk:	1	Cnd:	22	LVal:	0	RVal:	8	LName:	5S_62ne2	RName:	5S_134ls	Rsp:	Ignore	Start:	119323	End:	124437	END
+Trl:	22	Blk:	1	Cnd:	23	LVal:	8	RVal:	3	LName:	5S_134ne	RName:	5S_94ne2	Rsp:	Ignore	Start:	124946	End:	130052	END
+Trl:	23	Blk:	1	Cnd:	24	LVal:	8	RVal:	3	LName:	NS_mtlcup4	RName:	NS_mp5	Rsp:	Ignore	Start:	130468	End:	135583	END
+Trl:	24	Blk:	1	Cnd:	25	LVal:	0	RVal:	3	LName:	NS_mllt5	RName:	NS_mp4	Rsp:	Ignore	Start:	135990	End:	141098	END
+Trl:	25	Blk:	1	Cnd:	26	LVal:	3	RVal:	0	LName:	5S_94ls2	RName:	5S_62ne2	Rsp:	Ignore	Start:	141616	End:	146729	END
+Trl:	26	Blk:	1	Cnd:	27	LVal:	8	RVal:	3	LName:	NS_mtlcup3	RName:	NS_mp6	Rsp:	Ignore	Start:	147150	End:	152260	END
+Trl:	27	Blk:	1	Cnd:	28	LVal:	0	RVal:	8	LName:	5S_62th	RName:	5S_134ls2	Rsp:	Ignore	Start:	152762	End:	157875	END
+Trl:	28	Blk:	1	Cnd:	29	LVal:	3	RVal:	8	LName:	NS_mp6	RName:	NS_mtlcup3	Rsp:	Ignore	Start:	158302	End:	163406	END
+Trl:	29	Blk:	1	Cnd:	30	LVal:	0	RVal:	8	LName:	NS_mllt6	RName:	NS_mtlcup5	Rsp:	Ignore	Start:	163834	End:	168937	END
+Trl:	30	Blk:	1	Cnd:	31	LVal:	8	RVal:	0	LName:	NS_mtlcup4	RName:	NS_mllt1	Rsp:	Ignore	Start:	169365	End:	174468	END
+Trl:	31	Blk:	1	Cnd:	32	LVal:	3	RVal:	8	LName:	5S_94ls	RName:	5S_134th	Rsp:	Ignore	Start:	174979	End:	180083	END
+Trl:	32	Blk:	1	Cnd:	33	LVal:	0	RVal:	3	LName:	5S_62ls	RName:	5S_94th2	Rsp:	Ignore	Start:	180604	End:	185714	END
+Trl:	33	Blk:	1	Cnd:	34	LVal:	8	RVal:	0	LName:	5S_134ls2	RName:	5S_62ne	Rsp:	Ignore	Start:	186240	End:	191345	END
+Trl:	34	Blk:	1	Cnd:	35	LVal:	8	RVal:	3	LName:	5S_134th	RName:	5S_94th2	Rsp:	Ignore	Start:	191854	End:	196960	END
+Trl:	35	Blk:	1	Cnd:	36	LVal:	3	RVal:	0	LName:	NS_mp2	RName:	NS_mllt4	Rsp:	Ignore	Start:	197387	End:	202491	END
+Trl:	36	Blk:	1	Cnd:	37	LVal:	3	RVal:	8	LName:	5S_94th2	RName:	5S_134ne2	Rsp:	Ignore	Start:	203010	End:	208122	END
+Trl:	37	Blk:	1	Cnd:	38	LVal:	8	RVal:	3	LName:	5S_134ls2	RName:	5S_94ne2	Rsp:	Ignore	Start:	208604	End:	213720	END
+Trl:	38	Blk:	1	Cnd:	39	LVal:	3	RVal:	0	LName:	5S_94th	RName:	5S_62ne	Rsp:	Ignore	Start:	214225	End:	219335	END
+Trl:	39	Blk:	1	Cnd:	40	LVal:	0	RVal:	3	LName:	5S_62th	RName:	5S_94ne2	Rsp:	Ignore	Start:	219854	End:	224966	END
+Trl:	40	Blk:	1	Cnd:	41	LVal:	3	RVal:	0	LName:	NS_mp3	RName:	NS_mllt3	Rsp:	Ignore	Start:	225417	End:	230530	END
+Trl:	41	Blk:	1	Cnd:	42	LVal:	0	RVal:	8	LName:	NS_mllt4	RName:	NS_mtlcup2	Rsp:	Ignore	Start:	230967	End:	236078	END
+Trl:	42	Blk:	1	Cnd:	43	LVal:	8	RVal:	3	LName:	NS_mtlcup1	RName:	NS_mp3	Rsp:	Ignore	Start:	236510	End:	241626	END
+Trl:	43	Blk:	1	Cnd:	44	LVal:	8	RVal:	0	LName:	NS_mtlcup1	RName:	NS_mllt2	Rsp:	Ignore	Start:	242037	End:	247141	END
+Trl:	44	Blk:	1	Cnd:	45	LVal:	0	RVal:	3	LName:	NS_mllt4	RName:	NS_mp2	Rsp:	Ignore	Start:	247539	End:	252655	END
+Trl:	45	Blk:	1	Cnd:	46	LVal:	8	RVal:	0	LName:	5S_134th	RName:	5S_62ne	Rsp:	Ignore	Start:	253134	End:	258236	END
+Trl:	46	Blk:	1	Cnd:	47	LVal:	3	RVal:	8	LName:	NS_mp6	RName:	NS_mtlcup4	Rsp:	Ignore	Start:	258654	End:	263768	END
+Trl:	47	Blk:	1	Cnd:	48	LVal:	0	RVal:	8	LName:	5S_62ls	RName:	5S_134th	Rsp:	Ignore	Start:	264302	End:	269416	END
+Trl:	48	Blk:	1	Cnd:	49	LVal:	0	RVal:	8	LName:	5S_62th	RName:	5S_134ne	Rsp:	Ignore	Start:	269949	End:	275063	END
+Trl:	49	Blk:	1	Cnd:	50	LVal:	3	RVal:	8	LName:	5S_94th	RName:	5S_134ls	Rsp:	Ignore	Start:	275572	End:	280678	END
+Trl:	50	Blk:	1	Cnd:	51	LVal:	3	RVal:	0	LName:	NS_mp4	RName:	NS_mllt1	Rsp:	Ignore	Start:	281093	End:	286209	END
+Trl:	51	Blk:	1	Cnd:	52	LVal:	8	RVal:	0	LName:	NS_mtlcup1	RName:	NS_mllt4	Rsp:	Ignore	Start:	286617	End:	291724	END
+Trl:	52	Blk:	1	Cnd:	53	LVal:	0	RVal:	3	LName:	NS_mllt2	RName:	NS_mp4	

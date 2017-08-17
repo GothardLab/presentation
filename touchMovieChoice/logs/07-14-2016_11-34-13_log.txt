@@ -1,0 +1,15 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice9_itm.txt
+COND:	movieChoice9_cnd.txt
+DATE:	07/14/2016 11:34:13
+Showing conditions: 1-->10.
+MagicNumbers:	67	54	9	213	28	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_wd4	Rsp:	StartCueMiss	Start:	2190	End:	10115	END
+Trl:	1	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_wd4	Rsp:	Left	Start:	10529	End:	24493	END
+Trl:	2	Blk:	1	Cnd:	2	LVal:	0	RVal:	0	LName:	5S_107ne2	RName:	5S_96th	Rsp:	Early	Start:	25019	End:	35923	END
+Trl:	3	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_vg5	Rsp:	StartCueMiss	Start:	36357	End:	44902	END
+Trl:	4	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_vg5	Rsp:	StartCueMiss	Start:	45314	End:	53465	END
+Trl:	5	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_vg5	Rsp:	StartCueMiss	Start:	53878	End:	62045	END
+Trl:	6	Blk:	1	Cnd:	3	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_vg5	

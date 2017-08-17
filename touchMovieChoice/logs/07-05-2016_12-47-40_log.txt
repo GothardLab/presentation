@@ -1,0 +1,22 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice6_itm.txt
+COND:	movieChoice6_cnd.txt
+DATE:	07/05/2016 12:47:40
+Showing conditions: 51-->60.
+MagicNumbers:	218	33	102	173	173	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	51	LVal:	3	RVal:	0	LName:	NS_orngspl4	RName:	NS_mus1	Rsp:	startCueIgnore	Start:	1581	End:	14164	END
+Trl:	1	Blk:	1	Cnd:	51	LVal:	3	RVal:	0	LName:	NS_orngspl4	RName:	NS_mus1	Rsp:	startCueIgnore	Start:	14564	End:	27142	END
+Trl:	2	Blk:	1	Cnd:	51	LVal:	3	RVal:	0	LName:	NS_orngspl4	RName:	NS_mus1	Rsp:	StartCueMiss	Start:	27545	End:	35539	END
+Trl:	3	Blk:	1	Cnd:	51	LVal:	3	RVal:	0	LName:	NS_orngspl4	RName:	NS_mus1	Rsp:	Ignore	Start:	35922	End:	52417	END
+Trl:	4	Blk:	1	Cnd:	52	LVal:	8	RVal:	0	LName:	NS_pst1	RName:	NS_mus4	Rsp:	Ignore	Start:	52829	End:	69860	END
+Trl:	5	Blk:	1	Cnd:	53	LVal:	0	RVal:	3	LName:	NS_mus2	RName:	NS_orngspl4	Rsp:	startCueIgnore	Start:	70279	End:	82854	END
+Trl:	6	Blk:	1	Cnd:	53	LVal:	0	RVal:	3	LName:	NS_mus2	RName:	NS_orngspl4	Rsp:	startCueIgnore	Start:	83267	End:	95833	END
+Trl:	7	Blk:	1	Cnd:	53	LVal:	0	RVal:	3	LName:	NS_mus2	RName:	NS_orngspl4	Rsp:	Early	Start:	96251	End:	107562	END
+Trl:	8	Blk:	1	Cnd:	54	LVal:	3	RVal:	8	LName:	5S_123th2	RName:	5S_130ne2	Rsp:	Left	Start:	108068	End:	123589	END
+Trl:	9	Blk:	1	Cnd:	55	LVal:	0	RVal:	8	LName:	5S_121ls	RName:	5S_130th	Rsp:	Ignore	Start:	124091	End:	140684	END
+Trl:	10	Blk:	1	Cnd:	56	LVal:	0	RVal:	8	LName:	NS_mus5	RName:	NS_pst6	Rsp:	Ignore	Start:	141121	End:	158677	END
+Trl:	11	Blk:	1	Cnd:	57	LVal:	0	RVal:	3	LName:	5S_121ne2	RName:	5S_123ls	Rsp:	Right	Start:	159204	End:	173903	END
+Trl:	12	Blk:	1	Cnd:	58	LVal:	3	RVal:	8	LName:	NS_orngspl6	RName:	NS_pst6	Rsp:	Early	Start:	174334	End:	187649	END
+Trl:	13	Blk:	1	Cnd:	59	LVal:	8	RVal:	3	LName:	NS_pst1	RName:	NS_orngspl4	
