@@ -1,0 +1,49 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice10_itm.txt
+COND:	movieChoice10_cnd.txt
+DATE:	07/25/2016 12:59:13
+Showing conditions: 301-->340.
+MagicNumbers:	102	213	239	149	97	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	301	LVal:	0	RVal:	8	LName:	5S_92th2	RName:	5S_122ne	Rsp:	Right	Start:	1736	End:	14763	END
+Trl:	1	Blk:	1	Cnd:	302	LVal:	8	RVal:	0	LName:	5S_122ls2	RName:	5S_92ne	Rsp:	Right	Start:	15252	End:	25843	END
+Trl:	2	Blk:	1	Cnd:	303	LVal:	3	RVal:	0	LName:	5S_108ne	RName:	5S_92ls	Rsp:	Left	Start:	26365	End:	37855	END
+Trl:	3	Blk:	1	Cnd:	304	LVal:	3	RVal:	8	LName:	NS_grnbrush1	RName:	NS_brm2	Rsp:	Right	Start:	38287	End:	51283	END
+Trl:	4	Blk:	1	Cnd:	305	LVal:	0	RVal:	3	LName:	NS_hk3	RName:	NS_grnbrush4	Rsp:	Right	Start:	51702	End:	63195	END
+Trl:	5	Blk:	1	Cnd:	306	LVal:	8	RVal:	0	LName:	NS_brm1	RName:	NS_hk3	Rsp:	Right	Start:	63613	End:	74208	END
+Trl:	6	Blk:	1	Cnd:	307	LVal:	8	RVal:	3	LName:	5S_122th	RName:	5S_108ls	Rsp:	Left	Start:	74723	End:	87719	END
+Trl:	7	Blk:	1	Cnd:	308	LVal:	3	RVal:	0	LName:	NS_grnbrush5	RName:	NS_hk3	Rsp:	Right	Start:	88141	End:	98732	END
+Trl:	8	Blk:	1	Cnd:	309	LVal:	0	RVal:	3	LName:	5S_92ne2	RName:	5S_108ne	Rsp:	Right	Start:	99221	End:	110711	END
+Trl:	9	Blk:	1	Cnd:	310	LVal:	0	RVal:	8	LName:	NS_hk1	RName:	NS_brm1	Rsp:	Right	Start:	111128	End:	124122	END
+Trl:	10	Blk:	1	Cnd:	311	LVal:	3	RVal:	8	LName:	5S_108ls	RName:	5S_122ls	Rsp:	Right	Start:	124641	End:	137634	END
+Trl:	11	Blk:	1	Cnd:	312	LVal:	8	RVal:	3	LName:	NS_brm6	RName:	NS_grnbrush3	Rsp:	Left	Start:	138061	End:	151045	END
+Trl:	12	Blk:	1	Cnd:	313	LVal:	8	RVal:	0	LName:	NS_brm5	RName:	NS_hk6	Rsp:	Right	Start:	151454	End:	162041	END
+Trl:	13	Blk:	1	Cnd:	314	LVal:	3	RVal:	8	LName:	NS_grnbrush5	RName:	NS_brm6	Rsp:	Right	Start:	162471	End:	175469	END
+Trl:	14	Blk:	1	Cnd:	315	LVal:	8	RVal:	3	LName:	5S_122th	RName:	5S_108th	Rsp:	Left	Start:	175965	End:	188964	END
+Trl:	15	Blk:	1	Cnd:	316	LVal:	0	RVal:	8	LName:	5S_92ls	RName:	5S_122th2	Rsp:	Right	Start:	189466	End:	202459	END
+Trl:	16	Blk:	1	Cnd:	317	LVal:	0	RVal:	3	LName:	5S_92th	RName:	5S_108ls	Rsp:	Right	Start:	202990	End:	214488	END
+Trl:	17	Blk:	1	Cnd:	318	LVal:	0	RVal:	3	LName:	NS_hk5	RName:	NS_grnbrush5	Rsp:	Left	Start:	214891	End:	225484	END
+Trl:	18	Blk:	1	Cnd:	319	LVal:	3	RVal:	0	LName:	5S_108ne	RName:	5S_92ne2	Rsp:	Left	Start:	226002	End:	237496	END
+Trl:	19	Blk:	1	Cnd:	320	LVal:	0	RVal:	8	LName:	NS_hk1	RName:	NS_brm5	Rsp:	Right	Start:	237896	End:	250907	END
+Trl:	20	Blk:	1	Cnd:	321	LVal:	3	RVal:	0	LName:	NS_grnbrush4	RName:	NS_hk3	Rsp:	Right	Start:	251297	End:	261887	END
+Trl:	21	Blk:	1	Cnd:	322	LVal:	8	RVal:	3	LName:	NS_brm2	RName:	NS_grnbrush5	Rsp:	Left	Start:	262303	End:	275298	END
+Trl:	22	Blk:	1	Cnd:	323	LVal:	8	RVal:	0	LName:	5S_122th2	RName:	5S_92ls	Rsp:	Left	Start:	275813	End:	288826	END
+Trl:	23	Blk:	1	Cnd:	324	LVal:	3	RVal:	8	LName:	5S_108th2	RName:	5S_122ne2	Rsp:	Left	Start:	289340	End:	300839	END
+Trl:	24	Blk:	1	Cnd:	325	LVal:	8	RVal:	0	LName:	NS_brm5	RName:	NS_hk5	Rsp:	Left	Start:	301268	End:	314283	END
+Trl:	25	Blk:	1	Cnd:	326	LVal:	3	RVal:	8	LName:	NS_grnbrush1	RName:	NS_brm4	Rsp:	Left	Start:	314692	End:	326179	END
+Trl:	26	Blk:	1	Cnd:	327	LVal:	3	RVal:	0	LName:	NS_grnbrush4	RName:	NS_hk1	Rsp:	Left	Start:	326566	End:	338058	END
+Trl:	27	Blk:	1	Cnd:	328	LVal:	3	RVal:	8	LName:	5S_108ls	RName:	5S_122ls2	Rsp:	Ignore	Start:	338568	End:	351670	END
+Trl:	28	Blk:	1	Cnd:	329	LVal:	3	RVal:	0	LName:	5S_108ls2	RName:	5S_92ls	Rsp:	Right	Start:	352170	End:	362765	END
+Trl:	29	Blk:	1	Cnd:	330	LVal:	8	RVal:	0	LName:	5S_122th	RName:	5S_92ne2	Rsp:	Left	Start:	363285	End:	376293	END
+Trl:	30	Blk:	1	Cnd:	331	LVal:	8	RVal:	3	LName:	5S_122ne	RName:	5S_108th	Rsp:	Right	Start:	376798	End:	388289	END
+Trl:	31	Blk:	1	Cnd:	332	LVal:	8	RVal:	3	LName:	NS_brm4	RName:	NS_grnbrush5	Rsp:	Left	Start:	388706	End:	401717	END
+Trl:	32	Blk:	1	Cnd:	333	LVal:	0	RVal:	8	LName:	NS_hk5	RName:	NS_brm4	Rsp:	Left	Start:	402144	End:	412730	END
+Trl:	33	Blk:	1	Cnd:	334	LVal:	0	RVal:	8	LName:	5S_92ne	RName:	5S_122ls	Rsp:	Right	Start:	413271	End:	426274	END
+Trl:	34	Blk:	1	Cnd:	335	LVal:	0	RVal:	3	LName:	5S_92th	RName:	5S_108ne	Rsp:	Right	Start:	426763	End:	438253	END
+Trl:	35	Blk:	1	Cnd:	336	LVal:	0	RVal:	3	LName:	NS_hk2	RName:	NS_grnbrush3	Rsp:	Right	Start:	438692	End:	450182	END
+Trl:	36	Blk:	1	Cnd:	337	LVal:	8	RVal:	0	LName:	5S_122th2	RName:	5S_92th	Rsp:	Left	Start:	450688	End:	463694	END
+Trl:	37	Blk:	1	Cnd:	338	LVal:	0	RVal:	3	LName:	NS_hk1	RName:	NS_grnbrush6	Rsp:	Right	Start:	464108	End:	475606	END
+Trl:	38	Blk:	1	Cnd:	339	LVal:	0	RVal:	8	LName:	NS_hk3	RName:	NS_brm3	Rsp:	Right	Start:	476044	End:	489051	END
+Trl:	39	Blk:	1	Cnd:	340	LVal:	0	RVal:	3	LName:	5S_92ls2	RName:	5S_108ne2	Rsp:	Right	Start:	489579	End:	501079	END
+PROGRAM EXIT

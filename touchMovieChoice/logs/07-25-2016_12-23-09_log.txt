@@ -1,0 +1,29 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice10_itm.txt
+COND:	movieChoice10_cnd.txt
+DATE:	07/25/2016 12:23:09
+Showing conditions: 141-->160.
+MagicNumbers:	84	145	34	82	138	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	141	LVal:	3	RVal:	0	LName:	5S_108ls	RName:	5S_92th2	Rsp:	Left	Start:	1671	End:	13181	END
+Trl:	1	Blk:	1	Cnd:	142	LVal:	0	RVal:	8	LName:	NS_hk2	RName:	NS_brm6	Rsp:	Right	Start:	13582	End:	26576	END
+Trl:	2	Blk:	1	Cnd:	143	LVal:	3	RVal:	0	LName:	NS_grnbrush3	RName:	NS_hk5	Rsp:	Right	Start:	26972	End:	37572	END
+Trl:	3	Blk:	1	Cnd:	144	LVal:	0	RVal:	3	LName:	NS_hk3	RName:	NS_grnbrush6	Rsp:	Left	Start:	38005	End:	48601	END
+Trl:	4	Blk:	1	Cnd:	145	LVal:	0	RVal:	3	LName:	NS_hk2	RName:	NS_grnbrush2	Rsp:	Right	Start:	49010	End:	60496	END
+Trl:	5	Blk:	1	Cnd:	146	LVal:	8	RVal:	3	LName:	NS_brm2	RName:	NS_grnbrush2	Rsp:	Ignore	Start:	60895	End:	74009	END
+Trl:	6	Blk:	1	Cnd:	147	LVal:	3	RVal:	8	LName:	NS_grnbrush4	RName:	NS_brm6	Rsp:	Right	Start:	74419	End:	87403	END
+Trl:	7	Blk:	1	Cnd:	148	LVal:	3	RVal:	8	LName:	5S_108th2	RName:	5S_122ne	Rsp:	Left	Start:	87893	End:	99381	END
+Trl:	8	Blk:	1	Cnd:	149	LVal:	8	RVal:	3	LName:	5S_122ne	RName:	5S_108ne2	Rsp:	Ignore	Start:	99878	End:	112994	END
+Trl:	9	Blk:	1	Cnd:	150	LVal:	0	RVal:	3	LName:	5S_92th2	RName:	5S_108ls	Rsp:	Ignore	Start:	113501	End:	126606	END
+Trl:	10	Blk:	1	Cnd:	151	LVal:	3	RVal:	0	LName:	NS_grnbrush5	RName:	NS_hk1	Rsp:	Ignore	Start:	127065	End:	140167	END
+Trl:	11	Blk:	1	Cnd:	152	LVal:	8	RVal:	0	LName:	NS_brm1	RName:	NS_hk1	Rsp:	Right	Start:	140567	End:	151162	END
+Trl:	12	Blk:	1	Cnd:	153	LVal:	0	RVal:	8	LName:	NS_hk4	RName:	NS_brm6	Rsp:	Right	Start:	151551	End:	164540	END
+Trl:	13	Blk:	1	Cnd:	154	LVal:	3	RVal:	0	LName:	5S_108ne	RName:	5S_92ls2	Rsp:	Left	Start:	165049	End:	176536	END
+Trl:	14	Blk:	1	Cnd:	155	LVal:	8	RVal:	0	LName:	5S_122th2	RName:	5S_92ne2	Rsp:	Left	Start:	177109	End:	190097	END
+Trl:	15	Blk:	1	Cnd:	156	LVal:	0	RVal:	8	LName:	5S_92ls	RName:	5S_122ls	Rsp:	Left	Start:	190610	End:	201210	END
+Trl:	16	Blk:	1	Cnd:	157	LVal:	8	RVal:	0	LName:	NS_brm3	RName:	NS_hk3	Rsp:	Right	Start:	201656	End:	212255	END
+Trl:	17	Blk:	1	Cnd:	158	LVal:	0	RVal:	3	LName:	NS_hk4	RName:	NS_grnbrush2	Rsp:	Right	Start:	212671	End:	224168	END
+Trl:	18	Blk:	1	Cnd:	159	LVal:	3	RVal:	8	LName:	NS_grnbrush1	RName:	NS_brm5	Rsp:	Right	Start:	224597	End:	237596	END
+Trl:	19	Blk:	1	Cnd:	160	LVal:	0	RVal:	3	LName:	5S_92th	RName:	5S_108ne2	Rsp:	Left	Start:	238091	End:	248675	END
+PROGRAM EXIT

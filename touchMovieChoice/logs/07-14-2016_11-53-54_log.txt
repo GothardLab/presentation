@@ -1,0 +1,20 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice9_itm.txt
+COND:	movieChoice9_cnd.txt
+DATE:	07/14/2016 11:53:54
+Showing conditions: 61-->70.
+MagicNumbers:	168	211	146	1	20	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	61	LVal:	0	RVal:	3	LName:	NS_sprytp6	RName:	NS_vg4	Rsp:	Early	Start:	1583	End:	12632	END
+Trl:	1	Blk:	1	Cnd:	62	LVal:	8	RVal:	0	LName:	5S_98ne	RName:	5S_107th	Rsp:	Early	Start:	13140	End:	24044	END
+Trl:	2	Blk:	1	Cnd:	63	LVal:	3	RVal:	8	LName:	5S_96ls	RName:	5S_98ls2	Rsp:	Left	Start:	24550	End:	39904	END
+Trl:	3	Blk:	1	Cnd:	64	LVal:	8	RVal:	0	LName:	NS_wd6	RName:	NS_sprytp2	Rsp:	Early	Start:	40363	End:	51617	END
+Trl:	4	Blk:	1	Cnd:	65	LVal:	8	RVal:	3	LName:	NS_wd4	RName:	NS_vg4	Rsp:	Right	Start:	52019	End:	67377	END
+Trl:	5	Blk:	1	Cnd:	66	LVal:	3	RVal:	0	LName:	5S_96ne	RName:	5S_107ls	Rsp:	StartCueMiss	Start:	67893	End:	75824	END
+Trl:	6	Blk:	1	Cnd:	66	LVal:	3	RVal:	0	LName:	5S_96ne	RName:	5S_107ls	Rsp:	Left	Start:	76320	End:	91201	END
+Trl:	7	Blk:	1	Cnd:	67	LVal:	0	RVal:	3	LName:	5S_107th2	RName:	5S_96th2	Rsp:	Left	Start:	91705	End:	105812	END
+Trl:	8	Blk:	1	Cnd:	68	LVal:	0	RVal:	8	LName:	5S_107ls2	RName:	5S_98ls2	Rsp:	Left	Start:	106319	End:	120207	END
+Trl:	9	Blk:	1	Cnd:	69	LVal:	3	RVal:	0	LName:	NS_vg5	RName:	NS_sprytp1	Rsp:	Early	Start:	120646	End:	131953	END
+Trl:	10	Blk:	1	Cnd:	70	LVal:	0	RVal:	8	LName:	NS_sprytp4	RName:	NS_wd4	Rsp:	Right	Start:	132374	End:	150362	END
+PROGRAM EXIT

@@ -1,0 +1,30 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice12_itm.txt
+COND:	movieChoice12_cnd.txt
+DATE:	07/28/2016 11:34:50
+Showing conditions: 20-->40.
+MagicNumbers:	105	10	183	244	162	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	20	LVal:	8	RVal:	0	LName:	5S_134th	RName:	5S_62ne2	Rsp:	Left	Start:	1691	End:	14713	END
+Trl:	1	Blk:	1	Cnd:	21	LVal:	0	RVal:	3	LName:	NS_mllt2	RName:	NS_mp2	Rsp:	Right	Start:	15172	End:	26659	END
+Trl:	2	Blk:	1	Cnd:	22	LVal:	0	RVal:	8	LName:	5S_62ne2	RName:	5S_134ls	Rsp:	Right	Start:	27172	End:	40170	END
+Trl:	3	Blk:	1	Cnd:	23	LVal:	8	RVal:	3	LName:	5S_134ne	RName:	5S_94ne2	Rsp:	Right	Start:	40705	End:	52199	END
+Trl:	4	Blk:	1	Cnd:	24	LVal:	8	RVal:	3	LName:	NS_mtlcup4	RName:	NS_mp5	Rsp:	Right	Start:	52614	End:	64111	END
+Trl:	5	Blk:	1	Cnd:	25	LVal:	0	RVal:	3	LName:	NS_mllt5	RName:	NS_mp4	Rsp:	Right	Start:	64549	End:	76040	END
+Trl:	6	Blk:	1	Cnd:	26	LVal:	3	RVal:	0	LName:	5S_94ls2	RName:	5S_62ne2	Rsp:	Right	Start:	76580	End:	87169	END
+Trl:	7	Blk:	1	Cnd:	27	LVal:	8	RVal:	3	LName:	NS_mtlcup3	RName:	NS_mp6	Rsp:	Left	Start:	87591	End:	100581	END
+Trl:	8	Blk:	1	Cnd:	28	LVal:	0	RVal:	8	LName:	5S_62th	RName:	5S_134ls2	Rsp:	Right	Start:	101093	End:	114109	END
+Trl:	9	Blk:	1	Cnd:	29	LVal:	3	RVal:	8	LName:	NS_mp6	RName:	NS_mtlcup3	Rsp:	Right	Start:	114547	End:	127537	END
+Trl:	10	Blk:	1	Cnd:	30	LVal:	0	RVal:	8	LName:	NS_mllt6	RName:	NS_mtlcup5	Rsp:	Right	Start:	127939	End:	140932	END
+Trl:	11	Blk:	1	Cnd:	31	LVal:	8	RVal:	0	LName:	NS_mtlcup4	RName:	NS_mllt1	Rsp:	Right	Start:	141373	End:	151961	END
+Trl:	12	Blk:	1	Cnd:	32	LVal:	3	RVal:	8	LName:	5S_94ls	RName:	5S_134th	Rsp:	Right	Start:	152468	End:	165456	END
+Trl:	13	Blk:	1	Cnd:	33	LVal:	0	RVal:	3	LName:	5S_62ls	RName:	5S_94th2	Rsp:	Right	Start:	165968	End:	177468	END
+Trl:	14	Blk:	1	Cnd:	34	LVal:	8	RVal:	0	LName:	5S_134ls2	RName:	5S_62ne	Rsp:	Right	Start:	177968	End:	188564	END
+Trl:	15	Blk:	1	Cnd:	35	LVal:	8	RVal:	3	LName:	5S_134th	RName:	5S_94th2	Rsp:	Right	Start:	189069	End:	200559	END
+Trl:	16	Blk:	1	Cnd:	36	LVal:	3	RVal:	0	LName:	NS_mp2	RName:	NS_mllt4	Rsp:	Right	Start:	200987	End:	211572	END
+Trl:	17	Blk:	1	Cnd:	37	LVal:	3	RVal:	8	LName:	5S_94th2	RName:	5S_134ne2	Rsp:	Left	Start:	212068	End:	223567	END
+Trl:	18	Blk:	1	Cnd:	38	LVal:	8	RVal:	3	LName:	5S_134ls2	RName:	5S_94ne2	Rsp:	Right	Start:	224076	End:	235563	END
+Trl:	19	Blk:	1	Cnd:	39	LVal:	3	RVal:	0	LName:	5S_94th	RName:	5S_62ne	Rsp:	Right	Start:	236109	End:	246708	END
+Trl:	20	Blk:	1	Cnd:	40	LVal:	0	RVal:	3	LName:	5S_62th	RName:	5S_94ne2	Rsp:	Left	Start:	247256	End:	257854	END
+PROGRAM EXIT

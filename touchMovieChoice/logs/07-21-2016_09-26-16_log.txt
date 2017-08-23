@@ -1,0 +1,20 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice11_itm.txt
+COND:	movieChoice11_cnd.txt
+DATE:	07/21/2016 09:26:16
+Showing conditions: 1-->300.
+MagicNumbers:	165	248	64	36	64	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	3	RVal:	0	LName:	5S_97th2	RName:	5S_143th	Rsp:	Ignore	Start:	2184	End:	7315	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	0	RVal:	8	LName:	5S_143ne	RName:	5S_106th2	Rsp:	Ignore	Start:	7827	End:	12930	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	0	RVal:	3	LName:	NS_ldl5	RName:	NS_ducttp5	Rsp:	Ignore	Start:	13402	End:	18511	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	3	RVal:	8	LName:	NS_ducttp1	RName:	NS_hmmr6	Rsp:	Ignore	Start:	18954	End:	24059	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	3	RVal:	0	LName:	NS_ducttp3	RName:	NS_ldl4	Rsp:	Ignore	Start:	24486	End:	29590	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	3	RVal:	8	LName:	5S_97th2	RName:	5S_106ne	Rsp:	Ignore	Start:	30089	End:	35205	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	8	RVal:	0	LName:	5S_106th	RName:	5S_143th	Rsp:	Ignore	Start:	35703	End:	40819	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	8	RVal:	3	LName:	5S_106th2	RName:	5S_97th	Rsp:	Ignore	Start:	41316	End:	46434	END
+Trl:	8	Blk:	1	Cnd:	9	LVal:	0	RVal:	3	LName:	5S_143ne2	RName:	5S_97th2	Rsp:	Ignore	Start:	46934	End:	52048	END
+Trl:	9	Blk:	1	Cnd:	10	LVal:	8	RVal:	3	LName:	NS_hmmr1	RName:	NS_ducttp2	Rsp:	Ignore	Start:	52505	End:	57613	END
+Trl:	10	Blk:	1	Cnd:	11	LVal:	8	RVal:	0	LName:	NS_hmmr6	RName:	NS_ldl1	Rsp:	Ignore	Start:	58049	End:	63161	END
+Trl:	11	Blk:	1	Cnd:	12	LVal:	0	RVal:	8	LName:	NS_ldl6	RName:	NS_hmmr4	

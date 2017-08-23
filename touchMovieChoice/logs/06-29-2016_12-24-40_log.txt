@@ -1,0 +1,13 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice5_itm.txt
+COND:	movieChoice5_cnd.txt
+DATE:	06/29/2016 12:24:40
+Showing conditions: 261-->270.
+MagicNumbers:	1	46	71	237	106	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	261	LVal:	0	RVal:	8	LName:	NS_rdshrp4	RName:	ball2_1	Rsp:	StartCueMiss	Start:	1621	End:	9765	END
+Trl:	1	Blk:	1	Cnd:	261	LVal:	0	RVal:	8	LName:	NS_rdshrp4	RName:	ball2_1	Rsp:	Right	Start:	10197	End:	26925	END
+Trl:	2	Blk:	1	Cnd:	262	LVal:	3	RVal:	8	LName:	NS_scrwdrvr4	RName:	ball2_1	Rsp:	Ignore	Start:	27368	End:	44870	END
+Trl:	3	Blk:	1	Cnd:	263	LVal:	3	RVal:	0	LName:	5S_90th2	RName:	5S_111th	Rsp:	Ignore	Start:	45389	End:	61913	END
+Trl:	4	Blk:	1	Cnd:	264	

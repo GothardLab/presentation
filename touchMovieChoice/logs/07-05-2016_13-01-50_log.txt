@@ -1,0 +1,27 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice6_itm.txt
+COND:	movieChoice6_cnd.txt
+DATE:	07/05/2016 13:01:50
+Showing conditions: 61-->80.
+MagicNumbers:	199	177	120	32	204	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	61	LVal:	3	RVal:	0	LName:	5S_123ls2	RName:	5S_121ls	Rsp:	Left	Start:	1674	End:	19079	END
+Trl:	1	Blk:	1	Cnd:	62	LVal:	0	RVal:	3	LName:	NS_mus2	RName:	NS_orngspl6	Rsp:	Left	Start:	19485	End:	34356	END
+Trl:	2	Blk:	1	Cnd:	63	LVal:	0	RVal:	3	LName:	5S_121ls	RName:	5S_123th	Rsp:	Ignore	Start:	34862	End:	52450	END
+Trl:	3	Blk:	1	Cnd:	64	LVal:	3	RVal:	0	LName:	NS_orngspl1	RName:	NS_mus6	Rsp:	Right	Start:	52862	End:	68293	END
+Trl:	4	Blk:	1	Cnd:	65	LVal:	0	RVal:	8	LName:	NS_mus6	RName:	NS_pst1	Rsp:	Right	Start:	68691	End:	85537	END
+Trl:	5	Blk:	1	Cnd:	66	LVal:	8	RVal:	0	LName:	NS_pst4	RName:	NS_mus3	Rsp:	Right	Start:	85965	End:	99981	END
+Trl:	6	Blk:	1	Cnd:	67	LVal:	3	RVal:	8	LName:	5S_123ne2	RName:	5S_130ls2	Rsp:	Ignore	Start:	100498	End:	117059	END
+Trl:	7	Blk:	1	Cnd:	68	LVal:	3	RVal:	8	LName:	NS_orngspl1	RName:	NS_pst5	Rsp:	Left	Start:	117466	End:	134518	END
+Trl:	8	Blk:	1	Cnd:	69	LVal:	8	RVal:	0	LName:	5S_130th	RName:	5S_121th2	Rsp:	Left	Start:	135020	End:	154877	END
+Trl:	9	Blk:	1	Cnd:	70	LVal:	8	RVal:	3	LName:	5S_130ne2	RName:	5S_123th	Rsp:	startCueIgnore	Start:	155390	End:	167972	END
+Trl:	10	Blk:	1	Cnd:	70	LVal:	8	RVal:	3	LName:	5S_130ne2	RName:	5S_123th	Rsp:	Ignore	Start:	168466	End:	185800	END
+Trl:	11	Blk:	1	Cnd:	71	LVal:	8	RVal:	3	LName:	NS_pst3	RName:	NS_orngspl1	Rsp:	startCueIgnore	Start:	186214	End:	198794	END
+Trl:	12	Blk:	1	Cnd:	71	LVal:	8	RVal:	3	LName:	NS_pst3	RName:	NS_orngspl1	Rsp:	Early	Start:	199188	End:	212289	END
+Trl:	13	Blk:	1	Cnd:	72	LVal:	0	RVal:	8	LName:	5S_121ne2	RName:	5S_130ls	Rsp:	Ignore	Start:	212825	End:	230516	END
+Trl:	14	Blk:	1	Cnd:	73	LVal:	0	RVal:	8	LName:	NS_mus2	RName:	NS_pst5	Rsp:	Right	Start:	230933	End:	248558	END
+Trl:	15	Blk:	1	Cnd:	74	LVal:	0	RVal:	8	LName:	5S_121th2	RName:	5S_130ne	Rsp:	startCueIgnore	Start:	249051	End:	261620	END
+Trl:	16	Blk:	1	Cnd:	74	LVal:	0	RVal:	8	LName:	5S_121th2	RName:	5S_130ne	Rsp:	Right	Start:	262089	End:	280996	END
+Trl:	17	Blk:	1	Cnd:	75	LVal:	3	RVal:	8	LName:	5S_123ne	RName:	5S_130ls	Rsp:	startCueIgnore	Start:	281528	End:	294108	END
+Trl:	18	Blk:	1	Cnd:	75	LVal:	3	RVal:	8	LName:	5S_123ne	RName:	5S_130ls	

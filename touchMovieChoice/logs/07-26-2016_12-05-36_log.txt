@@ -1,0 +1,29 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice11_itm.txt
+COND:	movieChoice11_cnd.txt
+DATE:	07/26/2016 12:05:36
+Showing conditions: 71-->90.
+MagicNumbers:	250	247	201	206	227	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	71	LVal:	0	RVal:	8	LName:	NS_ldl3	RName:	NS_hmmr1	Rsp:	Right	Start:	1612	End:	14647	END
+Trl:	1	Blk:	1	Cnd:	72	LVal:	8	RVal:	3	LName:	5S_106ne2	RName:	5S_97ls	Rsp:	Right	Start:	15156	End:	26642	END
+Trl:	2	Blk:	1	Cnd:	73	LVal:	3	RVal:	0	LName:	NS_ducttp2	RName:	NS_ldl5	Rsp:	Ignore	Start:	27050	End:	40155	END
+Trl:	3	Blk:	1	Cnd:	74	LVal:	8	RVal:	3	LName:	5S_106th2	RName:	5S_97ne	Rsp:	Right	Start:	40674	End:	52166	END
+Trl:	4	Blk:	1	Cnd:	75	LVal:	0	RVal:	3	LName:	5S_143ne	RName:	5S_97ls	Rsp:	Right	Start:	52675	End:	64161	END
+Trl:	5	Blk:	1	Cnd:	76	LVal:	3	RVal:	8	LName:	5S_97ls	RName:	5S_106ne2	Rsp:	Early	Start:	64673	End:	72426	END
+Trl:	6	Blk:	1	Cnd:	77	LVal:	0	RVal:	8	LName:	5S_143th	RName:	5S_106th2	Rsp:	Early	Start:	72936	End:	80623	END
+Trl:	7	Blk:	1	Cnd:	78	LVal:	3	RVal:	0	LName:	5S_97ne	RName:	5S_143ls2	Rsp:	Left	Start:	81130	End:	92617	END
+Trl:	8	Blk:	1	Cnd:	79	LVal:	8	RVal:	0	LName:	5S_106ls2	RName:	5S_143ne2	Rsp:	Right	Start:	93142	End:	103730	END
+Trl:	9	Blk:	1	Cnd:	80	LVal:	3	RVal:	8	LName:	NS_ducttp3	RName:	NS_hmmr5	Rsp:	Left	Start:	104147	End:	115642	END
+Trl:	10	Blk:	1	Cnd:	81	LVal:	0	RVal:	8	LName:	NS_ldl1	RName:	NS_hmmr5	Rsp:	Right	Start:	116048	End:	129051	END
+Trl:	11	Blk:	1	Cnd:	82	LVal:	0	RVal:	3	LName:	NS_ldl1	RName:	NS_ducttp6	Rsp:	Early	Start:	129466	End:	138767	END
+Trl:	12	Blk:	1	Cnd:	83	LVal:	8	RVal:	3	LName:	NS_hmmr6	RName:	NS_ducttp5	Rsp:	Right	Start:	139189	End:	150679	END
+Trl:	13	Blk:	1	Cnd:	84	LVal:	8	RVal:	0	LName:	NS_hmmr6	RName:	NS_ldl2	Rsp:	Right	Start:	151085	End:	161675	END
+Trl:	14	Blk:	1	Cnd:	85	LVal:	3	RVal:	0	LName:	5S_97ne2	RName:	5S_143ls2	Rsp:	Left	Start:	162176	End:	173670	END
+Trl:	15	Blk:	1	Cnd:	86	LVal:	3	RVal:	8	LName:	NS_ducttp3	RName:	NS_hmmr1	Rsp:	Left	Start:	174080	End:	185566	END
+Trl:	16	Blk:	1	Cnd:	87	LVal:	8	RVal:	3	LName:	5S_106th	RName:	5S_97ls2	Rsp:	Left	Start:	186069	End:	199077	END
+Trl:	17	Blk:	1	Cnd:	88	LVal:	3	RVal:	0	LName:	NS_ducttp1	RName:	NS_ldl6	Rsp:	Right	Start:	199501	End:	210106	END
+Trl:	18	Blk:	1	Cnd:	89	LVal:	0	RVal:	8	LName:	5S_143ne2	RName:	5S_106th2	Rsp:	Left	Start:	210593	End:	221185	END
+Trl:	19	Blk:	1	Cnd:	90	LVal:	0	RVal:	3	LName:	5S_143ls2	RName:	5S_97ls	Rsp:	Left	Start:	221676	End:	232265	END
+PROGRAM EXIT

@@ -1,8 +1,8 @@
-item file: movieChoice1_itm.txt
-condition file: movieChoice1_cnd.txt
+item file: movieChoice12_itm.txt
+condition file: movieChoice12_cnd.txt
 -----------------------------------------------
 number of trials: 01
-conditions to show: 291-->300
+conditions to show: 280-->300
 condition order: incremental
 trial retry: ignore
 -----------------------------------------------

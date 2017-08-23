@@ -1,0 +1,9 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice9_itm.txt
+COND:	movieChoice9_cnd.txt
+DATE:	07/14/2016 09:14:52
+Showing conditions: 1-->340.
+MagicNumbers:	115	205	74	134	164	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	0	RVal:	0	LName:	NS_sprytp1	RName:	NS_wd4	

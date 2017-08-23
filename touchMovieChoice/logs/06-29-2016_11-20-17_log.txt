@@ -1,0 +1,10 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice5_itm.txt
+COND:	movieChoice5_cnd.txt
+DATE:	06/29/2016 11:20:17
+Showing conditions: 11-->20.
+MagicNumbers:	227	15	49	165	149	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	11	LVal:	3	RVal:	8	LName:	NS_scrwdrvr6	RName:	ball2_1	Rsp:	Early	Start:	1644	End:	12648	END
+Trl:	1	Blk:	1	Cnd:	12	

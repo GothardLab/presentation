@@ -1,0 +1,16 @@
+SCEN:	TouchMovieChoice
+PARM:	touch_parameters.txt
+ITEM:	movieChoice5_itm.txt
+COND:	movieChoice5_cnd.txt
+DATE:	06/28/2016 09:56:15
+Showing conditions: 1-->220.
+MagicNumbers:	149	232	3	152	235	
+Starting Task
+Trl:	0	Blk:	1	Cnd:	1	LVal:	8	RVal:	3	LName:	5S_93th2	RName:	5S_90th	Rsp:	Ignore	Start:	1762	End:	6899	END
+Trl:	1	Blk:	1	Cnd:	2	LVal:	3	RVal:	0	LName:	5S_90ne	RName:	5S_111th2	Rsp:	Ignore	Start:	7389	End:	12497	END
+Trl:	2	Blk:	1	Cnd:	3	LVal:	8	RVal:	0	LName:	ball2_6	RName:	NS_rdshrp5	Rsp:	Ignore	Start:	12966	End:	18078	END
+Trl:	3	Blk:	1	Cnd:	4	LVal:	0	RVal:	8	LName:	NS_rdshrp1	RName:	ball2_1	Rsp:	Ignore	Start:	18571	End:	23676	END
+Trl:	4	Blk:	1	Cnd:	5	LVal:	0	RVal:	8	LName:	NS_rdshrp3	RName:	ball2_5	Rsp:	Ignore	Start:	24151	End:	29257	END
+Trl:	5	Blk:	1	Cnd:	6	LVal:	8	RVal:	0	LName:	5S_93th2	RName:	5S_111ne	Rsp:	Ignore	Start:	29758	End:	34872	END
+Trl:	6	Blk:	1	Cnd:	7	LVal:	0	RVal:	3	LName:	5S_111th	RName:	5S_90th	Rsp:	Ignore	Start:	35385	End:	40503	END
+Trl:	7	Blk:	1	Cnd:	8	LVal:	0	RVal:	8	LName:	5S_111th2	RName:	5S_93th	
