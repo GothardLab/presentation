@@ -1,9 +1,0 @@
-SCEN:	fixationMovieChoice
-PARM:	fixate_parameters.txt
-ITEM:	novelMonkeysTraining1_itm.txt
-COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks4thMovie_cnd.txt
-DATE:	08/16/2017 16:37:29
-Showing conditions: 1-->10.
-MagicNumbers:	75	32	47	155	166	
-Starting Task
-Trl:	0	Blk:	1	Cnd:	7	LVal:	1	RVal:	8	LName:	5S_18ne2	RName:	5S_17ne2	

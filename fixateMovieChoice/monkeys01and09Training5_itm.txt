@@ -1,0 +1,3 @@
+item#	|moviename        	|reward	|totalitems=02
+01   	|5S_01th.avi      	|08    
+02   	|5s_009_th2.avi   	|01    

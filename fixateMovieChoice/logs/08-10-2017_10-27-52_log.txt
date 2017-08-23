@@ -1,5 +1,0 @@
-SCEN:	fixationMovieChoice
-PARM:	fixate_parameters.txt
-ITEM:	buttonMovieTrain_TrainSet1_Frames1to30_itm.txt
-COND:	movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks1FirstMovie_cnd.txt
-DATE:	08/10/2017 10:27:52

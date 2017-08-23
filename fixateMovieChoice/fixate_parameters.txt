@@ -1,5 +1,5 @@
-item file: novelMonkeysTraining1_itm.txt
-condition file: movieChoiceTwoMonkeysTwoObjectsAlternatingBlocks4thMovie_cnd.txt
+item file: monkeys17and18Training4_itm.txt
+condition file: movieChoiceTwoMonkeysTraining_cnd.txt
 -----------------------------------------------
 number of trials: 01
 conditions to show:001-->010
